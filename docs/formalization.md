@@ -7,6 +7,11 @@ from actual representations and channels to those endpoints. The
 [Lean explorer](proof-explorer.md) lets you search the declarations, inspect
 their compiled types and follow direct references in either direction.
 
+The [[correspondence|Paper ↔ Lean correspondence]] connects each mapped Article
+and Letter statement to its source label, informal proof guide, exact Lean
+declarations and coverage notes. It also explains how to review whether the
+informal and formal statements match.
+
 ## What is checked
 
 | Result | Formal statement | Scope |

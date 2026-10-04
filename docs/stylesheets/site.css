@@ -2,7 +2,7 @@
    See LICENSE and NOTICE for license and attribution. */
 .qmdl-reading-links {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: .75rem;
   margin: 1.4rem 0 1.8rem;
 }
@@ -22,6 +22,68 @@
 }
 .qmdl-reading-links strong { color: var(--md-primary-fg-color); }
 .qmdl-reading-links span { font-size: .8em; color: var(--md-default-fg-color--light); }
+
+.qmdl-correspondence-table {
+  margin: 1rem 0 2rem;
+  overflow-x: auto;
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: .25rem;
+}
+.qmdl-correspondence-table:focus-visible {
+  outline: 2px solid var(--md-accent-fg-color);
+  outline-offset: 2px;
+}
+.md-typeset .qmdl-correspondence-table table:not([class]) {
+  display: table;
+  width: 100%;
+  min-width: 44rem;
+  table-layout: fixed;
+  border: 0;
+  border-radius: 0;
+  font-size: .75rem;
+}
+.qmdl-correspondence-table th:nth-child(1) { width: 19%; }
+.qmdl-correspondence-table th:nth-child(2) { width: 34%; }
+.qmdl-correspondence-table th:nth-child(3) { width: 17%; }
+.qmdl-correspondence-table th:nth-child(4) { width: 30%; }
+.md-typeset .qmdl-correspondence-table td {
+  vertical-align: top;
+  overflow-wrap: anywhere;
+}
+.md-typeset .qmdl-correspondence-table p:first-child { margin-top: 0; }
+.md-typeset .qmdl-correspondence-table p:last-child { margin-bottom: 0; }
+.md-typeset .qmdl-correspondence-table code {
+  white-space: normal;
+  overflow-wrap: anywhere;
+  word-break: normal;
+  background: transparent;
+  padding: 0;
+}
+.qmdl-correspondence-table td:last-child > a {
+  display: inline-block;
+  max-width: 100%;
+}
+.qmdl-map-status {
+  display: inline-block;
+  margin-bottom: .5rem;
+  padding: .15rem .35rem;
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: .2rem;
+  font-size: .65rem;
+  font-weight: 600;
+}
+.qmdl-map-status[data-status="proved-endpoint"],
+.qmdl-map-status[data-status="proved-correspondence"],
+.qmdl-map-status[data-status="consequence-of-article"] {
+  color: var(--md-primary-fg-color);
+  border-color: var(--md-primary-fg-color);
+}
+.qmdl-map-notes {
+  color: var(--md-default-fg-color--light);
+  font-size: .7rem;
+}
+.qmdl-map-source { font-size: .65rem; }
+.qmdl-correspondence-table tr[id] { scroll-margin-top: 5rem; }
 @media (max-width: 800px) {
   .qmdl-reading-links { grid-template-columns: 1fr; }
 }

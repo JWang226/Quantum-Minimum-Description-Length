@@ -2,9 +2,12 @@
 
 > **Project:** "Free entropy and quantum minimum description length"
 > **Authors:** Patrick Hayden, Alexander Maloney, Jinzhao Wang, Yuxiang Yang
-> **Last updated:** 2026-10-01
+> **Last updated:** 2026-10-04
 
 **[[intro|Start here]]** -- overview of the project, main result, and how to navigate.
+
+**[[correspondence|Paper ↔ Lean]]** -- manuscript labels, proof guides, exact Lean
+statements and coverage notes for the Article and Letter.
 
 **[[proof-structure|Current proof structure]]** -- how representation theory, finite cloning bounds,
 physical compression and the quantitative converse fit together.

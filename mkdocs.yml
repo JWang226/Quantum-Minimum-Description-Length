@@ -5,6 +5,10 @@ site_url: "https://jwang226.github.io/Quantum-Minimum-Description-Length/"
 docs_dir: docs
 site_dir: site
 
+# Check the generated map for every local build and GitHub Pages deployment.
+hooks:
+  - scripts/generate_correspondence.py
+
 # These documents link to proof/source files outside docs/ and are read on GitHub.
 # The wiki's formalization page links to their repository versions.
 exclude_docs: |
@@ -78,6 +82,7 @@ extra:
 
 nav:
   - Home: index.md
+  - Paper ↔ Lean: correspondence.md
   - Proof Route: proof-structure.md
   - Lean Explorer: proof-explorer.md
   - Verify: verify.md

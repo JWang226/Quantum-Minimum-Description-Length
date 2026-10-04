@@ -1,5 +1,16 @@
 # Changelog
 
+## 2026-10-04 — Paper to Lean correspondence
+
+- Added [[correspondence|Paper ↔ Lean]] tables linking the current Article and
+  Letter statements to manuscript labels, informal guides, exact compiled Lean
+  statements and source lines, with explicit coverage notes.
+- Added a statement-matching checklist and explained the roles of Lean,
+  Comparator, Nanoda and human correspondence review.
+- Linked the guide from the README, home page, navigation and proof route.
+- Added deterministic table generation and a build check against the
+  source maps, manuscript snapshots and Lean catalog.
+
 ## 2026-10-03 — Readable correspondence link
 
 - Pointed the README's human-readable correspondence and scope link directly

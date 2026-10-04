@@ -7,6 +7,8 @@ they are not a literal graph of every import. See [[formalization|Formalization 
 reproduction and review status. The [Lean explorer](proof-explorer.md) complements
 this route with searchable compiled statements, direct dependencies, reverse
 references and module imports.
+The [[correspondence|Paper ↔ Lean correspondence]] locates the manuscript
+statements, their proof guides, and the exact declarations used along this route.
 
 ## The dependency map
 

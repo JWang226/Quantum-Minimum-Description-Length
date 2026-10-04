@@ -10,9 +10,9 @@ and Letter figure are included unchanged.
 [Lean explorer](https://jwang226.github.io/Quantum-Minimum-Description-Length/proof-explorer/) ·
 [Verification guide](https://jwang226.github.io/Quantum-Minimum-Description-Length/verify/)
 
-The [human-readable correspondence and scope](https://jwang226.github.io/Quantum-Minimum-Description-Length/formalization/#what-is-checked)
-maps manuscript statements to Lean declarations and explains their assumptions
-and coverage boundaries.
+The [human-readable correspondence and scope](https://jwang226.github.io/Quantum-Minimum-Description-Length/correspondence/)
+connects Article and Letter statements to proof guides, exact Lean declarations,
+and coverage notes.
 
 ## The statements
 

@@ -7,6 +7,7 @@ and [Letter](https://github.com/JWang226/Quantum-Minimum-Description-Length/blob
 the [repository](https://github.com/JWang226/Quantum-Minimum-Description-Length).
 
 <div class="qmdl-reading-links">
+<a href="correspondence/"><strong>Match the paper to Lean</strong><span>Statements, proof guides and coverage notes</span></a>
 <a href="proof-structure/"><strong>Read the proof route</strong><span>From representations to optimal memory</span></a>
 <a href="proof-explorer/"><strong>Explore the Lean statements</strong><span>Search declarations and follow dependencies</span></a>
 <a href="verify/"><strong>Check it yourself</strong><span>Copy commands for Lean, Comparator and Nanoda</span></a>
@@ -81,7 +82,7 @@ and conditional large-dimension bridge have no separate Lean certificates.
 Repeated **positive** eigenvalues and broader programming extensions are
 outside these endpoints; repeated zeros are already covered.
 
-See [[Letter|the Letter]], [[formalization|the full scope]], and the
+See [[correspondence|the paper-to-Lean correspondence]], [[Letter|the Letter]], [[formalization|the full scope]], and the
 [manuscript-to-Lean map](https://github.com/JWang226/Quantum-Minimum-Description-Length/blob/main/metadata/natural-language-map.json).
 The [[wiki-index|mathematical wiki index]] collects the background definitions,
 lemmas, references and open questions. English explanations are reading aids;
