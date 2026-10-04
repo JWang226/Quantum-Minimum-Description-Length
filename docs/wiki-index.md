@@ -4,6 +4,11 @@
 > **Authors:** Patrick Hayden, Alexander Maloney, Jinzhao Wang, Yuxiang Yang
 > **Last updated:** 2026-10-04
 
+The website has five main tabs: **Home**, **Proof**, **Verification**,
+**Background**, and **Papers**. Section tabs and the collapsible sidebar refine
+each group. Current theorem arguments are under Proof; historical arguments
+and additional paper-level claims are under Background.
+
 **[[intro|Start here]]** -- overview of the project, main result, and how to navigate.
 
 **[[correspondence|Paper ↔ Lean]]** -- manuscript labels, proof guides, exact Lean

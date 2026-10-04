@@ -87,3 +87,40 @@
 @media (max-width: 800px) {
   .qmdl-reading-links { grid-template-columns: 1fr; }
 }
+
+/* The active top-level section supplies this second navigation row. */
+.qmdl-subtabs {
+  background: var(--md-default-bg-color);
+  color: var(--md-default-fg-color);
+  border-bottom: 1px solid var(--md-default-fg-color--lightest);
+}
+.qmdl-subtabs__list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  gap: 0 .25rem;
+  margin: 0;
+  padding: 0 .2rem;
+  list-style: none;
+}
+.qmdl-subtabs__link {
+  display: block;
+  padding: .5rem .65rem .4rem;
+  border-bottom: .1rem solid transparent;
+  color: var(--md-default-fg-color--light);
+  font-size: .7rem;
+  line-height: 1.5;
+  white-space: nowrap;
+}
+.qmdl-subtabs__item--active .qmdl-subtabs__link {
+  border-bottom-color: var(--md-primary-fg-color);
+  color: var(--md-primary-fg-color);
+  font-weight: 500;
+}
+.qmdl-subtabs__link:hover {
+  color: var(--md-accent-fg-color);
+}
+.qmdl-subtabs__link:focus-visible {
+  outline: 2px solid var(--md-accent-fg-color);
+  outline-offset: -2px;
+}

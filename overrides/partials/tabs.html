@@ -1,0 +1,41 @@
+{# Copyright (c) 2026 Free Entropy formalization contributors.
+   See LICENSE and NOTICE for license and attribution. #}
+{% import "partials/tabs-item.html" as item with context %}
+
+{# Follow the first descendant page while retaining the section label. #}
+{% macro render_subtab(nav_item, ref) %}
+  {% set ref = ref or nav_item %}
+  {% if nav_item.children %}
+    {{ render_subtab(nav_item.children | first, ref) }}
+  {% else %}
+    <li class="qmdl-subtabs__item{% if ref.active %} qmdl-subtabs__item--active{% endif %}">
+      <a href="{{ nav_item.url | url }}" class="qmdl-subtabs__link"{% if ref.active %} aria-current="{{ 'location' if ref.children else 'page' }}"{% endif %}>{{ ref.title }}</a>
+    </li>
+  {% endif %}
+{% endmacro %}
+
+{# Keep both levels together so Material's instant navigation replaces them. #}
+<div class="md-tabs" data-md-component="tabs">
+  <nav aria-label="{{ lang.t('tabs') }}">
+    <div class="md-grid">
+      <ul class="md-tabs__list">
+        {% for nav_item in nav.items %}
+          {{ item.render(nav_item) }}
+        {% endfor %}
+      </ul>
+    </div>
+  </nav>
+  {% for nav_item in nav.items %}
+    {% if nav_item.active and nav_item.children %}
+      <nav class="qmdl-subtabs" aria-label="{{ nav_item.title }} sections">
+        <div class="md-grid">
+          <ul class="qmdl-subtabs__list">
+            {% for child in nav_item.children %}
+              {{ render_subtab(child) }}
+            {% endfor %}
+          </ul>
+        </div>
+      </nav>
+    {% endif %}
+  {% endfor %}
+</div>

@@ -13,6 +13,11 @@ the [repository](https://github.com/JWang226/Quantum-Minimum-Description-Length)
 <a href="verify/"><strong>Check it yourself</strong><span>Copy commands for Lean, Comparator and Nanoda</span></a>
 </div>
 
+Use **Proof** for the dependency map, correspondence, theorem guides and Lean
+explorer; **Verification** for reproducing the checks and reviewing their scope.
+**Background** groups the mathematical topics, historical arguments and open
+questions. **Papers** collects the Article, Letter and historical Notes.
+
 ## What is proved
 
 A known-spectrum state has an unknown eigenbasis. One pair of quantum channels

@@ -1,5 +1,14 @@
 # Changelog
 
+## 2026-10-04 — Organized website navigation
+
+- Grouped the navigation into Home, Proof, Verification, Background and Papers.
+- Added section tabs for the selected main tab and a collapsible sidebar for
+  detailed theorem guides, estimates, concepts and definitions.
+- Kept current proof arguments together and identified historical arguments
+  and additional paper-level results under Background.
+- Preserved every existing navigation destination and page address.
+
 ## 2026-10-04 — Paper to Lean correspondence
 
 - Added [[correspondence|Paper ↔ Lean]] tables linking the current Article and

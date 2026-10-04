@@ -20,6 +20,7 @@ exclude_docs: |
 
 theme:
   name: material
+  custom_dir: overrides
   palette:
     - scheme: default
       primary: indigo
@@ -36,8 +37,6 @@ theme:
   features:
     - navigation.instant
     - navigation.tabs
-    - navigation.sections
-    - navigation.expand
     - navigation.top
     - search.suggest
     - search.highlight
@@ -81,88 +80,100 @@ extra:
   social: []
 
 nav:
-  - Home: index.md
+- Home:
+  - Overview: index.md
+  - Introduction: intro.md
+  - Reading index: wiki-index.md
+  - Notation: notation.md
+- Proof:
+  - Dependency map: proof-structure.md
   - Paper ↔ Lean: correspondence.md
-  - Proof Route: proof-structure.md
-  - Lean Explorer: proof-explorer.md
-  - Verify: verify.md
-  - Guide:
-      - Introduction: intro.md
-      - Wiki Index: wiki-index.md
-      - Notation: notation.md
-      - Formalization and Evidence: formalization.md
-  - Source Papers:
-      - Letter: Letter.md
-      - Article: Article.md
-      - Notes: Notes.md
-  - Concepts:
+  - Lean explorer: proof-explorer.md
+  - Main theorems:
+    - Achievability (Article Thm 1): results/achievability.md
+    - Converse (Article Thm 1): results/converse.md
+    - Cloning Accuracy (Article Thm 2): results/cloning-fidelity.md
+  - Channel identities:
+    - Cartan and Choi Formulas: results/propositions/choi-matrix-lemma.md
+    - Reverse Cloner and Petz Map: results/propositions/reverse-cloner.md
+  - Finite estimates:
+    - Multiplicity Monotonicity: results/lemmas/kostka-monotonicity.md
+    - Positive-Order Trace Comparison: results/lemmas/monotonicity-lemma.md
+    - Highest-Weight Projector Deficit: results/lemmas/perturbation-lemma.md
+    - Uniform Mean Depth: results/lemmas/tail-mass.md
+    - Eigenvalue Ratio: results/lemmas/probability-ratio.md
+    - Weyl Dimension Ratio: results/lemmas/dimension-ratio.md
+  - Compression estimates:
+    - Physical Sector Concentration: results/lemmas/sanov-theorem.md
+    - Asymptotic Weyl Dimension: results/lemmas/weyl-dimension-asymptotic.md
+    - Haar-Orbit Memory Bound: results/propositions/orbit-sector-compression.md
+- Verification:
+  - Reproduce the checks: verify.md
+  - Scope and evidence: formalization.md
+- Background:
+  - Quantum information:
+    - Concepts:
+      - Quantum MDL: concepts/quantum-minimum-description-length.md
+      - Kolmogorov Complexity & QKC: concepts/kolmogorov-complexity.md
+      - Schumacher Compression: concepts/schumacher-compression.md
+      - Covering Numbers: concepts/covering-numbers.md
+      - Generalized Cloning Map: concepts/generalized-cloning-map.md
+      - Werner's Cloning Map: concepts/werners-cloning-map.md
+      - YCH Scheme: concepts/ych-scheme.md
+      - Koashi-Imoto: concepts/koashi-imoto.md
+      - Petz Recovery Map: concepts/petz-recovery-map.md
+      - Holevo Information: concepts/holevo-information.md
+    - Definitions:
+      - Compression Code: definitions/compression-code.md
+      - Covariant Channel: definitions/covariant-channel.md
+      - Generalized Cloning Map: definitions/generalized-cloning-map-def.md
+  - Representation theory:
+    - Concepts:
+      - Schur-Weyl Duality & Schur Transform: concepts/schur-weyl-duality.md
+      - Young Diagrams: concepts/young-diagrams.md
+      - Schur Polynomials: concepts/schur-polynomials.md
+      - Gelfand-Tsetlin Basis: concepts/gelfand-tsetlin-basis.md
+      - Weyl Dimension Formula: concepts/weyl-dimension-formula.md
+      - PRV Component: concepts/prv-component.md
+      - Kumar's Theorem: concepts/kumars-theorem.md
+      - Casimir Operator: concepts/casimir-operator.md
+      - Kostant Partition Function: concepts/kostant-partition-function.md
+    - Definitions:
+      - Normalized GL Irrep: definitions/normalized-gl-irrep.md
+      - Weight Space: definitions/weight-space.md
+      - Kostka Number: definitions/kostka-number.md
+      - Distance Between Irreps: definitions/distance-between-irreps.md
+      - Edge Gap: definitions/edge-gap.md
+      - Typical Set: definitions/typical-set.md
+  - Entropy and geometry:
+    - Concepts:
       - Free Probability & Entropy (Intro): concepts/free-probability-and-entropy.md
       - Free Entropy: concepts/free-entropy.md
       - Physical Free Entropy: concepts/physical-free-entropy.md
       - Free Entropy Dimension: concepts/free-entropy-dimension.md
       - Free Probability Theory: concepts/free-probability-theory.md
       - Semicircular Element: concepts/semicircular-element.md
-      - Quantum MDL: concepts/quantum-minimum-description-length.md
-      - Kolmogorov Complexity & QKC: concepts/kolmogorov-complexity.md
-      - Schumacher Compression: concepts/schumacher-compression.md
-      - Covering Numbers: concepts/covering-numbers.md
-      - Schur-Weyl Duality & Schur Transform: concepts/schur-weyl-duality.md
-      - Young Diagrams: concepts/young-diagrams.md
-      - Schur Polynomials: concepts/schur-polynomials.md
-      - Gelfand-Tsetlin Basis: concepts/gelfand-tsetlin-basis.md
-      - Weyl Dimension Formula: concepts/weyl-dimension-formula.md
       - Vandermonde Determinant: concepts/vandermonde-determinant.md
-      - PRV Component: concepts/prv-component.md
-      - "Kumar's Theorem": concepts/kumars-theorem.md
-      - Casimir Operator: concepts/casimir-operator.md
-      - Kostant Partition Function: concepts/kostant-partition-function.md
       - Flag Manifold: concepts/flag-manifold.md
-      - Generalized Cloning Map: concepts/generalized-cloning-map.md
-      - "Werner's Cloning Map": concepts/werners-cloning-map.md
-      - YCH Scheme: concepts/ych-scheme.md
-      - Koashi-Imoto: concepts/koashi-imoto.md
-      - Petz Recovery Map: concepts/petz-recovery-map.md
-      - Holevo Information: concepts/holevo-information.md
       - KKS Theorem: concepts/kks-theorem.md
-  - Definitions:
-      - Compression Code: definitions/compression-code.md
-      - Generalized Cloning Map: definitions/generalized-cloning-map-def.md
+    - Definitions:
       - Free Entropy (Voiculescu): definitions/free-entropy-voiculescu.md
       - Physical Free Entropy: definitions/physical-free-entropy-def.md
       - Regularized Free Entropy: definitions/regularized-free-entropy.md
       - Free Entropy Dimension: definitions/free-entropy-dimension-def.md
-      - Covariant Channel: definitions/covariant-channel.md
-      - Scaling Regime: definitions/scaling-regime.md
-      - Typical Set: definitions/typical-set.md
-      - Edge Gap: definitions/edge-gap.md
-      - Normalized GL Irrep: definitions/normalized-gl-irrep.md
-      - Kostka Number: definitions/kostka-number.md
-      - Weight Space: definitions/weight-space.md
-      - Distance Between Irreps: definitions/distance-between-irreps.md
-  - Results:
-      - Theorems:
-          - Achievability (Article Thm 1): results/achievability.md
-          - Converse (Article Thm 1): results/converse.md
-          - Cloning Accuracy (Article Thm 2): results/cloning-fidelity.md
-      - Propositions:
-          - Cartan and Choi Formulas: results/propositions/choi-matrix-lemma.md
-          - Reverse Cloner and Petz Map: results/propositions/reverse-cloner.md
-          - Commutativity: results/propositions/commutativity.md
-          - Haar-Orbit Memory Bound: results/propositions/orbit-sector-compression.md
-      - Lemmas:
-          - Multiplicity Monotonicity: results/lemmas/kostka-monotonicity.md
-          - Principal Angles (Background): results/lemmas/principal-angles.md
-          - Positive-Order Trace Comparison: results/lemmas/monotonicity-lemma.md
-          - Davis–Kahan (Background): results/lemmas/davis-kahan.md
-          - Highest-Weight Projector Deficit: results/lemmas/perturbation-lemma.md
-          - Uniform Mean Depth: results/lemmas/tail-mass.md
-          - Eigenvalue Ratio: results/lemmas/probability-ratio.md
-          - Weyl Dimension Ratio: results/lemmas/dimension-ratio.md
-          - Asymptotic Weyl Dimension: results/lemmas/weyl-dimension-asymptotic.md
-          - "Physical Sector Concentration": results/lemmas/sanov-theorem.md
-  - Open Questions:
-      - Cloning Optimality: open-questions/cloning-optimality.md
-      - Degenerate Spectrum: open-questions/degenerate-spectrum.md
-      - Error Scaling: open-questions/error-scaling.md
-      - Free Entropy Conjecture & Programming: open-questions/free-entropy-conjecture.md
+  - Historical context:
+    - Scaling regime (Notes): definitions/scaling-regime.md
+    - Principal angles: results/lemmas/principal-angles.md
+    - Davis–Kahan: results/lemmas/davis-kahan.md
+  - Additional structure:
+    - Commutativity (Article Proposition 3): results/propositions/commutativity.md
+  - Open questions:
+    - Cloning Optimality: open-questions/cloning-optimality.md
+    - Degenerate Spectrum: open-questions/degenerate-spectrum.md
+    - Error Scaling: open-questions/error-scaling.md
+    - Free Entropy Conjecture & Programming: open-questions/free-entropy-conjecture.md
   - References: references/key-references.md
+- Papers:
+  - Article: Article.md
+  - Letter: Letter.md
+  - Historical Notes: Notes.md
