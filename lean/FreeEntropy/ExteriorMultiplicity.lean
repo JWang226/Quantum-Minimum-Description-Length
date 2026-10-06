@@ -18,15 +18,6 @@ set_option backward.isDefEq.respectTransparency false
 set_option maxHeartbeats 1000000
 variable {d : ℕ}
 
-private theorem complex_weight_eq_iff (a b : Fin d → ℕ) :
-    (fun k => (a k : ℂ)) = (fun k => (b k : ℂ)) ↔ a = b := by
-  constructor
-  · intro h
-    funext k
-    exact_mod_cast congrFun h k
-  · rintro rfl
-    rfl
-
 /-- An integer root shift agrees exactly with the complex eigenvalue shift. -/
 theorem shiftedWeight_eq_of_difference (mu wt : Fin d → ℕ)
     (a : LowerRoot d →₀ ℕ)
