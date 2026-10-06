@@ -8,7 +8,8 @@ import Mathlib.RingTheory.Binomial
 import Mathlib.Algebra.BigOperators.Intervals
 import Mathlib.Data.Int.Interval
 import Mathlib.Data.Real.Basic
-import Mathlib.Tactic
+import Mathlib.Tactic.Linarith
+import Mathlib.Tactic.Positivity
 
 /-! Binomial determinants and their finite interlacing recurrence. These
 identities supply the enumeration side of the actual GT dimension formula. -/
