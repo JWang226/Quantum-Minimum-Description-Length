@@ -8,6 +8,7 @@ site_dir: site
 # Check the generated map for every local build and GitHub Pages deployment.
 hooks:
   - scripts/generate_correspondence.py
+  - scripts/check_statement_audit.py
 
 # These documents link to proof/source files outside docs/ and are read on GitHub.
 # The wiki's formalization page links to their repository versions.
@@ -110,6 +111,12 @@ nav:
 - Verification:
   - Reproduce the checks: verify.md
   - Scope and evidence: formalization.md
+  - Statement audit:
+    - Overview: audit.md
+    - Theorem 1: audit/theorem1.md
+    - Theorem 2: audit/theorem2.md
+    - Manuscript inventory: audit/source-coverage.md
+    - Independent review: audit/independent-review.md
 - Background:
   - Quantum information:
     - Concepts:

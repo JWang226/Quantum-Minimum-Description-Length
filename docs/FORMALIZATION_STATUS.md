@@ -54,6 +54,15 @@ Those counts describe a particular audited source fingerprint. Source edits can 
 
 The project is **agent-reviewed**. Agents checked the mathematical interpretation of the endpoints as well as Lean compilation and the axiom dependencies. Independent human peer review and manuscript-author endorsement have not been established and are not claimed. Kernel checking verifies the formal statements; it does not by itself certify the choice of those statements as a faithful interpretation of prose.
 
+A [retrospective statement audit](https://jwang226.github.io/Quantum-Minimum-Description-Length/audit/)
+adds expanded binder tables, selected definition reviews, a manuscript argument
+inventory, and a separate adversarial agent review. Seven fresh anonymous Lean
+applications compiled, including the physical-state formulation of Theorem 2.
+No excess endpoint hypotheses or substantive mismatch on the manuscript domain
+were found. The reports explicitly retain limits concerning total helper domains,
+grouped source dependencies and the depth of semantic review; they do not claim
+an exhaustive independent audit of all proof modules or a human/author seal.
+
 The additional Comparator entrypoints are:
 
 - [Theorem1Achievability.json](../lean/ComparatorChallenges/Theorem1Achievability.json)

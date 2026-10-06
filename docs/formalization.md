@@ -34,6 +34,11 @@ and their source labels are connected by
 
 ## Verification evidence
 
+The [[audit|retrospective statement audit]] separately reviews the manuscript
+interpretation of the four primary endpoints. It includes expanded hypotheses,
+definition scope, a source argument inventory, independent adversarial findings
+and reproducible exact-type Lean applications. This remains agent review.
+
 The current source record covers **270 proof modules**, **1,873 proved
 declarations**, and **2,499 public declarations audited**. The only allowed
 axioms are Lean's `propext`, `Classical.choice` and `Quot.sound`.

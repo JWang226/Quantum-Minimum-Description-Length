@@ -6,6 +6,11 @@ fetches the locked dependencies, checks the Lean proof, compares its final
 statements with the expected statements, and replays the proofs in a separate
 Rust kernel. It does not compile or change the manuscripts.
 
+For the separate source-to-statement review, see [[audit|the statement audit]].
+Its freshness check is `python3 scripts/check_statement_audit.py`; after Lean
+setup, add `--lean` to compile the recorded anonymous applications and check
+their axiom reports.
+
 ## Prerequisites
 
 Install [elan](https://github.com/leanprover/elan), Python 3.11 or newer, Git,

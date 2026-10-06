@@ -19,6 +19,10 @@ Follow the
 [[proof-structure|dependency map]], [Lean explorer](proof-explorer.md), and
 [[verify|verification commands]] to explore or reproduce a result.
 
+The [[audit|retrospective statement audit]] gives expanded hypothesis tables,
+definition reviews, manuscript argument coverage and fresh Lean applications
+for the four primary endpoints, with an independent adversarial review.
+
 [Main results](#main-results) · [Definitions](#definitions) ·
 [Channel identities](#state-and-channel-identifications) ·
 [Compression and converse](#compression-and-converse) ·

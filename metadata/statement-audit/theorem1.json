@@ -1,0 +1,2266 @@
+{
+  "audit_kind": "retrospective_selected_endpoint_semantic_audit",
+  "source_reconstruction_recorded_before_lean_reads": true,
+  "repository": "repository root",
+  "git_head": "490356f620c1ab963ff99585d6835c93e4324b37",
+  "source": {
+    "file": "article.tex",
+    "sha256": "09fc0a6bb205180cd820be94d843a1dc0d4342a543492e30dde54e367ae843a9",
+    "primary_ranges": [
+      [
+        77,
+        99
+      ],
+      [
+        645,
+        660
+      ],
+      [
+        923,
+        938
+      ]
+    ],
+    "label": "thm:qmdl; eq:error; eq:result",
+    "reconstruction": "# Independent source reconstruction: Theorem 1\n\nRecorded before reading the Lean endpoints or their definitions. Raw source: `article.tex`, lines 77–99, 645–660 and 923–938.\n\nThe source fixes a positive finite dimension d and a density matrix rho of rank r <= d with distinct, strictly decreasing positive eigenvalues x_1 > ... > x_r > 0, remaining eigenvalues zero. Density-matrix normalization entails sum_i x_i = 1. The group is U(d), with rho_g = U(g) rho U(g)^dagger. Neither d nor x varies with n in the limits (line 99).\n\nA code for n is an encoder E_n:B((C^d)^tensor n)->B(M_n) and decoder D_n in the reverse direction, both CPTP, chosen independently of g, where M_n is the sole retained memory including all classical registers. Its cost is log_2 dim M_n, without rounding (lines 77 and 83). Its worst-case reconstruction error is sup_g (1/2)||rho_g^tensor n - D_n(E_n(rho_g^tensor n))||_1 (eq:error, lines 78–80). A stated error allowance delta need only upper-bound this actual error.\n\nThe exact leading expression (eq:result, lines 88–90) is\nL_{d,r}(n,x) = [r(2d-r-1)/2] log_2 n + sum_{1<=i<j<=r} log_2(x_i-x_j) + (d-r) sum_{i=1}^r log_2 x_i - sum_{k=d-r}^{d-1} log_2(k!).\n\nAchievability quantifiers: for every fixed admissible d, rho (and its r,x), there exists a sequence of codes, hence memories and CPTP pairs indexed by n, for which cost-L tends to zero and actual worst-case error is O(log_2 n / sqrt n). Big-O constants/threshold may depend on fixed d,r,x, not n or g. This is existence of an achieving error schedule, not a claim for every prescribed vanishing schedule (line 99). Theorem achievability explicitly states constant dependence at line 660.\n\nConverse quantifiers: for each fixed admissible d,rho,r,x and every sequence of such codes, if actual worst-case error tends to zero, then liminf_{n->infinity}(cost-L)>=0. The same conclusion follows under the weaker hypothesis that actual error averaged against normalized Haar measure on U(d) tends to zero (Theorem 1 lines 96–97; detailed thm:converse lines 923–938). The liminf can be +infinity. An eventual epsilon lower-bound formulation, for every epsilon>0 eventually cost-L >= -epsilon, would be an equivalent safe encoding avoiding a real-valued liminf default.\n\nNo spectral representation interface, cloning estimate, concentration estimate, memory lower-bound assumption, asymptotic target dimension input, or externally supplied error-rate theorem is a premise of Theorem 1. Such objects may be internal constructions/proof steps but cannot be added hypotheses of an unconditional source endpoint.\n\nPotential source convention to check downstream: choice of diagonal reference state is without loss only if unitary conjugacy and Haar/worst-case invariance are justified; arbitrary labels for finite-dimensional memories may encode their dimensions provided CPTP maps have the full source-to-memory and memory-to-source types.\n"
+  },
+  "target_file_sha256": "86c004e3c43ce9dd6e9e6442edc86a05a73218068814ee69e5d08006b502f01a",
+  "workflow_notes": {
+    "frozen_or_author_approval_claim": false,
+    "manifest_status": "No source-anchor manifest supplied/located by filename search; Comparator configs pin expected exports, not author approval.",
+    "new_sorry_added": false,
+    "repo_edited": false,
+    "broad_build_run": false,
+    "skill_adaptation": "Retrospective semantic checklist; no reorganization/freezing/approval workflow imposed."
+  },
+  "endpoints": [
+    {
+      "export": "FreeEntropy.theorem1_achievability",
+      "statement_file": "lean/FreeEntropy/Theorem1Complete.lean",
+      "statement_range": [
+        23,
+        29
+      ],
+      "body_range": [
+        30,
+        39
+      ],
+      "statement_sha256": "be0d3c72025d1f52fe421432871f27029daba6f613f4ea01ece5fb663b205013",
+      "outer_binders": [
+        {
+          "binder": "d",
+          "type": "ℕ (implicit)",
+          "classification": "SOURCE",
+          "source_citation": "article.tex:86,99 [thm:qmdl]",
+          "reason": "Fixed ambient dimension.",
+          "kind": "outer"
+        },
+        {
+          "binder": "r",
+          "type": "ℕ (implicit)",
+          "classification": "SOURCE",
+          "source_citation": "article.tex:86;646 [thm:qmdl;thm:achievability]",
+          "reason": "Fixed rank.",
+          "kind": "outer"
+        },
+        {
+          "binder": "s",
+          "type": "FixedSpectrum d r (explicit)",
+          "classification": "SOURCE",
+          "source_citation": "article.tex:77,86 [standing code convention;thm:qmdl]",
+          "reason": "The source spectrum package, expanded below.",
+          "kind": "outer"
+        }
+      ],
+      "expanded_input_binders": [
+        {
+          "binder": "d",
+          "type": "ℕ (implicit)",
+          "classification": "SOURCE",
+          "source_citation": "article.tex:86,99 [thm:qmdl]",
+          "reason": "Fixed ambient dimension.",
+          "kind": "outer"
+        },
+        {
+          "binder": "r",
+          "type": "ℕ (implicit)",
+          "classification": "SOURCE",
+          "source_citation": "article.tex:86;646 [thm:qmdl;thm:achievability]",
+          "reason": "Fixed rank.",
+          "kind": "outer"
+        },
+        {
+          "binder": "s.rank_pos",
+          "type": "0 < r",
+          "classification": "STANDING",
+          "source_citation": "article.tex:77,86 [density-matrix standing convention]",
+          "reason": "A trace-one density matrix has nonzero rank.",
+          "kind": "expanded"
+        },
+        {
+          "binder": "s.rank_le",
+          "type": "r ≤ d",
+          "classification": "SOURCE",
+          "source_citation": "article.tex:646;924 [thm:achievability;thm:converse]",
+          "reason": "Rank is bounded by ambient dimension.",
+          "kind": "expanded"
+        },
+        {
+          "binder": "s.eigenvalue",
+          "type": "ℕ → ℝ",
+          "classification": "SOURCE",
+          "source_citation": "article.tex:77,86 [thm:qmdl]",
+          "reason": "Zero-based storage of spectrum; values at i≥d never enter source-facing expressions.",
+          "kind": "expanded"
+        },
+        {
+          "binder": "s.positive",
+          "type": "∀ i, i < r → 0 < s.eigenvalue i",
+          "classification": "SOURCE",
+          "source_citation": "article.tex:86 [thm:qmdl]",
+          "reason": "Positive active eigenvalues.",
+          "kind": "expanded"
+        },
+        {
+          "binder": "s.decreasing",
+          "type": "∀ i j, i < j → j < r → s.eigenvalue j < s.eigenvalue i",
+          "classification": "SOURCE",
+          "source_citation": "article.tex:86 [thm:qmdl]",
+          "reason": "Strict ordering/distinctness.",
+          "kind": "expanded"
+        },
+        {
+          "binder": "s.zero_padded",
+          "type": "∀ i, r ≤ i → i < d → s.eigenvalue i = 0",
+          "classification": "STANDING",
+          "source_citation": "article.tex:77,86 [rank-r density matrix]",
+          "reason": "Remaining d−r eigenvalues are zero.",
+          "kind": "expanded"
+        },
+        {
+          "binder": "s.normalized",
+          "type": "∑ i ∈ Finset.range r, s.eigenvalue i = 1",
+          "classification": "STANDING",
+          "source_citation": "article.tex:77,86 [density-matrix standing convention]",
+          "reason": "Trace-one normalization; audited directly through physicalSpectrum_normalized and physicalDensity_trace.",
+          "kind": "expanded"
+        }
+      ],
+      "outer_counts": {
+        "SOURCE": 3,
+        "STANDING": 0,
+        "TYPING": 0,
+        "RULED": 0,
+        "EXCESS": 0
+      },
+      "expanded_counts": {
+        "SOURCE": 6,
+        "STANDING": 3,
+        "TYPING": 0,
+        "RULED": 0,
+        "EXCESS": 0
+      },
+      "instance_binders": 0,
+      "verdict": "PASS_SELECTED_ENDPOINT_FIDELITY",
+      "exact_application_status": "PENDING_ROOT_COMPILATION"
+    },
+    {
+      "export": "FreeEntropy.theorem1_converse",
+      "statement_file": "lean/FreeEntropy/Theorem1Complete.lean",
+      "statement_range": [
+        43,
+        48
+      ],
+      "body_range": [
+        49,
+        56
+      ],
+      "statement_sha256": "8e4af48a5a102bb35f05b6b441220c4639ee3f75043020790d035141b960558b",
+      "outer_binders": [
+        {
+          "binder": "d",
+          "type": "ℕ (implicit)",
+          "classification": "SOURCE",
+          "source_citation": "article.tex:86,99 [thm:qmdl]",
+          "reason": "Fixed ambient dimension.",
+          "kind": "outer"
+        },
+        {
+          "binder": "r",
+          "type": "ℕ (implicit)",
+          "classification": "SOURCE",
+          "source_citation": "article.tex:86;646 [thm:qmdl;thm:achievability]",
+          "reason": "Fixed rank.",
+          "kind": "outer"
+        },
+        {
+          "binder": "s",
+          "type": "FixedSpectrum d r (explicit)",
+          "classification": "SOURCE",
+          "source_citation": "article.tex:77,86 [standing code convention;thm:qmdl]",
+          "reason": "The source spectrum package, expanded below.",
+          "kind": "outer"
+        },
+        {
+          "binder": "memory",
+          "type": "ℕ → ℕ (explicit)",
+          "classification": "SOURCE",
+          "source_citation": "article.tex:77,92 [sole retained memory;thm:qmdl]",
+          "reason": "Dimension of the entire retained memory, including classical registers.",
+          "kind": "outer"
+        },
+        {
+          "binder": "E",
+          "type": "∀ n, MatrixChannel (Fin n → Fin d) (Fin (memory n))",
+          "classification": "SOURCE",
+          "source_citation": "article.tex:77 [standing code convention]",
+          "reason": "Code sequence independent of U; expanded below.",
+          "kind": "outer"
+        },
+        {
+          "binder": "D",
+          "type": "∀ n, MatrixChannel (Fin (memory n)) (Fin n → Fin d)",
+          "classification": "SOURCE",
+          "source_citation": "article.tex:77 [standing code convention]",
+          "reason": "The decoder receives only this memory; expanded below.",
+          "kind": "outer"
+        },
+        {
+          "binder": "herror",
+          "type": "Tendsto (fun n => mixedAverageError s n (E n) (D n)) atTop (𝓝 0)",
+          "classification": "SOURCE",
+          "source_citation": "article.tex:92–97 [thm:qmdl];927–932 [thm:converse]",
+          "reason": "Only reliability is assumed.",
+          "kind": "outer"
+        }
+      ],
+      "expanded_input_binders": [
+        {
+          "binder": "d",
+          "type": "ℕ (implicit)",
+          "classification": "SOURCE",
+          "source_citation": "article.tex:86,99 [thm:qmdl]",
+          "reason": "Fixed ambient dimension.",
+          "kind": "outer"
+        },
+        {
+          "binder": "r",
+          "type": "ℕ (implicit)",
+          "classification": "SOURCE",
+          "source_citation": "article.tex:86;646 [thm:qmdl;thm:achievability]",
+          "reason": "Fixed rank.",
+          "kind": "outer"
+        },
+        {
+          "binder": "s.rank_pos",
+          "type": "0 < r",
+          "classification": "STANDING",
+          "source_citation": "article.tex:77,86 [density-matrix standing convention]",
+          "reason": "A trace-one density matrix has nonzero rank.",
+          "kind": "expanded"
+        },
+        {
+          "binder": "s.rank_le",
+          "type": "r ≤ d",
+          "classification": "SOURCE",
+          "source_citation": "article.tex:646;924 [thm:achievability;thm:converse]",
+          "reason": "Rank is bounded by ambient dimension.",
+          "kind": "expanded"
+        },
+        {
+          "binder": "s.eigenvalue",
+          "type": "ℕ → ℝ",
+          "classification": "SOURCE",
+          "source_citation": "article.tex:77,86 [thm:qmdl]",
+          "reason": "Zero-based storage of spectrum; values at i≥d never enter source-facing expressions.",
+          "kind": "expanded"
+        },
+        {
+          "binder": "s.positive",
+          "type": "∀ i, i < r → 0 < s.eigenvalue i",
+          "classification": "SOURCE",
+          "source_citation": "article.tex:86 [thm:qmdl]",
+          "reason": "Positive active eigenvalues.",
+          "kind": "expanded"
+        },
+        {
+          "binder": "s.decreasing",
+          "type": "∀ i j, i < j → j < r → s.eigenvalue j < s.eigenvalue i",
+          "classification": "SOURCE",
+          "source_citation": "article.tex:86 [thm:qmdl]",
+          "reason": "Strict ordering/distinctness.",
+          "kind": "expanded"
+        },
+        {
+          "binder": "s.zero_padded",
+          "type": "∀ i, r ≤ i → i < d → s.eigenvalue i = 0",
+          "classification": "STANDING",
+          "source_citation": "article.tex:77,86 [rank-r density matrix]",
+          "reason": "Remaining d−r eigenvalues are zero.",
+          "kind": "expanded"
+        },
+        {
+          "binder": "s.normalized",
+          "type": "∑ i ∈ Finset.range r, s.eigenvalue i = 1",
+          "classification": "STANDING",
+          "source_citation": "article.tex:77,86 [density-matrix standing convention]",
+          "reason": "Trace-one normalization; audited directly through physicalSpectrum_normalized and physicalDensity_trace.",
+          "kind": "expanded"
+        },
+        {
+          "binder": "memory",
+          "type": "ℕ → ℕ (explicit)",
+          "classification": "SOURCE",
+          "source_citation": "article.tex:77,92 [sole retained memory;thm:qmdl]",
+          "reason": "Dimension of the entire retained memory, including classical registers.",
+          "kind": "outer"
+        },
+        {
+          "binder": "E.toFun",
+          "type": "∀ n, Matrix (Fin n → Fin d) (Fin n → Fin d) ℂ → Matrix (Fin (memory n)) (Fin (memory n)) ℂ",
+          "classification": "SOURCE",
+          "source_citation": "article.tex:77 [standing CPTP code convention]",
+          "reason": "The actual finite-dimensional encoder/decoder function.",
+          "kind": "expanded"
+        },
+        {
+          "binder": "E.map_add",
+          "type": "∀ n X Y, toFun (X + Y) = toFun X + toFun Y",
+          "classification": "STANDING",
+          "source_citation": "article.tex:77 [standing CPTP code convention]",
+          "reason": "Complex-linearity is part of the meaning of a quantum channel.",
+          "kind": "expanded"
+        },
+        {
+          "binder": "E.map_smul",
+          "type": "∀ n (c : ℂ) X, toFun (c • X) = c • toFun X",
+          "classification": "STANDING",
+          "source_citation": "article.tex:77 [standing CPTP code convention]",
+          "reason": "Complex-linearity, with all scalars.",
+          "kind": "expanded"
+        },
+        {
+          "binder": "E.trace_preserving",
+          "type": "∀ n X, trace (toFun X) = trace X",
+          "classification": "SOURCE",
+          "source_citation": "article.tex:77 [standing CPTP code convention]",
+          "reason": "Trace preservation for all matrices.",
+          "kind": "expanded"
+        },
+        {
+          "binder": "E.positive",
+          "type": "∀ n X, X.PosSemidef → (toFun X).PosSemidef",
+          "classification": "STANDING",
+          "source_citation": "article.tex:77 [standing CPTP code convention]",
+          "reason": "The k=1 positivity consequence of complete positivity, explicitly bundled.",
+          "kind": "expanded"
+        },
+        {
+          "binder": "E.completely_positive",
+          "type": "∀ n (k : ℕ) (X : Matrix (Fin k × input) (Fin k × input) ℂ), X.PosSemidef → (amplify toFun X).PosSemidef",
+          "classification": "SOURCE",
+          "source_citation": "article.tex:77 [standing CPTP code convention]",
+          "reason": "Actual blockwise matrix amplification for every finite ancilla dimension.",
+          "kind": "expanded"
+        },
+        {
+          "binder": "D.toFun",
+          "type": "∀ n, Matrix (Fin (memory n)) (Fin (memory n)) ℂ → Matrix (Fin n → Fin d) (Fin n → Fin d) ℂ",
+          "classification": "SOURCE",
+          "source_citation": "article.tex:77 [standing CPTP code convention]",
+          "reason": "The actual finite-dimensional encoder/decoder function.",
+          "kind": "expanded"
+        },
+        {
+          "binder": "D.map_add",
+          "type": "∀ n X Y, toFun (X + Y) = toFun X + toFun Y",
+          "classification": "STANDING",
+          "source_citation": "article.tex:77 [standing CPTP code convention]",
+          "reason": "Complex-linearity is part of the meaning of a quantum channel.",
+          "kind": "expanded"
+        },
+        {
+          "binder": "D.map_smul",
+          "type": "∀ n (c : ℂ) X, toFun (c • X) = c • toFun X",
+          "classification": "STANDING",
+          "source_citation": "article.tex:77 [standing CPTP code convention]",
+          "reason": "Complex-linearity, with all scalars.",
+          "kind": "expanded"
+        },
+        {
+          "binder": "D.trace_preserving",
+          "type": "∀ n X, trace (toFun X) = trace X",
+          "classification": "SOURCE",
+          "source_citation": "article.tex:77 [standing CPTP code convention]",
+          "reason": "Trace preservation for all matrices.",
+          "kind": "expanded"
+        },
+        {
+          "binder": "D.positive",
+          "type": "∀ n X, X.PosSemidef → (toFun X).PosSemidef",
+          "classification": "STANDING",
+          "source_citation": "article.tex:77 [standing CPTP code convention]",
+          "reason": "The k=1 positivity consequence of complete positivity, explicitly bundled.",
+          "kind": "expanded"
+        },
+        {
+          "binder": "D.completely_positive",
+          "type": "∀ n (k : ℕ) (X : Matrix (Fin k × input) (Fin k × input) ℂ), X.PosSemidef → (amplify toFun X).PosSemidef",
+          "classification": "SOURCE",
+          "source_citation": "article.tex:77 [standing CPTP code convention]",
+          "reason": "Actual blockwise matrix amplification for every finite ancilla dimension.",
+          "kind": "expanded"
+        },
+        {
+          "binder": "herror",
+          "type": "Tendsto (fun n => mixedAverageError s n (E n) (D n)) atTop (𝓝 0)",
+          "classification": "SOURCE",
+          "source_citation": "article.tex:92–97 [thm:qmdl];927–932 [thm:converse]",
+          "reason": "Only reliability is assumed.",
+          "kind": "outer"
+        }
+      ],
+      "outer_counts": {
+        "SOURCE": 7,
+        "STANDING": 0,
+        "TYPING": 0,
+        "RULED": 0,
+        "EXCESS": 0
+      },
+      "expanded_counts": {
+        "SOURCE": 14,
+        "STANDING": 9,
+        "TYPING": 0,
+        "RULED": 0,
+        "EXCESS": 0
+      },
+      "instance_binders": 0,
+      "verdict": "PASS_SELECTED_ENDPOINT_FIDELITY",
+      "exact_application_status": "PENDING_ROOT_COMPILATION"
+    },
+    {
+      "export": "FreeEntropy.theorem1_converse_of_uniform",
+      "statement_file": "lean/FreeEntropy/Theorem1Complete.lean",
+      "statement_range": [
+        60,
+        65
+      ],
+      "body_range": [
+        66,
+        66
+      ],
+      "statement_sha256": "3d5041f6910e0539611e37450fe2e82a9d53540a992db2bb42f616769d0487ae",
+      "outer_binders": [
+        {
+          "binder": "d",
+          "type": "ℕ (implicit)",
+          "classification": "SOURCE",
+          "source_citation": "article.tex:86,99 [thm:qmdl]",
+          "reason": "Fixed ambient dimension.",
+          "kind": "outer"
+        },
+        {
+          "binder": "r",
+          "type": "ℕ (implicit)",
+          "classification": "SOURCE",
+          "source_citation": "article.tex:86;646 [thm:qmdl;thm:achievability]",
+          "reason": "Fixed rank.",
+          "kind": "outer"
+        },
+        {
+          "binder": "s",
+          "type": "FixedSpectrum d r (explicit)",
+          "classification": "SOURCE",
+          "source_citation": "article.tex:77,86 [standing code convention;thm:qmdl]",
+          "reason": "The source spectrum package, expanded below.",
+          "kind": "outer"
+        },
+        {
+          "binder": "memory",
+          "type": "ℕ → ℕ (explicit)",
+          "classification": "SOURCE",
+          "source_citation": "article.tex:77,92 [sole retained memory;thm:qmdl]",
+          "reason": "Dimension of the entire retained memory, including classical registers.",
+          "kind": "outer"
+        },
+        {
+          "binder": "E",
+          "type": "∀ n, MatrixChannel (Fin n → Fin d) (Fin (memory n))",
+          "classification": "SOURCE",
+          "source_citation": "article.tex:77 [standing code convention]",
+          "reason": "Code sequence independent of U; expanded below.",
+          "kind": "outer"
+        },
+        {
+          "binder": "D",
+          "type": "∀ n, MatrixChannel (Fin (memory n)) (Fin n → Fin d)",
+          "classification": "SOURCE",
+          "source_citation": "article.tex:77 [standing code convention]",
+          "reason": "The decoder receives only this memory; expanded below.",
+          "kind": "outer"
+        },
+        {
+          "binder": "herror",
+          "type": "Tendsto (fun n => mixedWorstError s n (E n) (D n)) atTop (𝓝 0)",
+          "classification": "SOURCE",
+          "source_citation": "article.tex:92–97 [thm:qmdl];927–932 [thm:converse]",
+          "reason": "Only reliability is assumed.",
+          "kind": "outer"
+        }
+      ],
+      "expanded_input_binders": [
+        {
+          "binder": "d",
+          "type": "ℕ (implicit)",
+          "classification": "SOURCE",
+          "source_citation": "article.tex:86,99 [thm:qmdl]",
+          "reason": "Fixed ambient dimension.",
+          "kind": "outer"
+        },
+        {
+          "binder": "r",
+          "type": "ℕ (implicit)",
+          "classification": "SOURCE",
+          "source_citation": "article.tex:86;646 [thm:qmdl;thm:achievability]",
+          "reason": "Fixed rank.",
+          "kind": "outer"
+        },
+        {
+          "binder": "s.rank_pos",
+          "type": "0 < r",
+          "classification": "STANDING",
+          "source_citation": "article.tex:77,86 [density-matrix standing convention]",
+          "reason": "A trace-one density matrix has nonzero rank.",
+          "kind": "expanded"
+        },
+        {
+          "binder": "s.rank_le",
+          "type": "r ≤ d",
+          "classification": "SOURCE",
+          "source_citation": "article.tex:646;924 [thm:achievability;thm:converse]",
+          "reason": "Rank is bounded by ambient dimension.",
+          "kind": "expanded"
+        },
+        {
+          "binder": "s.eigenvalue",
+          "type": "ℕ → ℝ",
+          "classification": "SOURCE",
+          "source_citation": "article.tex:77,86 [thm:qmdl]",
+          "reason": "Zero-based storage of spectrum; values at i≥d never enter source-facing expressions.",
+          "kind": "expanded"
+        },
+        {
+          "binder": "s.positive",
+          "type": "∀ i, i < r → 0 < s.eigenvalue i",
+          "classification": "SOURCE",
+          "source_citation": "article.tex:86 [thm:qmdl]",
+          "reason": "Positive active eigenvalues.",
+          "kind": "expanded"
+        },
+        {
+          "binder": "s.decreasing",
+          "type": "∀ i j, i < j → j < r → s.eigenvalue j < s.eigenvalue i",
+          "classification": "SOURCE",
+          "source_citation": "article.tex:86 [thm:qmdl]",
+          "reason": "Strict ordering/distinctness.",
+          "kind": "expanded"
+        },
+        {
+          "binder": "s.zero_padded",
+          "type": "∀ i, r ≤ i → i < d → s.eigenvalue i = 0",
+          "classification": "STANDING",
+          "source_citation": "article.tex:77,86 [rank-r density matrix]",
+          "reason": "Remaining d−r eigenvalues are zero.",
+          "kind": "expanded"
+        },
+        {
+          "binder": "s.normalized",
+          "type": "∑ i ∈ Finset.range r, s.eigenvalue i = 1",
+          "classification": "STANDING",
+          "source_citation": "article.tex:77,86 [density-matrix standing convention]",
+          "reason": "Trace-one normalization; audited directly through physicalSpectrum_normalized and physicalDensity_trace.",
+          "kind": "expanded"
+        },
+        {
+          "binder": "memory",
+          "type": "ℕ → ℕ (explicit)",
+          "classification": "SOURCE",
+          "source_citation": "article.tex:77,92 [sole retained memory;thm:qmdl]",
+          "reason": "Dimension of the entire retained memory, including classical registers.",
+          "kind": "outer"
+        },
+        {
+          "binder": "E.toFun",
+          "type": "∀ n, Matrix (Fin n → Fin d) (Fin n → Fin d) ℂ → Matrix (Fin (memory n)) (Fin (memory n)) ℂ",
+          "classification": "SOURCE",
+          "source_citation": "article.tex:77 [standing CPTP code convention]",
+          "reason": "The actual finite-dimensional encoder/decoder function.",
+          "kind": "expanded"
+        },
+        {
+          "binder": "E.map_add",
+          "type": "∀ n X Y, toFun (X + Y) = toFun X + toFun Y",
+          "classification": "STANDING",
+          "source_citation": "article.tex:77 [standing CPTP code convention]",
+          "reason": "Complex-linearity is part of the meaning of a quantum channel.",
+          "kind": "expanded"
+        },
+        {
+          "binder": "E.map_smul",
+          "type": "∀ n (c : ℂ) X, toFun (c • X) = c • toFun X",
+          "classification": "STANDING",
+          "source_citation": "article.tex:77 [standing CPTP code convention]",
+          "reason": "Complex-linearity, with all scalars.",
+          "kind": "expanded"
+        },
+        {
+          "binder": "E.trace_preserving",
+          "type": "∀ n X, trace (toFun X) = trace X",
+          "classification": "SOURCE",
+          "source_citation": "article.tex:77 [standing CPTP code convention]",
+          "reason": "Trace preservation for all matrices.",
+          "kind": "expanded"
+        },
+        {
+          "binder": "E.positive",
+          "type": "∀ n X, X.PosSemidef → (toFun X).PosSemidef",
+          "classification": "STANDING",
+          "source_citation": "article.tex:77 [standing CPTP code convention]",
+          "reason": "The k=1 positivity consequence of complete positivity, explicitly bundled.",
+          "kind": "expanded"
+        },
+        {
+          "binder": "E.completely_positive",
+          "type": "∀ n (k : ℕ) (X : Matrix (Fin k × input) (Fin k × input) ℂ), X.PosSemidef → (amplify toFun X).PosSemidef",
+          "classification": "SOURCE",
+          "source_citation": "article.tex:77 [standing CPTP code convention]",
+          "reason": "Actual blockwise matrix amplification for every finite ancilla dimension.",
+          "kind": "expanded"
+        },
+        {
+          "binder": "D.toFun",
+          "type": "∀ n, Matrix (Fin (memory n)) (Fin (memory n)) ℂ → Matrix (Fin n → Fin d) (Fin n → Fin d) ℂ",
+          "classification": "SOURCE",
+          "source_citation": "article.tex:77 [standing CPTP code convention]",
+          "reason": "The actual finite-dimensional encoder/decoder function.",
+          "kind": "expanded"
+        },
+        {
+          "binder": "D.map_add",
+          "type": "∀ n X Y, toFun (X + Y) = toFun X + toFun Y",
+          "classification": "STANDING",
+          "source_citation": "article.tex:77 [standing CPTP code convention]",
+          "reason": "Complex-linearity is part of the meaning of a quantum channel.",
+          "kind": "expanded"
+        },
+        {
+          "binder": "D.map_smul",
+          "type": "∀ n (c : ℂ) X, toFun (c • X) = c • toFun X",
+          "classification": "STANDING",
+          "source_citation": "article.tex:77 [standing CPTP code convention]",
+          "reason": "Complex-linearity, with all scalars.",
+          "kind": "expanded"
+        },
+        {
+          "binder": "D.trace_preserving",
+          "type": "∀ n X, trace (toFun X) = trace X",
+          "classification": "SOURCE",
+          "source_citation": "article.tex:77 [standing CPTP code convention]",
+          "reason": "Trace preservation for all matrices.",
+          "kind": "expanded"
+        },
+        {
+          "binder": "D.positive",
+          "type": "∀ n X, X.PosSemidef → (toFun X).PosSemidef",
+          "classification": "STANDING",
+          "source_citation": "article.tex:77 [standing CPTP code convention]",
+          "reason": "The k=1 positivity consequence of complete positivity, explicitly bundled.",
+          "kind": "expanded"
+        },
+        {
+          "binder": "D.completely_positive",
+          "type": "∀ n (k : ℕ) (X : Matrix (Fin k × input) (Fin k × input) ℂ), X.PosSemidef → (amplify toFun X).PosSemidef",
+          "classification": "SOURCE",
+          "source_citation": "article.tex:77 [standing CPTP code convention]",
+          "reason": "Actual blockwise matrix amplification for every finite ancilla dimension.",
+          "kind": "expanded"
+        },
+        {
+          "binder": "herror",
+          "type": "Tendsto (fun n => mixedWorstError s n (E n) (D n)) atTop (𝓝 0)",
+          "classification": "SOURCE",
+          "source_citation": "article.tex:92–97 [thm:qmdl];927–932 [thm:converse]",
+          "reason": "Only reliability is assumed.",
+          "kind": "outer"
+        }
+      ],
+      "outer_counts": {
+        "SOURCE": 7,
+        "STANDING": 0,
+        "TYPING": 0,
+        "RULED": 0,
+        "EXCESS": 0
+      },
+      "expanded_counts": {
+        "SOURCE": 14,
+        "STANDING": 9,
+        "TYPING": 0,
+        "RULED": 0,
+        "EXCESS": 0
+      },
+      "instance_binders": 0,
+      "verdict": "PASS_SELECTED_ENDPOINT_FIDELITY",
+      "exact_application_status": "PENDING_ROOT_COMPILATION"
+    }
+  ],
+  "definitions_reviewed": [
+    {
+      "name": "FreeEntropy.FixedSpectrum",
+      "file": "lean/FreeEntropy/Statements.lean",
+      "range": [
+        25,
+        32
+      ],
+      "body": "rank constraints; eigenvalue : ℕ→ℝ; positivity, decreasing, zero padding, sum=1",
+      "source_match": "article.tex:77,86;646;924. No proof-estimate fields.",
+      "scope": "endpoint_type",
+      "BODY_MATCH": "OK",
+      "PUBLIC_CARRIER": "OK",
+      "WELL_DEFINEDNESS": "N/A_LITERAL",
+      "CHARACTERIZATION": "N/A_LITERAL",
+      "CHOICE_INDEPENDENCE": "N/A",
+      "DEFINITION_VERDICT": "PASS"
+    },
+    {
+      "name": "FreeEntropy.Channels.MatrixChannel",
+      "file": "lean/FreeEntropy/Channels.lean",
+      "range": [
+        95,
+        102
+      ],
+      "body": "toFun plus complex-linear, TP, positive and all finite-amplification-positive laws",
+      "source_match": "article.tex:77. Positivity is an explicit redundant part of CPTP, not an independent convenience assumption.",
+      "scope": "endpoint_type",
+      "BODY_MATCH": "OK",
+      "PUBLIC_CARRIER": "OK",
+      "WELL_DEFINEDNESS": "N/A_LITERAL",
+      "CHARACTERIZATION": "N/A_LITERAL",
+      "CHOICE_INDEPENDENCE": "N/A",
+      "DEFINITION_VERDICT": "PASS"
+    },
+    {
+      "name": "FreeEntropy.Channels.amplify",
+      "file": "lean/FreeEntropy/Channels.lean",
+      "range": [
+        74,
+        76
+      ],
+      "body": "Φ applied to each ancilla-indexed matrix block",
+      "source_match": "The standard id_k⊗Φ; no positivity surrogate.",
+      "scope": "endpoint_type",
+      "BODY_MATCH": "OK",
+      "PUBLIC_CARRIER": "OK",
+      "WELL_DEFINEDNESS": "N/A_LITERAL",
+      "CHARACTERIZATION": "N/A_LITERAL",
+      "CHOICE_INDEPENDENCE": "N/A",
+      "DEFINITION_VERDICT": "PASS"
+    },
+    {
+      "name": "FreeEntropy.SchurWeyl.physicalSpectrum",
+      "file": "lean/FreeEntropy/SchurWeylConcentrationTail.lean",
+      "range": [
+        87,
+        87
+      ],
+      "body": "fun j : Fin d => s.eigenvalue j",
+      "source_match": "The d eigenvalues. Lines 89–116 prove nonnegativity, ordering, sum=1.",
+      "scope": "endpoint_type",
+      "BODY_MATCH": "OK",
+      "PUBLIC_CARRIER": "OK",
+      "WELL_DEFINEDNESS": "N/A_LITERAL",
+      "CHARACTERIZATION": "N/A_LITERAL",
+      "CHOICE_INDEPENDENCE": "N/A",
+      "DEFINITION_VERDICT": "PASS"
+    },
+    {
+      "name": "FreeEntropy.SchurWeyl.physicalDensity",
+      "file": "lean/FreeEntropy/PhysicalSchurProtocol.lean",
+      "range": [
+        25,
+        28
+      ],
+      "body": "U * diagonal(physicalSpectrum s) * Uᴴ",
+      "source_match": "article.tex:77; rho chosen diagonal. Lines 30–47 prove positivity and trace=1.",
+      "scope": "endpoint_type",
+      "BODY_MATCH": "OK",
+      "PUBLIC_CARRIER": "OK",
+      "WELL_DEFINEDNESS": "N/A_LITERAL",
+      "CHARACTERIZATION": "N/A_LITERAL",
+      "CHOICE_INDEPENDENCE": "N/A",
+      "DEFINITION_VERDICT": "PASS"
+    },
+    {
+      "name": "FreeEntropy.TensorPowers.matrix",
+      "file": "lean/FreeEntropy/TensorPowers.lean",
+      "range": [
+        27,
+        28
+      ],
+      "body": "fun x y => ∏ t : Fin n, A (x t) (y t)",
+      "source_match": "Literal tensor-power matrix in word basis (dimension d^n); trace, positivity and covariance proved at 55–79.",
+      "scope": "endpoint_type",
+      "BODY_MATCH": "OK",
+      "PUBLIC_CARRIER": "OK",
+      "WELL_DEFINEDNESS": "N/A_LITERAL",
+      "CHARACTERIZATION": "N/A_LITERAL",
+      "CHOICE_INDEPENDENCE": "N/A",
+      "DEFINITION_VERDICT": "PASS"
+    },
+    {
+      "name": "FreeEntropy.SchurWeyl.physicalSource",
+      "file": "lean/FreeEntropy/PhysicalCanonicalConverse.lean",
+      "range": [
+        31,
+        32
+      ],
+      "body": "TensorPowers.matrix n (physicalDensity s U)",
+      "source_match": "article.tex:77–80; actual n-copy source. Positivity/continuity 34–49; trace PhysicalUniformError:18–20.",
+      "scope": "endpoint_type",
+      "BODY_MATCH": "OK",
+      "PUBLIC_CARRIER": "OK",
+      "WELL_DEFINEDNESS": "N/A_LITERAL",
+      "CHARACTERIZATION": "N/A_LITERAL",
+      "CHOICE_INDEPENDENCE": "N/A",
+      "DEFINITION_VERDICT": "PASS"
+    },
+    {
+      "name": "FreeEntropy.OrbitMemory.tr",
+      "file": "lean/FreeEntropy/OrbitMemory.lean",
+      "range": [
+        37,
+        37
+      ],
+      "body": "A.trace.re",
+      "source_match": "Unnormalized real trace, not trace divided by dimension.",
+      "scope": "endpoint_type",
+      "BODY_MATCH": "OK",
+      "PUBLIC_CARRIER": "OK",
+      "WELL_DEFINEDNESS": "N/A_LITERAL",
+      "CHARACTERIZATION": "N/A_LITERAL",
+      "CHOICE_INDEPENDENCE": "N/A",
+      "DEFINITION_VERDICT": "PASS"
+    },
+    {
+      "name": "FreeEntropy.TraceDistance.traceNorm",
+      "file": "lean/FreeEntropy/TraceDistance.lean",
+      "range": [
+        32,
+        32
+      ],
+      "body": "tr (CFC.abs X)",
+      "source_match": "CFC.abs read in pinned local mathlib Abs.lean:46 as sqrt(star X * X); full matrix carrier is the true trace norm.",
+      "scope": "endpoint_type",
+      "BODY_MATCH": "OK",
+      "PUBLIC_CARRIER": "OK",
+      "WELL_DEFINEDNESS": "N/A_LITERAL",
+      "CHARACTERIZATION": "N/A_LITERAL",
+      "CHOICE_INDEPENDENCE": "N/A",
+      "DEFINITION_VERDICT": "PASS"
+    },
+    {
+      "name": "FreeEntropy.TraceDistance.traceDistance",
+      "file": "lean/FreeEntropy/TraceDistance.lean",
+      "range": [
+        35,
+        35
+      ],
+      "body": "traceNorm (A - B) / 2",
+      "source_match": "article.tex:eq:error 79–80. Symmetry at 49–53 covers source subtraction order.",
+      "scope": "endpoint_type",
+      "BODY_MATCH": "OK",
+      "PUBLIC_CARRIER": "OK",
+      "WELL_DEFINEDNESS": "N/A_LITERAL",
+      "CHARACTERIZATION": "N/A_LITERAL",
+      "CHOICE_INDEPENDENCE": "N/A",
+      "DEFINITION_VERDICT": "PASS"
+    },
+    {
+      "name": "FreeEntropy.UnitaryHaar.wholeGroup",
+      "file": "lean/FreeEntropy/UnitaryHaar.lean",
+      "range": [
+        41,
+        42
+      ],
+      "body": "PositiveCompacts of Set.univ",
+      "source_match": "Actual compact U(d); compactness proved 24–33.",
+      "scope": "endpoint_type",
+      "BODY_MATCH": "OK",
+      "PUBLIC_CARRIER": "OK",
+      "WELL_DEFINEDNESS": "N/A_LITERAL",
+      "CHARACTERIZATION": "N/A_LITERAL",
+      "CHOICE_INDEPENDENCE": "N/A",
+      "DEFINITION_VERDICT": "PASS"
+    },
+    {
+      "name": "FreeEntropy.UnitaryHaar.probabilityHaar",
+      "file": "lean/FreeEntropy/UnitaryHaar.lean",
+      "range": [
+        45,
+        46
+      ],
+      "body": "Measure.haarMeasure (wholeGroup n)",
+      "source_match": "Normalized by whole-group compact set; IsProbabilityMeasure 48–49 and IsMulLeftInvariant 51–53 are proved instances.",
+      "scope": "endpoint_type",
+      "BODY_MATCH": "OK",
+      "PUBLIC_CARRIER": "OK",
+      "WELL_DEFINEDNESS": "N/A_LITERAL",
+      "CHARACTERIZATION": "N/A_LITERAL",
+      "CHOICE_INDEPENDENCE": "N/A",
+      "DEFINITION_VERDICT": "PASS"
+    },
+    {
+      "name": "FreeEntropy.UnitaryHaar.measurableSpace / borelSpace",
+      "file": "lean/FreeEntropy/UnitaryHaar.lean",
+      "range": [
+        37,
+        38
+      ],
+      "body": "borel _; ⟨rfl⟩",
+      "source_match": "Borel sigma algebra on actual matrix unitary group, not arbitrary measurable structure.",
+      "scope": "endpoint_type",
+      "BODY_MATCH": "OK",
+      "PUBLIC_CARRIER": "OK",
+      "WELL_DEFINEDNESS": "N/A_LITERAL",
+      "CHARACTERIZATION": "N/A_LITERAL",
+      "CHOICE_INDEPENDENCE": "N/A",
+      "DEFINITION_VERDICT": "PASS"
+    },
+    {
+      "name": "FreeEntropy.SchurWeyl.mixedAverageError",
+      "file": "lean/FreeEntropy/PhysicalCanonicalConverse.lean",
+      "range": [
+        51,
+        55
+      ],
+      "body": "∫ U, traceDistance (D(E(physicalSource s n U))) (physicalSource s n U) d probabilityHaar",
+      "source_match": "article.tex:96–97,929–932. Integrability from actual source/channel continuity and compactness: PhysicalUniformError:64–69; QuantumTransfer:34–44.",
+      "scope": "endpoint_type",
+      "BODY_MATCH": "OK",
+      "PUBLIC_CARRIER": "OK",
+      "WELL_DEFINEDNESS": "N/A_LITERAL",
+      "CHARACTERIZATION": "N/A_LITERAL",
+      "CHOICE_INDEPENDENCE": "N/A",
+      "DEFINITION_VERDICT": "PASS"
+    },
+    {
+      "name": "FreeEntropy.SchurWeyl.mixedWorstError",
+      "file": "lean/FreeEntropy/PhysicalUniformError.lean",
+      "range": [
+        22,
+        25
+      ],
+      "body": "sSup (range of actual traceDistance reconstruction error over U(d))",
+      "source_match": "article.tex:eq:error. Range nonempty (identity U); bounded by 1 via actual states/channels (27–41), so no sSup default branch.",
+      "scope": "endpoint_type",
+      "BODY_MATCH": "OK",
+      "PUBLIC_CARRIER": "OK",
+      "WELL_DEFINEDNESS": "N/A_LITERAL",
+      "CHARACTERIZATION": "N/A_LITERAL",
+      "CHOICE_INDEPENDENCE": "N/A",
+      "DEFINITION_VERDICT": "PASS"
+    },
+    {
+      "name": "FreeEntropy.Weyl.qmdl",
+      "file": "lean/FreeEntropy/WeylCombinatorics.lean",
+      "range": [
+        178,
+        183
+      ],
+      "body": "r*(2*d-r-1)/2*logb 2 n + positive-pair log gaps + (d-r)*positive log eigenvalues − factorial log sum",
+      "source_match": "article.tex:eq:result 88–90, exact zero-based sum bounds. Natural d−r is safe under rank_le. On n=0 the log is totalized, outside the asymptotic source use; finite-prefix value immaterial.",
+      "scope": "endpoint_type",
+      "BODY_MATCH": "OK",
+      "PUBLIC_CARRIER": "OK",
+      "WELL_DEFINEDNESS": "N/A_LITERAL",
+      "CHARACTERIZATION": "N/A_LITERAL",
+      "CHOICE_INDEPENDENCE": "N/A",
+      "DEFINITION_VERDICT": "PASS"
+    },
+    {
+      "name": "FreeEntropy.Weyl.errorScale",
+      "file": "lean/FreeEntropy/Weyl.lean",
+      "range": [
+        33,
+        33
+      ],
+      "body": "Real.logb 2 n / Real.sqrt n",
+      "source_match": "article.tex:92,658. Tends to zero proved 35–45.",
+      "scope": "endpoint_type",
+      "BODY_MATCH": "OK",
+      "PUBLIC_CARRIER": "OK",
+      "WELL_DEFINEDNESS": "N/A_LITERAL",
+      "CHARACTERIZATION": "N/A_LITERAL",
+      "CHOICE_INDEPENDENCE": "N/A",
+      "DEFINITION_VERDICT": "PASS"
+    },
+    {
+      "name": "FreeEntropy.FixedSpectrum.targetRow",
+      "file": "lean/FreeEntropy/Statements.lean",
+      "range": [
+        45,
+        46
+      ],
+      "body": "if i<r then cast(paddedRow n x_i typicalWidth (r-i)) else 0",
+      "source_match": "article.tex:eq:target_rep 619–625; source zero rows, one-based r-i+1 translates to zero-based r-i.",
+      "scope": "internal_witness",
+      "BODY_MATCH": "OK",
+      "PUBLIC_CARRIER": "OK_FOR_ENDPOINT_USE",
+      "WELL_DEFINEDNESS": "N/A_LITERAL",
+      "CHARACTERIZATION": "N/A_LITERAL",
+      "CHOICE_INDEPENDENCE": "N/A",
+      "DEFINITION_VERDICT": "PASS"
+    },
+    {
+      "name": "FreeEntropy.typicalWidth",
+      "file": "lean/FreeEntropy/Proofs.lean",
+      "range": [
+        29,
+        29
+      ],
+      "body": "sqrt(n/2)*logb 2 n",
+      "source_match": "article.tex:eq:typical_set 612; normalization is exact.",
+      "scope": "internal_witness",
+      "BODY_MATCH": "OK",
+      "PUBLIC_CARRIER": "OK_FOR_ENDPOINT_USE",
+      "WELL_DEFINEDNESS": "N/A_LITERAL",
+      "CHARACTERIZATION": "N/A_LITERAL",
+      "CHOICE_INDEPENDENCE": "N/A",
+      "DEFINITION_VERDICT": "PASS"
+    },
+    {
+      "name": "FreeEntropy.paddedRow",
+      "file": "lean/FreeEntropy/OptimalMemory.lean",
+      "range": [
+        31,
+        32
+      ],
+      "body": "ceil(n*x+k*(2*epsilon+1))",
+      "source_match": "article.tex:eq:target_rep 622.",
+      "scope": "internal_witness",
+      "BODY_MATCH": "OK",
+      "PUBLIC_CARRIER": "OK_FOR_ENDPOINT_USE",
+      "WELL_DEFINEDNESS": "N/A_LITERAL",
+      "CHARACTERIZATION": "N/A_LITERAL",
+      "CHOICE_INDEPENDENCE": "N/A",
+      "DEFINITION_VERDICT": "PASS"
+    },
+    {
+      "name": "FreeEntropy.GTDimension.targetIntegerRow",
+      "file": "lean/FreeEntropy/GTDimensionFormula.lean",
+      "range": [
+        56,
+        57
+      ],
+      "body": "if i<r then paddedRow(...) else 0",
+      "source_match": "Same padded integer row; nonnegative/dominant proven 69–93.",
+      "scope": "internal_witness",
+      "BODY_MATCH": "OK",
+      "PUBLIC_CARRIER": "OK_FOR_ENDPOINT_USE",
+      "WELL_DEFINEDNESS": "N/A_LITERAL",
+      "CHARACTERIZATION": "N/A_LITERAL",
+      "CHOICE_INDEPENDENCE": "N/A",
+      "DEFINITION_VERDICT": "PASS"
+    },
+    {
+      "name": "FreeEntropy.ExteriorRepresentation.targetNaturalRow",
+      "file": "lean/FreeEntropy/CanonicalDimension.lean",
+      "range": [
+        51,
+        52
+      ],
+      "body": "(targetIntegerRow s n i).toNat",
+      "source_match": "No truncation of negative mathematical rows is used: nonnegativity and cast equality at 54–61.",
+      "scope": "internal_witness",
+      "BODY_MATCH": "OK",
+      "PUBLIC_CARRIER": "OK_FOR_ENDPOINT_USE",
+      "WELL_DEFINEDNESS": "N/A_LITERAL",
+      "CHARACTERIZATION": "N/A_LITERAL",
+      "CHOICE_INDEPENDENCE": "N/A",
+      "DEFINITION_VERDICT": "PASS"
+    },
+    {
+      "name": "FreeEntropy.ExteriorRepresentation.targetCanonicalRow",
+      "file": "lean/FreeEntropy/CanonicalConverse.lean",
+      "range": [
+        19,
+        20
+      ],
+      "body": "fun i : Fin d => targetNaturalRow s n i.val",
+      "source_match": "The specified d padded rows.",
+      "scope": "internal_witness",
+      "BODY_MATCH": "OK",
+      "PUBLIC_CARRIER": "OK_FOR_ENDPOINT_USE",
+      "WELL_DEFINEDNESS": "N/A_LITERAL",
+      "CHARACTERIZATION": "N/A_LITERAL",
+      "CHOICE_INDEPENDENCE": "N/A",
+      "DEFINITION_VERDICT": "PASS"
+    },
+    {
+      "name": "FreeEntropy.ExteriorRepresentation.targetCanonicalDimension",
+      "file": "lean/FreeEntropy/CanonicalDimension.lean",
+      "range": [
+        68,
+        69
+      ],
+      "body": "Module.finrank ℂ (highestSubspace targetRow)",
+      "source_match": "Actual Hilbert-space dimension, not Weyl product by fiat. Equality to GT cardinality 71–76 and Weyl product 81–83; log asymptotic 86–89.",
+      "scope": "internal_witness",
+      "BODY_MATCH": "OK",
+      "PUBLIC_CARRIER": "OK_FOR_ENDPOINT_USE",
+      "WELL_DEFINEDNESS": "N/A_LITERAL",
+      "CHARACTERIZATION": "N/A_LITERAL",
+      "CHOICE_INDEPENDENCE": "N/A",
+      "DEFINITION_VERDICT": "PASS"
+    },
+    {
+      "name": "FreeEntropy.ExteriorRepresentation.IrrepIndex",
+      "file": "lean/FreeEntropy/ExteriorMatrixIrreducible.lean",
+      "range": [
+        20,
+        20
+      ],
+      "body": "Fin (Module.finrank ℂ (highestSubspace mu))",
+      "source_match": "Literal memory carrier; matches targetCanonicalDimension definition.",
+      "scope": "internal_witness",
+      "BODY_MATCH": "OK",
+      "PUBLIC_CARRIER": "OK_FOR_ENDPOINT_USE",
+      "WELL_DEFINEDNESS": "N/A_LITERAL",
+      "CHARACTERIZATION": "N/A_LITERAL",
+      "CHOICE_INDEPENDENCE": "N/A",
+      "DEFINITION_VERDICT": "PASS"
+    },
+    {
+      "name": "FreeEntropy.ExteriorRepresentation.highestSubspace",
+      "file": "lean/FreeEntropy/ExteriorHighestRepresentation.lean",
+      "range": [
+        33,
+        34
+      ],
+      "body": "cyclicSubspace (euclideanRepresentation ambientRepresentation) highestVector",
+      "source_match": "Actual representation subspace. Irreducibility supplied by a theorem application at 36–45, not an endpoint premise.",
+      "scope": "internal_witness",
+      "BODY_MATCH": "OK",
+      "PUBLIC_CARRIER": "OK_FOR_ENDPOINT_USE",
+      "WELL_DEFINEDNESS": "N/A_LITERAL",
+      "CHARACTERIZATION": "N/A_LITERAL",
+      "CHOICE_INDEPENDENCE": "N/A",
+      "DEFINITION_VERDICT": "PASS"
+    },
+    {
+      "name": "FreeEntropy.UnitaryDecomposition.cyclicSubspace",
+      "file": "lean/FreeEntropy/CyclicHighestRepresentation.lean",
+      "range": [
+        21,
+        22
+      ],
+      "body": "Submodule.span ℂ (range (fun g => rho g v))",
+      "source_match": "Literal orbit-generated subspace.",
+      "scope": "internal_witness",
+      "BODY_MATCH": "OK",
+      "PUBLIC_CARRIER": "OK_FOR_ENDPOINT_USE",
+      "WELL_DEFINEDNESS": "N/A_LITERAL",
+      "CHARACTERIZATION": "N/A_LITERAL",
+      "CHOICE_INDEPENDENCE": "N/A",
+      "DEFINITION_VERDICT": "PASS"
+    },
+    {
+      "name": "FreeEntropy.ExteriorRepresentation.irrepMatrix",
+      "file": "lean/FreeEntropy/ExteriorMatrixIrreducible.lean",
+      "range": [
+        25,
+        27
+      ],
+      "body": "restrictedMatrix ambientRepresentation highestSubspace proved_invariance",
+      "source_match": "Actual representation restriction.",
+      "scope": "internal_witness",
+      "BODY_MATCH": "OK",
+      "PUBLIC_CARRIER": "OK_FOR_ENDPOINT_USE",
+      "WELL_DEFINEDNESS": "N/A_LITERAL",
+      "CHARACTERIZATION": "N/A_LITERAL",
+      "CHOICE_INDEPENDENCE": "N/A",
+      "DEFINITION_VERDICT": "PASS"
+    },
+    {
+      "name": "FreeEntropy.ExteriorRepresentation.canonicalWeightCoordinates",
+      "file": "lean/FreeEntropy/ExteriorWeightCoordinates.lean",
+      "range": [
+        26,
+        27
+      ],
+      "body": "(irrepGenerators mu).weightCoordinates (irrep_cyclicSpan_eq_top mu)",
+      "source_match": "Chosen coordinates from proved existence (LieWeightModel:27–88), not a supplied bundle. Choice is internal to existential protocol, not a source-unique object.",
+      "scope": "internal_witness",
+      "BODY_MATCH": "OK",
+      "PUBLIC_CARRIER": "OK_FOR_ENDPOINT_USE",
+      "WELL_DEFINEDNESS": "N/A_LITERAL",
+      "CHARACTERIZATION": "N/A_LITERAL",
+      "CHOICE_INDEPENDENCE": "N/A",
+      "DEFINITION_VERDICT": "PASS"
+    },
+    {
+      "name": "FreeEntropy.ExteriorRepresentation.canonicalWeightModel",
+      "file": "lean/FreeEntropy/ExteriorWeightCoordinates.lean",
+      "range": [
+        29,
+        30
+      ],
+      "body": "(canonicalWeightCoordinates mu).model",
+      "source_match": "Actual coordinate model; highest row checked by 61–88.",
+      "scope": "internal_witness",
+      "BODY_MATCH": "OK",
+      "PUBLIC_CARRIER": "OK_FOR_ENDPOINT_USE",
+      "WELL_DEFINEDNESS": "N/A_LITERAL",
+      "CHARACTERIZATION": "N/A_LITERAL",
+      "CHOICE_INDEPENDENCE": "N/A",
+      "DEFINITION_VERDICT": "PASS"
+    },
+    {
+      "name": "FreeEntropy.CartanLieCloning.CyclicWeightModel.relativeState",
+      "file": "lean/FreeEntropy/CyclicWeightStates.lean",
+      "range": [
+        21,
+        33
+      ],
+      "body": "diag(relativeWeight/relativeNormalizer), monomial weights, finite-sum normalizer",
+      "source_match": "Actual normalization; relativeNormalizer≥1 for nonnegative ratios at 100–105. Valid-source identity canonicalMonomialState_eq_relativeState 169–186.",
+      "scope": "internal_witness",
+      "BODY_MATCH": "OK",
+      "PUBLIC_CARRIER": "OK_FOR_ENDPOINT_USE",
+      "WELL_DEFINEDNESS": "N/A_LITERAL",
+      "CHARACTERIZATION": "N/A_LITERAL",
+      "CHOICE_INDEPENDENCE": "N/A",
+      "DEFINITION_VERDICT": "PASS"
+    },
+    {
+      "name": "FreeEntropy.ExteriorRepresentation.canonicalWeightRepresentation",
+      "file": "lean/FreeEntropy/CanonicalOrbit.lean",
+      "range": [
+        23,
+        26
+      ],
+      "body": "UnitaryCoordinates.representation irrepMatrix chosenUnitary provedIsometry",
+      "source_match": "Actual coordinate change of representation; unitary/continuous/irreducible 28–39.",
+      "scope": "internal_witness",
+      "BODY_MATCH": "OK",
+      "PUBLIC_CARRIER": "OK_FOR_ENDPOINT_USE",
+      "WELL_DEFINEDNESS": "N/A_LITERAL",
+      "CHARACTERIZATION": "N/A_LITERAL",
+      "CHOICE_INDEPENDENCE": "N/A",
+      "DEFINITION_VERDICT": "PASS"
+    },
+    {
+      "name": "FreeEntropy.ExteriorRepresentation.canonicalOrbitState",
+      "file": "lean/FreeEntropy/CanonicalOrbit.lean",
+      "range": [
+        41,
+        45
+      ],
+      "body": "U_mu * relativeState * U_muᴴ",
+      "source_match": "Literal conjugation, with normalization and positivity at 47–64; physical tensor identification for supported antitone rows PhysicalOrbitChannels:23–32. No claim of a global source-state characterization for arbitrary unsupported rows.",
+      "scope": "internal_witness",
+      "BODY_MATCH": "OK",
+      "PUBLIC_CARRIER": "OK_FOR_ENDPOINT_USE",
+      "WELL_DEFINEDNESS": "N/A_LITERAL",
+      "CHARACTERIZATION": "N/A_LITERAL",
+      "CHOICE_INDEPENDENCE": "N/A",
+      "DEFINITION_VERDICT": "PASS"
+    },
+    {
+      "name": "FreeEntropy.FixedSpectrum.adjacentRatio / qx",
+      "file": "lean/FreeEntropy/SpectrumBounds.lean",
+      "range": [
+        28,
+        34
+      ],
+      "body": "positive adjacent ratio, otherwise 0; maximum over range r",
+      "source_match": "article.tex:905,909; nonnegative and <1 proved 36–56.",
+      "scope": "internal_witness",
+      "BODY_MATCH": "OK",
+      "PUBLIC_CARRIER": "OK_FOR_ENDPOINT_USE",
+      "WELL_DEFINEDNESS": "N/A_LITERAL",
+      "CHARACTERIZATION": "N/A_LITERAL",
+      "CHOICE_INDEPENDENCE": "N/A",
+      "DEFINITION_VERDICT": "PASS"
+    },
+    {
+      "name": "FreeEntropy.SchurWeyl.typicalCartanForward / typicalCartanReverse",
+      "file": "lean/FreeEntropy/PhysicalCloningChannels.lean",
+      "range": [
+        24,
+        43
+      ],
+      "body": "specified canonical channel on n≥1 typical sectors; replacementChannel otherwise",
+      "source_match": "Constructed witness may choose any CPTP behavior on atypical sectors; tail error bounded, not ignored. This does not define the source norm/state via a fallback.",
+      "scope": "internal_witness",
+      "BODY_MATCH": "OK",
+      "PUBLIC_CARRIER": "OK_FOR_ENDPOINT_USE",
+      "WELL_DEFINEDNESS": "N/A_LITERAL",
+      "CHARACTERIZATION": "N/A_LITERAL",
+      "CHOICE_INDEPENDENCE": "N/A",
+      "DEFINITION_VERDICT": "PASS"
+    },
+    {
+      "name": "FreeEntropy.SchurWeyl.mixedEncoder / mixedDecoder",
+      "file": "lean/FreeEntropy/PhysicalCloningChannels.lean",
+      "range": [
+        64,
+        71
+      ],
+      "body": "physicalOrbitEncoder typicalCartanForward; physicalOrbitDecoder s n typicalCartanReverse",
+      "source_match": "Actual encoder/decoder, independent of U.",
+      "scope": "internal_witness",
+      "BODY_MATCH": "OK",
+      "PUBLIC_CARRIER": "OK_FOR_ENDPOINT_USE",
+      "WELL_DEFINEDNESS": "N/A_LITERAL",
+      "CHARACTERIZATION": "N/A_LITERAL",
+      "CHOICE_INDEPENDENCE": "N/A",
+      "DEFINITION_VERDICT": "PASS"
+    },
+    {
+      "name": "FreeEntropy.SchurWeyl.physicalOrbitEncoder / physicalOrbitDecoder",
+      "file": "lean/FreeEntropy/PhysicalOrbitChannels.lean",
+      "range": [
+        98,
+        105
+      ],
+      "body": "physicalEncoder/Decoder with unitary sector coordinate changes",
+      "source_match": "Their source identification is supplied by physicalSectorState_canonicalOrbit (45–60), using actual supported typicality.",
+      "scope": "internal_witness",
+      "BODY_MATCH": "OK",
+      "PUBLIC_CARRIER": "OK_FOR_ENDPOINT_USE",
+      "WELL_DEFINEDNESS": "N/A_LITERAL",
+      "CHARACTERIZATION": "N/A_LITERAL",
+      "CHOICE_INDEPENDENCE": "N/A",
+      "DEFINITION_VERDICT": "PASS"
+    },
+    {
+      "name": "FreeEntropy.SchurWeyl.physicalEncoder / physicalDecoder",
+      "file": "lean/FreeEntropy/PhysicalSchurProtocol.lean",
+      "range": [
+        90,
+        101
+      ],
+      "body": "SectorChannels.encoder with proved resolution; decoder with proved sector probabilities/isometries",
+      "source_match": "All CPTP assembly hypotheses supplied from actual decomposition and probability theorems.",
+      "scope": "internal_witness",
+      "BODY_MATCH": "OK",
+      "PUBLIC_CARRIER": "OK_FOR_ENDPOINT_USE",
+      "WELL_DEFINEDNESS": "N/A_LITERAL",
+      "CHARACTERIZATION": "N/A_LITERAL",
+      "CHOICE_INDEPENDENCE": "N/A",
+      "DEFINITION_VERDICT": "PASS"
+    },
+    {
+      "name": "FreeEntropy.SectorChannels.encodeMap / decodeMap",
+      "file": "lean/FreeEntropy/SectorChannels.lean",
+      "range": [
+        73,
+        74
+      ],
+      "body": "encode = sum_i F_i(J_iᴴ X J_i); decode = sum_i q_i J_i G_i(Y) J_iᴴ (122–124)",
+      "source_match": "Sums produce matrices on the single memory/output space; no hidden retained sector register.",
+      "scope": "internal_witness",
+      "BODY_MATCH": "OK",
+      "PUBLIC_CARRIER": "OK_FOR_ENDPOINT_USE",
+      "WELL_DEFINEDNESS": "N/A_LITERAL",
+      "CHARACTERIZATION": "N/A_LITERAL",
+      "CHOICE_INDEPENDENCE": "N/A",
+      "DEFINITION_VERDICT": "PASS"
+    },
+    {
+      "name": "FreeEntropy.AtypicalChannels.replacementChannel",
+      "file": "lean/FreeEntropy/AtypicalChannels.lean",
+      "range": [
+        33,
+        47
+      ],
+      "body": "Kraus |target><a| summed over input a, with normalization proof",
+      "source_match": "Actual CPTP map, formula trace(X)|target><target| proved 50–62.",
+      "scope": "internal_witness",
+      "BODY_MATCH": "OK",
+      "PUBLIC_CARRIER": "OK_FOR_ENDPOINT_USE",
+      "WELL_DEFINEDNESS": "N/A_LITERAL",
+      "CHARACTERIZATION": "N/A_LITERAL",
+      "CHOICE_INDEPENDENCE": "N/A",
+      "DEFINITION_VERDICT": "PASS"
+    },
+    {
+      "name": "FreeEntropy.SchurWeyl.normalizedBlock",
+      "file": "lean/FreeEntropy/SchurWeylNormalization.lean",
+      "range": [
+        29,
+        30
+      ],
+      "body": "if tr B=0 then maximallyMixed else (tr B)^−1 • B",
+      "source_match": "A total internal auxiliary. At zero probability the exact identity B=tr(B)·normalizedBlock B is proved (54–60); no unique normalized zero-state source object is claimed here. Global manuscript-definition certification would require narrowing scope.",
+      "scope": "internal_witness",
+      "BODY_MATCH": "OK",
+      "PUBLIC_CARRIER": "OK_FOR_ENDPOINT_USE",
+      "WELL_DEFINEDNESS": "N/A_LITERAL",
+      "CHARACTERIZATION": "N/A_LITERAL",
+      "CHOICE_INDEPENDENCE": "N/A",
+      "DEFINITION_VERDICT": "PASS"
+    },
+    {
+      "name": "FreeEntropy.SchurWeyl.physicalDecomposition",
+      "file": "lean/FreeEntropy/SchurWeylPhysical.lean",
+      "range": [
+        31,
+        32
+      ],
+      "body": "decomposition physicalRepresentation provedUnitary",
+      "source_match": "Chosen complete orthogonal irreducible family, from exists_complete_orthogonal_family; resolution/orthogonality/dimensions consumed in channels.",
+      "scope": "internal_witness",
+      "BODY_MATCH": "OK",
+      "PUBLIC_CARRIER": "OK_FOR_ENDPOINT_USE",
+      "WELL_DEFINEDNESS": "N/A_LITERAL",
+      "CHARACTERIZATION": "N/A_LITERAL",
+      "CHOICE_INDEPENDENCE": "N/A",
+      "DEFINITION_VERDICT": "PASS"
+    },
+    {
+      "name": "FreeEntropy.SchurWeyl.physicalProbability / physicalSectorState",
+      "file": "lean/FreeEntropy/PhysicalSchurProtocol.lean",
+      "range": [
+        50,
+        62
+      ],
+      "body": "trace of diagonal source block; normalized conjugated source block",
+      "source_match": "Physical source mixture identity proved 76–86, including zero-probability sectors.",
+      "scope": "internal_witness",
+      "BODY_MATCH": "OK",
+      "PUBLIC_CARRIER": "OK_FOR_ENDPOINT_USE",
+      "WELL_DEFINEDNESS": "N/A_LITERAL",
+      "CHARACTERIZATION": "N/A_LITERAL",
+      "CHOICE_INDEPENDENCE": "N/A",
+      "DEFINITION_VERDICT": "PASS"
+    },
+    {
+      "name": "FreeEntropy.SchurWeyl.mixedComparisonConstant / mixedComparisonError",
+      "file": "lean/FreeEntropy/PhysicalCloningChannels.lean",
+      "range": [
+        74,
+        87
+      ],
+      "body": "2*cloningConstant*d-r expression/minimumGap; error=C*errorScale+tailBound",
+      "source_match": "Only fixed s,d,r in C; no n or U dependency. MinimumGap is finite inf of active spectral gaps (TypicalRows:37–46); strictly positive.",
+      "scope": "internal_witness",
+      "BODY_MATCH": "OK",
+      "PUBLIC_CARRIER": "OK_FOR_ENDPOINT_USE",
+      "WELL_DEFINEDNESS": "N/A_LITERAL",
+      "CHARACTERIZATION": "N/A_LITERAL",
+      "CHOICE_INDEPENDENCE": "N/A",
+      "DEFINITION_VERDICT": "PASS"
+    },
+    {
+      "name": "FreeEntropy.Concentration.tailBound",
+      "file": "lean/FreeEntropy/Concentration.lean",
+      "range": [
+        25,
+        26
+      ],
+      "body": "(n+1)^k * exp(−(logb 2 n)^2/4)",
+      "source_match": "A proved internal envelope, not a claimed literal source quantity or endpoint input.",
+      "scope": "internal_witness",
+      "BODY_MATCH": "OK",
+      "PUBLIC_CARRIER": "OK_FOR_ENDPOINT_USE",
+      "WELL_DEFINEDNESS": "N/A_LITERAL",
+      "CHARACTERIZATION": "N/A_LITERAL",
+      "CHOICE_INDEPENDENCE": "N/A",
+      "DEFINITION_VERDICT": "PASS"
+    },
+    {
+      "name": "FreeEntropy.SchurWeyl.scalarSourceEncoder / scalarSourceDecoder",
+      "file": "lean/FreeEntropy/OneDimensionalSource.lean",
+      "range": [
+        29,
+        33
+      ],
+      "body": "replacement channels on one-dimensional source and memory",
+      "source_match": "d=1 source endpoint handled exactly; zero error 43–49, qmdl=0 51–54.",
+      "scope": "internal_witness",
+      "BODY_MATCH": "OK",
+      "PUBLIC_CARRIER": "OK_FOR_ENDPOINT_USE",
+      "WELL_DEFINEDNESS": "N/A_LITERAL",
+      "CHARACTERIZATION": "N/A_LITERAL",
+      "CHOICE_INDEPENDENCE": "N/A",
+      "DEFINITION_VERDICT": "PASS"
+    }
+  ],
+  "premise_discharge": [
+    {
+      "obligation": "achievability: actual memories/channels",
+      "consumer": "lean/FreeEntropy/Theorem1Complete.lean:31",
+      "term": "targetCanonicalDimension s, mixedEncoder s, mixedDecoder s",
+      "evidence": "CanonicalDimension.lean:68–89; PhysicalCloningChannels.lean:64–71"
+    },
+    {
+      "obligation": "achievability/converse: forward comparison",
+      "consumer": "lean/FreeEntropy/Theorem1Complete.lean:34,52",
+      "term": "mixedEncoder_error_eventually s hd",
+      "evidence": "PhysicalCloningAccuracy.lean:63–67,41–60 supplies local orbit estimates and physical mixture/tail estimates"
+    },
+    {
+      "obligation": "achievability/converse: reverse comparison",
+      "consumer": "lean/FreeEntropy/Theorem1Complete.lean:34,52",
+      "term": "mixedDecoder_error_eventually s hd",
+      "evidence": "PhysicalCloningAccuracy.lean:70–74,41–60"
+    },
+    {
+      "obligation": "achievability/converse: vanishing comparison scale",
+      "consumer": "lean/FreeEntropy/Theorem1Complete.lean:35,53",
+      "term": "(mixedComparisonError_isBigO s hd).add itself",
+      "evidence": "PhysicalCloningChannels.lean:99–112 supplies explicit fixed constant C+1 from proved tail bound"
+    },
+    {
+      "obligation": "achievability: actual memory expansion",
+      "consumer": "lean/FreeEntropy/PhysicalUniformError.lean:117",
+      "term": "targetCanonicalDimension_log_asymptotic s",
+      "evidence": "CanonicalDimension.lean:86–89 → actual dimension/GT identity 71–83"
+    },
+    {
+      "obligation": "achievability: actual worst error and convergence",
+      "consumer": "lean/FreeEntropy/PhysicalUniformError.lean:107–117",
+      "term": "physical_roundtrip_of_comparison; IsBigO domination; errorScale_tendsto_zero",
+      "evidence": "PhysicalUniformError.lean:79–90; Weyl.lean:35–45"
+    },
+    {
+      "obligation": "converse: exact target dimension identity",
+      "consumer": "lean/FreeEntropy/PhysicalCanonicalConverse.lean:119",
+      "term": "Eventually.of_forall (targetCanonicalDimension_weyl s)",
+      "evidence": "CanonicalDimension.lean:81–83"
+    },
+    {
+      "obligation": "converse: positive actual target dimension",
+      "consumer": "lean/FreeEntropy/PhysicalCanonicalConverse.lean:119",
+      "term": "targetCanonicalDimension_pos s",
+      "evidence": "CanonicalDimension.lean:78–79; ExteriorMatrixIrreducible.lean:29–30"
+    },
+    {
+      "obligation": "converse: fixed positive spectral gap",
+      "consumer": "lean/FreeEntropy/PhysicalCanonicalConverse.lean:120",
+      "term": "pow_pos (sub_pos.mpr s.qx_lt_one) _",
+      "evidence": "SpectrumBounds.lean:55–56; canonical_orbit_memory_bound uses (1−qx)^(choose(d,2)+1), a smaller proved positive gap sufficient for same asymptotic constant"
+    },
+    {
+      "obligation": "converse: finite whole-memory lower bound",
+      "consumer": "lean/FreeEntropy/PhysicalCanonicalConverse.lean:121–123",
+      "term": "physical_memory_bound_of_comparison with hfn/hrn",
+      "evidence": "79–97 applies actual_transferred_average_error_le and canonical_orbit_memory_bound to E.comp R and A.comp D, same B memory"
+    },
+    {
+      "obligation": "converse: irreducibility/Haar/spectral inputs",
+      "consumer": "lean/FreeEntropy/CanonicalOrbit.lean:83–87",
+      "term": "letI canonicalWeightRepresentation_irreducible; actual_orbit_memory_bound with continuity/unitarity",
+      "evidence": "CyclicWeightOrbit.lean:67–81 invokes GeometricOrbit.memory_bound with spectrumWeights and proved qx bounds"
+    },
+    {
+      "obligation": "converse: error hypothesis",
+      "consumer": "lean/FreeEntropy/Theorem1Complete.lean:53",
+      "term": "herror passed directly",
+      "evidence": "The only supplied analytic reliability premise, source article.tex:96–97,927–932"
+    },
+    {
+      "obligation": "uniform converse: Haar error tends to zero",
+      "consumer": "lean/FreeEntropy/Theorem1Complete.lean:66",
+      "term": "mixedAverageError_tendsto_of_uniform s memory E D herror",
+      "evidence": "PhysicalUniformError.lean:71–77 uses 0≤average≤worst (57–69), including integrability."
+    },
+    {
+      "obligation": "d=1 cases",
+      "consumer": "lean/FreeEntropy/Theorem1Complete.lean:36–39,54–56",
+      "term": "d=1 derived from rank_pos/rank_le and not 2≤d; scalar endpoint theorems",
+      "evidence": "OneDimensionalSource.lean:56–84; no missing d=1 premise."
+    },
+    {
+      "obligation": "liminf semantics",
+      "consumer": "lean/FreeEntropy/Statements.lean:79–94 → OptimalMemory.lean:196–210",
+      "term": "nonnegative_ereal_liminf_of_eventual_lower_bound",
+      "evidence": "OptimalMemory.lean:183–192 proves from ∀η>0 eventually −η≤cost−L, with +∞ permitted."
+    }
+  ],
+  "findings": [
+    {
+      "id": "T1-F1",
+      "severity": "INFO",
+      "status": "VERIFIED",
+      "title": "No EXCESS logical inputs in the three selected endpoints",
+      "evidence": "Expanded leaf tables: 9 inputs for achievability and 23 for each converse; SOURCE/STANDING only. No convenience estimate is an endpoint hypothesis."
+    },
+    {
+      "id": "T1-F2",
+      "severity": "INFO",
+      "status": "VERIFIED",
+      "title": "Actual physical errors and whole-memory cost are used",
+      "evidence": "Definitions inspected directly. Complex CPTP maps factor only through Fin(memory n); traceDistance has factor 1/2; supremum is nonempty/bounded; average integral is integrable against probability Haar."
+    },
+    {
+      "id": "T1-F3",
+      "severity": "LOW",
+      "status": "SCOPE_LIMIT",
+      "title": "Source is represented in a diagonal reference basis",
+      "evidence": "physicalDensity is U diag(x) U†. This parametrizes the same full known-spectrum orbit, by the spectral theorem. No arbitrary-reference-rho wrapper or formal reparametrization theorem was identified in the reviewed endpoint chain. It is a conventional representation choice, not a detected restriction of the orbit; a literally arbitrary rho API would need that wrapper."
+    },
+    {
+      "id": "T1-F4",
+      "severity": "LOW",
+      "status": "SCOPE_LIMIT",
+      "title": "Internal helpers have totalizations beyond source-defined domains",
+      "evidence": "normalizedBlock has a zero-trace maximally-mixed branch; typicalCartan maps use explicit replacement on atypical sectors; canonicalOrbitState accepts rows beyond supported antitone partitions. These are not admitted here as globally source-faithful standalone definitions. For Theorem 1, actual mixture identity and supported-row bridge are proved and consumed; no endpoint defect was found."
+    },
+    {
+      "id": "T1-F5",
+      "severity": "INFO",
+      "status": "SCOPE_LIMIT",
+      "title": "Selected semantic closure audited; deeper proof library not exhaustively re-reviewed",
+      "evidence": "Source-facing type definitions and immediate premise-discharge paths were read. Representation constructions were sampled through actual definitions and checked bridges, with shared theorem2 review. This report does not certify every transitive project definition or reproduce the entire representation-theory proof."
+    },
+    {
+      "id": "T1-F6",
+      "severity": "INFO",
+      "status": "PENDING_ROOT",
+      "title": "Fresh exact applications and axiom checks delegated to root",
+      "evidence": "metadata/statement-audit/probes.json (theorem1) has three independent anonymous applications, expanded L/error definitions, #print axioms, and a positive-memory lemma. No build run by this reviewer."
+    }
+  ],
+  "files_reviewed": [
+    {
+      "path": "article.tex",
+      "ranges": [
+        [
+          73,
+          101
+        ],
+        [
+          603,
+          664
+        ],
+        [
+          923,
+          951
+        ],
+        [
+          563,
+          587
+        ],
+        [
+          895,
+          918
+        ]
+      ]
+    },
+    {
+      "path": "lean/ComparatorChallenges/ChannelInterface.lean",
+      "ranges": [
+        [
+          1,
+          34
+        ]
+      ]
+    },
+    {
+      "path": "lean/ComparatorChallenges/ErrorScale.lean",
+      "ranges": [
+        [
+          1,
+          14
+        ]
+      ]
+    },
+    {
+      "path": "lean/ComparatorChallenges/PhysicalInterface.lean",
+      "ranges": [
+        [
+          1,
+          80
+        ]
+      ]
+    },
+    {
+      "path": "lean/ComparatorChallenges/Qmdl.lean",
+      "ranges": [
+        [
+          1,
+          19
+        ]
+      ]
+    },
+    {
+      "path": "lean/ComparatorChallenges/Theorem1Achievability.json",
+      "ranges": [
+        [
+          1,
+          14
+        ]
+      ]
+    },
+    {
+      "path": "lean/ComparatorChallenges/Theorem1Achievability.lean",
+      "ranges": [
+        [
+          1,
+          27
+        ]
+      ]
+    },
+    {
+      "path": "lean/ComparatorChallenges/Theorem1Converse.json",
+      "ranges": [
+        [
+          1,
+          15
+        ]
+      ]
+    },
+    {
+      "path": "lean/ComparatorChallenges/Theorem1Converse.lean",
+      "ranges": [
+        [
+          1,
+          34
+        ]
+      ]
+    },
+    {
+      "path": "lean/FreeEntropy/AtypicalChannels.lean",
+      "ranges": [
+        [
+          33,
+          47
+        ]
+      ]
+    },
+    {
+      "path": "lean/FreeEntropy/CanonicalConverse.lean",
+      "ranges": [
+        [
+          19,
+          20
+        ],
+        [
+          1,
+          50
+        ]
+      ]
+    },
+    {
+      "path": "lean/FreeEntropy/CanonicalDimension.lean",
+      "ranges": [
+        [
+          51,
+          52
+        ],
+        [
+          68,
+          69
+        ],
+        [
+          1,
+          91
+        ]
+      ]
+    },
+    {
+      "path": "lean/FreeEntropy/CanonicalMonomialState.lean",
+      "ranges": [
+        [
+          1,
+          95
+        ],
+        [
+          161,
+          188
+        ]
+      ]
+    },
+    {
+      "path": "lean/FreeEntropy/CanonicalOrbit.lean",
+      "ranges": [
+        [
+          23,
+          26
+        ],
+        [
+          41,
+          45
+        ],
+        [
+          1,
+          89
+        ]
+      ]
+    },
+    {
+      "path": "lean/FreeEntropy/Channels.lean",
+      "ranges": [
+        [
+          95,
+          102
+        ],
+        [
+          74,
+          76
+        ]
+      ]
+    },
+    {
+      "path": "lean/FreeEntropy/Concentration.lean",
+      "ranges": [
+        [
+          25,
+          26
+        ]
+      ]
+    },
+    {
+      "path": "lean/FreeEntropy/CyclicHighestRepresentation.lean",
+      "ranges": [
+        [
+          21,
+          22
+        ]
+      ]
+    },
+    {
+      "path": "lean/FreeEntropy/CyclicWeightOrbit.lean",
+      "ranges": [
+        [
+          1,
+          83
+        ]
+      ]
+    },
+    {
+      "path": "lean/FreeEntropy/CyclicWeightStates.lean",
+      "ranges": [
+        [
+          21,
+          33
+        ]
+      ]
+    },
+    {
+      "path": "lean/FreeEntropy/ExteriorHighestRepresentation.lean",
+      "ranges": [
+        [
+          33,
+          34
+        ]
+      ]
+    },
+    {
+      "path": "lean/FreeEntropy/ExteriorMatrixIrreducible.lean",
+      "ranges": [
+        [
+          20,
+          20
+        ],
+        [
+          25,
+          27
+        ]
+      ]
+    },
+    {
+      "path": "lean/FreeEntropy/ExteriorWeightCoordinates.lean",
+      "ranges": [
+        [
+          26,
+          27
+        ],
+        [
+          29,
+          30
+        ]
+      ]
+    },
+    {
+      "path": "lean/FreeEntropy/GTDimensionFormula.lean",
+      "ranges": [
+        [
+          56,
+          57
+        ]
+      ]
+    },
+    {
+      "path": "lean/FreeEntropy/LieWeightModel.lean",
+      "ranges": [
+        [
+          17,
+          58
+        ],
+        [
+          78,
+          90
+        ]
+      ]
+    },
+    {
+      "path": "lean/FreeEntropy/MultiplicityChannels.lean",
+      "ranges": [
+        [
+          25,
+          45
+        ]
+      ]
+    },
+    {
+      "path": "lean/FreeEntropy/OneDimensionalSource.lean",
+      "ranges": [
+        [
+          29,
+          33
+        ]
+      ]
+    },
+    {
+      "path": "lean/FreeEntropy/OptimalMemory.lean",
+      "ranges": [
+        [
+          31,
+          32
+        ],
+        [
+          24,
+          38
+        ],
+        [
+          155,
+          212
+        ]
+      ]
+    },
+    {
+      "path": "lean/FreeEntropy/OrbitMemory.lean",
+      "ranges": [
+        [
+          37,
+          37
+        ]
+      ]
+    },
+    {
+      "path": "lean/FreeEntropy/PhysicalCanonicalConverse.lean",
+      "ranges": [
+        [
+          31,
+          32
+        ],
+        [
+          51,
+          55
+        ],
+        [
+          1,
+          125
+        ]
+      ]
+    },
+    {
+      "path": "lean/FreeEntropy/PhysicalCloningAccuracy.lean",
+      "ranges": [
+        [
+          1,
+          76
+        ]
+      ]
+    },
+    {
+      "path": "lean/FreeEntropy/PhysicalCloningChannels.lean",
+      "ranges": [
+        [
+          24,
+          43
+        ],
+        [
+          64,
+          71
+        ],
+        [
+          74,
+          87
+        ],
+        [
+          1,
+          153
+        ]
+      ]
+    },
+    {
+      "path": "lean/FreeEntropy/PhysicalOrbitChannels.lean",
+      "ranges": [
+        [
+          98,
+          105
+        ]
+      ]
+    },
+    {
+      "path": "lean/FreeEntropy/PhysicalSchurProtocol.lean",
+      "ranges": [
+        [
+          25,
+          28
+        ],
+        [
+          90,
+          101
+        ],
+        [
+          50,
+          62
+        ]
+      ]
+    },
+    {
+      "path": "lean/FreeEntropy/PhysicalUniformError.lean",
+      "ranges": [
+        [
+          22,
+          25
+        ],
+        [
+          1,
+          119
+        ]
+      ]
+    },
+    {
+      "path": "lean/FreeEntropy/Proofs.lean",
+      "ranges": [
+        [
+          29,
+          29
+        ]
+      ]
+    },
+    {
+      "path": "lean/FreeEntropy/QuantumTransfer.lean",
+      "ranges": [
+        [
+          31,
+          98
+        ]
+      ]
+    },
+    {
+      "path": "lean/FreeEntropy/SchurWeylBlocks.lean",
+      "ranges": [
+        [
+          20,
+          42
+        ]
+      ]
+    },
+    {
+      "path": "lean/FreeEntropy/SchurWeylConcentrationTail.lean",
+      "ranges": [
+        [
+          87,
+          87
+        ]
+      ]
+    },
+    {
+      "path": "lean/FreeEntropy/SchurWeylNormalization.lean",
+      "ranges": [
+        [
+          29,
+          30
+        ]
+      ]
+    },
+    {
+      "path": "lean/FreeEntropy/SchurWeylPhysical.lean",
+      "ranges": [
+        [
+          31,
+          32
+        ]
+      ]
+    },
+    {
+      "path": "lean/FreeEntropy/SectorChannels.lean",
+      "ranges": [
+        [
+          73,
+          74
+        ]
+      ]
+    },
+    {
+      "path": "lean/FreeEntropy/SpectrumBounds.lean",
+      "ranges": [
+        [
+          28,
+          34
+        ]
+      ]
+    },
+    {
+      "path": "lean/FreeEntropy/Statements.lean",
+      "ranges": [
+        [
+          25,
+          32
+        ],
+        [
+          45,
+          46
+        ],
+        [
+          1,
+          96
+        ]
+      ]
+    },
+    {
+      "path": "lean/FreeEntropy/TensorPowers.lean",
+      "ranges": [
+        [
+          27,
+          28
+        ]
+      ]
+    },
+    {
+      "path": "lean/FreeEntropy/TensorWeightModel.lean",
+      "ranges": [
+        [
+          17,
+          28
+        ]
+      ]
+    },
+    {
+      "path": "lean/FreeEntropy/Theorem1Complete.lean",
+      "ranges": [
+        [
+          1,
+          68
+        ]
+      ]
+    },
+    {
+      "path": "lean/FreeEntropy/Theorem2.lean",
+      "ranges": [
+        [
+          19,
+          36
+        ]
+      ]
+    },
+    {
+      "path": "lean/FreeEntropy/TraceDistance.lean",
+      "ranges": [
+        [
+          32,
+          32
+        ],
+        [
+          35,
+          35
+        ]
+      ]
+    },
+    {
+      "path": "lean/FreeEntropy/TypicalRows.lean",
+      "ranges": [
+        [
+          20,
+          59
+        ]
+      ]
+    },
+    {
+      "path": "lean/FreeEntropy/UnitaryDecomposition.lean",
+      "ranges": [
+        [
+          15,
+          64
+        ]
+      ]
+    },
+    {
+      "path": "lean/FreeEntropy/UnitaryDecompositionOrthogonal.lean",
+      "ranges": [
+        [
+          73,
+          91
+        ]
+      ]
+    },
+    {
+      "path": "lean/FreeEntropy/UnitaryHaar.lean",
+      "ranges": [
+        [
+          41,
+          42
+        ],
+        [
+          45,
+          46
+        ],
+        [
+          37,
+          38
+        ]
+      ]
+    },
+    {
+      "path": "lean/FreeEntropy/Weyl.lean",
+      "ranges": [
+        [
+          33,
+          33
+        ]
+      ]
+    },
+    {
+      "path": "lean/FreeEntropy/WeylCombinatorics.lean",
+      "ranges": [
+        [
+          178,
+          183
+        ]
+      ]
+    }
+  ],
+  "verdict": {
+    "DECLARATION_FIDELITY": "PASS_SELECTED_ENDPOINTS",
+    "EXCESS_BINDERS": 0,
+    "SOURCE_FACING_DEFINITION_BODIES": "PASS_ON_THE_ENDPOINT_SOURCE_CARRIERS",
+    "IMMEDIATE_PREMISE_DISCHARGE": "CHECKED_IN_ACTUAL_TERMS",
+    "EXHAUSTIVE_TRANSITIVE_DEFINITION_AUDIT": "NOT_CLAIMED",
+    "FRESH_COMPILATION_AND_AXIOM_CLOSURE": "PENDING_ROOT"
+  },
+  "comparator": {
+    "expected_exports_match_by_textual_inspection": true,
+    "type_interfaces_match_by_body_inspection": true,
+    "fresh_strict_comparator_run": "NOT_RUN_BY_THIS_REVIEWER",
+    "permitted_axioms": [
+      "propext",
+      "Quot.sound",
+      "Classical.choice"
+    ],
+    "warning": "Existing verification-status files were located but are not used as evidence. Expected challenge sorries already existed and are not production proof holes."
+  },
+  "integration": {
+    "reviewer": "/root",
+    "fresh_lean_checks": "PASSED; see checks.json",
+    "review_scope": "Selected endpoint and definition review; not exhaustive re-review of the complete proof library.",
+    "compiled_applications": 4,
+    "axiom_policy": "Only propext, Classical.choice and Quot.sound permitted.",
+    "review_time_pending_fields": "Original reviewer did not execute Lean. Integration results above supersede verification-pending fields, without changing the semantic review verdict."
+  }
+}

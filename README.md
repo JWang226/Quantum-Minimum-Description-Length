@@ -13,6 +13,8 @@ and Letter figure are included unchanged.
 The [human-readable correspondence and scope](https://jwang226.github.io/Quantum-Minimum-Description-Length/correspondence/)
 connects Article and Letter statements to proof guides, exact Lean declarations,
 and coverage notes.
+The [statement audit](https://jwang226.github.io/Quantum-Minimum-Description-Length/audit/)
+adds hypothesis tables, definition reviews and reproducible Lean applications.
 
 ## The statements
 

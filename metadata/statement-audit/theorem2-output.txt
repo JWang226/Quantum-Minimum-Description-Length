@@ -1,0 +1,43 @@
+'FreeEntropy.ExteriorRepresentation.theorem2_cloning_accuracy_choi' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FreeEntropy.ExteriorRepresentation.prv_maps_are_channels' depends on axioms: [propext, Classical.choice, Quot.sound]
+theorem FreeEntropy.ExteriorRepresentation.theorem2_cloning_accuracy_choi : ∀ {d r : ℕ} (s : FixedSpectrum d r)
+  (hd : 2 ≤ d) (mu nu : Fin d → ℕ) (hmu : Antitone mu) (hnu : Antitone nu),
+  (∀ (i : Fin d), r ≤ ↑i → mu i = 0) →
+    (∀ (i : Fin d), r ≤ ↑i → nu i = 0) →
+      ∀ (hinc : Antitone fun i => ↑(nu i) - ↑(mu i)) (U : ↥(unitaryGroup (Fin d) ℂ)),
+        TraceDistance.traceDistance (prvForward mu nu hmu hnu hinc (canonicalOrbitState s mu U))
+              (canonicalOrbitState s nu U) ≤
+            Theorem2.cloningConstant d r s.qx * ↑(differenceNorm mu nu) / (↑(minimumRowGap mu r hd ⋯) + 1) ∧
+          TraceDistance.traceDistance (prvReverse mu nu hmu hnu hinc (canonicalOrbitState s nu U))
+              (canonicalOrbitState s mu U) ≤
+            Theorem2.cloningConstant d r s.qx * ↑(differenceNorm mu nu) / (↑(minimumRowGap mu r hd ⋯) + 1) :=
+fun {d r} s hd mu nu hmu hnu hmu_support hnu_support hinc U =>
+  Eq.mpr
+    (id
+      (congrArg
+        (fun _a =>
+          TraceDistance.traceDistance _a (canonicalOrbitState s nu U) ≤
+              Theorem2.cloningConstant d r s.qx * ↑(differenceNorm mu nu) / (↑(minimumRowGap mu r hd s.rank_pos) + 1) ∧
+            TraceDistance.traceDistance (prvReverse mu nu hmu hnu hinc (canonicalOrbitState s nu U))
+                (canonicalOrbitState s mu U) ≤
+              Theorem2.cloningConstant d r s.qx * ↑(differenceNorm mu nu) / (↑(minimumRowGap mu r hd s.rank_pos) + 1))
+        (prvForward_eq mu nu hmu hnu hinc
+          (Decidable.byContradiction fun a => theorem2_cloning_accuracy_choi._proof_1_1 hd a)
+          (canonicalOrbitState s mu U))))
+    (Eq.mpr
+      (id
+        (congrArg
+          (fun _a =>
+            TraceDistance.traceDistance ((canonicalForward mu nu hmu hnu hinc).toFun (canonicalOrbitState s mu U))
+                  (canonicalOrbitState s nu U) ≤
+                Theorem2.cloningConstant d r s.qx * ↑(differenceNorm mu nu) /
+                  (↑(minimumRowGap mu r hd s.rank_pos) + 1) ∧
+              TraceDistance.traceDistance _a (canonicalOrbitState s mu U) ≤
+                Theorem2.cloningConstant d r s.qx * ↑(differenceNorm mu nu) / (↑(minimumRowGap mu r hd s.rank_pos) + 1))
+          (prvReverse_eq mu nu hmu hnu hinc
+            (Decidable.byContradiction fun a => theorem2_cloning_accuracy_choi._proof_1_1 hd a)
+            (canonicalOrbitState s nu U))))
+      (theorem2_cloning_accuracy s hd mu nu hmu hnu hmu_support hnu_support hinc U))
+'FreeEntropy.SchurWeyl.canonicalWeightTensorState_eq_orbit' depends on axioms: [propext, Classical.choice, Quot.sound]

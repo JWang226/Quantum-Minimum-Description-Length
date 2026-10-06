@@ -221,3 +221,16 @@ Every definition page now has: concrete examples, expanded intuition, connection
 - Added a hash-bound companion source map and release/metadata validation.
   The Article's compression formulas retain their checked Lean correspondence;
   Letter volume and bridge claims are explicitly not separately formalized.
+
+## 2026-10-05 — Retrospective statement and manuscript-coverage audit
+
+- Added source-first agent reviews of the four primary theorem endpoints, with
+  expanded hypothesis tables, definition scope and explicit premise discharge.
+- Added a separate adversarial review, a 407-item Article inventory and a source
+  graph with 75 nodes and 137 dependency use sites. Clarified compound-statement
+  grouping, external-result provenance and limits of mathematical coverage.
+- Compiled seven anonymous Lean applications, including the physical-state
+  formulation of Theorem 2, and recorded compiled binders and permitted axioms.
+- Added reproducible audit checks, rejection controls and a website build hook
+  binding the reports to the reviewed sources. Linked the audit from the
+  correspondence page, verification section and README.

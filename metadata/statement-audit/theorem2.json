@@ -1,0 +1,1333 @@
+{
+  "audit": "Retrospective semantic statement audit: Theorem 2",
+  "repository": "repository root",
+  "revision": "490356f620c1ab963ff99585d6835c93e4324b37",
+  "source_sha256": "09fc0a6bb205180cd820be94d843a1dc0d4342a543492e30dde54e367ae843a9",
+  "source_reconstruction": "# Theorem 2: independent source reconstruction\n\nRead and recorded before inspecting any Lean implementation. Source repository HEAD 490356f620c1ab963ff99585d6835c93e4324b37; article.tex SHA256 09fc0a6bb205180cd820be94d843a1dc0d4342a543492e30dde54e367ae843a9.\n\nExact target: article.tex:562–580, thm:main / eq:cloning_trace_bound.\n\nFor each integer d≥2 and density matrix rho on C^d of rank r≤d, whose nonzero eigenvalues form a strictly decreasing list x_1>...>x_r>0, there exists a constant C_{d,x}, independent of rho's eigenbasis and of both partitions, such that for all partitions mu, nu with at most r rows and dominant integral signed difference omega=nu-mu, BOTH half-trace-norm errors of the forward and reverse generalized cloning maps between normalized irrep states are bounded by C_{d,x} D/(b_mu+1). D=sum_i |omega_i|, including negative omega coordinates; b_mu=min_{1≤i≤min(r,d-1)}(mu_i-mu_{i+1}). The same C and same b_mu control both directions. Constant dependence only on d and nonzero spectrum is part of the statement. A density matrix implies trace 1 and positivity, hence r≥1. Partitions are nonnegative weakly decreasing integer rows padded to d entries (299–302). No fixed total box count is required and mu,nu can have different sizes.\n\nSource object definitions: the actual irreducible representation spaces H_mu,H_nu (299–316,322–338), rho_lambda=pi_lambda(rho)/Tr(pi_lambda(rho)) (310–312,476–485); PRV component in H_mu* tensor H_nu has highest weight sorted(nu-mu), multiplicity one (363–400,422–424). Its unique orthogonal projector Pi_omega determines J_omega=(d_mu/d_omega)Pi_omega, and C_mu→nu(sigma)=Tr_mu[J_omega(sigma^T tensor id_nu)] (412–432). Reverse uses swapped pair or equivalent dimension-scaled adjoint (540–551). The Cartan formula uses an isometric irrep intertwiner and does not redefine the representation carrier (442–455). Trace norm means Schatten trace norm; article.tex:1147–1150 distinguishes operator norm from trace norm.\n\nBoundary conventions: d=1 is explicitly outside theorem and separately trivial (581–582); r=1 is allowed; r<d includes supported gap mu_r-0=mu_r (582–583), while r=d takes only d-1 adjacent differences; b_mu=0 is allowed and denominator remains positive. omega=0 is allowed and both actual channels are identity (504,1629–1631). At full rank signed omega may contain negative entries and is a rational GL(d) irrep evaluated on invertible rho; at deficient rank trailing zeros plus dominance force omega to be a partition (402–408). Singular rho is allowed at r<d with polynomial input/output representations. No generic-gap-positive premise, no projector-overlap estimate premise, no abstract state/model premise, and no arbitrary-distance premise appear in the source.\n",
+  "target": {
+    "export": "FreeEntropy.ExteriorRepresentation.theorem2_cloning_accuracy_choi",
+    "path": "lean/FreeEntropy/Theorem2Choi.lean",
+    "lines": "79–96",
+    "source_label": "thm:main",
+    "source_lines": "562–580",
+    "statement_sha256": "da0d3f67ed3f9cfc8ec632b53c75b6e2e71d7daa4c915c04bc3b311ef2828ad7"
+  },
+  "verdict": {
+    "endpoint_binder_fidelity": "PASS; no EXCESS",
+    "endpoint_mathematical_meaning": "PASS on source-restricted carrier based on inspected definitions and existing characterization bridges",
+    "strict_skill_seal": "NOT CLAIMED; manifest/characterization-consumption/public-carrier deviations recorded",
+    "compiled_probe": "Pending root execution; see theorem2-probe.lean",
+    "axioms": "Pending root fresh #print axioms; no old status relied upon",
+    "overall": "Retrospective source-fidelity assessment with explicit workflow limitations; no substantive in-domain mismatch found"
+  },
+  "binder_wrapper": {
+    "s": "Explicit FixedSpectrum structure replaced by its seven fields in counts",
+    "U": "Explicit standard unitary subtype replaced by value and both unitary equations",
+    "instance_binders": "None at exported root; Fin Fintype/DecidableEq and matrix algebra instances are synthesized, not universally quantified premises",
+    "implicit_binders": [
+      "d",
+      "r"
+    ]
+  },
+  "binders": [
+    {
+      "name": "d",
+      "visibility": "implicit",
+      "expanded_type": "ℕ",
+      "bin": "SOURCE",
+      "source": "thm:main, 563",
+      "reason": "Ambient complex dimension; hd enforces d≥2."
+    },
+    {
+      "name": "r",
+      "visibility": "implicit",
+      "expanded_type": "ℕ",
+      "bin": "SOURCE",
+      "source": "thm:main, 563",
+      "reason": "Rank; no hidden dependence on rows."
+    },
+    {
+      "name": "s.rank_pos",
+      "visibility": "field of explicit s",
+      "expanded_type": "0 < r",
+      "bin": "STANDING",
+      "source": "density matrix in thm:main, 563; trace-one convention",
+      "reason": "A positive trace-one matrix has at least one nonzero eigenvalue. This standing implication is independently checked mathematically here, not taken from a status file."
+    },
+    {
+      "name": "s.rank_le",
+      "visibility": "field of explicit s",
+      "expanded_type": "r ≤ d",
+      "bin": "SOURCE",
+      "source": "thm:main, 563",
+      "reason": "Explicit rank bound."
+    },
+    {
+      "name": "s.eigenvalue",
+      "visibility": "field of explicit s",
+      "expanded_type": "ℕ → ℝ",
+      "bin": "SOURCE",
+      "source": "thm:main, 563–564",
+      "reason": "0-based positive spectrum, extended past r; values beyond d do not enter this theorem."
+    },
+    {
+      "name": "s.positive",
+      "visibility": "field of explicit s",
+      "expanded_type": "∀ i, i < r → 0 < eigenvalue i",
+      "bin": "SOURCE",
+      "source": "thm:main, 564",
+      "reason": "Every active eigenvalue positive."
+    },
+    {
+      "name": "s.decreasing",
+      "visibility": "field of explicit s",
+      "expanded_type": "∀ i j, i < j → j < r → eigenvalue j < eigenvalue i",
+      "bin": "SOURCE",
+      "source": "thm:main, 564",
+      "reason": "Strict order on active spectrum."
+    },
+    {
+      "name": "s.zero_padded",
+      "visibility": "field of explicit s",
+      "expanded_type": "∀ i, r ≤ i → i < d → eigenvalue i = 0",
+      "bin": "STANDING",
+      "source": "thm:main, 563–564; rank-r spectrum convention",
+      "reason": "Coordinates of a rank-r spectrum padded to ambient d."
+    },
+    {
+      "name": "s.normalized",
+      "visibility": "field of explicit s",
+      "expanded_type": "∑ i ∈ Finset.range r, eigenvalue i = 1",
+      "bin": "STANDING",
+      "source": "density matrix in thm:main, 563; eq:schur_d, 304–316",
+      "reason": "Trace-one density matrix means positive eigenvalues sum to one; standing meaning audited directly."
+    },
+    {
+      "name": "hd",
+      "visibility": "explicit",
+      "expanded_type": "2 ≤ d",
+      "bin": "SOURCE",
+      "source": "thm:main, 563",
+      "reason": "Exact endpoint convention."
+    },
+    {
+      "name": "mu",
+      "visibility": "explicit",
+      "expanded_type": "Fin d → ℕ",
+      "bin": "SOURCE",
+      "source": "thm:main, 565; partition convention, 299–302",
+      "reason": "Nonnegative integer rows, no total box-count restriction."
+    },
+    {
+      "name": "nu",
+      "visibility": "explicit",
+      "expanded_type": "Fin d → ℕ",
+      "bin": "SOURCE",
+      "source": "thm:main, 565; partition convention, 299–302",
+      "reason": "Independent target partition."
+    },
+    {
+      "name": "hmu",
+      "visibility": "explicit",
+      "expanded_type": "∀ {i j}, i ≤ j → mu j ≤ mu i",
+      "bin": "SOURCE",
+      "source": "thm:main, 565; partition convention, 299–302",
+      "reason": "Expanded Antitone mu."
+    },
+    {
+      "name": "hnu",
+      "visibility": "explicit",
+      "expanded_type": "∀ {i j}, i ≤ j → nu j ≤ nu i",
+      "bin": "SOURCE",
+      "source": "thm:main, 565; partition convention, 299–302",
+      "reason": "Expanded Antitone nu."
+    },
+    {
+      "name": "hmu_support",
+      "visibility": "explicit",
+      "expanded_type": "∀ i : Fin d, r ≤ i.val → mu i = 0",
+      "bin": "SOURCE",
+      "source": "thm:main, 565",
+      "reason": "At most r rows."
+    },
+    {
+      "name": "hnu_support",
+      "visibility": "explicit",
+      "expanded_type": "∀ i : Fin d, r ≤ i.val → nu i = 0",
+      "bin": "SOURCE",
+      "source": "thm:main, 565",
+      "reason": "At most r rows."
+    },
+    {
+      "name": "hinc",
+      "visibility": "explicit",
+      "expanded_type": "∀ {i j}, i ≤ j → (nu j : ℝ)−mu j ≤ (nu i : ℝ)−mu i",
+      "bin": "SOURCE",
+      "source": "thm:main, 566; 399–408",
+      "reason": "Dominant signed integral difference: integrality follows from natural rows; no coordinatewise nu≥mu requirement."
+    },
+    {
+      "name": "U.val",
+      "visibility": "field of explicit U",
+      "expanded_type": "Matrix (Fin d) (Fin d) ℂ",
+      "bin": "TYPING",
+      "source": "thm:main, 563, normalized irrep states 571; covariance 340–345",
+      "reason": "Arbitrary choice of eigenbasis. The statement parameterizes all known-spectrum density matrices by U diag(x) U†."
+    },
+    {
+      "name": "U.property.1",
+      "visibility": "field of explicit U",
+      "expanded_type": "U† * U = 1",
+      "bin": "STANDING",
+      "source": "same eigenbasis convention; Mathlib/Algebra/Star/Unitary.lean:35–36",
+      "reason": "First unitary relation: semantic eigenbasis convention, independently checked from orthonormal eigenbasis meaning; not pure type formation or a channel/estimate assumption."
+    },
+    {
+      "name": "U.property.2",
+      "visibility": "field of explicit U",
+      "expanded_type": "U * U† = 1",
+      "bin": "STANDING",
+      "source": "same eigenbasis convention; Mathlib/Algebra/Star/Unitary.lean:35–36",
+      "reason": "Second unitary relation: semantic eigenbasis convention, independently checked from orthonormal eigenbasis meaning; redundant in finite square dimension but part of standard subtype."
+    }
+  ],
+  "counts": {
+    "SOURCE": 14,
+    "STANDING": 5,
+    "TYPING": 1,
+    "RULED": 0,
+    "EXCESS": 0
+  },
+  "definition_inventory": [
+    {
+      "names": [
+        "FixedSpectrum"
+      ],
+      "path": "lean/FreeEntropy/Statements.lean",
+      "lines": "25–32",
+      "formula_or_meaning": "Seven fields exactly expanded in binder table.",
+      "source": "thm:main 563–564",
+      "evidence": "Fields normalize and strictly order first r eigenvalues; no theorem-shaped premise bundle.",
+      "kind": "literal",
+      "body_match": "OK on endpoint source domain",
+      "public_carrier": "OK",
+      "well_definedness": "N/A_LITERAL",
+      "characterization": "N/A_LITERAL",
+      "choice_independence": "N/A",
+      "definition_verdict": "SCOPED_PASS",
+      "public_carrier_note": ""
+    },
+    {
+      "names": [
+        "FixedSpectrum.adjacentRatio",
+        "FixedSpectrum.qx"
+      ],
+      "path": "lean/FreeEntropy/SpectrumBounds.lean",
+      "lines": "28–34",
+      "formula_or_meaning": "q_i=x_(i+1)/x_i for i+1<r, otherwise zero; maximum over i<r.",
+      "source": "lem:sector_gap 901–909",
+      "evidence": "adjacentRatio_nonneg/lt_one 36–49; qx_nonneg/lt_one 51–56; qx_rank_one 77–78. Zero is explicit source convention, not a fallback concealing missing proof.",
+      "kind": "literal",
+      "body_match": "OK on endpoint source domain",
+      "public_carrier": "OK",
+      "well_definedness": "N/A_LITERAL",
+      "characterization": "N/A_LITERAL",
+      "choice_independence": "N/A",
+      "definition_verdict": "SCOPED_PASS",
+      "public_carrier_note": ""
+    },
+    {
+      "names": [
+        "differenceNorm"
+      ],
+      "path": "lean/FreeEntropy/CanonicalRowBounds.lean",
+      "lines": "17–44",
+      "formula_or_meaning": "Σ_i Int.natAbs((nu_i:ℤ)−(mu_i:ℤ)); real cast equals Σ|nu_i−mu_i|.",
+      "source": "thm:main 568",
+      "evidence": "differenceNorm_cast 20–27 and zero iff 29–41. Signed difference is preserved.",
+      "kind": "literal",
+      "body_match": "OK on endpoint source domain",
+      "public_carrier": "OK",
+      "well_definedness": "N/A_LITERAL",
+      "characterization": "N/A_LITERAL",
+      "choice_independence": "N/A",
+      "definition_verdict": "SCOPED_PASS",
+      "public_carrier_note": ""
+    },
+    {
+      "names": [
+        "supportedGapIndices",
+        "minimumRowGap"
+      ],
+      "path": "lean/FreeEntropy/CanonicalRowBounds.lean",
+      "lines": "46–80",
+      "formula_or_meaning": "Minimum of mu_j−mu_(j+1) for j<d−1 and j<r, using nonempty finite infimum.",
+      "source": "thm:main 569, 582–583",
+      "evidence": "Nonempty proved from d≥2,r>0; natural subtraction agrees with integer difference under hmu (64–69); universal lower-bound characterization 72–80.",
+      "kind": "literal",
+      "body_match": "OK on endpoint source domain",
+      "public_carrier": "FAIL strict source-only carrier",
+      "well_definedness": "N/A_LITERAL",
+      "characterization": "N/A_LITERAL",
+      "choice_independence": "N/A",
+      "definition_verdict": "SCOPED_PASS; STRICT_GLOBAL_FAIL",
+      "public_carrier_note": "mu argument is not restricted to Antitone in the helper itself; natural subtraction on nonpartitions is a total extension not source b_mu."
+    },
+    {
+      "names": [
+        "MeanDepth.meanDepthConstant"
+      ],
+      "path": "lean/FreeEntropy/MeanDepth.lean",
+      "lines": "24–35",
+      "formula_or_meaning": "N*q/(1−q)^(N+1).",
+      "source": "lem:tail 1512–1513",
+      "evidence": "Formula literal; N=0 produces 0; used with 0≤q<1.",
+      "kind": "literal",
+      "body_match": "OK on endpoint source domain",
+      "public_carrier": "OK",
+      "well_definedness": "N/A_LITERAL",
+      "characterization": "N/A_LITERAL",
+      "choice_independence": "N/A",
+      "definition_verdict": "SCOPED_PASS",
+      "public_carrier_note": ""
+    },
+    {
+      "names": [
+        "Theorem2.cloningConstant"
+      ],
+      "path": "lean/FreeEntropy/Theorem2.lean",
+      "lines": "27–35",
+      "formula_or_meaning": "choose(d,2)+3*meanDepthConstant(choose(r,2),q).",
+      "source": "proof of thm:main 1824–1826",
+      "evidence": "Exactly a sufficient constant given by manuscript proof; fixed before mu,nu,U. Nonnegativity follows from spectrum q bounds.",
+      "kind": "literal",
+      "body_match": "OK on endpoint source domain",
+      "public_carrier": "OK",
+      "well_definedness": "N/A_LITERAL",
+      "characterization": "N/A_LITERAL",
+      "choice_independence": "N/A",
+      "definition_verdict": "SCOPED_PASS",
+      "public_carrier_note": ""
+    },
+    {
+      "names": [
+        "OrbitMemory.tr"
+      ],
+      "path": "lean/FreeEntropy/OrbitMemory.lean",
+      "lines": "36–37",
+      "formula_or_meaning": "Real part of matrix trace.",
+      "source": "trace norm convention 1147–1150",
+      "evidence": "On positive/Hermitian matrices imaginary part of trace is zero.",
+      "kind": "literal",
+      "body_match": "OK on endpoint source domain",
+      "public_carrier": "OK",
+      "well_definedness": "N/A_LITERAL",
+      "characterization": "N/A_LITERAL",
+      "choice_independence": "N/A",
+      "definition_verdict": "SCOPED_PASS",
+      "public_carrier_note": ""
+    },
+    {
+      "names": [
+        "TraceDistance.traceNorm",
+        "TraceDistance.traceDistance"
+      ],
+      "path": "lean/FreeEntropy/TraceDistance.lean",
+      "lines": "31–35",
+      "formula_or_meaning": "Re Tr sqrt(X†X); error is traceNorm(A−B)/2.",
+      "source": "eq:cloning_trace_bound 575–578; 1147–1150",
+      "evidence": "Mathlib Analysis/SpecialFunctions/ContinuousFunctionalCalculus/Abs.lean:46 defines CFC.abs a = sqrt(star a*a). Eigenvalue characterization for Hermitian difference 56–64; this is not an arbitrary norm parameter.",
+      "kind": "literal",
+      "body_match": "OK on endpoint source domain",
+      "public_carrier": "OK",
+      "well_definedness": "N/A_LITERAL",
+      "characterization": "N/A_LITERAL",
+      "choice_independence": "N/A",
+      "definition_verdict": "SCOPED_PASS",
+      "public_carrier_note": ""
+    },
+    {
+      "names": [
+        "Column",
+        "columnHeight"
+      ],
+      "path": "lean/FreeEntropy/ExteriorDominant.lean",
+      "lines": "18–25",
+      "formula_or_meaning": "Column index Fin(Σ rows); height counts i with column<mu_i. Zero-height columns are trivial factors.",
+      "source": "partition representation 299–302; 322–328",
+      "evidence": "tensorFirst_weight 59–80 proves actual highest row when hmu.",
+      "kind": "literal",
+      "body_match": "OK on endpoint source domain",
+      "public_carrier": "FAIL strict source-only carrier",
+      "well_definedness": "N/A_LITERAL",
+      "characterization": "N/A_LITERAL",
+      "choice_independence": "N/A",
+      "definition_verdict": "SCOPED_PASS; STRICT_GLOBAL_FAIL",
+      "public_carrier_note": "Non-antitone row functions are accepted and effectively sorted by column heights; no source highest-weight identity asserted without hmu."
+    },
+    {
+      "names": [
+        "Index",
+        "wedgeBasis",
+        "exteriorMatrix"
+      ],
+      "path": "lean/FreeEntropy/ExteriorRepresentation.lean",
+      "lines": "21–32",
+      "formula_or_meaning": "Actual kth exterior power, basis indexed by k-subsets; matrix of exteriorPower.map.",
+      "source": "actual polynomial irreps 299–302; 322–328",
+      "evidence": "exteriorMatrix_mul/adjoint/unitary 34–79; minors formula 48–59 identifies ordinary exterior representation.",
+      "kind": "constructed representation",
+      "body_match": "OK on endpoint source domain",
+      "public_carrier": "OK",
+      "well_definedness": "OK on source domain",
+      "characterization": "OK via cited existing theorems; strict workflow caveats below",
+      "choice_independence": "See choice inventory; no mathematical ambiguity found on source domain",
+      "definition_verdict": "SCOPED_PASS",
+      "public_carrier_note": ""
+    },
+    {
+      "names": [
+        "productMatrix",
+        "tensorMatrix",
+        "tensorRepresentation"
+      ],
+      "path": "lean/FreeEntropy/ExteriorTensor.lean",
+      "lines": "21–22, 81–102",
+      "formula_or_meaning": "Product of exterior representation matrices over Young-diagram columns.",
+      "source": "actual polynomial irreps 299–302; 322–328",
+      "evidence": "Matrix multiplication, adjoint, unitary laws are proved; source carrier is actual exterior tensor construction.",
+      "kind": "constructed representation",
+      "body_match": "OK on endpoint source domain",
+      "public_carrier": "OK",
+      "well_definedness": "OK on source domain",
+      "characterization": "OK via cited existing theorems; strict workflow caveats below",
+      "choice_independence": "See choice inventory; no mathematical ambiguity found on source domain",
+      "definition_verdict": "SCOPED_PASS",
+      "public_carrier_note": ""
+    },
+    {
+      "names": [
+        "AmbientIndex",
+        "ambientRepresentation",
+        "highestBasisIndex",
+        "highestVector",
+        "highestSubspace"
+      ],
+      "path": "lean/FreeEntropy/ExteriorHighestRepresentation.lean",
+      "lines": "22–46",
+      "formula_or_meaning": "Cyclic subspace generated by the tensor of first-basis exterior highest vectors.",
+      "source": "highest-weight irreps 299–302; 322–338",
+      "evidence": "highestSubspace_irreducible 36–45; actual torus weight equals mu under hmu 47–58; vector nonzero 60–61.",
+      "kind": "constructed representation",
+      "body_match": "OK on endpoint source domain",
+      "public_carrier": "OK",
+      "well_definedness": "OK on source domain",
+      "characterization": "OK via cited existing theorems; strict workflow caveats below",
+      "choice_independence": "See choice inventory; no mathematical ambiguity found on source domain",
+      "definition_verdict": "SCOPED_PASS",
+      "public_carrier_note": ""
+    },
+    {
+      "names": [
+        "IrrepIndex",
+        "irrepEmbedding",
+        "irrepMatrix"
+      ],
+      "path": "lean/FreeEntropy/ExteriorMatrixIrreducible.lean",
+      "lines": "20–51",
+      "formula_or_meaning": "Fin(finrank highestSubspace); actual restricted unitary representation in an orthonormal basis.",
+      "source": "H_mu and d_mu, 299–302",
+      "evidence": "Positive dimension 29–30, intertwining 35–38, irreducibility 40–43, unitarity 45–48, continuity 50–52.",
+      "kind": "constructed representation",
+      "body_match": "OK on endpoint source domain",
+      "public_carrier": "FAIL strict source-only carrier",
+      "well_definedness": "OK on source domain",
+      "characterization": "OK via cited existing theorems; strict workflow caveats below",
+      "choice_independence": "See choice inventory; no mathematical ambiguity found on source domain",
+      "definition_verdict": "SCOPED_PASS; STRICT_GLOBAL_FAIL",
+      "public_carrier_note": "IrrepIndex is exported for arbitrary natural row functions; source interpretation as the irrep of that row requires hmu."
+    },
+    {
+      "names": [
+        "WeightCoordinates",
+        "Generators.weightCoordinates"
+      ],
+      "path": "lean/FreeEntropy/LieWeightModel.lean",
+      "lines": "19–88",
+      "formula_or_meaning": "Model plus change-of-basis matrix with isometry and exact generator conjugation. Chosen from proved existence.",
+      "source": "representation coordinate convention 299–302, 340–345",
+      "evidence": "exists_weightCoordinates builds every field using joint eigenbasis, actual highest vector/cyclicity and root cone (27–83); coordinate choice is not an endpoint binder.",
+      "kind": "coordinate choice",
+      "body_match": "OK on endpoint source domain",
+      "public_carrier": "OK",
+      "well_definedness": "OK on source domain",
+      "characterization": "OK via cited existing theorems; strict workflow caveats below",
+      "choice_independence": "See choice inventory; no mathematical ambiguity found on source domain",
+      "definition_verdict": "SCOPED_PASS",
+      "public_carrier_note": ""
+    },
+    {
+      "names": [
+        "CyclicWeightModel"
+      ],
+      "path": "lean/FreeEntropy/CartanLieCloning.lean",
+      "lines": "81–92",
+      "formula_or_meaning": "Generators; row; weights; highest column; diagonal law; highest eigenvalue law; raising annihilation; cyclicity; dominance; integer root coefficients; exact root-cone equation.",
+      "source": "highest-weight representation conventions 322–338; weight notation 1144 onwards",
+      "evidence": "All fields supplied by canonicalWeightCoordinates, not assumed at endpoint; expanded field inventory below.",
+      "kind": "constructed representation",
+      "body_match": "OK on endpoint source domain",
+      "public_carrier": "OK",
+      "well_definedness": "OK on source domain",
+      "characterization": "OK via cited existing theorems; strict workflow caveats below",
+      "choice_independence": "See choice inventory; no mathematical ambiguity found on source domain",
+      "definition_verdict": "SCOPED_PASS",
+      "public_carrier_note": ""
+    },
+    {
+      "names": [
+        "Generators"
+      ],
+      "path": "lean/FreeEntropy/LieMatrixCasimir.lean",
+      "lines": "34–39",
+      "formula_or_meaning": "Matrix gl(d) generators with E_ij†=E_ji and actual gl(d) commutator relations.",
+      "source": "GL(d) representation 322–338",
+      "evidence": "Fundamental and exterior/tensor generators are literal matrix constructions, then restricted to actual irrep; not a synthetic labeled representation.",
+      "kind": "constructed representation",
+      "body_match": "OK on endpoint source domain",
+      "public_carrier": "OK",
+      "well_definedness": "OK on source domain",
+      "characterization": "OK via cited existing theorems; strict workflow caveats below",
+      "choice_independence": "See choice inventory; no mathematical ambiguity found on source domain",
+      "definition_verdict": "SCOPED_PASS",
+      "public_carrier_note": ""
+    },
+    {
+      "names": [
+        "canonicalWeightCoordinates",
+        "canonicalWeightModel",
+        "canonicalWeightEmbedding"
+      ],
+      "path": "lean/FreeEntropy/ExteriorWeightCoordinates.lean",
+      "lines": "26–58",
+      "formula_or_meaning": "Apply constructed weightCoordinates to irrepGenerators; model projection; embedding irrepEmbedding times coordinate unitary.",
+      "source": "actual H_mu and representation, 299–302; 322–338",
+      "evidence": "canonicalWeightModel_row 61–88 identifies highest row under hmu; exact embedding generator equation 48–58.",
+      "kind": "coordinate choice",
+      "body_match": "OK on endpoint source domain",
+      "public_carrier": "OK",
+      "well_definedness": "OK on source domain",
+      "characterization": "OK via cited existing theorems; strict workflow caveats below",
+      "choice_independence": "See choice inventory; no mathematical ambiguity found on source domain",
+      "definition_verdict": "SCOPED_PASS",
+      "public_carrier_note": ""
+    },
+    {
+      "names": [
+        "canonicalWeight"
+      ],
+      "path": "lean/FreeEntropy/ExteriorWeightCoordinates.lean",
+      "lines": "111–127",
+      "formula_or_meaning": "Select nonzero ambient embedding coordinate, take its natural occupation.",
+      "source": "weights of polynomial irrep, 299–302",
+      "evidence": "canonicalWeight_spec fixes selected value independently (115–117), supported embedding 119–127; total degree correct under hmu 130–132.",
+      "kind": "coordinate choice",
+      "body_match": "OK on endpoint source domain",
+      "public_carrier": "OK",
+      "well_definedness": "OK on source domain",
+      "characterization": "OK via cited existing theorems; strict workflow caveats below",
+      "choice_independence": "See choice inventory; no mathematical ambiguity found on source domain",
+      "definition_verdict": "SCOPED_PASS",
+      "public_carrier_note": ""
+    },
+    {
+      "names": [
+        "rootWeightMonomial",
+        "CyclicWeightModel.relativeWeight",
+        "relativeNormalizer",
+        "relativeState"
+      ],
+      "path": "lean/FreeEntropy/CyclicWeightStates.lean",
+      "lines": "21–33",
+      "formula_or_meaning": "Product of adjacent ratios raised to integer simple-root deficits; finite sum normalizer; diagonal normalized weights.",
+      "source": "rho_mu definition 310–312, 476–485; source weight states in sec:prelim",
+      "evidence": "Highest coefficient is 1 (95–98), normalizer ≥1 for nonnegative ratios (100–105). Physical monomial equality proved in CanonicalMonomialState169–186.",
+      "kind": "literal",
+      "body_match": "OK on endpoint source domain",
+      "public_carrier": "FAIL strict source-only carrier",
+      "well_definedness": "N/A_LITERAL",
+      "characterization": "N/A_LITERAL",
+      "choice_independence": "N/A",
+      "definition_verdict": "SCOPED_PASS; STRICT_GLOBAL_FAIL",
+      "public_carrier_note": "relativeState accepts arbitrary real ratios, and canonical specialization accepts unsupported/nonpartition rows. State interpretation only on appropriate nonnegative/source domain."
+    },
+    {
+      "names": [
+        "canonicalWeightRepresentation"
+      ],
+      "path": "lean/FreeEntropy/CanonicalOrbit.lean",
+      "lines": "23–39",
+      "formula_or_meaning": "Conjugate actual irrepMatrix by chosen weight-coordinate unitary.",
+      "source": "unitary action 340–345",
+      "evidence": "Unitarity, continuity, irreducibility proved 28–39; UnitaryCoordinates17–23 gives exact W†R(U)W.",
+      "kind": "coordinate choice",
+      "body_match": "OK on endpoint source domain",
+      "public_carrier": "OK",
+      "well_definedness": "OK on source domain",
+      "characterization": "OK via cited existing theorems; strict workflow caveats below",
+      "choice_independence": "See choice inventory; no mathematical ambiguity found on source domain",
+      "definition_verdict": "SCOPED_PASS",
+      "public_carrier_note": ""
+    },
+    {
+      "names": [
+        "canonicalOrbitState"
+      ],
+      "path": "lean/FreeEntropy/CanonicalOrbit.lean",
+      "lines": "41–45",
+      "formula_or_meaning": "R_mu(U)*relativeState(x ratios)*R_mu(U)†.",
+      "source": "normalized irrep states thm:main571; rho_mu310–312,476–485",
+      "evidence": "Positive and trace-one 47–64; exact physical source identification PhysicalOrbitChannels23–32 using hmu,hsupp.",
+      "kind": "constructed state",
+      "body_match": "OK on endpoint source domain",
+      "public_carrier": "FAIL strict source-only carrier",
+      "well_definedness": "OK on source domain",
+      "characterization": "OK via cited existing theorems; strict workflow caveats below",
+      "choice_independence": "See choice inventory; no mathematical ambiguity found on source domain",
+      "definition_verdict": "SCOPED_PASS; STRICT_GLOBAL_FAIL",
+      "public_carrier_note": "Public helper admits partitions longer than rank and nonpartitions. For e.g. r=1,d=2, mu=(1,1), physical determinant block vanishes, source normalized state is undefined, but relative construction returns a normalized 1D state."
+    },
+    {
+      "names": [
+        "canonicalTensorSource",
+        "canonicalTensorState"
+      ],
+      "path": "lean/FreeEntropy/PhysicalCanonicalSector.lean",
+      "lines": "112–120",
+      "formula_or_meaning": "Compress rho tensor-power by actual irrep tensor isometry; normalize block.",
+      "source": "eq:schur_d304–312; normalized representation state476–485",
+      "evidence": "canonicalWeightTensorState-diagonal-orbit bridge CanonicalPhysicalOrbit60–75; positive monomial cancels in source domain.",
+      "kind": "physical bridge",
+      "body_match": "OK on endpoint source domain",
+      "public_carrier": "FAIL strict source-only carrier",
+      "well_definedness": "OK on source domain",
+      "characterization": "OK via cited existing theorems; strict workflow caveats below",
+      "choice_independence": "See choice inventory; no mathematical ambiguity found on source domain",
+      "definition_verdict": "SCOPED_PASS; STRICT_GLOBAL_FAIL",
+      "public_carrier_note": "canonicalTensorState uses normalizedBlock zero-trace fallback; not itself a source-only definition."
+    },
+    {
+      "names": [
+        "normalizedBlock"
+      ],
+      "path": "lean/FreeEntropy/SchurWeylNormalization.lean",
+      "lines": "28–30",
+      "formula_or_meaning": "If real trace zero use maximally mixed; else trace inverse times block.",
+      "source": "normalized rho_mu310–312,476–485",
+      "evidence": "On source-supported rows nonzero trace follows highest_monomial_pos and normalizer≥1; CanonicalMonomialState142–186 selects nonzero branch.",
+      "kind": "literal",
+      "body_match": "OK on endpoint source domain",
+      "public_carrier": "FAIL strict source-only carrier",
+      "well_definedness": "N/A_LITERAL",
+      "characterization": "N/A_LITERAL",
+      "choice_independence": "N/A",
+      "definition_verdict": "SCOPED_PASS; STRICT_GLOBAL_FAIL",
+      "public_carrier_note": "Zero-trace maximally mixed output is totalization, not source normalization. Strict checklist forbids admitting it globally as source object."
+    },
+    {
+      "names": [
+        "auxiliaryShift",
+        "auxiliaryRow"
+      ],
+      "path": "lean/FreeEntropy/SignedAuxiliaryModel.lean",
+      "lines": "18–45",
+      "formula_or_meaning": "shift=Σmu; auxiliaryRow_i=nu_i+(shift−mu_i), exactly nu_i−mu_i+shift.",
+      "source": "signed omega and determinant twists330–338,402–408",
+      "evidence": "le_auxiliaryShift ensures Nat subtraction never truncates; auxiliaryRow_antitone31–37, balance40–45.",
+      "kind": "literal",
+      "body_match": "OK on endpoint source domain",
+      "public_carrier": "OK",
+      "well_definedness": "N/A_LITERAL",
+      "characterization": "N/A_LITERAL",
+      "choice_independence": "N/A",
+      "definition_verdict": "SCOPED_PASS",
+      "public_carrier_note": ""
+    },
+    {
+      "names": [
+        "canonicalAuxiliaryModel"
+      ],
+      "path": "lean/FreeEntropy/SignedAuxiliaryModel.lean",
+      "lines": "51–75",
+      "formula_or_meaning": "Actual polynomial model of shifted omega, then subtract same scalar from every generator diagonal/weight.",
+      "source": "rational auxiliary representation330–338,402–408",
+      "evidence": "row exactly signed nu−mu55–63; exact sum row67–75. Representation dimensions unaffected by determinant twist; no requirement nu≥mu.",
+      "kind": "constructed representation",
+      "body_match": "OK on endpoint source domain",
+      "public_carrier": "OK",
+      "well_definedness": "OK on source domain",
+      "characterization": "OK via cited existing theorems; strict workflow caveats below",
+      "choice_independence": "See choice inventory; no mathematical ambiguity found on source domain",
+      "definition_verdict": "SCOPED_PASS",
+      "public_carrier_note": ""
+    },
+    {
+      "names": [
+        "CyclicWeightModel.shift"
+      ],
+      "path": "lean/FreeEntropy/CyclicWeightShift.lean",
+      "lines": "19–45",
+      "formula_or_meaning": "Generator scalar shift; row and every weight shifted by c; same highest vector/root coefficients.",
+      "source": "determinant twist330–338",
+      "evidence": "All commutator/cyclicity/weight laws proved. Used c=−sum mu (integer), though generic helper supports real Lie shifts.",
+      "kind": "constructed representation",
+      "body_match": "OK on endpoint source domain",
+      "public_carrier": "OK",
+      "well_definedness": "OK on source domain",
+      "characterization": "OK via cited existing theorems; strict workflow caveats below",
+      "choice_independence": "See choice inventory; no mathematical ambiguity found on source domain",
+      "definition_verdict": "SCOPED_PASS",
+      "public_carrier_note": ""
+    },
+    {
+      "names": [
+        "specifiedTopUnitary",
+        "specifiedCartanEmbedding"
+      ],
+      "path": "lean/FreeEntropy/SpecifiedLieCloning.lean",
+      "lines": "24–79",
+      "formula_or_meaning": "Choose proved unitary intertwiner to constructed Cartan top, compose its adjoint with top embedding.",
+      "source": "Cartan intertwiner prop:choi442–455",
+      "evidence": "Exists theorem24–39; chosen W spec45–51; V isometry58–67 and intertwinement76–83. Uniqueness up to scalar supplied by CartanHomMultiplicity87–125, not an endpoint premise.",
+      "kind": "choice up to phase",
+      "body_match": "OK on endpoint source domain",
+      "public_carrier": "OK",
+      "well_definedness": "OK on source domain",
+      "characterization": "OK via cited existing theorems; strict workflow caveats below",
+      "choice_independence": "See choice inventory; no mathematical ambiguity found on source domain",
+      "definition_verdict": "SCOPED_PASS",
+      "public_carrier_note": ""
+    },
+    {
+      "names": [
+        "CartanChoi.choi",
+        "CartanChoi.choiMap"
+      ],
+      "path": "lean/FreeEntropy/CartanChoi.lean",
+      "lines": "21–27",
+      "formula_or_meaning": "Unnormalized Choi on input-dual×output; sum X_aa′J_(a,c),(a′,c′).",
+      "source": "eq:gen_cloner414–418",
+      "evidence": "choiMap_sectorMap36–58; literal transpose/partial trace identity ChoiContraction21–32.",
+      "kind": "literal",
+      "body_match": "OK on endpoint source domain",
+      "public_carrier": "OK",
+      "well_definedness": "N/A_LITERAL",
+      "characterization": "N/A_LITERAL",
+      "choice_independence": "N/A",
+      "definition_verdict": "SCOPED_PASS",
+      "public_carrier_note": ""
+    },
+    {
+      "names": [
+        "CartanChoi.projector",
+        "CartanChoi.embedding"
+      ],
+      "path": "lean/FreeEntropy/CartanChoi.lean",
+      "lines": "103–105,140–142",
+      "formula_or_meaning": "Projector=(dim omega/dim nu)*reshuffle(V)†reshuffle(V); embedding=sqrt(dim omega/dim nu)*reshuffle(V)†.",
+      "source": "Pi_omega multiplicity-one source390–424; prop:choi442–455",
+      "evidence": "Isometry/intertwinement144–172; idempotence114–128; Gram scalar derived via actual irreducible commutant77–101. Not merely an arbitrary projector.",
+      "kind": "PRV characterization",
+      "body_match": "OK on endpoint source domain",
+      "public_carrier": "OK",
+      "well_definedness": "OK on source domain",
+      "characterization": "OK via cited existing theorems; strict workflow caveats below",
+      "choice_independence": "See choice inventory; no mathematical ambiguity found on source domain",
+      "definition_verdict": "SCOPED_PASS",
+      "public_carrier_note": ""
+    },
+    {
+      "names": [
+        "canonicalChoiProjector",
+        "canonicalChoiEmbedding"
+      ],
+      "path": "lean/FreeEntropy/CanonicalChoi.lean",
+      "lines": "24–33",
+      "formula_or_meaning": "Instantiate CartanChoi projector with actual canonical signed auxiliary and Cartan isometry.",
+      "source": "eq:gen_cloner413–424",
+      "evidence": "Isometry36–41, intertwines43–49, Hermitian/idempotent57–67, rank70–75, multiplicity-one79–87, highest90–121, cyclic/range124–159; complete source-defining properties split over proved theorems.",
+      "kind": "PRV characterization",
+      "body_match": "OK on endpoint source domain",
+      "public_carrier": "OK",
+      "well_definedness": "OK on source domain",
+      "characterization": "OK via cited existing theorems; strict workflow caveats below",
+      "choice_independence": "See choice inventory; no mathematical ambiguity found on source domain",
+      "definition_verdict": "SCOPED_PASS",
+      "public_carrier_note": ""
+    },
+    {
+      "names": [
+        "flipConjugate",
+        "reverseEmbedding",
+        "reverseProjector"
+      ],
+      "path": "lean/FreeEntropy/ReverseChoi.lean",
+      "lines": "20–30",
+      "formula_or_meaning": "Conjugate entries and swap tensor factors.",
+      "source": "reverse prop540–551; general PRV395–398",
+      "evidence": "Reverse range/isometry32–50; idempotence62–69; Choi reverse normalization86–96.",
+      "kind": "PRV characterization",
+      "body_match": "OK on endpoint source domain",
+      "public_carrier": "OK",
+      "well_definedness": "OK on source domain",
+      "characterization": "OK via cited existing theorems; strict workflow caveats below",
+      "choice_independence": "See choice inventory; no mathematical ambiguity found on source domain",
+      "definition_verdict": "SCOPED_PASS",
+      "public_carrier_note": ""
+    },
+    {
+      "names": [
+        "canonicalReverseChoiProjector",
+        "canonicalReverseChoiEmbedding"
+      ],
+      "path": "lean/FreeEntropy/CanonicalReverseChoi.lean",
+      "lines": "22–32",
+      "formula_or_meaning": "Reverse support from same canonical Cartan isometry.",
+      "source": "reverse prop540–551; PRV395–398",
+      "evidence": "Hermitian/idempotent/rank47–66; ReverseChoiRepresentation92–108 highest row (mu−nu)∘reverse and cyclic range; ReverseChoiMultiplicity147–185 multiplicity and uniqueness.",
+      "kind": "PRV characterization",
+      "body_match": "OK on endpoint source domain",
+      "public_carrier": "OK",
+      "well_definedness": "OK on source domain",
+      "characterization": "OK via cited existing theorems; strict workflow caveats below",
+      "choice_independence": "See choice inventory; no mathematical ambiguity found on source domain",
+      "definition_verdict": "SCOPED_PASS",
+      "public_carrier_note": ""
+    },
+    {
+      "names": [
+        "partialTraceInput"
+      ],
+      "path": "lean/FreeEntropy/ChoiContraction.lean",
+      "lines": "17–18",
+      "formula_or_meaning": "Y↦[Σ_a Y_(a,c),(a,c′)]_(c,c′).",
+      "source": "eq:gen_cloner416–418",
+      "evidence": "choiMap_eq_partialTraceInput21–32 proves exact product ordering and ordinary transpose, for all matrices.",
+      "kind": "literal",
+      "body_match": "OK on endpoint source domain",
+      "public_carrier": "OK",
+      "well_definedness": "N/A_LITERAL",
+      "characterization": "N/A_LITERAL",
+      "choice_independence": "N/A",
+      "definition_verdict": "SCOPED_PASS",
+      "public_carrier_note": ""
+    },
+    {
+      "names": [
+        "prvForward",
+        "prvReverse"
+      ],
+      "path": "lean/FreeEntropy/Theorem2Choi.lean",
+      "lines": "25–32,44–51",
+      "formula_or_meaning": "Partial trace of normalized PRV projector times X^T⊗I, with input dimension numerator and auxiliary dimension denominator.",
+      "source": "eq:gen_cloner414–418; reverse540–551",
+      "evidence": "prvForward_eq36–41 and prvReverse_eq53–58; prv_maps_are_channels62–73. Equalities valid on ALL matrices and include mu=nu.",
+      "kind": "literal",
+      "body_match": "OK on endpoint source domain",
+      "public_carrier": "OK",
+      "well_definedness": "N/A_LITERAL",
+      "characterization": "N/A_LITERAL",
+      "choice_independence": "N/A",
+      "definition_verdict": "SCOPED_PASS",
+      "public_carrier_note": ""
+    },
+    {
+      "names": [
+        "canonicalForward",
+        "canonicalReverse"
+      ],
+      "path": "lean/FreeEntropy/CanonicalFullCloning.lean",
+      "lines": "27–39",
+      "formula_or_meaning": "Identity at equal rows, otherwise actual Cartan channel.",
+      "source": "identity504,1629–1631; prop:choi442–455",
+      "evidence": "CanonicalCloningSelf99–151 proves Cartan formula identity at equal rows and exact equality of branchwise channel to Cartan on all matrices. Thus this branch does not invent off-source behavior.",
+      "kind": "literal",
+      "body_match": "OK on endpoint source domain",
+      "public_carrier": "OK",
+      "well_definedness": "N/A_LITERAL",
+      "characterization": "N/A_LITERAL",
+      "choice_independence": "N/A",
+      "definition_verdict": "SCOPED_PASS",
+      "public_carrier_note": ""
+    },
+    {
+      "names": [
+        "specifiedForward",
+        "specifiedReverse"
+      ],
+      "path": "lean/FreeEntropy/SpecifiedCloningChannels.lean",
+      "lines": "21–33",
+      "formula_or_meaning": "Forward=(dim mu/dim nu)V†(X⊗I)V; reverse=Tr_aux(VYV†), supplied as actual CPTP maps.",
+      "source": "prop:choi450–455; reverse540–551,1760–1764",
+      "evidence": "Balance proved via actual cyclic weights, isometry/intertwining; MatrixChannel fields constructed, never endpoint input.",
+      "kind": "constructed channels",
+      "body_match": "OK on endpoint source domain",
+      "public_carrier": "OK",
+      "well_definedness": "OK on source domain",
+      "characterization": "OK via cited existing theorems; strict workflow caveats below",
+      "choice_independence": "See choice inventory; no mathematical ambiguity found on source domain",
+      "definition_verdict": "SCOPED_PASS",
+      "public_carrier_note": ""
+    },
+    {
+      "names": [
+        "Channels.MatrixChannel",
+        "krausMap",
+        "amplify"
+      ],
+      "path": "lean/FreeEntropy/Channels.lean",
+      "lines": "39–41,73–76,95–102",
+      "formula_or_meaning": "Complex-linear map, exact trace preserving, positive, every finite matrix amplification positive; Kraus sum and block amplification literal.",
+      "source": "channel premise/definition340–345,426–432",
+      "evidence": "All channel laws proved by specifiedForward/Reverse; only used internally and existential channel conclusion, not as a root binder.",
+      "kind": "literal",
+      "body_match": "OK on endpoint source domain",
+      "public_carrier": "OK",
+      "well_definedness": "N/A_LITERAL",
+      "characterization": "N/A_LITERAL",
+      "choice_independence": "N/A",
+      "definition_verdict": "SCOPED_PASS",
+      "public_carrier_note": ""
+    },
+    {
+      "names": [
+        "TensorIndex",
+        "tensorWeight",
+        "tensorFirst"
+      ],
+      "path": "lean/FreeEntropy/ExteriorWeights.lean",
+      "lines": "137–141",
+      "formula_or_meaning": "Dependent product of actual exterior-power indices; occupations sum across columns; first subsets define highest tensor.",
+      "source": "partition irreps299–302",
+      "evidence": "tensorFirst_weight identifies exact partition row under antitone; no dummy one-dimensional carrier.",
+      "kind": "literal",
+      "body_match": "OK on endpoint source domain",
+      "public_carrier": "OK",
+      "well_definedness": "N/A_LITERAL",
+      "characterization": "N/A_LITERAL",
+      "choice_independence": "N/A",
+      "definition_verdict": "SCOPED_PASS",
+      "public_carrier_note": ""
+    },
+    {
+      "names": [
+        "cyclicSubspace"
+      ],
+      "path": "lean/FreeEntropy/CyclicHighestRepresentation.lean",
+      "lines": "20–22",
+      "formula_or_meaning": "Complex span of the actual group orbit of v.",
+      "source": "irreducible highest-weight module322–338",
+      "evidence": "highestSubspace uses this literal span, then proves it irreducible; no arbitrary codomain inhabitant.",
+      "kind": "literal",
+      "body_match": "OK on endpoint source domain",
+      "public_carrier": "OK",
+      "well_definedness": "N/A_LITERAL",
+      "characterization": "N/A_LITERAL",
+      "choice_independence": "N/A",
+      "definition_verdict": "SCOPED_PASS",
+      "public_carrier_note": ""
+    },
+    {
+      "names": [
+        "embedding",
+        "restrictedMatrix"
+      ],
+      "path": "lean/FreeEntropy/UnitaryDecompositionMatrices.lean",
+      "lines": "22–23,90–98",
+      "formula_or_meaning": "Embedding columns are an actual stdOrthonormalBasis of subspace; restricted action is E†U(g)E.",
+      "source": "coordinate realization of H_mu299–302",
+      "evidence": "embedding_isometry25–29 and embedding_projection47 onwards identify exact Hilbert projection; restrictedMatrix uses proved invariance.",
+      "kind": "coordinate choice",
+      "body_match": "OK on endpoint source domain",
+      "public_carrier": "OK",
+      "well_definedness": "OK on source domain",
+      "characterization": "OK via cited existing theorems; strict workflow caveats below",
+      "choice_independence": "See choice inventory; no mathematical ambiguity found on source domain",
+      "definition_verdict": "SCOPED_PASS",
+      "public_carrier_note": ""
+    },
+    {
+      "names": [
+        "irrepGenerators"
+      ],
+      "path": "lean/FreeEntropy/ExteriorPhysicalIrrep.lean",
+      "lines": "63–78",
+      "formula_or_meaning": "Physical tensor Lie action restricted by actual irrepTensorEmbedding.",
+      "source": "GL(d) module322–338",
+      "evidence": "Intertwining67–71 and cyclicSpan top74–78 proved from actual representation irreducibility.",
+      "kind": "constructed representation",
+      "body_match": "OK on endpoint source domain",
+      "public_carrier": "OK",
+      "well_definedness": "OK on source domain",
+      "characterization": "OK via cited existing theorems; strict workflow caveats below",
+      "choice_independence": "See choice inventory; no mathematical ambiguity found on source domain",
+      "definition_verdict": "SCOPED_PASS",
+      "public_carrier_note": ""
+    },
+    {
+      "names": [
+        "Generators.dual"
+      ],
+      "path": "lean/FreeEntropy/LieDual.lean",
+      "lines": "15–26",
+      "formula_or_meaning": "Generator E_ij maps to minus its ordinary transpose.",
+      "source": "dual highest weights393–398; dual-source Choi363–366",
+      "evidence": "Actual gl(d) contragredient action with adjoint and commutator laws proved.",
+      "kind": "literal",
+      "body_match": "OK on endpoint source domain",
+      "public_carrier": "OK",
+      "well_definedness": "N/A_LITERAL",
+      "characterization": "N/A_LITERAL",
+      "choice_independence": "N/A",
+      "definition_verdict": "SCOPED_PASS",
+      "public_carrier_note": ""
+    },
+    {
+      "names": [
+        "constructedTensorDecomposition"
+      ],
+      "path": "lean/FreeEntropy/ConstructedTensorDecomposition.lean",
+      "lines": "21–57",
+      "formula_or_meaning": "Full actual constituent decomposition with isometries, resolution and intertwinement; choose a proved top constituent and prove uniqueTop.",
+      "source": "Cartan component442–449; multiplicity390–398",
+      "evidence": "Top existence21–25; uniqueTop39–51 uses orthogonality and top-vector uniqueness; root coefficients52–57 from proved tensor cone. No extra top-existence assumption survives.",
+      "kind": "choice up to decomposition coordinates",
+      "body_match": "OK on endpoint source domain",
+      "public_carrier": "OK",
+      "well_definedness": "OK on source domain",
+      "characterization": "OK via cited existing theorems; strict workflow caveats below",
+      "choice_independence": "See choice inventory; no mathematical ambiguity found on source domain",
+      "definition_verdict": "SCOPED_PASS",
+      "public_carrier_note": ""
+    },
+    {
+      "names": [
+        "reshuffle",
+        "unreshuffle"
+      ],
+      "path": "lean/FreeEntropy/CartanReshuffle.lean",
+      "lines": "20–27",
+      "formula_or_meaning": "Reshuffle(V)_(b,(a,c))=V_((a,b),c), without conjugation; inverse exact.",
+      "source": "Choi/Cartan equivalence442–455",
+      "evidence": "Conjugation occurs later in Gram matrix, so Choi transpose orientation is correct; inverses rfl26–27.",
+      "kind": "literal",
+      "body_match": "OK on endpoint source domain",
+      "public_carrier": "OK",
+      "well_definedness": "N/A_LITERAL",
+      "characterization": "N/A_LITERAL",
+      "choice_independence": "N/A",
+      "definition_verdict": "SCOPED_PASS",
+      "public_carrier_note": ""
+    }
+  ],
+  "expanded_internal_bundles": {
+    "CyclicWeightModel": [
+      "generators.E",
+      "generators.adjoint",
+      "generators.commutator",
+      "row",
+      "weight",
+      "highest",
+      "diagonal",
+      "highest_weight",
+      "highest_raise",
+      "cyclic",
+      "dominant",
+      "weightCoeff",
+      "weight_cone"
+    ],
+    "WeightCoordinates": [
+      "model (expanded as CyclicWeightModel)",
+      "unitary",
+      "isometry",
+      "generators conjugation"
+    ],
+    "MatrixChannel": [
+      "toFun",
+      "map_add",
+      "map_smul",
+      "trace_preserving",
+      "positive",
+      "completely_positive over every Fin k amplification"
+    ],
+    "classification": "These are constructed internal data and laws, not logical input bundles of theorem2_cloning_accuracy_choi. Their producers are recorded in definition/consumption inventories; they must not be counted as EXCESS endpoint premises."
+  },
+  "consumption": [
+    {
+      "step": "Endpoint",
+      "location": "Theorem2Choi.lean:94–96",
+      "supplied": "prvForward_eq and prvReverse_eq require 0<d, discharged from hd by omega; then exact theorem2_cloning_accuracy with every root premise."
+    },
+    {
+      "step": "Orbit to diagonal errors",
+      "location": "Theorem2Canonical.lean:65–68; CanonicalCloningOrbit.lean:52–79",
+      "supplied": "Actual proved covariance and unitary trace-distance invariance; row-support premises derive equality nu_i=mu_i=0 beyond r."
+    },
+    {
+      "step": "Exact row quantities",
+      "location": "CanonicalFullCloning.lean:109–111",
+      "supplied": "D=differenceNorm, g=b=minimumRowGap; nonnegativity from Nat, hbg reflexive; hDnorm=differenceNorm_cast; hgap=minimumRowGap_cast_le. No scalar estimates remain assumptions."
+    },
+    {
+      "step": "Zero difference",
+      "location": "CanonicalFullCloning.lean:71–81; CanonicalCloningSelf.lean:99–151",
+      "supplied": "Equal rows uses identity with nonnegative bound; unequal rows proves 1≤D from integer L1. Cartan identity equivalence is separately proved and used in Choi equality, so zero is not a patched non-source channel."
+    },
+    {
+      "step": "Rank split",
+      "location": "CanonicalFullCloning.lean:83–90; CanonicalCloningBounds.lean:16–21",
+      "supplied": "r=1 uses actual ambient count theorem and qx=0 makes K=0; r≠1 gives r≥2 from rank_pos. Exact constant then reduced back to rank r."
+    },
+    {
+      "step": "Auxiliary",
+      "location": "CanonicalCloning.lean:54–55; SignedAuxiliaryModel.lean:51–75",
+      "supplied": "Concrete shifted exterior auxiliary replaces CyclicWeightModel witness; exact signed highest-weight addition proved from row dominance."
+    },
+    {
+      "step": "Mixture and normalization",
+      "location": "CanonicalCloningCore.lean:56–76,102–112",
+      "supplied": "Offsets are union of finite actual supports filtered to rank; unsupported spectral ratios zero; mixture_eq_relativeState and state trace give exact normalization; ofSpecifiedCyclicWeights supplies projector geometry."
+    },
+    {
+      "step": "Multiplicity and finite estimates",
+      "location": "CanonicalCloningCore.lean:96–140",
+      "supplied": "Shallow multiplicities from canonical_offsetMultiplicity_shallow_eq; monotonicity from weight_multiplicity_add_le; decay from relativeCoefficient_envelope; depth counts from canonical_offsetMultiplicity_rank_depth_le; dimensions and deficit from canonical_dimensionRatio_*."
+    },
+    {
+      "step": "Finite scalar reduction",
+      "location": "Theorem2.lean:68–76",
+      "supplied": "Mean depth derived from actual spectral envelopes and multiplicity counts; applies finite-block cloning theorem. These internal hypotheses are produced before use and are absent from exported root."
+    },
+    {
+      "step": "Literal Choi maps are channels",
+      "location": "Theorem2Choi.lean:69–73; CanonicalChoi.lean:162–192; CanonicalReverseChoi.lean:81–106",
+      "supplied": "Exhibits canonicalForward/Reverse and exact all-matrices function equality; Choi normalization is dimensions of actual constructed spaces."
+    }
+  ],
+  "boundary_cases": [
+    {
+      "case": "d=0 or d=1",
+      "assessment": "Excluded by hd; d=1 separately trivial in source581–582. minimum uses no invented empty minimum."
+    },
+    {
+      "case": "r=0",
+      "assessment": "Excluded by FixedSpectrum.rank_pos, consequence of density normalization."
+    },
+    {
+      "case": "r=1",
+      "assessment": "qx=0, N=0, C=choose(d,2); supported gap mu_0−mu_1=mu_0; no active spectral-ratio division. Both bounds hold; manuscript proof sharper reverse zero is not itself a theorem2 conclusion."
+    },
+    {
+      "case": "r=d",
+      "assessment": "Support premises vacuous; gap only d−1 adjacent pairs; signed differences may have negative entries."
+    },
+    {
+      "case": "1≤r<d",
+      "assessment": "Gap filter includes j=r−1 and mu_r=0, hence final supported row gap; omega trailing zeros and dominance force omega nonnegative."
+    },
+    {
+      "case": "D=0 / mu=nu",
+      "assessment": "Both literal Choi maps equal identity, bound zero, checked by exact Cartan/self equivalence."
+    },
+    {
+      "case": "D>0",
+      "assessment": "Integrality gives D≥1 in proof; no D≥1 endpoint binder."
+    },
+    {
+      "case": "b_mu=0",
+      "assessment": "Allowed; denominator=1, no gap positivity assumption."
+    },
+    {
+      "case": "mu or nu zero partition",
+      "assessment": "Allowed, actual irrep dimension positive (=1 mathematically); normalized state defined since top monomial=1. Dominance constrains which zero/nonzero pair combinations occur."
+    },
+    {
+      "case": "Negative determinant shift",
+      "assessment": "Allowed at full rank; auxiliaryRow is polynomial realization plus generator twist; norm counts absolute signed differences. At deficient rank such negative dominant difference is impossible from support."
+    },
+    {
+      "case": "Eigenvalues collide or go to zero",
+      "assessment": "Equality/collision inside positive spectrum excluded; rank-deficient spectra allowed via finite rank. No uniform-in-spectrum constant claim; qx→1 may blow up C as allowed."
+    },
+    {
+      "case": "Natural-number subtraction",
+      "assessment": "differenceNorm casts before subtraction to ℤ; only gap uses Nat subtraction, justified by antitone. auxiliaryShift−mu_i nontruncated by summand≤sum."
+    },
+    {
+      "case": "Eigenvalue function beyond d",
+      "assessment": "Unconstrained values never read in qx, normalized state or theorem conclusion. They add representation redundancy, not mathematical dependence."
+    },
+    {
+      "case": "Choice of eigenbasis",
+      "assessment": "∀U including all phases/degenerate zero-support basis choices. C independent of U and rows; arbitrary source density recovered by spectral diagonalization, not an extra estimate premise."
+    },
+    {
+      "case": "General non-Cartan irreps",
+      "assessment": "The general source cloner definition includes atypical pairs, but thm:main explicitly restricts dominant difference. prvForward/Reverse only target this theorem domain; no claim of formalizing general non-Cartan definition."
+    },
+    {
+      "case": "Zero auxiliary dimension",
+      "assessment": "Impossible: IrrepIndex dimension positivity proved; denominator does not silently use division by zero."
+    },
+    {
+      "case": "Off-source unsupported partition",
+      "assessment": "Not an endpoint case: rejected by hmu_support/hnu_support. Public canonicalOrbitState total extension is not asserted to be physical normalized state there."
+    }
+  ],
+  "choices": [
+    {
+      "object": "Orthonormal coordinate bases / irrepEmbedding / canonicalWeightCoordinates",
+      "construction": "Actual finite-dimensional subspace basis and exists_weightCoordinates.some",
+      "independence": "Source representation is defined up to unitary coordinates. Proved conjugation intertwines representation and state; literal state bridge holds for selected coordinates. No arbitrary representation witness input. Not a unique coordinate object and should not be sold as one."
+    },
+    {
+      "object": "canonicalWeight",
+      "construction": "Choose nonzero ambient coordinate",
+      "independence": "canonicalWeightEmbedding_weight and canonicalWeight_spec make its value the actual coordinate weight, independent of which nonzero ambient entry is selected."
+    },
+    {
+      "object": "weightCoeff",
+      "construction": "Choose c in root cone during exists_weightCoordinates",
+      "independence": "Exact row−weight=offset(c); root offset is injective and coefficient identities are proved. Choice is constrained to actual weight differences, not an arbitrary family."
+    },
+    {
+      "object": "specifiedTopUnitary / specifiedCartanEmbedding",
+      "construction": "Classical choice from proved existence of actual highest-weight unitary",
+      "independence": "CartanHomMultiplicity.tensor_intertwiner_scalar gives scalar freedom only; isometry makes modulus one, so projector/conjugation maps are invariant. Reverse projector uniqueness explicitly proves scalar cancellation. Strict separately packaged forward ∃! not identified."
+    },
+    {
+      "object": "PRV projector",
+      "construction": "Explicit normalized Gram matrix of reshuffled specified Cartan embedding",
+      "independence": "Hermitian/idempotent, isometric auxiliary range, actual highest weight and cyclicity, one-dimensional Hom space; reverse full projector uniqueness exported. Not chosen from mere existence of arbitrary projector."
+    }
+  ],
+  "findings": [
+    {
+      "id": "T2-F01",
+      "severity": "checklist_deviation",
+      "title": "Source-correct endpoint uses total helper carriers",
+      "detail": "canonicalOrbitState, IrrepIndex, relativeState and minimumRowGap have larger public carriers than source definitions. Source restrictions are exactly d≥2, spectrum positive/ordered/normalized with 1≤r≤d, mu/nu antitone and zero outside rank. Root endpoint supplies these. normalizedBlock additionally has a zero-trace maximally-mixed fallback in a physical identification helper. This violates the strict skill public-carrier/no-fallback sealing test if those globally exported helpers are admitted as literal source objects. It is not a counterexample to the restricted theorem.",
+      "locations": [
+        "CanonicalOrbit.lean:41–45",
+        "CanonicalRowBounds.lean:53–55",
+        "ExteriorMatrixIrreducible.lean:20",
+        "SchurWeylNormalization.lean:29–30"
+      ],
+      "endpoint_effect": "No in-domain discrepancy found; strict global definition seal withheld"
+    },
+    {
+      "id": "T2-F02",
+      "severity": "checklist_deviation",
+      "title": "Physical-state characterization proved separately but not consumed by endpoint proof",
+      "detail": "PhysicalOrbitChannels.canonicalWeightTensorState_eq_orbit23–32 proves exact source-state identification from hmu and hsupp, using monomial normalizer positivity. Theorem2Choi proof rewrites Choi formulas and invokes Theorem2Canonical; that proof reduces orbit errors to relative states. Neither proof explicitly applies the physical-state characterization. A strict characterization-consumption workflow therefore is not satisfied by the selected root alone; existence of this real bridge establishes mathematical identification on its source domain, not its term-level use by that root. The new transient audit probe explicitly composes both bridge instances with the root to obtain the physical normalized-state formulation; compilation is delegated to root.",
+      "locations": [
+        "PhysicalOrbitChannels.lean:23–32",
+        "CanonicalMonomialState.lean:169–186",
+        "Theorem2Choi.lean:94–96",
+        "Theorem2Canonical.lean:65–68"
+      ],
+      "endpoint_effect": "Representation-coordinate formulation mathematically matches source on restrictions; no claim that root proof consumes separate physical bridge"
+    },
+    {
+      "id": "T2-F03",
+      "severity": "checklist_deviation",
+      "title": "PRV meaning established through split construction and Hom-space results, without frozen paired ∃! anchor",
+      "detail": "Forward projector has isometry, range, highest weight and multiplicity-one results; any intertwiner is scalar by CartanChoiMultiplicity.dual_embedding_scalar96–105. Reverse has explicit canonicalReverseChoiProjector_unique173–185. These establish the mathematical component and eliminate arbitrary component selection. Source projector is unique; the skill requires a separately frozen exact ∃! plus paired characterization and consumer dependency. No such versioned pair is identified, and forward exact projector uniqueness is not exported under an analogous unique theorem in inspected source. Do not label this repository as satisfying that fresh-author-seal workflow.",
+      "endpoint_effect": "No substantive projector mismatch found; strict characterization/choice-independence packaging not certified"
+    },
+    {
+      "id": "T2-F04",
+      "severity": "verification_scope",
+      "title": "Comparator fixture shares the deepest source-facing definitions",
+      "detail": "Fixture independently redeclares prvForward, prvReverse and the theorem. All three are literally identical to solution at audit time. It imports actual canonical representation/state/PRV definition modules, so it is not an independent mathematical audit of those semantics. JSON permits only propext, Quot.sound, Classical.choice and disables Nanoda. Existing verification status files were not used as evidence.",
+      "locations": [
+        "ComparatorChallenges/Theorem2Choi.lean:5–15,25–58",
+        "ComparatorChallenges/Theorem2Choi.json:1–13"
+      ],
+      "endpoint_effect": "Useful exact expected-statement comparison, not a substitute for this semantic reconstruction"
+    },
+    {
+      "id": "T2-F05",
+      "severity": "workflow_scope",
+      "title": "Retrospective audit is not an author-approved freeze/seal",
+      "detail": "Source and selected declaration bytes are pinned by this report. No source-facing versioned declaration manifest, author ruling, paired characterization manifest or approved draft baseline was found. lake-manifest.json is a dependency lock, not that workflow manifest. No new sorry, reorganization, or author-endorsement claim is made.",
+      "endpoint_effect": "Strict manifest/seal test N/A retrospective; no author approval inferred"
+    }
+  ],
+  "comparator": {
+    "prvForward_same": true,
+    "prvReverse_same": true,
+    "theorem_statement_same": true,
+    "statement_sha256": "da0d3f67ed3f9cfc8ec632b53c75b6e2e71d7daa4c915c04bc3b311ef2828ad7"
+  },
+  "scope": [
+    "Source reconstructed before any Lean file was opened; source reconstruction saved independently.",
+    "Selected meaning-carrying closure audited; not every lower-level proof tactic in all transitive modules independently rederived.",
+    "No repository edit, no broad build, no new draft sorry or author-approval claim.",
+    "Source revision and bytes pinned mechanically; no source-author manifesto/ruling inferred.",
+    "Mathlib unitary and CFC.abs definitions directly inspected in pinned local Mathlib source."
+  ],
+  "file_sha256": {
+    "article.tex": "09fc0a6bb205180cd820be94d843a1dc0d4342a543492e30dde54e367ae843a9",
+    "lean/ComparatorChallenges/Theorem2Choi.json": "a32afec6d35b4dff942b11987b9f680635589bfc3b8cfdee37ecb6bfcfb4b04e",
+    "lean/ComparatorChallenges/Theorem2Choi.lean": "a52bb8218ace6d41b63ac6a2842e95f6ba8ae1b26eaf77ee15fbeb82781ac73d",
+    "lean/FreeEntropy/CanonicalChoi.lean": "93de69b5f92e6efef8913be6ca3d250664adce30b56e662f45e34ddf0ba2cd10",
+    "lean/FreeEntropy/CanonicalFullCloning.lean": "aa9eeb553f09977578b97423816a5022f7b65ba3e3e9261105252f43518132c7",
+    "lean/FreeEntropy/CanonicalOrbit.lean": "42900e19bd005a29055cfce5c4851ff89d7b62fd7dd8e26f67b8e6fae2de69aa",
+    "lean/FreeEntropy/CanonicalReverseChoi.lean": "19df8f456d6710b89b27097c766ae6ee88046374c03e7b855ba55f83ad1dbbf0",
+    "lean/FreeEntropy/CanonicalRowBounds.lean": "0ee47cdcd1fc5351cf744e6f1106969757900510987f669a0543aef59ef6f8dc",
+    "lean/FreeEntropy/CartanChoi.lean": "8daeb5378f58413d3b54d398cc36ef2201b947fa45d0ce1cdbc9dcaf48ae9276",
+    "lean/FreeEntropy/CartanLieCloning.lean": "cb59714b4aab386357c113dd257f6e79f14e440624a885ab354087288e62d64b",
+    "lean/FreeEntropy/CartanReshuffle.lean": "90600b4316c7aab02c68bc8ce42a6f428db961eba611de531d50f732bd0ae908",
+    "lean/FreeEntropy/Channels.lean": "c974858f41263dd2dbb79079de675ab2a0fa4b510b32a6b61d96101b5f6a6c12",
+    "lean/FreeEntropy/ChoiContraction.lean": "910f027286549e546ef6d1831f947ef4998da59ec9f32b315ce09ce6f2bc1b55",
+    "lean/FreeEntropy/ConstructedTensorDecomposition.lean": "9e5cd671c2a2897acb5bd5e4c7aff96afff3edce9f9d6e7ce0ca2857e2373325",
+    "lean/FreeEntropy/CyclicHighestRepresentation.lean": "313c7525e369508fec95b5664ed71dcc940fa2bcd269b22830a9d902b30e3d21",
+    "lean/FreeEntropy/CyclicWeightShift.lean": "2a74c297daf52d4214d9571c983e1f0828c469d5493e7d00faa49b7bee19faa4",
+    "lean/FreeEntropy/CyclicWeightStates.lean": "ab5626d12a23446180d60f8e4f8e7229110fff21c2a4d0bdf29225e7240eeb91",
+    "lean/FreeEntropy/ExteriorDominant.lean": "8f5e36cbf3565dee034d9c9e2f1d6033dc76a4ca2a38934fe744b478975a3430",
+    "lean/FreeEntropy/ExteriorHighestRepresentation.lean": "d1c2f0c9536defaac68c1f463626494fac83d0be8098bd5e01c3bdc884910dc9",
+    "lean/FreeEntropy/ExteriorMatrixIrreducible.lean": "d4f1f141323efbce4cd98b6f8a168b1f445cd662b96cafb8388f3b62917918b9",
+    "lean/FreeEntropy/ExteriorPhysicalIrrep.lean": "90425dc5e344943a1b653d2b059962a6503804f571d803509c0844b32280bf53",
+    "lean/FreeEntropy/ExteriorRepresentation.lean": "d450b2e5c6f77571e302c19d82f4002ed3a0a70909bff4c7ed454d7963e137ca",
+    "lean/FreeEntropy/ExteriorTensor.lean": "5739a19d2ae6c888de3f355bb89a27367856b312e138536f1da6460abd9af639",
+    "lean/FreeEntropy/ExteriorWeightCoordinates.lean": "5148d3c1a5d105a234fe4ac65d16f85fc6a1dfa4655d37c0f2dead11ac610cfa",
+    "lean/FreeEntropy/ExteriorWeights.lean": "b6af62eb0830bcdf44ba6fed558afcd18e1bbd44d03a1bb8086a8b905f572143",
+    "lean/FreeEntropy/LieDual.lean": "fc4f78632c803b22e58a37c62cb4a0c5efcf5b19fe688b0bf3a4073412807f2f",
+    "lean/FreeEntropy/LieMatrixCasimir.lean": "4ca4286dd4d9b0226dde1db4d571052edc6206504e04663b84cdd37ae5aa4859",
+    "lean/FreeEntropy/LieWeightModel.lean": "d15b3262e70b61342686056efaac7e2372285aaf860f799d2c0e76408a978eee",
+    "lean/FreeEntropy/MeanDepth.lean": "7eccedab1ab9a75ccc1c28f7dbec6bded472cb5f32f42b30b9869a7e708b74e1",
+    "lean/FreeEntropy/OrbitMemory.lean": "7b75ac0a82f4fbd273f52c3b0a0ae8bd36f3b8d808931b523d13b45b0cbb47be",
+    "lean/FreeEntropy/PhysicalCanonicalSector.lean": "f7f9ae0e2fb1927cac880c617a9a7c86cf1e2fc256c6f0979e2a574f82aa1b7c",
+    "lean/FreeEntropy/ReverseChoi.lean": "cc5183bcb0823f7808659fe72be139d76414f3064f27313b854529f7b19b74b0",
+    "lean/FreeEntropy/SchurWeylNormalization.lean": "88a3b4ba2d490ce90783243a33c8300767fcbb8b78a534e4a3d61b456190839e",
+    "lean/FreeEntropy/SignedAuxiliaryModel.lean": "b38e18e74455cae29c1db10f7c2e7f4f6cb5ee5d48644df658afa6d5d13c6015",
+    "lean/FreeEntropy/SpecifiedCloningChannels.lean": "29d64a8af3f2a45734664bc01f0d59f138bed80d2d3d4c3388bbda410e3c3cf4",
+    "lean/FreeEntropy/SpecifiedLieCloning.lean": "e987e1b56294587714f8283965e1b455b301c042e914c677cca65ad1afb5579f",
+    "lean/FreeEntropy/SpectrumBounds.lean": "188f25c440accaf2f791a168a8d917c23498d49d89058470e180cf40ab0a72c8",
+    "lean/FreeEntropy/Statements.lean": "6860bf1a70fce03cdc557de953bb240794e89cbb8c9d09c6d9cdcfbd247dea63",
+    "lean/FreeEntropy/Theorem2.lean": "b99beec42b8dd9a808282cc06cf705d7f5cd9afad4bce0d1c79d7981b410bc3a",
+    "lean/FreeEntropy/Theorem2Choi.lean": "894396b1e8d1dda636cb94e847fc5ca64bc9b044955d9650f38fcbdb5ae4718a",
+    "lean/FreeEntropy/TraceDistance.lean": "89c2ce22cc4647cee32b7cfd3ec0d54c80e8fb4a9af72c258c43be0a2fbdbe74",
+    "lean/FreeEntropy/UnitaryDecompositionMatrices.lean": "43709dc26ee178d9da8862c391e0bbf93e25f24909d279cd2c0fb9b52176a064"
+  },
+  "integration": {
+    "reviewer": "/root",
+    "fresh_lean_checks": "PASSED; see checks.json",
+    "review_scope": "Selected endpoint and definition review; not exhaustive re-review of the complete proof library.",
+    "compiled_applications": 3,
+    "axiom_policy": "Only propext, Classical.choice and Quot.sound permitted.",
+    "review_time_pending_fields": "Original reviewer did not execute Lean. Integration results above supersede verification-pending fields, without changing the semantic review verdict.",
+    "locator_correction": "CanonicalCloningOrbit proof location corrected to52–79 after reading the file; no semantic finding changed."
+  }
+}
