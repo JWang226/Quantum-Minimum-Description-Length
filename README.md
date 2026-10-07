@@ -16,6 +16,9 @@ and coverage notes.
 The [statement audit](https://jwang226.github.io/Quantum-Minimum-Description-Length/audit/)
 adds hypothesis tables, definition reviews and reproducible Lean applications.
 
+[Release candidate `v0.1.0-rc1`](docs/releases/v0.1.0-rc1.md) is prepared;
+publication is pending resolution of licensing and attribution.
+
 ## The statements
 
 | Result | Checked declaration | Conclusion |
@@ -69,6 +72,27 @@ git clone https://github.com/JWang226/Quantum-Minimum-Description-Length.git
 cd Quantum-Minimum-Description-Length
 bash scripts/verify.sh all
 ```
+
+For the frozen candidate, **after its tag and source asset are published**:
+
+```sh
+git clone --branch v0.1.0-rc1 --single-branch https://github.com/JWang226/Quantum-Minimum-Description-Length.git
+cd Quantum-Minimum-Description-Length
+bash scripts/verify.sh all
+```
+
+Alternatively, download the candidate source asset and compare its SHA-256
+with the release's checksum file, then run:
+
+```sh
+tar -xzf quantum-minimum-description-length-v0.1.0-rc1.tar.gz
+cd free-entropy-formalization
+bash scripts/verify.sh all
+```
+
+The source archive includes the proof checkers and pinned configuration;
+a root Git checkout is unnecessary. Local website rebuilding below uses a
+Git checkout.
 
 Success ends with **`VERIFICATION PASSED: all`**. The command returns nonzero
 if any requested check fails. Logs and the new Nanoda report are saved in the

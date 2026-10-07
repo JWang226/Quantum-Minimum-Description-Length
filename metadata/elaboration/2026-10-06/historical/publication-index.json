@@ -1,14 +1,6 @@
 {
   "campaign_date_local": "2026-10-06",
   "campaign_timezone": "America/Los_Angeles",
-  "external_binding_snapshot": {
-    "git_commit": "5203e019c19b32585e0dab2b957a2c367f1baf68",
-    "note": "The 23 external hashes describe the October 6 publication snapshot, not later release documentation or CI-generated checker reports. Resolve these paths at git_commit. The 87 campaign-internal bindings remain relative to this source tree.",
-    "original_index_file": "metadata/elaboration/2026-10-06/historical/publication-index.json",
-    "original_index_sha256": "56196ccd8e8263fe88df88d59fef304c1df7d00ace17d2a931e0e985e6f2c164",
-    "path_base": "repository root in the immutable Git tree identified by git_commit",
-    "tree_url": "https://github.com/JWang226/Quantum-Minimum-Description-Length/tree/5203e019c19b32585e0dab2b957a2c367f1baf68"
-  },
   "external_file_bindings": {
     "ELABORATION_REPORT_2026-10-06_AFTER.md": {
       "bytes": 34876,
@@ -497,8 +489,7 @@
     "Historical record bytes retain their own dates, source hashes and execution conditions; they are not new checks for cleaned sources.",
     "Raw GNU timing logs, phase profiles and source/measurement hashes are retained separately from proof verification logs.",
     "Raw execution logs include the actual local build/run paths reported by their tools; these are retained as evidence, not reproducer prerequisites.",
-    "The index authenticates file bytes and summarizes recorded scopes. It does not execute Lean, Comparator or Nanoda and is not a new mathematical or human review.",
-    "External bindings resolve at the immutable external_binding_snapshot.git_commit. Later documentation edits and CI checker outputs are separate evidence, not changes to this dated campaign."
+    "The index authenticates file bytes and summarizes recorded scopes. It does not execute Lean, Comparator or Nanoda and is not a new mathematical or human review."
   ],
   "source_identities": {
     "instrumented_before_reproducer": {

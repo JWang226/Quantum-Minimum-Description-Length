@@ -2,12 +2,13 @@ cff-version: 1.2.0
 message: >-
   Cite the mathematical manuscript and identify the version or commit of this
   Lean formalization used. The repository URL is provided below; a persistent
-  scholarly identifier has not been assigned.
+  scholarly identifier has not been assigned. Candidate 0.1.0-rc1 was prepared
+  on 2026-10-06; publication is pending resolution of the licensing record.
 repository-code: https://github.com/JWang226/Quantum-Minimum-Description-Length
 url: https://github.com/JWang226/Quantum-Minimum-Description-Length
 title: Lean formalization of Quantum minimum description of density matrices
 type: software
-version: 0.1.0
+version: 0.1.0-rc1
 authors:
   - name: Free Entropy formalization contributors
 abstract: >-

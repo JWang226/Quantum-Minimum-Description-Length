@@ -123,8 +123,13 @@ The archive contains the current `article.tex` and `letter.tex`, their shared
 proof and verification scripts, pinned configuration,
 named publication metadata, the workflow, and a current portable audit
 summary. `RELEASE_MANIFEST.json` records a SHA-256 digest for every selected
-file and records every locked dependency. Raw machine-specific logs are
-excluded; CI uploads newly generated logs separately.
+file and records every locked dependency. The named historical elaboration
+evidence retains tool-reported local paths in benchmark and checker logs.
+These paths describe earlier executions and are not reproducer prerequisites.
+Private correspondence, credentials, caches and machine-specific build products
+are excluded; CI uploads newly generated logs separately.
+The exporter generates this manifest afresh inside each archive; no tracked
+repository-root manifest represents the current mutable checkout.
 
 The exporter checks that the audit's proof fingerprint matches the selected
 proof source bytes. A stale summary makes the default export fail. It also

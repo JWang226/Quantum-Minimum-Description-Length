@@ -110,6 +110,7 @@ nav:
     - Haar-Orbit Memory Bound: results/propositions/orbit-sector-compression.md
 - Verification:
   - Reproduce the checks: verify.md
+  - Release candidate: releases/v0.1.0-rc1.md
   - Scope and evidence: formalization.md
   - Statement audit:
     - Overview: audit.md

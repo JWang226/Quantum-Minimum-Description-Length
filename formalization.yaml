@@ -114,6 +114,10 @@ status:
       records are preserved under metadata/elaboration/2026-10-06/historical; current checks and
       the bounded cleanup preservation bridge are recorded separately. Comparator specification
       placeholders are not unresolved development proofs; Comparator execution is recorded separately.
+      Hosted run 37557196945 subsequently passed a clean exported-source build at commit
+      5203e019c19b32585e0dab2b957a2c367f1baf68 with fresh pinned dependencies, unsandboxed Linux
+      Comparator and Nanoda. All 270 production Lean files match the release candidate byte-for-byte;
+      metadata/releases/v0.1.0-rc1/hosted-verification.json records that distinct execution.
 automation:
   methods:
   - method: agent

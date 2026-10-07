@@ -46,8 +46,11 @@ into completed checks.
 ## Prepare the release tree
 
 Use the explicit allowlist exporter described in `REPRODUCIBILITY.md`.
-Inspect the generated manifest and ensure no `.lake`, credentials, local
-paths, unrelated drafts, generated TeX logs, or machine-specific build
-products are included. The optional existing PDF must be selected
-explicitly. Initialize or push a Git repository only when publication is
+Inspect the generated manifest and ensure no `.lake`, credentials, private
+correspondence, unrelated drafts, generated TeX logs, or machine-specific build
+products are included. Named historical benchmark and checker evidence may
+retain tool-reported local paths; disclose them as execution history rather
+than reproducer inputs, and preserve their source-bound bytes. Portable current
+audit summaries must contain no machine-specific paths. The optional existing
+PDF must be selected explicitly. Initialize or push a Git repository only when publication is
 separately requested.

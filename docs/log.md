@@ -265,3 +265,15 @@ Every definition page now has: concrete examples, expanded intuition, connection
   review bridge, refreshed current source-bound evidence, and linked the new
   elaboration guide in the README and Verification navigation. Manuscript bytes
   and dependency pins remain unchanged.
+
+## 2026-10-06 — v0.1.0-rc1 preparation
+
+- Prepared candidate citation metadata, scope notes and frozen-tag/source-archive
+  reproducer commands. The release candidate is not yet published; licensing and
+  adapted-code attribution remain pending.
+- Recorded the successful hosted clean-source reproduction at `5203e01`
+  separately from local unsandboxed checks and later packaging edits. Human
+  correspondence review and Linux/Landrun Comparator checking remain pending.
+- Clarified that named historical benchmark/checker evidence retains local
+  execution paths, while private correspondence, credentials, caches and
+  machine-specific build products are excluded from the source package.

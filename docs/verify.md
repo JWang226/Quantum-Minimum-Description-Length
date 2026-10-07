@@ -1,7 +1,8 @@
 # Check the proof yourself
 
 The supplied proof can be checked on macOS or Linux. Run the commands below from
-a fresh clone of [JWang226/Quantum-Minimum-Description-Length](https://github.com/JWang226/Quantum-Minimum-Description-Length). The wrapper
+a fresh clone of [JWang226/Quantum-Minimum-Description-Length](https://github.com/JWang226/Quantum-Minimum-Description-Length)
+or an unpacked source archive. The wrapper
 fetches the locked dependencies, checks the Lean proof, compares its final
 statements with the expected statements, and replays the proofs in a separate
 Rust kernel. It does not compile or change the manuscripts.
@@ -31,6 +32,31 @@ git clone https://github.com/JWang226/Quantum-Minimum-Description-Length.git
 cd Quantum-Minimum-Description-Length
 bash scripts/verify.sh
 ```
+
+### Frozen candidate
+
+[`v0.1.0-rc1`](releases/v0.1.0-rc1.md) is prepared, with publication pending
+resolution of licensing and attribution. Once its tag is published, check the
+frozen version with:
+
+```bash
+git clone --branch v0.1.0-rc1 --single-branch https://github.com/JWang226/Quantum-Minimum-Description-Length.git
+cd Quantum-Minimum-Description-Length
+bash scripts/verify.sh all
+```
+
+Or download the release's source asset, compare its SHA-256 with the attached
+checksum file, and extract it:
+
+```bash
+tar -xzf quantum-minimum-description-length-v0.1.0-rc1.tar.gz
+cd free-entropy-formalization
+bash scripts/verify.sh all
+```
+
+The archive contains the proof-check inputs; these commands do not require a
+root `.git` directory. Internet access and the prerequisites above are still
+needed for fetching dependencies and building the pinned checkers.
 
 The default is `all`. Each invocation creates a new `.verify-work/run-*`
 directory and prints its location. Logs are streamed to the terminal and saved
