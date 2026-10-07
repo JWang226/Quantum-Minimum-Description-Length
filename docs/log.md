@@ -289,3 +289,14 @@ Every definition page now has: concrete examples, expanded intuition, connection
 - Preserved the earlier hosted record and recorded the successful clean-source
   CI run at `7d5cf57` separately. Licensing and release metadata changes leave
   all production Lean sources and supplied manuscript bytes unchanged.
+
+## 2026-10-06 — Published release wiki follow-up
+
+- Linked the public v0.1.0-rc1 release and its frozen reproducer from the wiki
+  overview. Updated software credit and Apache-2.0 status in the scope page.
+- Recorded the successful CI run for the exact release tag at `4ce4384`,
+  separately from earlier local and hosted evidence. Human correspondence
+  review and Linux/Landrun checking remain pending.
+- Corrected stale license-pending and local-clean-build wording in the current
+  human-readable scope document. The release tag and source archive are frozen;
+  these documentation updates describe current status on main.

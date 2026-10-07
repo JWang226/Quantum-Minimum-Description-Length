@@ -3,7 +3,10 @@
 The Lean development proves the two main statements of the current
 [[Article]]: optimal known-spectrum memory (`thm:qmdl`) and finite cloning
 accuracy (`thm:main`). [[proof-structure|The proof map]] explains the route
-from actual representations and channels to those endpoints. The
+from actual representations and channels to those endpoints. The frozen
+[v0.1.0-rc1 release](releases/v0.1.0-rc1.md) provides source archives and checksums.
+Software is licensed under **Apache-2.0**, credited to **Jinzhao Wang and
+contributors**; manuscripts and third-party files retain their rights and notices. The
 [Lean explorer](proof-explorer.md) lets you search the declarations, inspect
 their compiled types and follow direct references in either direction.
 
@@ -62,9 +65,13 @@ files happen to be present later. Consult the
 [audit summary](https://github.com/JWang226/Quantum-Minimum-Description-Length/blob/main/lean/verification/summary.json),
 [Comparator record](https://github.com/JWang226/Quantum-Minimum-Description-Length/blob/main/lean/ComparatorChallenges/verification-status.json)
 and [Nanoda record](https://github.com/JWang226/Quantum-Minimum-Description-Length/blob/main/lean/ComparatorConfig/nanoda-status.json).
-Live hosted results are available from
-[GitHub Actions](https://github.com/JWang226/Quantum-Minimum-Description-Length/actions/workflows/lean.yml);
-this page does not infer a completed hosted run from workflow configuration.
+The [release-tag clean-source CI](https://github.com/JWang226/Quantum-Minimum-Description-Length/actions/runs/37566361840)
+passed for exact release commit `4ce43849fba096ec2174097625711323f1ce5ee8`:
+exported-source Lean build and axiom audit, expected-statement comparisons,
+Lean replay, and pinned Nanoda controls and kernel checks. Dependencies were
+fetched into the exported tree without the local checkout's package symlinks.
+Comparator and Nanoda were unsandboxed; the separate Landrun job was skipped.
+This is an actual completed run, separate from the preserved local evidence.
 
 ## Reproduce the checks
 
@@ -107,4 +114,4 @@ See the [formalization status](https://github.com/JWang226/Quantum-Minimum-Descr
 for precise scope, [formalization.yaml](https://github.com/JWang226/Quantum-Minimum-Description-Length/blob/main/formalization.yaml)
 for machine-readable provenance, and
 [the release checklist](https://github.com/JWang226/Quantum-Minimum-Description-Length/blob/main/docs/RELEASE_CHECKLIST.md)
-for outstanding review and licensing metadata.
+for remaining human and sandbox review items and the confirmed licensing record.

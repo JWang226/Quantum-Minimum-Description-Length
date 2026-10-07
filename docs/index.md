@@ -6,6 +6,11 @@ from Codex. The current [Article](https://github.com/JWang226/Quantum-Minimum-De
 and [Letter](https://github.com/JWang226/Quantum-Minimum-Description-Length/blob/main/letter.tex) are included in
 the [repository](https://github.com/JWang226/Quantum-Minimum-Description-Length).
 
+The frozen [**v0.1.0-rc1 release**](https://github.com/JWang226/Quantum-Minimum-Description-Length/releases/tag/v0.1.0-rc1) includes the source archive,
+checksums and verification reports. Software: **Apache-2.0**, credited to
+**Jinzhao Wang and contributors**; manuscript and third-party rights are retained.
+See [the release guide](releases/v0.1.0-rc1.md) for the frozen reproducer.
+
 <div class="qmdl-reading-links">
 <a href="correspondence/"><strong>Match the paper to Lean</strong><span>Statements, proof guides and coverage notes</span></a>
 <a href="proof-structure/"><strong>Read the proof route</strong><span>From representations to optimal memory</span></a>
@@ -61,14 +66,17 @@ or custom axioms. Its transitive axiom audit permits only `propext`,
 | Local Comparator diagnostic | Passed for three configurations / four endpoints | Expected statements and referenced definitions, allowed axioms, and Lean kernel replay. |
 | Nanoda, a separate Rust kernel | Passed for all three solution exports | The exported endpoint dependency closures, including required theorem roots. |
 
-The latter two checks were unsandboxed. Independent human review and a
+The [release-tag clean-source CI](https://github.com/JWang226/Quantum-Minimum-Description-Length/actions/runs/37566361840) also passed
+Lean, Comparator and Nanoda for exact commit
+`4ce43849fba096ec2174097625711323f1ce5ee8`. Comparator and Nanoda were
+unsandboxed in both the local and hosted checks. Independent human review and a
 Linux-sandboxed Comparator run are not established. The [[formalization|scope and evidence]]
 page identifies the actual records; [[verify|fresh verification]] checks your checkout.
 
 With the prerequisites listed in the verification guide installed:
 
 ```sh
-git clone https://github.com/JWang226/Quantum-Minimum-Description-Length.git
+git clone --branch v0.1.0-rc1 --single-branch https://github.com/JWang226/Quantum-Minimum-Description-Length.git
 cd Quantum-Minimum-Description-Length
 bash scripts/verify.sh all
 ```
