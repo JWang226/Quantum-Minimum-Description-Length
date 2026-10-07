@@ -1,8 +1,14 @@
 Free Entropy formalization
 ==========================
 
-Copyright (c) 2026 Free Entropy formalization contributors.
-Final copyright-holder names and the public-release license are pending.
+Copyright (c) 2026 Jinzhao Wang and contributors.
+
+The project software, including the Lean proofs, challenge specifications,
+verification scripts and original documentation, is licensed under Apache-2.0.
+Headers using "Free Entropy formalization contributors" refer to the same
+contributor credit. Manuscripts, the figure and third-party TeX support retain
+their own rights and notices; the software license does not relicense them.
+The maintainer confirmed this credit and licensing authority on 2026-10-06.
 
 Mathematical source
 -------------------
@@ -30,13 +36,15 @@ The existing source comments record these adaptations:
   and Cloning/MatrixPartialTraceCovariance.lean in that earlier project.
 
 Those modules are source-level adaptations, not hidden build dependencies.
-The earlier source was identified in a maintainer-controlled private
-repository and the four source files were matched against that record.
-No repository-wide license or copyright notice covering those modules was
-found. A publicly accessible upstream reference and the licensing record
-remain incomplete; do not infer Apache-2.0 coverage for those portions from
-the proposed license. No additional code from that repository was added
-during release preparation.
+The prior source repository is JWang226/Cloning, inspected at commit
+dca79dc637649a44d41125387e534d0f6b747b84 (private source record).
+The four files under formalization/Cloning/ are Channels.lean,
+CartanChannel.lean, Compression.lean and MatrixPartialTraceCovariance.lean.
+No covering upstream license was found in that source snapshot. On 2026-10-06,
+the maintainer expressly confirmed authority to release the adapted code in
+this project under Apache-2.0. This confirmed grant covers the adaptations
+included here. No additional source from that repository was bundled during
+release preparation.
 
 Third-party TeX support
 -----------------------

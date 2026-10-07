@@ -35,9 +35,7 @@ bash scripts/verify.sh
 
 ### Frozen candidate
 
-[`v0.1.0-rc1`](releases/v0.1.0-rc1.md) is prepared, with publication pending
-resolution of licensing and attribution. Once its tag is published, check the
-frozen version with:
+Check the frozen [`v0.1.0-rc1`](releases/v0.1.0-rc1.md) release candidate with:
 
 ```bash
 git clone --branch v0.1.0-rc1 --single-branch https://github.com/JWang226/Quantum-Minimum-Description-Length.git

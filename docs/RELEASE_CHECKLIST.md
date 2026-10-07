@@ -27,8 +27,10 @@ The maintainer explicitly requested publication to
 [JWang226/Quantum-Minimum-Description-Length](https://github.com/JWang226/Quantum-Minimum-Description-Length), including the reproduction
 commands. The repository URL is recorded in `CITATION.cff` and
 `formalization.yaml`. Its existing wiki and deployment workflow are retained.
-Publishing the source does not turn pending review or licensing decisions
-into completed checks.
+Publishing the source does not turn pending review into completed checks.
+For `v0.1.0-rc1`, the maintainer confirmed software credit and Apache-2.0
+licensing authority, including the Cloning adaptations, on 2026-10-06.
+The manuscripts and third-party assets retain their existing rights and notices.
 
 - Confirm the copyright-holder names and public-release license. The
   current choice is recorded in `LICENSE`; a pending choice is not a grant.

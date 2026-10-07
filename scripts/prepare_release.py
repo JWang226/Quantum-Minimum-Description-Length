@@ -37,6 +37,8 @@ PUBLICATION_FILES = (
     "docs/FORMALIZATION_STATUS.md", "docs/REPRODUCIBILITY.md",
     "docs/verify.md", "docs/PROOF_EXPLORER.md", "docs/correspondence.md",
     "docs/releases/v0.1.0-rc1.md", "metadata/releases/v0.1.0-rc1/hosted-verification.json",
+    "metadata/releases/v0.1.0-rc1/licensing.json",
+    "metadata/releases/v0.1.0-rc1/hosted-verification-5203e01.json",
     "docs/audit.md", "docs/audit/theorem1.md", "docs/audit/theorem2.md",
     "docs/audit/source-coverage.md", "docs/audit/independent-review.md",
     "ELABORATION_REPORT_2026-10-06_BEFORE.md", "ELABORATION_REPORT_2026-10-06_AFTER.md",

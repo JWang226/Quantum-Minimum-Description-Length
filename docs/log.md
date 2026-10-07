@@ -277,3 +277,15 @@ Every definition page now has: concrete examples, expanded intuition, connection
 - Clarified that named historical benchmark/checker evidence retains local
   execution paths, while private correspondence, credentials, caches and
   machine-specific build products are excluded from the source package.
+
+## 2026-10-06 — v0.1.0-rc1 license and release finalization
+
+- Applied the maintainer-confirmed Apache-2.0 software grant and the copyright
+  credit "Jinzhao Wang and contributors," including authority for the four
+  prior Cloning source adaptations. Recorded the exact source snapshot in
+  NOTICE and retained manuscript and third-party rights and notices.
+- Updated citation, release guide and frozen-tag/archive reproducer commands.
+  Human correspondence review and Linux/Landrun checking remain pending.
+- Preserved the earlier hosted record and recorded the successful clean-source
+  CI run at `7d5cf57` separately. Licensing and release metadata changes leave
+  all production Lean sources and supplied manuscript bytes unchanged.

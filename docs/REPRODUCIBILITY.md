@@ -146,8 +146,10 @@ regenerating it. The default package omits that PDF. The original
 notices; the formalization's license does not override those notices.
 
 The exporter checks file selection and verification fingerprints, not the
-sufficiency of copyright permissions. A bundled pending `LICENSE` notice
-remains pending. The publication record and outstanding metadata decisions
+sufficiency of copyright permissions. The maintainer confirmed the software
+Apache-2.0 grant, including the Cloning adaptations, on 2026-10-06; manuscripts
+and third-party assets retain their rights and notices. The publication record
+and outstanding review decisions
 are in [`RELEASE_CHECKLIST.md`](RELEASE_CHECKLIST.md).
 
 For a clean build before fresh verification exists, use a preparation copy:

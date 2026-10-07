@@ -5,10 +5,11 @@ project:
   name: 'Free Entropy: quantum minimum description of density matrices'
   url: https://github.com/JWang226/Quantum-Minimum-Description-Length
   authors:
-  - Free Entropy formalization contributors
-  license: pending
-  note: Collective software-contributor credit; manuscript authorship is listed separately. License selection
-    and individual attribution await maintainer confirmation.
+  - Jinzhao Wang and contributors
+  license: Apache-2.0
+  note: Software copyright credit and licensing authority, including the Cloning adaptations,
+    were confirmed by the maintainer on 2026-10-06. Manuscript authorship is listed separately;
+    manuscripts and third-party files retain their own rights and notices.
 sources:
 - title: Quantum minimum description of density matrices
   authors:
@@ -18,9 +19,10 @@ sources:
   - Yuxiang Yang
   id: article.tex; SHA-256 09fc0a6bb205180cd820be94d843a1dc0d4342a543492e30dde54e367ae843a9
   type: manuscript
-  license: pending
+  license: unspecified
   note: Bundled source manuscript. Theorems thm:qmdl and thm:main are the requested scope. Publication
-    date and source-author endorsement are not asserted.
+    date and source-author endorsement are not asserted. Authors' rights are retained;
+    the software Apache-2.0 grant does not apply to the manuscript.
 - title: Free entropy and quantum minimum description length
   authors:
   - Patrick Hayden
@@ -29,11 +31,12 @@ sources:
   - Yuxiang Yang
   id: letter.tex; SHA-256 0b6a2c45b1565c3e9aadcdaa1c6631a2d7e2e2ec259b7382d04bcbce83622260
   type: manuscript
-  license: pending
+  license: unspecified
   note: Current author-supplied companion Letter, with compression.pdf and the shared free.bib.
     Its QMDL formulas are covered by the Article's memory endpoints; its tube-volume,
     physical-free-entropy, and large-dimension bridge claims are not separately formalized.
-    Detailed correspondence is in metadata/letter-source-map.json.
+    Detailed correspondence is in metadata/letter-source-map.json. Authors' rights
+    are retained; the software Apache-2.0 grant does not apply to these assets.
 status:
   scope: 'Theorems 1 and 2 for actual finite complex matrices and constructed CPTP channels: fixed-spectrum
     physical tensor-source compression with exact additive memory constant and uniform achievability;
@@ -114,10 +117,11 @@ status:
       records are preserved under metadata/elaboration/2026-10-06/historical; current checks and
       the bounded cleanup preservation bridge are recorded separately. Comparator specification
       placeholders are not unresolved development proofs; Comparator execution is recorded separately.
-      Hosted run 37557196945 subsequently passed a clean exported-source build at commit
-      5203e019c19b32585e0dab2b957a2c367f1baf68 with fresh pinned dependencies, unsandboxed Linux
-      Comparator and Nanoda. All 270 production Lean files match the release candidate byte-for-byte;
-      metadata/releases/v0.1.0-rc1/hosted-verification.json records that distinct execution.
+      Hosted runs 37557196945 at commit 5203e019c19b32585e0dab2b957a2c367f1baf68 and
+      37562098825 at commit 7d5cf579cf33ab05317ab2567e8213f3ef9be600 passed clean exported-source
+      builds with fresh pinned dependencies, unsandboxed Linux Comparator and Nanoda. All 270
+      production Lean files match the release byte-for-byte. Separate records are retained under
+      metadata/releases/v0.1.0-rc1; hosted-verification.json records the later actual run.
 automation:
   methods:
   - method: agent
@@ -190,5 +194,5 @@ alignment:
     status: proved
 acknowledgements: Built with Lean 4 and mathlib. Channels.lean and CartanChannel.lean preserve provenance
   notes for algebra adapted from the previously available local Cloning formalization; there is no import
-  dependency on that project. See NOTICE for the adaptation record. The earlier source was identified privately;
-  a publicly accessible upstream reference and the licensing record remain incomplete.
+  dependency on that project. See NOTICE for the exact private source snapshot and the maintainer's
+  confirmed authority to license the adaptations included here under Apache-2.0.

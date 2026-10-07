@@ -1,0 +1,35 @@
+{
+  "confirmation_source": "Maintainer confirmation in the project chat after the specific software credit and adaptation licensing questions",
+  "confirmed_date_local": "2026-10-06",
+  "format": "qmdl-license-decision-v1",
+  "note": "The maintainer expressly confirmed authority for the software grant. Manuscript authorship does not imply review or endorsement of the formalization, and the software grant does not relicense the listed manuscript or third-party assets.",
+  "prior_source_record": {
+    "access": "private source record",
+    "files": [
+      "formalization/Cloning/Channels.lean",
+      "formalization/Cloning/CartanChannel.lean",
+      "formalization/Cloning/Compression.lean",
+      "formalization/Cloning/MatrixPartialTraceCovariance.lean"
+    ],
+    "repository": "JWang226/Cloning",
+    "source_git_commit": "dca79dc637649a44d41125387e534d0f6b747b84"
+  },
+  "retained_rights": [
+    "article.tex",
+    "letter.tex",
+    "compression.pdf",
+    "free.bib",
+    "quantumarticle.cls",
+    "utphys.bst"
+  ],
+  "scope": [
+    "Lean proof library",
+    "challenge specifications",
+    "verification scripts",
+    "original project documentation",
+    "prior Cloning adaptations included in Channels.lean and CartanChannel.lean"
+  ],
+  "software_copyright_credit": "Jinzhao Wang and contributors",
+  "software_license": "Apache-2.0",
+  "timezone": "America/Los_Angeles"
+}

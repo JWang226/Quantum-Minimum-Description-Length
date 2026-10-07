@@ -16,8 +16,9 @@ and coverage notes.
 The [statement audit](https://jwang226.github.io/Quantum-Minimum-Description-Length/audit/)
 adds hypothesis tables, definition reviews and reproducible Lean applications.
 
-[Release candidate `v0.1.0-rc1`](docs/releases/v0.1.0-rc1.md) is prepared;
-publication is pending resolution of licensing and attribution.
+[Release candidate `v0.1.0-rc1`](https://github.com/JWang226/Quantum-Minimum-Description-Length/releases/tag/v0.1.0-rc1)
+freezes the proof and manuscripts with source archives, checksums and verification reports.
+See the [release guide](docs/releases/v0.1.0-rc1.md).
 
 ## The statements
 
@@ -73,7 +74,7 @@ cd Quantum-Minimum-Description-Length
 bash scripts/verify.sh all
 ```
 
-For the frozen candidate, **after its tag and source asset are published**:
+For the frozen release candidate:
 
 ```sh
 git clone --branch v0.1.0-rc1 --single-branch https://github.com/JWang226/Quantum-Minimum-Description-Length.git
@@ -140,8 +141,9 @@ for rebuilding the explorer data from the Lean environment.
 
 [Formalization metadata](formalization.yaml) · [AI provenance](docs/AI_PROVENANCE.md) ·
 [Citation](CITATION.cff) · [License status](LICENSE) · [Attribution](NOTICE).
-Cite the commit checked. Independent human review and the pending license
-choice are recorded in the [release checklist](docs/RELEASE_CHECKLIST.md).
+Cite the version or commit checked. The software is licensed under **Apache-2.0**;
+manuscripts and third-party files retain their rights and notices. Outstanding
+human and sandbox reviews are recorded in the [release checklist](docs/RELEASE_CHECKLIST.md).
 
 The reading and verification layout follows the example of
 [Anthropic's FLT repository](https://github.com/anthropics/fermats-last-theorem)
