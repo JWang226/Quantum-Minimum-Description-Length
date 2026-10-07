@@ -241,10 +241,13 @@ at the locked revisions; the official public mathlib cache was used.
 The build and actual kernel audit passed for 1,873 proved declarations and
 2,499 public declarations, with only the three permitted standard axioms.
 `lake build All` and all eight artifact-validation checks also passed.
-[`reproducibility.json`](../lean/verification/reproducibility.json) records
+The byte-preserved historical
+[`reproducibility.json`](../metadata/elaboration/2026-10-06/historical/lean-reproducibility.json) records
 the actual platform, dependency pins, commands, source fingerprint, and
-outcome without machine-specific paths. Its fingerprint must match the
-sources before the exporter will include it. This completed local result
+outcome without machine-specific paths. For the October 1 archive, its
+fingerprint had to match the selected sources before export. The archived
+historical copy is now included as labeled earlier evidence, rather than
+required to match the cleanup sources. This completed local result
 does not assert that hosted CI or the Linux-sandboxed Comparator has run.
 
 ## Additional independent check — 2026-10-01
@@ -268,9 +271,92 @@ requires actual theorem roots, and Nanoda independently requires their presence.
 CI runs the regression controls before checking the solution exports.
 The theorem sources and manuscript were unchanged.
 
-The updated [Nanoda record](../lean/ComparatorConfig/nanoda-status.json) and
-the latest entry in [reproducibility.json](../lean/verification/reproducibility.json)
+The historical [Nanoda record](../metadata/elaboration/2026-10-06/historical/nanoda-status.json) and
+the October 1 entry in [reproducibility.json](../metadata/elaboration/2026-10-06/historical/lean-reproducibility.json)
 bind this run to its source, checker, binary and export hashes. An agent-performed
 review found no concrete mismatch between the final statements and the manuscript;
 this does not establish independent human review. The checks were local and
 unsandboxed; the Linux-sandboxed Comparator status remains separate.
+
+These October 1 records are preserved without changing their bytes, dates,
+counts, source fingerprints, or execution contexts. They describe the earlier
+sources and are not fresh passes for the October 6 cleanup. The
+[historical index](../metadata/elaboration/2026-10-06/historical/index.json)
+records their original paths and hashes.
+
+## Cleanup verification — October 6 campaign
+
+The cleanup proof sources are at commit
+`4c2054c47d6c81615f5687fe5ac3f1c4dd1ea1d9`, with proof-source SHA-256
+`e7068771d301aaac3156ecc7cd0a1a4b3868a894a1d0988ce897420786ba2c3f`.
+The bounded source change removes one unused private theorem and narrows
+one tactic import; the retained source proof bodies and statement text
+are unchanged. The
+[source-delta review](../metadata/elaboration/2026-10-06/cleanup-delta-review.json)
+records the exact scope and limits of that review. The
+[cleanup review bridge](../metadata/elaboration/2026-10-06/cleanup-review-bridge.json)
+will bind it to the completed fresh checks and compiled preservation evidence.
+The original source-first manuscript review was not rerun, and independent
+human review is not established.
+
+The [before/after elaboration reports](elaboration.md) record two successful
+project-only cold builds of `All`: all 270 proof modules and four facade/reader
+entry modules compiled in each run, with project artifacts invalidated and
+warm dependency artifacts retained. All twelve dependency revisions matched
+the lockfile and had clean tracked source trees; dependency-directory symlinks
+were present, as recorded in the
+[dependency source check](../metadata/elaboration/2026-10-06/dependency-source-check.json).
+This campaign did not install upstream dependencies into a new clean checkout.
+Its measured cold state covers project proof artifacts only, unlike the
+October 1 exported-source reproduction above.
+
+A fresh final-source Lean audit passed all 2,499 public declarations with
+no placeholders or project-added axioms and only `propext`, `Classical.choice`,
+and `Quot.sound` permitted. It ran outside the timed build measurements.
+The [fresh statement applications](../metadata/statement-audit/checks.json)
+passed, and the actual exported endpoint binder lists agree with the recorded
+lists. This was an incremental local run, not a source-first manuscript review.
+The [portable verification records](../metadata/elaboration/2026-10-06/verification/)
+retain the audit summary, fresh statement checks, binder export and raw probe
+outputs separately from the measurements and historical records.
+The [raw compiled comparison](../metadata/elaboration/2026-10-06/cleanup-comparison.json)
+retains status `review_required`, with 15 retained declaration AST differences,
+including three public signatures and four data values. The four final theorem
+names, universes and raw compiled types match without substitutions. There are
+no added or unexpected removed declarations; 4,527→4,526 reflects the reviewed
+unused private theorem's removal.
+
+The [qualified comparison](../metadata/elaboration/2026-10-06/cleanup-reviewed-comparison.json)
+passed with zero residual differences across 4,526 retained declarations,
+2,499 public types and 863 data values after only two exact ground substitutions
+for `IntPartialOrder` and `RealCharZero`. The
+[literal `Eq.refl` witnesses](../metadata/elaboration/2026-10-06/instance-witnesses.json)
+establish their definitional equality in Lean's kernel using only the permitted
+standard axioms. The same helper rejected the false `Nat.zero = Nat.succ Nat.zero`
+control with exit status 1. The
+[fresh scratch reproducer validation](../metadata/elaboration/2026-10-06/instance-runner-validation.json)
+passed, as did its 15 Python guard controls. This is bounded preservation modulo
+the two kernel-checked instance equalities, not a raw AST identity result.
+
+Fresh Nanoda replay passed all three cases after rebuilding its pinned source
+with Rust 1.90.0. The achievability, converse and Choi-cloning exports checked
+59,959, 62,881 and 58,851 declarations, respectively, with no errors; these
+overlapping dependency closures must not be added as distinct declarations.
+All seven acceptance/rejection regression groups passed. The
+[fresh Nanoda result](../metadata/elaboration/2026-10-06/verification/nanoda-result.json)
+and [execution record](../lean/ComparatorConfig/nanoda-status.json) bind the
+cleanup source, checker, binary and actual export hashes. These local checks
+were unsandboxed. Fresh Comparator passed all three statement/constant
+comparisons, axiom checks and Lean kernel replays; its wrapper exited 0.
+The [current source-bound report](../lean/ComparatorChallenges/verification-status.json)
+and [complete raw log](../metadata/elaboration/2026-10-06/verification/comparator.log)
+record this new execution. This status is separate from a Linux-sandboxed
+Comparator run. Successful builds and historical records do not establish a
+new checker pass.
+
+The refreshed [compiled catalog](assets/lean-catalog.json) contains 4,526
+declarations: 2,499 public and 2,027 auxiliary, with 1,873 proved declarations
+across 270 proof modules. Its generation and consistency check passed.
+The correspondence consistency check also passed, retaining all 33 Article
+and 9 Letter locators. These are compiled-export and documentation checks;
+they do not replace kernel verification or establish a new manuscript review.

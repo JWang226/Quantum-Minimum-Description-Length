@@ -117,6 +117,7 @@ nav:
     - Theorem 2: audit/theorem2.md
     - Manuscript inventory: audit/source-coverage.md
     - Independent review: audit/independent-review.md
+  - Elaboration cleanup: elaboration.md
 - Background:
   - Quantum information:
     - Concepts:

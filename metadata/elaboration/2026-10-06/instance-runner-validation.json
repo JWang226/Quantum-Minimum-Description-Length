@@ -1,0 +1,86 @@
+{
+  "schema_version": "qmdl-cleanup-instance-runner-validation-v1",
+  "checked_at_utc": "2026-10-07T00:52:32.404232+00:00",
+  "status": "passed",
+  "cache_condition": "Existing source- and pin-matching compiled artifacts retained; an actual fresh scratch witness/reviewed-comparer workflow was exercised. This is not a fresh checkout or a timing run.",
+  "fixed_helpers_copied_outside_checkout_scripts_directory": true,
+  "runner": {
+    "path": "scripts/run_cleanup_instance_witnesses.py",
+    "sha256": "b8cfdacd7165c71ea7c6842a59a56f27e051b81470f1271c8ecff2c5da5a1f96"
+  },
+  "persistent_python_controls": {
+    "path": "scripts/test_cleanup_instance_runner.py",
+    "sha256": "0b7e41afd2f6b493ce89c17869e7cd2a13d5c26172f3059aaa653b3392c2a113",
+    "count": 15,
+    "exit_status": 0,
+    "log": {
+      "path": "metadata/elaboration/2026-10-06/verification/cleanup-instance-runner-controls.txt",
+      "sha256": "e25e20d72ff1e67cb6db16f928fd05a4ef025fba3d223c20ad487ecf8e54b910"
+    },
+    "scope": "Synthetic Python-only guard controls; no claim that test fixtures are Lean-checked environments."
+  },
+  "fresh_witness_runner": {
+    "exit_status": 0,
+    "log": {
+      "path": "metadata/elaboration/2026-10-06/verification/cleanup-instance-runner-reproduction.txt",
+      "sha256": "828a79c0280954fbe238fe9ef1e5a1875f4ebee45250d9610bbb687735874c14"
+    },
+    "kernel_log": {
+      "path": "metadata/elaboration/2026-10-06/verification/cleanup-instance-runner-kernel-reproduction.txt",
+      "sha256": "b5e4a441ea223cb13e8b57a78212cb94bc8752249fa42c873bea2f2ffa1b3cbe"
+    },
+    "exact_pair_ids": [
+      "IntPartialOrder",
+      "RealCharZero"
+    ],
+    "actual_kernel_checked_pairs": 2,
+    "witness_artifact_sha256": "b7a8e8f8e9eef90b52e01919af4a54ec5652800c4b0b87654c848a6e6965f7f9",
+    "source_identities": {
+      "before": "f4efe7d88eb576d8ad579c57a2dd1b4ddc3a6b628d5cb023d9f42a326c0dbfee",
+      "after": "e7068771d301aaac3156ecc7cd0a1a4b3868a894a1d0988ce897420786ba2c3f"
+    },
+    "input_bindings_freshly_generated": true,
+    "dag_root_ids_discovered_by_exact_full_tree_matching": true,
+    "historical_records_mutated": false
+  },
+  "fresh_strict_report": {
+    "sha256": "6e6859f9b1edccb6ecb978fca32e78b3b5c1b0883d6683767219b2e5dc778b45",
+    "status": "review_required",
+    "counts": {
+      "before_declarations": 4527,
+      "after_declarations": 4526,
+      "before_public_declarations": 2499,
+      "after_public_declarations": 2499,
+      "before_data_values": 863,
+      "after_data_values": 863,
+      "public_signature_changes": 3,
+      "data_value_changes": 4,
+      "changed_declarations": 15
+    }
+  },
+  "fresh_reviewed_comparison": {
+    "exit_status": 0,
+    "sha256": "98ae9b487f7edd41e95e9bcb60815eb04b8fcd18ef05d2b3c2f532dde936737b",
+    "status": "passed",
+    "counts": {
+      "before_declarations": 4527,
+      "after_declarations": 4526,
+      "before_public_declarations": 2499,
+      "after_public_declarations": 2499,
+      "before_data_values": 863,
+      "after_data_values": 863,
+      "public_signature_changes": 0,
+      "data_value_changes": 0,
+      "changed_declarations": 0
+    },
+    "reviewed_pair_ids": [
+      "IntPartialOrder",
+      "RealCharZero"
+    ],
+    "log": {
+      "path": "metadata/elaboration/2026-10-06/verification/cleanup-instance-runner-reviewed-reproduction.txt",
+      "sha256": "5686865f17adc08563abcf43b562a740df807bc91d1427060c8cb3e5483d91e6"
+    }
+  },
+  "limitations": "The local raw snapshots and scratch certificates remain in ignored verification work; the reproducer regenerates them. Published historical strict and qualified reports remain unchanged."
+}

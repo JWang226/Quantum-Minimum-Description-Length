@@ -14,6 +14,7 @@ import json
 from pathlib import Path
 import tempfile
 import unittest
+from unittest.mock import patch
 
 import compare_cleanup_fingerprints as compare
 
@@ -312,6 +313,394 @@ class CleanupControls(unittest.TestCase):
         self.get(self.after, PUBLIC_DATA)["value_root"] = None
         with self.assertRaisesRegex(ValueError, "value class and expression disagree"):
             self.compare()
+
+
+class ReviewedInstanceControls(unittest.TestCase):
+    """Synthetic evidence controls, never substituted for actual kernel runs."""
+
+    def setUp(self):
+        directory = tempfile.TemporaryDirectory(prefix="qmdl-instance-controls-")
+        self.addCleanup(directory.cleanup)
+        self.root = Path(directory.name)
+        self.before_path, self.after_path = self.root / "before.json", self.root / "after.json"
+        self.strict_path = self.root / "strict.json"
+        self.pairs_path, self.witnesses_path = self.root / "pairs.json", self.root / "witnesses.json"
+        self.before = fixture()
+        self.after = copy.deepcopy(self.before)
+        self.blueprints = compare.instance_blueprints()
+        pins = {}
+        for filename in ("lean-toolchain", "lakefile.toml", "lake-manifest.json"):
+            path = self.root / "lean" / filename
+            path.parent.mkdir(exist_ok=True)
+            path.write_text("test-fixture-" + filename + "\n")
+            pins[filename] = compare.sha(path.read_bytes())
+        for snapshot in (self.before, self.after):
+            snapshot["seed_provenance"].update(pin_sha256=pins, lean_toolchain="test-fixture-toolchain")
+        self.roots = {side: {} for side in ("before", "after")}
+        for side, snapshot, field in (("before", self.before, "before_expr"),
+                                      ("after", self.after, "after_expr")):
+            for identifier, blueprint in self.blueprints.items():
+                self.roots[side][identifier] = self.append_term(snapshot, blueprint[field])
+        self.get(self.before, PUBLIC_DATA)["value_root"] = self.roots["before"]["IntPartialOrder"]
+        self.get(self.after, PUBLIC_DATA)["value_root"] = self.roots["after"]["IntPartialOrder"]
+        self.get(self.before, PUBLIC_FUNCTION)["type_root"] = self.roots["before"]["RealCharZero"]
+        self.get(self.after, PUBLIC_FUNCTION)["type_root"] = self.roots["after"]["RealCharZero"]
+        # An unchanged data value retains the OLD whole instance on BOTH sides.
+        old_in_after = self.append_term(self.after, self.blueprints["IntPartialOrder"]["before_expr"])
+        self.get(self.before, PUBLIC_WITNESS)["value_root"] = self.roots["before"]["IntPartialOrder"]
+        self.get(self.after, PUBLIC_WITNESS)["value_root"] = old_in_after
+        rows = []
+        certificates = []
+        for identifier, blueprint in self.blueprints.items():
+            row = {"id": identifier, "before_snapshot_root": self.roots["before"][identifier],
+                   "after_snapshot_root": self.roots["after"][identifier]}
+            for field in ("before_expr", "after_expr", "type_expr"):
+                row[field] = copy.deepcopy(blueprint[field])
+                row[field + "_sha256"] = compare.sha(compare.canonical(row[field]).encode())
+            rows.append(row)
+            level = blueprint["equality_level"]
+            eq = ["const", name_tree("Eq"), [level]]
+            refl = ["const", name_tree("Eq.refl"), [level]]
+            certificates.append({
+                "id": identifier, **{field: copy.deepcopy(row[field]) for field in
+                                     ("before_expr", "after_expr", "type_expr")},
+                "inferred_before_type_expr": copy.deepcopy(blueprint["inferred_before_type_expr"]),
+                "inferred_after_type_expr": copy.deepcopy(blueprint["inferred_after_type_expr"]),
+                "equality_type_expr": ["app", ["app", ["app", eq, row["type_expr"]],
+                                                        row["before_expr"]], row["after_expr"]],
+                "eq_refl_proof_expr": ["app", ["app", refl, row["type_expr"]], row["before_expr"]],
+                "kernel_eq_refl_checked": True,
+                "theorem_name": "QMDLCleanupFoundationWitness." + identifier,
+                "axioms": ["propext", "Classical.choice", "Quot.sound"],
+                "axiom_policy_passed": True,
+            })
+        self.pairs = {"schema_version": "qmdl-cleanup-instance-pairs-v1", "pairs": rows}
+        self.witnesses = {
+            "schema_version": "qmdl-cleanup-instance-witnesses-v1", "status": "passed",
+            "pairs": certificates, "kernel_check_explicitly_enabled": True,
+            "project_modules_imported": False,
+            "allowed_axioms": ["propext", "Classical.choice", "Quot.sound"],
+            "foundation_imports": ["Mathlib.Data.Int.ConditionallyCompleteOrder",
+                                   "Mathlib.Analysis.RCLike.Basic"],
+        }
+        helper = self.root / "scripts/check_cleanup_instance_pairs.lean"
+        helper.parent.mkdir()
+        helper.write_bytes(Path(compare.__file__).with_name("check_cleanup_instance_pairs.lean").read_bytes())
+        log = self.root / "witnesses.txt"
+        log.write_text("\n".join(
+            f"Kernel-checked exact foundation pair {identifier}; axioms: fixture"
+            for identifier in self.blueprints) + "\nKernel-checked 2 exact foundation instance pairs.\n")
+        self.witnesses["execution_evidence"] = {
+            "helper_path": "scripts/check_cleanup_instance_pairs.lean",
+            "helper_sha256": compare.sha(helper.read_bytes()),
+            "log_path": "witnesses.txt", "log_sha256": compare.sha(log.read_bytes()),
+            "input_path": "pairs.json", "lean_toolchain": "test-fixture-toolchain",
+            "pin_sha256": pins, "exit_status": 0,
+        }
+        self.bind()
+
+    get = staticmethod(CleanupControls.get)
+
+    @staticmethod
+    def append_term(snapshot, tree):
+        node = copy.deepcopy(tree)
+        if node[0] == "app":
+            node = ["app", ReviewedInstanceControls.append_term(snapshot, tree[1]),
+                    ReviewedInstanceControls.append_term(snapshot, tree[2])]
+        try:
+            return snapshot["nodes"].index(node)
+        except ValueError:
+            snapshot["nodes"].append(node)
+            return len(snapshot["nodes"]) - 1
+
+    def write_review(self):
+        self.pairs_path.write_text(json.dumps(self.pairs))
+        self.witnesses["instance_pair_input"] = copy.deepcopy(self.pairs)
+        self.witnesses["execution_evidence"]["input_sha256"] = compare.sha(self.pairs_path.read_bytes())
+        self.witnesses_path.write_text(json.dumps(self.witnesses))
+
+    def bind(self):
+        self.before_path.write_text(json.dumps(self.before))
+        self.after_path.write_text(json.dumps(self.after))
+        self.strict = compare.compare(self.before_path, self.after_path, [])
+        self.strict_path.write_text(json.dumps(self.strict))
+        self.pairs.update(
+            before_snapshot_sha256=compare.sha(self.before_path.read_bytes()),
+            after_snapshot_sha256=compare.sha(self.after_path.read_bytes()),
+            before_source_provenance=copy.deepcopy(self.before["seed_provenance"]),
+            after_source_provenance=copy.deepcopy(self.after["seed_provenance"]),
+            strict_comparison_sha256=compare.sha(self.strict_path.read_bytes()),
+        )
+        self.write_review()
+
+    def run_review(self):
+        return compare.compare_reviewed(self.before_path, self.after_path, [], (),
+            self.strict_path, self.pairs_path, self.witnesses_path, self.root)
+
+    def test_two_exact_pairs_pass_while_strict_differences_remain_visible(self):
+        strict_bytes = self.strict_path.read_bytes()
+        report = self.run_review()
+        self.assertEqual(report["status"], "passed")
+        self.assertEqual(report["strict_status"], "review_required")
+        self.assertEqual(report["strict_counts"]["changed_declarations"], 2)
+        self.assertEqual(report["counts"]["changed_declarations"], 0)
+        self.assertEqual(self.strict_path.read_bytes(), strict_bytes)
+
+    def test_unchanged_old_term_on_both_sides_is_canonicalized_consistently(self):
+        report = self.run_review()
+        self.assertEqual(report["status"], "passed")
+        counts = report["instance_node_counts"]["after"]["IntPartialOrder"]
+        self.assertEqual(counts["before_expr_matches"], 1)
+        self.assertEqual(counts["after_expr_matches"], 1)
+        self.assertEqual(counts["actual_substitutions"], 1)
+
+    def test_different_raw_inferred_real_types_require_the_checked_explicit_type(self):
+        row = self.witnesses["pairs"][1]
+        self.assertNotEqual(row["inferred_before_type_expr"], row["inferred_after_type_expr"])
+        self.assertEqual(self.run_review()["status"], "passed")
+
+    def test_unrelated_public_type_change_remains_a_change(self):
+        self.get(self.after, PUBLIC_THEOREM)["type_root"] = 2
+        self.bind()
+        report = self.run_review()
+        self.assertEqual(report["status"], "review_required")
+        self.assertEqual(report["counts"]["public_signature_changes"], 1)
+
+    def test_unrelated_data_change_remains_a_change(self):
+        for snapshot in (self.before, self.after):
+            snapshot["declarations"].append(declaration("FreeEntropy.unrelatedData", "definition", 2, 4))
+        self.after["nodes"][4][1] = 8
+        self.bind()
+        self.assertEqual(self.run_review()["status"], "review_required")
+
+    def test_public_metadata_change_remains_a_change(self):
+        self.get(self.after, PUBLIC_DATA)["is_unsafe"] = True
+        self.bind()
+        self.assertEqual(self.run_review()["status"], "review_required")
+
+    def test_arbitrary_whole_expression_rule_is_rejected_even_with_rebound_hashes(self):
+        row = self.pairs["pairs"][0]
+        row["before_expr"] = ["const", name_tree("Nat"), []]
+        row["before_expr_sha256"] = compare.sha(compare.canonical(row["before_expr"]).encode())
+        self.witnesses["pairs"][0]["before_expr"] = copy.deepcopy(row["before_expr"])
+        self.write_review()
+        with self.assertRaisesRegex(ValueError, "unregistered whole instance"):
+            self.run_review()
+
+    def test_project_constant_pair_is_rejected(self):
+        self.pairs["pairs"][0]["before_expr"] = ["const", name_tree(PUBLIC_DATA), []]
+        self.write_review()
+        with self.assertRaisesRegex(ValueError, "unregistered whole instance"):
+            self.run_review()
+
+    def test_wrapper_head_or_prefix_is_not_a_registered_whole_term(self):
+        row = self.pairs["pairs"][0]
+        row["before_expr"] = ["app", ["const", name_tree("id"), [["zero"]]], row["before_expr"]]
+        self.write_review()
+        with self.assertRaisesRegex(ValueError, "unregistered whole instance"):
+            self.run_review()
+
+    def test_open_or_nonapplication_term_is_rejected(self):
+        self.pairs["pairs"][0]["before_expr"] = ["bvar", 0]
+        self.write_review()
+        with self.assertRaisesRegex(ValueError, "unregistered whole instance"):
+            self.run_review()
+
+    def test_pair_type_cannot_be_replaced(self):
+        self.pairs["pairs"][0]["type_expr"] = ["const", name_tree("Nat"), []]
+        self.write_review()
+        with self.assertRaisesRegex(ValueError, "unregistered whole instance"):
+            self.run_review()
+
+    def test_unknown_pair_id_is_rejected(self):
+        self.pairs["pairs"][0]["id"] = "Arbitrary"
+        self.write_review()
+        with self.assertRaisesRegex(ValueError, "unknown or duplicate"):
+            self.run_review()
+
+    def test_duplicate_pair_id_is_rejected(self):
+        self.pairs["pairs"][1]["id"] = self.pairs["pairs"][0]["id"]
+        self.write_review()
+        with self.assertRaisesRegex(ValueError, "unknown or duplicate"):
+            self.run_review()
+
+    def test_extra_pair_is_rejected(self):
+        self.pairs["pairs"].append(copy.deepcopy(self.pairs["pairs"][0]))
+        self.write_review()
+        with self.assertRaisesRegex(ValueError, "exactly two"):
+            self.run_review()
+
+    def test_missing_pair_is_rejected(self):
+        self.pairs["pairs"].pop()
+        self.write_review()
+        with self.assertRaisesRegex(ValueError, "exactly two"):
+            self.run_review()
+
+    def test_unused_rule_cannot_receive_a_review_exception(self):
+        self.get(self.after, PUBLIC_FUNCTION)["type_root"] = self.append_term(
+            self.after, self.blueprints["RealCharZero"]["before_expr"])
+        self.bind()
+        with self.assertRaisesRegex(ValueError, "does not explain any preserved raw change"):
+            self.run_review()
+
+    def test_tampered_ast_hash_is_rejected(self):
+        self.pairs["pairs"][0]["before_expr_sha256"] = "0" * 64
+        self.write_review()
+        with self.assertRaisesRegex(ValueError, "AST hash mismatch"):
+            self.run_review()
+
+    def test_wrong_snapshot_subterm_root_is_rejected(self):
+        self.pairs["pairs"][0]["before_snapshot_root"] = 2
+        self.write_review()
+        with self.assertRaisesRegex(ValueError, "exact snapshot subterm"):
+            self.run_review()
+
+    def test_stale_snapshot_hash_is_rejected(self):
+        self.pairs["after_snapshot_sha256"] = "0" * 64
+        self.write_review()
+        with self.assertRaisesRegex(ValueError, "stale instance-pair binding"):
+            self.run_review()
+
+    def test_stale_source_binding_is_rejected(self):
+        self.pairs["before_source_provenance"]["proof_sources_sha256"] = "3" * 64
+        self.write_review()
+        with self.assertRaisesRegex(ValueError, "stale instance-pair binding"):
+            self.run_review()
+
+    def test_stale_strict_hash_is_rejected(self):
+        self.pairs["strict_comparison_sha256"] = "0" * 64
+        self.write_review()
+        with self.assertRaisesRegex(ValueError, "stale instance-pair binding"):
+            self.run_review()
+
+    def test_forged_raw_verdict_is_rejected_after_rebinding(self):
+        self.strict["counts"]["changed_declarations"] = 0
+        self.strict_path.write_text(json.dumps(self.strict))
+        self.pairs["strict_comparison_sha256"] = compare.sha(self.strict_path.read_bytes())
+        self.write_review()
+        with self.assertRaisesRegex(ValueError, "strict structural verdict differs"):
+            self.run_review()
+
+    def test_unchecked_or_nonfoundation_certificate_is_rejected(self):
+        for field, value in (("kernel_check_explicitly_enabled", False), ("project_modules_imported", True)):
+            with self.subTest(field=field):
+                original = self.witnesses[field]
+                self.witnesses[field] = value
+                self.write_review()
+                with self.assertRaisesRegex(ValueError, "foundation-only"):
+                    self.run_review()
+                self.witnesses[field] = original
+
+    def test_unchecked_pair_is_rejected(self):
+        self.witnesses["pairs"][0]["kernel_eq_refl_checked"] = False
+        self.write_review()
+        with self.assertRaisesRegex(ValueError, "unchecked instance equality"):
+            self.run_review()
+
+    def test_nonliteral_reflexivity_certificate_is_rejected(self):
+        self.witnesses["pairs"][0]["eq_refl_proof_expr"] = ["const", name_tree("True.intro"), []]
+        self.write_review()
+        with self.assertRaisesRegex(ValueError, "literal typed Eq.refl"):
+            self.run_review()
+
+    def test_unregistered_raw_inferred_type_is_rejected(self):
+        self.witnesses["pairs"][1]["inferred_before_type_expr"] = self.blueprints["RealCharZero"]["type_expr"]
+        self.write_review()
+        with self.assertRaisesRegex(ValueError, "unregistered inferred instance type"):
+            self.run_review()
+
+    def test_wrong_witness_name_is_rejected(self):
+        self.witnesses["pairs"][0]["theorem_name"] = PUBLIC_THEOREM
+        self.write_review()
+        with self.assertRaisesRegex(ValueError, "invalid foundation witness"):
+            self.run_review()
+
+    def test_custom_witness_axiom_is_rejected(self):
+        self.witnesses["pairs"][0]["axioms"].append("FreeEntropy.fakeAxiom")
+        self.write_review()
+        with self.assertRaisesRegex(ValueError, "unreviewed axioms"):
+            self.run_review()
+
+    def test_unsuccessful_execution_is_rejected(self):
+        for status in (1, False):
+            with self.subTest(status=status):
+                self.witnesses["execution_evidence"]["exit_status"] = status
+                self.write_review()
+                with self.assertRaisesRegex(ValueError, "did not succeed"):
+                    self.run_review()
+
+    def test_helper_log_and_current_pin_byte_tampering_is_rejected(self):
+        paths = ("scripts/check_cleanup_instance_pairs.lean", "witnesses.txt", "lean/lake-manifest.json")
+        for path in paths:
+            with self.subTest(path=path):
+                target = self.root / path
+                original = target.read_bytes()
+                target.write_bytes(original + b"tampered\n")
+                with self.assertRaises(ValueError):
+                    self.run_review()
+                target.write_bytes(original)
+
+    def test_rebound_log_without_success_verdict_is_rejected(self):
+        (self.root / "witnesses.txt").write_text("Not a successful witness run.\n")
+        self.witnesses["execution_evidence"]["log_sha256"] = compare.sha((self.root / "witnesses.txt").read_bytes())
+        self.write_review()
+        with self.assertRaisesRegex(ValueError, "lacks the two successful"):
+            self.run_review()
+
+    def test_absolute_and_escape_evidence_paths_are_rejected(self):
+        for path in ("/tmp/witnesses.txt", "../witnesses.txt"):
+            with self.subTest(path=path):
+                self.witnesses["execution_evidence"]["log_path"] = path
+                self.write_review()
+                with self.assertRaisesRegex(ValueError, "unsafe public evidence"):
+                    self.run_review()
+
+    def test_local_scratch_evidence_and_copied_helper_are_accepted(self):
+        scratch = self.root / ".verify-work/instance-control"
+        scratch.mkdir(parents=True)
+        execution = self.witnesses["execution_evidence"]
+        for kind in ("input", "log", "helper"):
+            old_path = self.root / execution[kind + "_path"]
+            new_path = scratch / old_path.name
+            new_path.write_bytes(old_path.read_bytes())
+            execution[kind + "_path"] = new_path.relative_to(self.root).as_posix()
+        self.write_review()
+        (scratch / "pairs.json").write_bytes(self.pairs_path.read_bytes())
+        self.assertEqual(self.run_review()["status"], "passed")
+
+    def test_changed_helper_is_rejected_even_after_its_digest_is_rebound(self):
+        path = self.root / self.witnesses["execution_evidence"]["helper_path"]
+        path.write_bytes(path.read_bytes() + b"\n-- Modified helper\n")
+        self.witnesses["execution_evidence"]["helper_sha256"] = compare.sha(path.read_bytes())
+        self.write_review()
+        with self.assertRaisesRegex(ValueError, "differs from the published/copied helper"):
+            self.run_review()
+
+    def test_symlink_evidence_is_rejected(self):
+        (self.root / "alias.txt").symlink_to(self.root / "witnesses.txt")
+        self.witnesses["execution_evidence"]["log_path"] = "alias.txt"
+        self.write_review()
+        with self.assertRaisesRegex(ValueError, "symlink in public evidence"):
+            self.run_review()
+
+    def test_cli_requires_the_complete_review_evidence_set(self):
+        with patch("sys.argv", ["compare", str(self.before_path), str(self.after_path),
+                                "--report", str(self.root / "reviewed.json"),
+                                "--reviewed-instance-pairs", str(self.pairs_path)]):
+            with self.assertRaises(SystemExit) as error:
+                compare.main()
+            self.assertEqual(error.exception.code, 1)
+
+    def test_cli_cannot_overwrite_strict_report(self):
+        original = self.strict_path.read_bytes()
+        with patch("sys.argv", ["compare", str(self.before_path), str(self.after_path),
+                "--report", str(self.strict_path), "--strict-report", str(self.strict_path),
+                "--reviewed-instance-pairs", str(self.pairs_path),
+                "--instance-witnesses", str(self.witnesses_path), "--evidence-root", str(self.root)]):
+            with self.assertRaises(SystemExit) as error:
+                compare.main()
+            self.assertEqual(error.exception.code, 1)
+        self.assertEqual(self.strict_path.read_bytes(), original)
 
 
 if __name__ == "__main__":

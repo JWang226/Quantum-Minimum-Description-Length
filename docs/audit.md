@@ -13,6 +13,12 @@ current Article: Theorem 1's achievability, Haar-average converse and worst-case
 converse, and Theorem 2's original Choi-projector bounds. It records what was
 reviewed, the interpretation choices, and the limits of the review.
 
+The source-first manuscript reviews retain their original dated snapshots.
+The October 6 cleanup is covered by a separate bounded source-delta review,
+compiled statement/definition comparison, and fresh Lean applications. The
+[cleanup bridge](https://github.com/JWang226/Quantum-Minimum-Description-Length/blob/main/metadata/elaboration/2026-10-06/cleanup-review-bridge.json)
+records this distinction; it does not claim a new source-first or human review.
+
 - [[audit/theorem1|Theorem 1: hypotheses, definitions and constants]]
 - [[audit/theorem2|Theorem 2: supported rows, states and Choi channels]]
 - [[audit/source-coverage|Manuscript argument inventory and source dependencies]]

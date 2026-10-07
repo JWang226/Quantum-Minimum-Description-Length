@@ -1,0 +1,48 @@
+import took 7.88s
+FreeEntropy/WeylCoefficient.lean:26:61: warning: 'simp' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+FreeEntropy/WeylCoefficient.lean:26:61: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+cumulative profiling times:
+	attribute application 0.0606ms
+	congr simp thm 2.01ms
+	elaboration 23.4ms
+	fix level params 0.317ms
+	import 7.88s
+	initialization 48.9ms
+	instantiate metavars 2.74ms
+	interpretation 1.3s
+	let-to-have transformation 0.0885ms
+	linting 7.77ms
+	parsing 6.35ms
+	process pre-definitions 4.79ms
+	share common exprs 2.9ms
+	simp 69.8ms
+	tactic execution 152ms
+	type checking 38.6ms
+	typeclass inference 433ms
+	Command being timed: "/Users/jw/.elan/bin/lake env lean --profile FreeEntropy/WeylCoefficient.lean"
+	User time (seconds): 3.22
+	System time (seconds): 3.84
+	Percent of CPU this job got: 54%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:12.96
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 2759648
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 29058
+	Minor (reclaiming a frame) page faults: 263954
+	Voluntary context switches: 5979
+	Involuntary context switches: 71887
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 0
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 16384
+	Exit status: 0

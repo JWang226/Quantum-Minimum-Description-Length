@@ -1,0 +1,63 @@
+import took 7.9s
+FreeEntropy/RaisingKernel.lean:31:56: warning: This simp argument is unused:
+  mul_sub
+
+Hint: Omit it from the simp argument list.
+  simp [left, right, basisDepth, depth, Nat.cast_sum,̵ ̵m̵u̵l̵_̵s̵u̵b̵]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+FreeEntropy/RaisingKernel.lean:34:13: warning: This simp argument is unused:
+  Pi.sub_apply
+
+Hint: Omit it from the simp argument list.
+  simp only [P̵i̵.̵s̵u̵b̵_̵a̵p̵p̵l̵y̵,̵ ̵mul_sub, Finset.sum_sub_distrib] at h
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+cumulative profiling times:
+	attribute application 0.0927ms
+	compilation (IR) 0.697ms
+	compilation (LCNF base) 1.71ms
+	compilation (LCNF impure) 1.03ms
+	compilation (LCNF mono) 4.62ms
+	congr simp thm 2.55ms
+	dsimp 6.84ms
+	elaboration 57ms
+	fix level params 2.3ms
+	import 7.9s
+	initialization 37.8ms
+	instantiate metavars 7.25ms
+	interpretation 1.59s
+	let-to-have transformation 0.147ms
+	linting 18.1ms
+	norm_num 7.65ms
+	parsing 7.9ms
+	process pre-definitions 16.5ms
+	ring 84.6ms
+	share common exprs 11ms
+	simp 135ms
+	tactic execution 172ms
+	type checking 123ms
+	typeclass inference 469ms
+	Command being timed: "/Users/jw/.elan/bin/lake env lean --profile FreeEntropy/RaisingKernel.lean"
+	User time (seconds): 3.64
+	System time (seconds): 4.31
+	Percent of CPU this job got: 60%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:13.05
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 2799152
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 16577
+	Minor (reclaiming a frame) page faults: 279418
+	Voluntary context switches: 8498
+	Involuntary context switches: 56515
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 0
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 16384
+	Exit status: 0

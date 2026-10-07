@@ -1,0 +1,138 @@
+{
+  "source_commit": "4c496959aa1462a6b6a6faf5535ea2a3caf9c119",
+  "started_at_utc": "2026-10-06T22:32:09.100305+00:00",
+  "host": "macOS-27.2-arm64-arm-64bit",
+  "logical_cpus": 8,
+  "timing_tool": "GNU time -v",
+  "command": [
+    "/opt/homebrew/bin/gtime",
+    "-v",
+    "/Users/jw/.elan/bin/lake",
+    "--no-ansi",
+    "--no-cache",
+    "build",
+    "All"
+  ],
+  "lean_num_threads": 4,
+  "lean_version": "Lean (version 4.29.0-rc6, arm64-apple-darwin24.6.0, commit 00659f8e6071d7e46131ed643bf8003b99b044e9, Release)",
+  "cache_condition": "own proof artifacts invalidated; dependency oleans retained; OS cache uncontrolled",
+  "source_snapshot_sha256": "08fd4c03d6a037c5964d3299ae8e4cdb2d3cc94b89d0f5005f2b5477d3fd3f3b",
+  "dependencies_before": {
+    "Cli": {
+      "oleans": 0,
+      "artifact_stat_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "Comparator": {
+      "oleans": 5,
+      "artifact_stat_sha256": "a311b543b3636a2b3d768f2c09a50ae3bd74e8f540287f5e4a6a580d8aa1269b"
+    },
+    "Lean4Checker": {
+      "oleans": 1,
+      "artifact_stat_sha256": "db1893388376cad64ebb2ff01390ae10ac128224f1c695da632a9c45727b9b67"
+    },
+    "LeanSearchClient": {
+      "oleans": 4,
+      "artifact_stat_sha256": "bb4dee5a863eb4c7066809008d07343cfd65a3d113114002b568fd6f011b6770"
+    },
+    "Qq": {
+      "oleans": 14,
+      "artifact_stat_sha256": "bddfa9f14d1ecd4926a52cbc55492a574b2a2d76641a15b9f165a318f75156d2"
+    },
+    "aesop": {
+      "oleans": 135,
+      "artifact_stat_sha256": "f158ddcf3918283c03445ff3ba89086bb71da70487103d6ab543d6dfd5e8d5d8"
+    },
+    "batteries": {
+      "oleans": 174,
+      "artifact_stat_sha256": "33d0995faf4672111158a1445cd67eaa4eea1f97cac995f7cada00315767cbd5"
+    },
+    "importGraph": {
+      "oleans": 10,
+      "artifact_stat_sha256": "5c2e5c4e7189875a43fdb20fed69a5d827f685072e18fa4ffd4bcbe03ddb956e"
+    },
+    "lean4export": {
+      "oleans": 3,
+      "artifact_stat_sha256": "a6109e49305b48f04b277c94aa4365b5d78b0fce0234e04796ba3b043f9202a9"
+    },
+    "mathlib": {
+      "oleans": 7805,
+      "artifact_stat_sha256": "03e13aa03731d31093c5cc9527af3cf36002dba86cc419533c5832e533b0cb60"
+    },
+    "plausible": {
+      "oleans": 11,
+      "artifact_stat_sha256": "73d11435f357c3853eb6f7c677b8e4d78a4211766c1e7b6be2ab14182fa24d78"
+    },
+    "proofwidgets": {
+      "oleans": 12,
+      "artifact_stat_sha256": "bddb409a3f71c31712c2034aac6e311214cb16d3cbc4a90c95fe56b6bdc5e2c6"
+    }
+  },
+  "invalidated": [
+    "lean/.lake/build/lib/lean/FreeEntropy",
+    "lean/.lake/build/ir/FreeEntropy"
+  ],
+  "status": "passed",
+  "finished_at_utc": "2026-10-06T23:11:35.870228+00:00",
+  "observer_elapsed_seconds": 2362.965245042,
+  "exit_status": 0,
+  "invalid_upstream_compiles": [],
+  "dependencies_after": {
+    "Cli": {
+      "oleans": 0,
+      "artifact_stat_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "Comparator": {
+      "oleans": 5,
+      "artifact_stat_sha256": "a311b543b3636a2b3d768f2c09a50ae3bd74e8f540287f5e4a6a580d8aa1269b"
+    },
+    "Lean4Checker": {
+      "oleans": 1,
+      "artifact_stat_sha256": "db1893388376cad64ebb2ff01390ae10ac128224f1c695da632a9c45727b9b67"
+    },
+    "LeanSearchClient": {
+      "oleans": 4,
+      "artifact_stat_sha256": "bb4dee5a863eb4c7066809008d07343cfd65a3d113114002b568fd6f011b6770"
+    },
+    "Qq": {
+      "oleans": 14,
+      "artifact_stat_sha256": "bddfa9f14d1ecd4926a52cbc55492a574b2a2d76641a15b9f165a318f75156d2"
+    },
+    "aesop": {
+      "oleans": 135,
+      "artifact_stat_sha256": "f158ddcf3918283c03445ff3ba89086bb71da70487103d6ab543d6dfd5e8d5d8"
+    },
+    "batteries": {
+      "oleans": 174,
+      "artifact_stat_sha256": "33d0995faf4672111158a1445cd67eaa4eea1f97cac995f7cada00315767cbd5"
+    },
+    "importGraph": {
+      "oleans": 10,
+      "artifact_stat_sha256": "5c2e5c4e7189875a43fdb20fed69a5d827f685072e18fa4ffd4bcbe03ddb956e"
+    },
+    "lean4export": {
+      "oleans": 3,
+      "artifact_stat_sha256": "a6109e49305b48f04b277c94aa4365b5d78b0fce0234e04796ba3b043f9202a9"
+    },
+    "mathlib": {
+      "oleans": 7805,
+      "artifact_stat_sha256": "03e13aa03731d31093c5cc9527af3cf36002dba86cc419533c5832e533b0cb60"
+    },
+    "plausible": {
+      "oleans": 11,
+      "artifact_stat_sha256": "73d11435f357c3853eb6f7c677b8e4d78a4211766c1e7b6be2ab14182fa24d78"
+    },
+    "proofwidgets": {
+      "oleans": 12,
+      "artifact_stat_sha256": "bddb409a3f71c31712c2034aac6e311214cb16d3cbc4a90c95fe56b6bdc5e2c6"
+    }
+  },
+  "source_snapshot_after_sha256": "08fd4c03d6a037c5964d3299ae8e4cdb2d3cc94b89d0f5005f2b5477d3fd3f3b",
+  "user_cpu_seconds": 1249.26,
+  "sys_cpu_seconds": 1534.45,
+  "elapsed_seconds": 2362.93,
+  "max_rss_bytes": 3318497280,
+  "cpu_percent": 117.80755248780117,
+  "build_log_sha256": "a7149000a5f6fc36bf70cd79d82ac2c836f72c356620635a69f2b48debbd2ceb",
+  "runner_sha256": "363f92aaadef7b4c6151fd4c43a17148f6c213a1ff30d92fb737440687985098",
+  "runner_provenance_note": "Executed helper archived at launch; hash bound after completion. Subsequent helper guard revisions were outside the timed command."
+}

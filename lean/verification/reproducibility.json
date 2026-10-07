@@ -4,29 +4,64 @@
     "Quot.sound",
     "propext"
   ],
-  "checked_at_utc": "2026-10-01T05:45:52+00:00",
+  "axiom_collection": "Lean.CollectAxioms.collect with a shared dependency traversal; final endpoints also checked with #print axioms",
+  "checked_at_utc": "2026-10-07T01:21:35.801071+00:00",
   "completed_checks": [
     {
-      "command": "lake exe cache get",
-      "scope": "Locked public dependencies and mathlib compiled cache",
+      "command": "LEAN_NUM_THREADS=4 gtime -v lake --no-ansi --no-cache build All",
+      "evidence": "metadata/elaboration/2026-10-06/before/result.json and after/result.json",
+      "scope": "Two matched project-only cold builds, before and after cleanup; no upstream compilation, stable source/dependency snapshots, 274 own modules in each",
       "status": "passed"
     },
     {
-      "command": "bash check.sh",
-      "executed_main_build_command": "lake build (default target FreeEntropy)",
-      "scope": "Fresh FreeEntropy build, regenerated Audit.lean, actual Lean kernel dependency audit, summary validation",
-      "script_snapshot_note": "The script used at launch built the default target. check.sh was subsequently updated to lake build All; the separate All command recorded next verified those final entrypoints. No claim is made that the final check.sh bytes ran in one invocation.",
+      "command": "bash lean/check.sh",
+      "evidence": "metadata/elaboration/2026-10-06/verification/lean-audit.log",
+      "scope": "Final-source All build, actual transitive Lean kernel axiom collection over 2499 public declarations including 1873 proved declarations",
       "status": "passed"
     },
     {
-      "command": "lake build All",
-      "scope": "All production modules and the Theorem1/Theorem2 reader entrypoints",
+      "command": "scripts/check_statement_audit.py run_lean (current-source manifest copy)",
+      "evidence": "metadata/statement-audit/checks.json",
+      "scope": "Actual seven anonymous applications in two Lean bundles and compiled binders for all four primary endpoints; incremental source-matching run",
       "status": "passed"
     },
     {
-      "checks": 8,
-      "command": "python scripts/validate_artifacts.py --root <isolated-source-copy>",
-      "scope": "Current audit required; official schemas, declaration/manuscript mappings, import boundary, headers, dependency pins and Comparator configuration",
+      "command": "python3 scripts/generate_proof_catalog.py; python3 scripts/generate_proof_catalog.py --check; python3 scripts/generate_correspondence.py --check",
+      "evidence": "docs/assets/lean-catalog.json",
+      "scope": "4526 compiled declarations, current catalog, and 33 Article/9 Letter locators",
+      "status": "passed"
+    },
+    {
+      "command": "Compiled expression export, raw comparison, foundation kernel Eq.refl witnesses, then separate reviewed comparison",
+      "evidence": "metadata/elaboration/2026-10-06/cleanup-reviewed-comparison.json",
+      "scope": "Raw 15 syntactic changes preserved; precisely two whole foundation instance pairs kernel checked; zero residual retained type/data changes and four raw-unchanged final endpoint types",
+      "status": "passed_qualified"
+    },
+    {
+      "command": "python3 scripts/run_cleanup_instance_witnesses.py; separate compare_cleanup_fingerprints.py reviewed mode",
+      "evidence": "metadata/elaboration/2026-10-06/instance-runner-validation.json",
+      "scope": "Fresh scratch runner and kernel evidence, fixed helpers saved outside checkout scripts directory; 15 persistent runner controls",
+      "status": "passed"
+    },
+    {
+      "command": "bash scripts/verify.sh nanoda",
+      "evidence": "lean/ComparatorConfig/nanoda-status.json",
+      "scope": "New pinned Nanoda source checkout, Rust 1.90.0 locked release build, seven rejection/acceptance control groups and all three independent theorem export checks",
+      "status": "passed"
+    },
+    {
+      "checked_at_utc": "2026-10-07T01:12:03.492939+00:00",
+      "checks": 11,
+      "command": "python3 scripts/validate_artifacts.py --schema-cache <verified-external-cache>",
+      "scope": "Official pinned metadata schemas, complete source index, headers, import boundary, statement/manuscript mappings, tool pins, current audit/catalog and execution-evidence freshness; Comparator was still incomplete at this validation time and its later completed run is recorded separately",
+      "status": "passed"
+    },
+    {
+      "command": "bash scripts/verify.sh comparator",
+      "completed_at_utc": "2026-10-07T01:20:11.842054+00:00",
+      "evidence": "lean/ComparatorChallenges/verification-status.json",
+      "exit_status": 0,
+      "scope": "All three pinned expected-statement/constant comparisons, allowed-axiom checks and Lean kernel replays in an empty environment; incremental source-matching challenge builds, warm pinned dependencies, unsandboxed",
       "status": "passed"
     }
   ],
@@ -80,99 +115,80 @@
       "url": "https://github.com/leanprover-community/ProofWidgets4"
     }
   },
+  "evidence_binding_scope": "Recorded commands ran separately; no claim that one verify.sh all invocation or an extracted release archive was rebuilt. Archive preparation and hash refresh do not themselves run a proof checker.",
+  "executed_scripts_sha256": {
+    "lean/ComparatorConfig/ReplayExports.lean": "26abec40254d4ce174eaa6b1201611a9e624ad62296e774a6930fc9e1ca4f892",
+    "lean/ComparatorConfig/check_local.py": "ebf49cdc6967e9d7e31f1d373f6657f3692dcf390fad4bc94747f5668754aa45",
+    "lean/ComparatorConfig/check_nanoda.py": "d24aca97dbd903e47718fbdf97dc8ea7269fbcabe822c0e5debe5e3e6ec33d44",
+    "lean/audit.py": "d3fd79cb607c9b6e2c2f83d9569c7a52e3e934be1ea3faa5e208978f3421b240",
+    "lean/check.sh": "92bd75452b8535f45f90edeee260d2559ef2c887c32eae520cd300ed2c7f8534",
+    "scripts/check_cleanup_instance_pairs.lean": "f910509d40ad393f54f932f676e7df10cc2495c43ba46b881f52f4e71d7c03c8",
+    "scripts/compare_cleanup_fingerprints.py": "ca6cb4bd7d319293d10b2a0a4ea84c5fa6814f7f5a195d3cc0fda2e8140f2720",
+    "scripts/export_cleanup_fingerprints.lean": "7c0e5f8356141af02341f69ec04cf9dec3b9f0a82394d4295bfefe01c791bd02",
+    "scripts/run_cleanup_instance_witnesses.py": "b8cfdacd7165c71ea7c6842a59a56f27e051b81470f1271c8ecff2c5da5a1f96",
+    "scripts/test_nanoda_check.py": "b32c6683ecacd8c09afaa4c6f55695e9f19f5be0b01cce790861290d52473189",
+    "scripts/validate_artifacts.py": "4c72da80da97016c6c05969841e448503fc4113f9137a3bb0f46ccc80af817b8",
+    "scripts/verify.sh": "95a4b99188783b3e52cea047bc6a6521e5184de0797b81b3f9950fd73aecaecc"
+  },
   "format_version": 1,
+  "historical_evidence": {
+    "path": "metadata/elaboration/2026-10-06/historical/lean-reproducibility.json",
+    "role": "Original October 1 record preserved byte-for-byte, with its dates, source identities and fresh dependency installation context",
+    "sha256": "545e81c66f4fa6d6fc1d64f24db21830b38ea74f879eca91685408414bba36cd"
+  },
   "initial_state": {
-    "dependency_checkout_origin": "New public Git checkouts; all twelve HEAD revisions matched the lockfile",
-    "dependency_directory_symlinks_present": false,
-    "mathlib_cache": "Official public mathlib cache, using reusable downloaded cache entries and extracting into the new checkout",
-    "private_or_sibling_project_dependencies_used": false,
+    "dependency_checkout_origin": "Existing public dependency sources; all twelve clean tracked checkouts and HEAD revisions verified against the lockfile",
+    "dependency_directory_symlinks_present": true,
+    "mathlib_cache": "Existing pinned public compiled artifacts retained; dependency olean/stat snapshots unchanged across both timed commands",
+    "os_cache": "Uncontrolled on a shared host",
+    "private_project_source_dependencies_used": false,
+    "project_artifact_handling": "FreeEntropy proof-library and IR artifacts invalidated; all 270 proof modules and four reader/facade modules have fresh build timing entries",
     "project_proof_oleans_present": false,
-    "source_selection": "Explicit source-only exporter allowlist"
+    "record_boundary": "Start of the two timed project-only rebuilds, after deliberate removal of owned proof artifacts; not a fresh upstream dependency installation",
+    "sibling_artifact_cache_reused": true,
+    "source_selection": "Isolated Git clone; proof-source changes committed before their timed snapshots"
   },
   "lean_modules": 270,
   "lean_toolchain": "leanprover/lean4:v4.29.0-rc6",
   "lean_version_output": "Lean (version 4.29.0-rc6, arm64-apple-darwin24.6.0, commit 00659f8e6071d7e46131ed643bf8003b99b044e9, Release)",
   "manuscript_sha256": "09fc0a6bb205180cd820be94d843a1dc0d4342a543492e30dde54e367ae843a9",
   "mathlib_revision": "f156f7abd91ac67adb22bf999e5a71ba22e22e41",
+  "nanoda_count_policy": "Overlapping transitive export closures; do not sum these counts as distinct declarations",
+  "nanoda_declarations_checked_by_case": {
+    "ComparatorChallenges/Theorem1Achievability.json": 59959,
+    "ComparatorChallenges/Theorem1Converse.json": 62881,
+    "ComparatorChallenges/Theorem2Choi.json": 58851
+  },
   "platform": {
     "architecture": "arm64",
     "operating_system": "macOS",
-    "version": "27.0.1"
+    "version": "27.2"
   },
-  "proof_sources_sha256": "f4efe7d88eb576d8ad579c57a2dd1b4ddc3a6b628d5cb023d9f42a326c0dbfee",
+  "proof_sources_sha256": "e7068771d301aaac3156ecc7cd0a1a4b3868a894a1d0988ce897420786ba2c3f",
   "proved_declarations_audited": 1873,
-  "publication_status": "Local reproduction does not grant a license or approve publication; pending decisions remain in LICENSE and docs/RELEASE_CHECKLIST.md",
-  "separate_checks": {
-    "hosted_ci": "Not run; workflow is prepared for a future repository",
-    "sandboxed_comparator": "Not run on this macOS host; strict Linux requirements apply",
-    "unsandboxed_comparator_diagnostic": "Recorded separately in ComparatorChallenges/verification-status.json"
+  "publication_status": "Local checks do not grant a license or imply human review; recorded scope and pending metadata remain in LICENSE and docs/RELEASE_CHECKLIST.md",
+  "record_kind": "cleanup_source_verification_with_project_only_cold_rebuilds",
+  "scope": "Complete Theorem 1 for actual known-spectrum physical tensor sources, all dimensions and positive ranks, with uniform achievability and Haar-average converse; complete Theorem 2 for the original Choi-projector channels, with proved Cartan and Petz identifications, signed dominant differences, rank one, and zero difference.",
+  "semantic_review": {
+    "cleanup_bridge": "metadata/elaboration/2026-10-06/cleanup-review-bridge.json",
+    "human_review": "not_established",
+    "original_source_first_review_revision": "490356f620c1ab963ff99585d6835c93e4324b37",
+    "scope": "Carry the original agent review over a bounded source delta and kernel-witnessed structural preservation; no new human endorsement or fresh full manuscript review is asserted",
+    "source_first_review_rerun": false
   },
+  "separate_checks": {
+    "hosted_ci": "Not established for this cleanup by local execution; deployment and hosted workflows have separate statuses",
+    "sandboxed_comparator": "Not run on this macOS host; no Landrun/Linux sandbox pass is asserted",
+    "unsandboxed_comparator_diagnostic": "Passed all three cases in the fresh current-source invocation; source/helper/log bindings in ComparatorChallenges/verification-status.json"
+  },
+  "source_only_export_preflight": {
+    "artifact_checks": 11,
+    "kernel_rebuilt_from_export": false,
+    "note": "A separately exported source-only directory passed metadata and statement-record checks. No new Lean, Comparator or Nanoda run is inferred from export or validation.",
+    "selected_files": 456,
+    "statement_audit": "current: four endpoints and 407 inventory items"
+  },
+  "source_revision": "4c2054c47d6c81615f5687fe5ac3f1c4dd1ea1d9",
   "status": "passed",
-  "subsequent_checks": [
-    {
-      "check_script_sha256": "92bd75452b8535f45f90edeee260d2559ef2c887c32eae520cd300ed2c7f8534",
-      "checked_at_utc": "2026-10-01T06:55:20.355027+00:00",
-      "command": "bash check.sh",
-      "scope": "Final script executed in the same isolated source checkout, using its previously built proof artifacts; build All and regenerated actual kernel audit both passed.",
-      "status": "passed"
-    },
-    {
-      "checked_at_utc": "2026-10-01T07:56:11.603365+00:00",
-      "checker_change": "Hardened Nanoda helper applied to the fresh checkout before replay; its exact bytes are bound by nanoda-status.json",
-      "commands": [
-        "bash lean/check.sh",
-        "python3 lean/ComparatorConfig/check_local.py",
-        "cargo +1.90.0 build --release --locked (clean pinned Nanoda checkout)",
-        "python3 scripts/test_nanoda_check.py --lake-project <pinned-lean-project> --nanoda-bin <rebuilt-nanoda>",
-        "python3 lean/ComparatorConfig/check_nanoda.py --nanoda-bin <rebuilt-nanoda> --report <fresh-report>"
-      ],
-      "dependency_caches_reused": true,
-      "dependency_sources_verified_against_lockfile": true,
-      "executed_scripts_sha256": {
-        "lean/ComparatorConfig/ReplayExports.lean": "26abec40254d4ce174eaa6b1201611a9e624ad62296e774a6930fc9e1ca4f892",
-        "lean/ComparatorConfig/check_local.py": "ebf49cdc6967e9d7e31f1d373f6657f3692dcf390fad4bc94747f5668754aa45",
-        "lean/ComparatorConfig/check_nanoda.py": "d24aca97dbd903e47718fbdf97dc8ea7269fbcabe822c0e5debe5e3e6ec33d44",
-        "lean/audit.py": "d3fd79cb607c9b6e2c2f83d9569c7a52e3e934be1ea3faa5e208978f3421b240",
-        "lean/check.sh": "92bd75452b8535f45f90edeee260d2559ef2c887c32eae520cd300ed2c7f8534",
-        "scripts/test_nanoda_check.py": "b32c6683ecacd8c09afaa4c6f55695e9f19f5be0b01cce790861290d52473189"
-      },
-      "nanoda_binary_sha256": "1ec977b7ed44125c209252c239c8db5516602699a9a7e576d473c3dc8d9cee35",
-      "nanoda_declarations_checked_by_case": {
-        "ComparatorChallenges/Theorem1Achievability.json": 59959,
-        "ComparatorChallenges/Theorem1Converse.json": 62881,
-        "ComparatorChallenges/Theorem2Choi.json": 58851
-      },
-      "nanoda_rebuilt_from_clean_checkout": true,
-      "project_proof_artifacts_reused": false,
-      "proof_sources_sha256": "f4efe7d88eb576d8ad579c57a2dd1b4ddc3a6b628d5cb023d9f42a326c0dbfee",
-      "raw_log_sha256": {
-        "comparator": "aaabde4696032d4074f5a85d72e41236d702846db0c8b87180d96188e62a7274",
-        "lean": "87a420ab718aa4fde397e7d1b6153e49c4555bf3dc4d0c636387284486964586",
-        "nanoda": "1e8ead921a58f25aa61b688ad44aa0cdad0ea130a9ba94659acd4aac6cd8c0d2"
-      },
-      "regression_controls": {
-        "checks": [
-          "valid theorem accepted",
-          "missing target rejected by wrapper and kernel",
-          "non-theorem root rejected",
-          "badAxiom rejected by real kernel axiom policy",
-          "proofHole rejected by real kernel axiom policy",
-          "ill-typed proof rejected by real kernel",
-          "empty, duplicate, and malformed target selections rejected"
-        ],
-        "status": "passed"
-      },
-      "regression_report_sha256": "5a4a9626d75fe15211d9d9be9e07d55e947c7e1d0d6de7374a085e8b56eedb1b",
-      "sandboxed_comparator": "not_run",
-      "scope": "Fresh project build, actual axiom audit, all Comparator cases, rebuilt independent Nanoda, and negative controls",
-      "semantic_review": {
-        "finding": "No concrete mismatch, vacuous premise or hidden final-endpoint hypothesis found",
-        "kind": "agent-performed source and statement review",
-        "limits": "Theorem 2 challenges import disclosed representation definitions; independent human mathematical review remains pending"
-      },
-      "source_commit": "dc226a55023a47d1f4868a042d87d39238b7e2dd",
-      "status": "passed"
-    }
-  ],
   "total_public_declarations_audited": 2499
 }

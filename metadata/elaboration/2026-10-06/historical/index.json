@@ -1,0 +1,53 @@
+{
+  "status": "historical_evidence_only",
+  "repository_revision": "9c97dbf8cb5d7913fcc7b33d812f94cb1f1738bf",
+  "note": "Original bytes copied before cleanup evidence refresh. Dates, execution contexts and claims are historical; these records are not new passes for the cleanup source.",
+  "files": {
+    "lean-reproducibility.json": {
+      "original_path": "lean/verification/reproducibility.json",
+      "sha256": "545e81c66f4fa6d6fc1d64f24db21830b38ea74f879eca91685408414bba36cd"
+    },
+    "comparator-status.json": {
+      "original_path": "lean/ComparatorChallenges/verification-status.json",
+      "sha256": "b8679538a979ce7ff9eb17b33a6de16e1c70466ccacc2a2c7c3eef189e1d2e80"
+    },
+    "nanoda-status.json": {
+      "original_path": "lean/ComparatorConfig/nanoda-status.json",
+      "sha256": "1befd02b2fc89305bb2f8f4b6ce8fb006f54c4aa9bc61efcf46f6457a4c48ad8"
+    },
+    "statement-manifest.json": {
+      "original_path": "metadata/statement-audit/manifest.json",
+      "sha256": "7de60a4373d1fd0a8bf87dfb02ea4f676c013d7546e57c35bf87bdd8d7f90912"
+    },
+    "statement-checks.json": {
+      "original_path": "metadata/statement-audit/checks.json",
+      "sha256": "94c92f26af7e89aedcc24d7a72fdc9f561a6d011687fbe7e797d9dd65cb665ea"
+    },
+    "compiled-binders.json": {
+      "original_path": "metadata/statement-audit/compiled-binders.json",
+      "sha256": "02d31b308cbd2a06983fd2db0e6c92b0a53c5d7fb2f8611baf821991a8fa0139"
+    },
+    "theorem1-output.txt": {
+      "original_path": "metadata/statement-audit/theorem1-output.txt",
+      "sha256": "7818b1c0d4fee5ae15ebac351ee8dfcb0142252832691976158f21e4e5fda250"
+    },
+    "theorem2-output.txt": {
+      "original_path": "metadata/statement-audit/theorem2-output.txt",
+      "sha256": "7edc4d565ccc7ab98d962b184b88766d7986c4ac20d7a59760939d32e5790a74"
+    }
+  },
+  "additional_instrumentation_snapshots": {
+    "strict-compare-cleanup-fingerprints.py": {
+      "source_revision": "07d563cc77ef4ac8a439911f827162d277da4432",
+      "original_path": "scripts/compare_cleanup_fingerprints.py",
+      "sha256": "05a2a58ca6b707ac827593f216888d6b39b1b39c1e1d233a5bba5f9283f99687",
+      "role": "Exact strict implementation before the separately reviewed comparison mode."
+    },
+    "strict-test-cleanup-fingerprints.py": {
+      "source_revision": "07d563cc77ef4ac8a439911f827162d277da4432",
+      "original_path": "scripts/test_cleanup_fingerprints.py",
+      "sha256": "9084920870c98d25fa27555d1e2076e0403628543545e97eb4eea07a3c472422",
+      "role": "Exact 32-control suite for the original strict comparison."
+    }
+  }
+}

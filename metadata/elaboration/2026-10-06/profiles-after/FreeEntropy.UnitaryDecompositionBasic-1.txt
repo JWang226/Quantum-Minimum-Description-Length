@@ -1,0 +1,63 @@
+import took 9.88s
+typeclass inference of Submodule.HasOrthogonalProjection took 125ms
+typeclass inference of Submodule.HasOrthogonalProjection took 105ms
+typeclass inference of DecidablePred took 113ms
+typeclass inference of CoeFun took 253ms
+simp took 288ms
+typeclass inference of MulHomClass took 245ms
+simp took 268ms
+elaboration took 174ms
+typeclass inference of CoeFun took 113ms
+typeclass inference of CoeFun took 122ms
+typeclass inference of CoeFun took 136ms
+typeclass inference of CoeFun took 138ms
+typeclass inference of CoeFun took 131ms
+typeclass inference of CoeFun took 126ms
+tactic execution of Lean.Parser.Tactic.change took 157ms
+tactic execution of Lean.Parser.Tactic.rewriteSeq took 138ms
+cumulative profiling times:
+	attribute application 8.36ms
+	blocked (unaccounted) 142ms
+	compilation (IR) 0.165ms
+	compilation (LCNF base) 10.8ms
+	compilation (LCNF impure) 0.422ms
+	compilation (LCNF mono) 21.6ms
+	congr simp thm 5.44ms
+	elaboration 510ms
+	fix level params 4.03ms
+	import 9.88s
+	initialization 57.2ms
+	instantiate metavars 19.3ms
+	interpretation 2.26s
+	let-to-have transformation 1.08ms
+	linting 42ms
+	parsing 20ms
+	process pre-definitions 28.9ms
+	share common exprs 11ms
+	simp 670ms
+	tactic execution 931ms
+	type checking 418ms
+	typeclass inference 5.83s
+	Command being timed: "/Users/jw/.elan/bin/lake env lean --profile FreeEntropy/UnitaryDecompositionBasic.lean"
+	User time (seconds): 8.46
+	System time (seconds): 5.61
+	Percent of CPU this job got: 66%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:21.15
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 2727168
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 13813
+	Minor (reclaiming a frame) page faults: 291191
+	Voluntary context switches: 7468
+	Involuntary context switches: 127403
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 0
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 16384
+	Exit status: 0

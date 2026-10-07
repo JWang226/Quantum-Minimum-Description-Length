@@ -1,0 +1,924 @@
+⚠ [2954/2964] Replayed FreeEntropy.TensorInfinitesimal
+warning: FreeEntropy/TensorInfinitesimal.lean:28:0: automatically included section variable(s) unused in theorem `FreeEntropy.TensorPowers.differential_add`:
+  [Fintype H]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype H] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: FreeEntropy/TensorInfinitesimal.lean:33:0: automatically included section variable(s) unused in theorem `FreeEntropy.TensorPowers.differential_smul`:
+  [Fintype H]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype H] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: FreeEntropy/TensorInfinitesimal.lean:38:0: automatically included section variable(s) unused in theorem `FreeEntropy.TensorPowers.differential_sub`:
+  [Fintype H]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype H] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: FreeEntropy/TensorInfinitesimal.lean:45:0: automatically included section variable(s) unused in theorem `FreeEntropy.TensorPowers.hasDerivAt_matrix_identity`:
+  [Fintype H]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype H] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: FreeEntropy/TensorInfinitesimal.lean:104:6: This simp argument is unused:
+  map_div₀
+
+Hint: Omit it from the simp argument list.
+  simp only [C, Matrix.conjTranspose_smul, Matrix.conjTranspose_sub,
+        Matrix.conjTranspose_conjTranspose, star_div₀, star_ofNat, Complex.star_def,
+  ̵  ̵ ̵ ̵ ̵ ̵m̵a̵p̵_̵d̵i̵v̵₀̵,̵ ̵Complex.conj_I,
+  ̲  ̲ ̲ ̲ ̲ ̲map_ofNat]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: FreeEntropy/TensorInfinitesimal.lean:104:32: This simp argument is unused:
+  map_ofNat
+
+Hint: Omit it from the simp argument list.
+  simp only [C, Matrix.conjTranspose_smul, Matrix.conjTranspose_sub,
+        Matrix.conjTranspose_conjTranspose, star_div₀, star_ofNat, Complex.star_def,
+  ̵  ̵ ̵ ̵ ̵ ̵map_div₀,
+  ̲  ̲ ̲ ̲ ̲ ̲Complex.conj_I,̵ ̵m̵a̵p̵_̵o̵f̵N̵a̵t̵]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [2984/3012] Replayed FreeEntropy.LiePBW
+warning: FreeEntropy/LiePBW.lean:72:25: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: FreeEntropy/LiePBW.lean:96:25: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [2987/3012] Replayed FreeEntropy.HighestWeightDominance
+warning: FreeEntropy/HighestWeightDominance.lean:18:0: automatically included section variable(s) unused in theorem `FreeEntropy.LieMatrixCasimir.Generators.raising_weight`:
+  [DecidableEq H]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq H] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: FreeEntropy/HighestWeightDominance.lean:37:0: automatically included section variable(s) unused in theorem `FreeEntropy.LieMatrixCasimir.Generators.highest_weight_dominant`:
+  [DecidableEq H]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq H] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [2995/3026] Replayed FreeEntropy.TensorLieRestriction
+warning: FreeEntropy/TensorLieRestriction.lean:28:8: automatically included section variable(s) unused in theorem `_private.FreeEntropy.TensorLieRestriction.0.FreeEntropy.SchurWeyl.compressed_product`:
+  [DecidableEq A]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq A] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [3002/3026] Replayed FreeEntropy.CyclicHighestRepresentation
+warning: FreeEntropy/CyclicHighestRepresentation.lean:24:0: automatically included section variable(s) unused in theorem `FreeEntropy.UnitaryDecomposition.orbit_mem_cyclicSubspace`:
+  [FiniteDimensional ℂ E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [FiniteDimensional ℂ E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: FreeEntropy/CyclicHighestRepresentation.lean:39:12: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+warning: FreeEntropy/CyclicHighestRepresentation.lean:43:0: automatically included section variable(s) unused in theorem `FreeEntropy.UnitaryDecomposition.cyclicSubspace_le`:
+  [FiniteDimensional ℂ E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [FiniteDimensional ℂ E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: FreeEntropy/CyclicHighestRepresentation.lean:63:0: automatically included section variable(s) unused in theorem `FreeEntropy.UnitaryDecomposition.operator_on_cyclicSubspace`:
+  [FiniteDimensional ℂ E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [FiniteDimensional ℂ E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [3087/3100] Replayed FreeEntropy.TorusWeightEigenline
+warning: FreeEntropy/TorusWeightEigenline.lean:77:10: This simp argument is unused:
+  Pi.single_apply
+
+Hint: Omit it from the simp argument list.
+  simp [P̵i̵.̵s̵i̵n̵g̵l̵e̵_̵a̵p̵p̵l̵y̵,̵ ̵hb, joint_eigenvector_support weight (weight b₀) v hv b hw]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: FreeEntropy/TorusWeightEigenline.lean:84:2: Try `simp at this` instead of `simpa using this`
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+warning: FreeEntropy/TorusWeightEigenline.lean:81:0: automatically included section variable(s) unused in theorem `FreeEntropy.TorusWeights.highestVector_ne_zero`:
+  [Fintype B]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype B] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: FreeEntropy/TorusWeightEigenline.lean:111:27: This simp argument is unused:
+  Pi.single_apply
+
+Hint: Omit it from the simp argument list.
+  simp [highestVector, P̵i̵.̵s̵i̵n̵g̵l̵e̵_̵a̵p̵p̵l̵y̵,̵ ̵hb]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [3088/3100] Replayed FreeEntropy.ExteriorHighestRepresentation
+warning: FreeEntropy/ExteriorHighestRepresentation.lean:58:53: This simp argument is unused:
+  Pi.single_apply
+
+Hint: Omit it from the simp argument list.
+  simp [highestVector, TorusWeights.highestVector, P̵i̵.̵s̵i̵n̵g̵l̵e̵_̵a̵p̵p̵l̵y̵,̵ ̵hx]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [3090/3100] Replayed FreeEntropy.ExteriorColumnEquiv
+warning: FreeEntropy/ExteriorColumnEquiv.lean:68:4: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+⚠ [3096/3100] Replayed FreeEntropy.ExteriorTensorSum
+warning: FreeEntropy/ExteriorTensorSum.lean:43:58: This simp argument is unused:
+  Matrix.kronecker_apply
+
+Hint: Omit it from the simp argument list.
+  simp only [tensorMatrix, productMatrix, tensorSumEquiv, M̵a̵t̵r̵i̵x̵.̵k̵r̵o̵n̵e̵c̵k̵e̵r̵_̵a̵p̵p̵l̵y̵,̵
+  ̵ ̵ ̵ ̵ ̵Fintype.prod_sum_type]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [3097/3100] Replayed FreeEntropy.ExteriorCartanEmbedding
+warning: FreeEntropy/ExteriorCartanEmbedding.lean:62:4: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+warning: FreeEntropy/ExteriorCartanEmbedding.lean:64:4: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+⚠ [3099/3126] Replayed FreeEntropy.ExteriorCommutant
+warning: FreeEntropy/ExteriorCommutant.lean:84:40: This simp argument is unused:
+  Matrix.single_apply
+
+Hint: Omit it from the simp argument list.
+  simp [Matrix.mul_swap_apply_left, M̵a̵t̵r̵i̵x̵.̵s̵i̵n̵g̵l̵e̵_̵a̵p̵p̵l̵y̵,̵ ̵hb, Ne.symm hb]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: FreeEntropy/ExteriorCommutant.lean:86:12: This simp argument is unused:
+  Matrix.single_apply
+
+Hint: Omit it from the simp argument list.
+  simp [M̵a̵t̵r̵i̵x̵.̵s̵i̵n̵g̵l̵e̵_̵a̵p̵p̵l̵y̵,̵ ̵hb, hb', Ne.symm hb, Ne.symm hb']
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: FreeEntropy/ExteriorCommutant.lean:86:33: This simp argument is unused:
+  hb
+
+Hint: Omit it from the simp argument list.
+  simp [Matrix.single_apply, hb,̵ ̵h̵b̵', Ne.symm hb, Ne.symm hb']
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: FreeEntropy/ExteriorCommutant.lean:86:37: This simp argument is unused:
+  hb'
+
+Hint: Omit it from the simp argument list.
+  simp [Matrix.single_apply, hb, h̵b̵'̵,̵ ̵Ne.symm hb, Ne.symm hb']
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: FreeEntropy/ExteriorCommutant.lean:111:46: This simp argument is unused:
+  Matrix.one_apply
+
+Hint: Omit it from the simp argument list.
+  simp_all [transvection, Matrix.add_apply, Matrix.o̵n̵e̵_̵a̵p̵p̵l̵y̵,̵ ̵M̵a̵t̵r̵i̵x̵.̵single_apply, eq_comm]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [3102/3126] Replayed FreeEntropy.ExteriorMonomialWeights
+warning: FreeEntropy/ExteriorMonomialWeights.lean:31:6: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+warning: FreeEntropy/ExteriorMonomialWeights.lean:36:6: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+⚠ [3110/3126] Replayed FreeEntropy.LiePBWDimension
+warning: FreeEntropy/LiePBWDimension.lean:125:22: This simp argument is unused:
+  Fintype.card_fun
+
+Hint: Omit it from the simp argument list.
+  simp [̵F̵i̵n̵t̵y̵p̵e̵.̵c̵a̵r̵d̵_̵f̵u̵n̵,̵ ̵c̵a̵r̵d̵_̵l̵o̵w̵e̵r̵R̵o̵o̵t̵]̵[̲c̲a̲r̲d̲_̲l̲o̲w̲e̲r̲R̲o̲o̲t̲]̲
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [3125/3139] Replayed FreeEntropy.ExteriorTensorEmbedding
+warning: FreeEntropy/ExteriorTensorEmbedding.lean:50:4: This simp argument is unused:
+  Units.smul_def
+
+Hint: Omit it from the simp argument list.
+  simp only [alternatingColumn, Finset.sum_apply, Pi.smul_apply, permutationSign,
+      U̵n̵i̵t̵s̵.̵s̵m̵u̵l̵_̵d̵e̵f̵,̵ ̵Int.cast_smul_eq_zsmul, smul_eq_mul]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: FreeEntropy/ExteriorTensorEmbedding.lean:50:44: This simp argument is unused:
+  smul_eq_mul
+
+Hint: Omit it from the simp argument list.
+  simp only [alternatingColumn, Finset.sum_apply, Pi.smul_apply, permutationSign,
+  ̵  ̵ ̵ ̵Units.smul_def,
+  ̲  ̲ ̲ ̲Int.cast_smul_eq_zsmul,̵ ̵s̵m̵u̵l̵_̵e̵q̵_̵m̵u̵l̵]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: FreeEntropy/ExteriorTensorEmbedding.lean:113:15: This simp argument is unused:
+  Ne.symm hst
+
+Hint: Omit it from the simp argument list.
+  simp [hst,̵ ̵N̵e̵.̵s̵y̵m̵m̵ ̵h̵s̵t̵]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [3126/3139] Replayed FreeEntropy.ExteriorTensorEmbeddingProduct
+warning: FreeEntropy/ExteriorTensorEmbeddingProduct.lean:57:30: unused variable `i`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [3137/3139] Replayed FreeEntropy.WeylCharacterAlgebra
+warning: FreeEntropy/WeylCharacterAlgebra.lean:23:28: This simp argument is unused:
+  mul_smul_comm
+
+Hint: Omit it from the simp argument list.
+  simp ̵[̵m̵u̵l̵_̵s̵m̵u̵l̵_̵c̵o̵m̵m̵]̵
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: FreeEntropy/WeylCharacterAlgebra.lean:40:32: This simp argument is unused:
+  Ne.symm ha
+
+Hint: Omit it from the simp argument list.
+  simp [coeff_monomial, ha,̵ ̵N̵e̵.̵s̵y̵m̵m̵ ̵h̵a̵]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [3138/3162] Replayed FreeEntropy.LieCharacterRadial
+warning: FreeEntropy/LieCharacterRadial.lean:146:0: automatically included section variable(s) unused in theorem `FreeEntropy.LieCharacter.euler_character`:
+  [DecidableEq H]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq H] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: FreeEntropy/LieCharacterRadial.lean:157:0: automatically included section variable(s) unused in theorem `FreeEntropy.LieCharacter.euler_sq_character`:
+  [DecidableEq H]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq H] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: FreeEntropy/LieCharacterRadial.lean:174:13: This simp argument is unused:
+  Pi.mul_apply
+
+Hint: Omit it from the simp argument list.
+  simp only [̵P̵i̵.̵m̵u̵l̵_̵a̵p̵p̵l̵y̵,̵ ̵m̵a̵p̵_̵p̵o̵w̵]̵[̲m̲a̲p̲_̲p̲o̲w̲]̲
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: FreeEntropy/LieCharacterRadial.lean:197:72: This simp argument is unused:
+  Finset.sum_ite_eq'
+
+Hint: Omit it from the simp argument list.
+  simp only [Finset.sum_add_distrib, Finset.sum_ite_eq, F̵i̵n̵s̵e̵t̵.̵s̵u̵m̵_̵i̵t̵e̵_̵e̵q̵'̵,̵ ̵Finset.mem_univ, if_true]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: FreeEntropy/LieCharacterRadial.lean:224:43: This simp argument is unused:
+  Matrix.one_apply
+
+Hint: Omit it from the simp argument list.
+  simp [lift, M̵a̵t̵r̵i̵x̵.̵o̵n̵e̵_̵a̵p̵p̵l̵y̵,̵ ̵hab]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [3143/3162] Replayed FreeEntropy.TorusWeightProjection
+warning: FreeEntropy/TorusWeightProjection.lean:93:0: automatically included section variable(s) unused in theorem `FreeEntropy.TorusWeights.projector_mem_weightSpace`:
+  [DecidableEq I]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq I] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [3149/3162] Replayed FreeEntropy.CoordinateWeightSpace
+warning: FreeEntropy/CoordinateWeightSpace.lean:34:0: automatically included section variable(s) unused in theorem `FreeEntropy.LiePBW.coordinateWeightSpace_finrank`:
+  [DecidableEq H]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq H] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [3153/3162] Replayed FreeEntropy.PhysicalCanonicalChannels
+warning: FreeEntropy/PhysicalCanonicalChannels.lean:52:0: automatically included section variable(s) unused in theorem `FreeEntropy.SchurWeyl.sectorCanonicalForward_state`:
+  [DecidableEq M]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq M] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: FreeEntropy/PhysicalCanonicalChannels.lean:61:0: automatically included section variable(s) unused in theorem `FreeEntropy.SchurWeyl.sectorCanonicalReverse_error`:
+  [DecidableEq M]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq M] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [3154/3162] Replayed FreeEntropy.RaisingKernel
+warning: FreeEntropy/RaisingKernel.lean:31:56: This simp argument is unused:
+  mul_sub
+
+Hint: Omit it from the simp argument list.
+  simp [left, right, basisDepth, depth, Nat.cast_sum,̵ ̵m̵u̵l̵_̵s̵u̵b̵]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: FreeEntropy/RaisingKernel.lean:34:13: This simp argument is unused:
+  Pi.sub_apply
+
+Hint: Omit it from the simp argument list.
+  simp only [P̵i̵.̵s̵u̵b̵_̵a̵p̵p̵l̵y̵,̵ ̵mul_sub, Finset.sum_sub_distrib] at h
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [3173/3189] Replayed FreeEntropy.CanonicalMonomialState
+warning: FreeEntropy/CanonicalMonomialState.lean:143:0: automatically included section variable(s) unused in theorem `FreeEntropy.CanonicalMonomials.normalized_diagonal_factor`:
+  [Nonempty A]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Nonempty A] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: FreeEntropy/CanonicalMonomialState.lean:158:29: This simp argument is unused:
+  Matrix.diagonal_apply_ne _ hab
+
+Hint: Omit it from the simp argument list.
+  simp [Matrix.smul_apply, M̵a̵t̵r̵i̵x̵.̵d̵i̵a̵g̵o̵n̵a̵l̵_̵a̵p̵p̵l̵y̵_̵n̵e̵ ̵_̵ ̵h̵a̵b̵,̵ ̵hab]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [3178/3189] Replayed FreeEntropy.WeylDenominator
+warning: FreeEntropy/WeylDenominator.lean:27:2: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+warning: FreeEntropy/WeylDenominator.lean:27:100: 'simp' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: FreeEntropy/WeylDenominator.lean:27:100: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: FreeEntropy/WeylDenominator.lean:36:26: This simp argument is unused:
+  ha
+
+Hint: Omit it from the simp argument list.
+  simp [coeff_monomial, h̵a̵,̵ ̵Ne.symm ha]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [3179/3189] Replayed FreeEntropy.LieCharacterFinite
+warning: FreeEntropy/LieCharacterFinite.lean:29:8: automatically included section variable(s) unused in theorem `FreeEntropy.LieCharacter.character_eval_one`:
+  [DecidableEq H]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq H] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: FreeEntropy/LieCharacterFinite.lean:50:0: automatically included section variable(s) unused in theorem `FreeEntropy.LieCharacter.character_coeff`:
+  [DecidableEq H]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq H] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: FreeEntropy/LieCharacterFinite.lean:55:13: This simp argument is unused:
+  ← Nat.cast_sum
+
+Hint: Omit it from the simp argument list.
+  simp only [← N̵a̵t̵.̵c̵a̵s̵t̵_̵s̵u̵m̵,̵ ̵←̵ ̵Finset.sum_boole]
+
+Note: Simp arguments with `←` have the additional effect of removing the other direction from the simp set, even if the simp argument itself is unused. If the hint above does not work, try replacing `←` with `-` to only get that effect and silence this warning.
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [3181/3189] Replayed FreeEntropy.WeylDifferentialProduct
+warning: FreeEntropy/WeylDifferentialProduct.lean:28:26: This simp argument is unused:
+  pderiv_one
+
+Hint: Omit it from the simp argument list.
+  simp [euler,̵ ̵p̵d̵e̵r̵i̵v̵_̵o̵n̵e̵]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [3183/3189] Replayed FreeEntropy.WeylCharacterCone
+warning: FreeEntropy/WeylCharacterCone.lean:54:34: This simp argument is unused:
+  hn
+
+Hint: Omit it from the simp argument list.
+  simp [coeff_one, h̵n̵,̵ ̵Ne.symm hn]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: FreeEntropy/WeylCharacterCone.lean:81:69: This simp argument is unused:
+  hm1
+
+Hint: Omit it from the simp argument list.
+  simp [rootFactor, MvPolynomial.X, coeff_monomial, hm̵1̵,̵ ̵h̵n, Ne.symm hm1, Ne.symm hn]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: FreeEntropy/WeylCharacterCone.lean:81:74: This simp argument is unused:
+  hn
+
+Hint: Omit it from the simp argument list.
+  simp [rootFactor, MvPolynomial.X, coeff_monomial, hm1, h̵n̵,̵ ̵Ne.symm hm1, Ne.symm hn]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [3194/3214] Replayed FreeEntropy.WeylCoefficient
+warning: FreeEntropy/WeylCoefficient.lean:26:61: 'simp' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: FreeEntropy/WeylCoefficient.lean:26:61: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+⚠ [3211/3214] Replayed FreeEntropy.TensorConstituentWeights
+warning: FreeEntropy/TensorConstituentWeights.lean:35:0: automatically included section variable(s) unused in theorem `FreeEntropy.CartanLieCloning.isometry_column_nonzero`:
+  [DecidableEq A]
+  [Fintype K]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq A] [Fintype K] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [3212/3214] Replayed FreeEntropy.TensorTopExistence
+warning: FreeEntropy/TensorTopExistence.lean:45:59: This simp argument is unused:
+  Matrix.kronecker_apply
+
+Hint: Omit it from the simp argument list.
+  simp only [tensorHighestVector, Matrix.mulVec_single_one, Matrix.col_apply, Generators.tensor,
+  ̲  ̲ ̲ ̲M̵a̵t̵r̵i̵x̵.̵a̵d̵d̵_̵a̵p̵p̵l̵y̵,̵ ̵M̵a̵t̵r̵i̵x̵.̵k̵r̵o̵n̵e̵c̵k̵e̵r̵_̵a̵p̵p̵l̵y̵]̵M̲a̲t̲r̲i̲x̲.̲a̲d̲d̲_̲a̲p̲p̲l̲y̲]̲
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: FreeEntropy/TensorTopExistence.lean:56:0: automatically included section variable(s) unused in theorem `FreeEntropy.CartanLieCloning.resolution_detects_vector`:
+  [Nonempty A]
+  [DecidableEq κ]
+  [(i : κ) → DecidableEq (T i)]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Nonempty A] [DecidableEq κ] [(i : κ) → DecidableEq (T i)] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [3214/3264] Replayed FreeEntropy.LieDeterminantTwist
+warning: FreeEntropy/LieDeterminantTwist.lean:31:26: This simp argument is unused:
+  Matrix.smul_mul
+
+Hint: Omit it from the simp argument list.
+  simp [̵M̵a̵t̵r̵i̵x̵.̵s̵m̵u̵l̵_̵m̵u̵l̵,̵ ̵M̵a̵t̵r̵i̵x̵.̵m̵u̵l̵_̵s̵m̵u̵l̵]̵[̲M̲a̲t̲r̲i̲x̲.̲m̲u̲l̲_̲s̲m̲u̲l̲]̲
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: FreeEntropy/LieDeterminantTwist.lean:31:43: This simp argument is unused:
+  Matrix.mul_smul
+
+Hint: Omit it from the simp argument list.
+  simp [Matrix.smul_mul,̵ ̵M̵a̵t̵r̵i̵x̵.̵m̵u̵l̵_̵s̵m̵u̵l̵]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: FreeEntropy/LieDeterminantTwist.lean:34:26: This simp argument is unused:
+  Matrix.smul_mul
+
+Hint: Omit it from the simp argument list.
+  simp [̵M̵a̵t̵r̵i̵x̵.̵s̵m̵u̵l̵_̵m̵u̵l̵,̵ ̵M̵a̵t̵r̵i̵x̵.̵m̵u̵l̵_̵s̵m̵u̵l̵]̵[̲M̲a̲t̲r̲i̲x̲.̲m̲u̲l̲_̲s̲m̲u̲l̲]̲
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: FreeEntropy/LieDeterminantTwist.lean:34:43: This simp argument is unused:
+  Matrix.mul_smul
+
+Hint: Omit it from the simp argument list.
+  simp [Matrix.smul_mul,̵ ̵M̵a̵t̵r̵i̵x̵.̵m̵u̵l̵_̵s̵m̵u̵l̵]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: FreeEntropy/LieDeterminantTwist.lean:137:6: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+⚠ [3216/3264] Replayed FreeEntropy.LieCartanBalance
+warning: FreeEntropy/LieCartanBalance.lean:21:0: automatically included section variable(s) unused in theorem `FreeEntropy.CartanBalance.partialTrace_left`:
+  [DecidableEq A]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq A] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: FreeEntropy/LieCartanBalance.lean:30:0: automatically included section variable(s) unused in theorem `FreeEntropy.CartanBalance.partialTrace_right`:
+  [DecidableEq A]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq A] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: FreeEntropy/LieCartanBalance.lean:39:0: automatically included section variable(s) unused in theorem `FreeEntropy.CartanBalance.partialTrace_environment`:
+  [DecidableEq B]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq B] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: FreeEntropy/LieCartanBalance.lean:54:0: automatically included section variable(s) unused in theorem `FreeEntropy.CartanBalance.partialTrace_add`:
+  [Fintype A]
+  [DecidableEq A]
+  [DecidableEq B]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype A] [DecidableEq A] [DecidableEq B] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: FreeEntropy/LieCartanBalance.lean:71:0: automatically included section variable(s) unused in theorem `FreeEntropy.CartanBalance.lie_range_commutes`:
+  [DecidableEq C]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq C] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [3218/3264] Replayed FreeEntropy.CartanMultiplicity
+warning: FreeEntropy/CartanMultiplicity.lean:24:0: automatically included section variable(s) unused in theorem `FreeEntropy.CartanLieCloning.tensor_basisEmbedding_raise`:
+  [Nonempty A]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Nonempty A] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: FreeEntropy/CartanMultiplicity.lean:33:76: This simp argument is unused:
+  add_mul
+
+Hint: Omit it from the simp argument list.
+  simp [N.highest_basis_raise N.highestBasis N.highestBasis_weight i j hij, a̵d̵d̵_̵m̵u̵l̵,̵
+  ̵ ̵ ̵ ̵ ̵Finset.sum_add_distrib,
+  ̲  ̲ ̲ ̲mul_ite, ite_mul, and_comm]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: FreeEntropy/CartanMultiplicity.lean:34:4: This simp argument is unused:
+  Finset.sum_add_distrib
+
+Hint: Omit it from the simp argument list.
+  simp [N.highest_basis_raise N.highestBasis N.highestBasis_weight i j hij, add_mul, F̵i̵n̵s̵e̵t̵.̵s̵u̵m̵_̵a̵d̵d̵_̵d̵i̵s̵t̵r̵i̵b̵,̵ ̵mul_ite,
+  ̲  ̲ ̲ ̲ite_mul, and_comm]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: FreeEntropy/CartanMultiplicity.lean:34:28: This simp argument is unused:
+  mul_ite
+
+Hint: Omit it from the simp argument list.
+  simp [N.highest_basis_raise N.highestBasis N.highestBasis_weight i j hij, add_mul,
+      Finset.sum_add_distrib, m̵u̵l̵_̵ite,̵ ̵i̵t̵e̵_mul, and_comm]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: FreeEntropy/CartanMultiplicity.lean:34:37: This simp argument is unused:
+  ite_mul
+
+Hint: Omit it from the simp argument list.
+  simp [N.highest_basis_raise N.highestBasis N.highestBasis_weight i j hij, add_mul,
+      Finset.sum_add_distrib, mul_ite, i̵t̵e̵_̵m̵u̵l̵,̵ ̵and_comm]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: FreeEntropy/CartanMultiplicity.lean:34:46: This simp argument is unused:
+  and_comm
+
+Hint: Omit it from the simp argument list.
+  simp [N.highest_basis_raise N.highestBasis N.highestBasis_weight i j hij, add_mul,
+      Finset.sum_add_distrib, mul_ite, ite_mul,̵ ̵a̵n̵d̵_̵c̵o̵m̵m̵]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: FreeEntropy/CartanMultiplicity.lean:36:0: automatically included section variable(s) unused in theorem `FreeEntropy.CartanLieCloning.cartanSlice_raise`:
+  [Nonempty C]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Nonempty C] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: FreeEntropy/CartanMultiplicity.lean:84:0: automatically included section variable(s) unused in theorem `FreeEntropy.CartanLieCloning.cartanSlice_weight`:
+  [Nonempty A]
+  [Nonempty C]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Nonempty A] [Nonempty C] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [3219/3264] Replayed FreeEntropy.CyclicWeightStateBlocks
+warning: FreeEntropy/CyclicWeightStateBlocks.lean:107:42: This simp argument is unused:
+  Pi.smul_apply
+
+Hint: Omit it from the simp argument list.
+  simp only [mixture, Matrix.sum_apply, P̵i̵.̵s̵m̵u̵l̵_̵a̵p̵p̵l̵y̵,̵ ̵weightProjector, Matrix.diagonal_apply_eq,
+  ̲  ̲ ̲ ̲ ̲ ̲Complex.real_smul, smul_eq_mul, relativeState]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: FreeEntropy/CyclicWeightStateBlocks.lean:108:32: This simp argument is unused:
+  Complex.real_smul
+
+Hint: Omit it from the simp argument list.
+  simp only [mixture, Matrix.sum_apply, Pi.smul_apply, weightProjector, Matrix.diagonal_apply_eq,
+  ̲  ̲ ̲ ̲ ̲ ̲C̵o̵m̵p̵l̵e̵x̵.̵r̵e̵a̵l̵_̵s̵m̵u̵l̵,̵ ̵smul_eq_mul, relativeState]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: FreeEntropy/CyclicWeightStateBlocks.lean:108:51: This simp argument is unused:
+  smul_eq_mul
+
+Hint: Omit it from the simp argument list.
+  simp only [mixture, Matrix.sum_apply, Pi.smul_apply, weightProjector,
+  ̵  ̵ ̵ ̵ ̵ ̵Matrix.diagonal_apply_eq,
+  ̲  ̲ ̲ ̲ ̲ ̲Complex.real_smul, s̵m̵u̵l̵_̵e̵q̵_̵m̵u̵l̵,̵ ̵relativeState]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [3221/3264] Replayed FreeEntropy.ExteriorSimpleOffsets
+warning: FreeEntropy/ExteriorSimpleOffsets.lean:39:18: This simp argument is unused:
+  Nat.cast_mul
+
+Hint: Omit it from the simp argument list.
+  simp only [rootWeightShift, simpleRootAssignment, Finsupp.finset_sum_apply, Nat.cast_sum,
+  ̲  ̲ ̲ ̲N̵a̵t̵.̵c̵a̵s̵t̵_̵m̵u̵l̵,̵ ̵Int.cast_sum, Int.cast_mul, Int.cast_natCast, Finset.sum_mul]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [3224/3264] Replayed FreeEntropy.SupportedWeightStates
+warning: FreeEntropy/SupportedWeightStates.lean:40:34: `_root_.not_imp` has been deprecated: Use `Classical.not_imp` instead
+warning: FreeEntropy/SupportedWeightStates.lean:41:29: `_root_.not_imp` has been deprecated: Use `Classical.not_imp` instead
+⚠ [3238/3264] Replayed FreeEntropy.CartanGroupCovariance
+warning: FreeEntropy/CartanGroupCovariance.lean:77:0: automatically included section variable(s) unused in theorem `FreeEntropy.CartanChannel.phase_conjugation`:
+  [DecidableEq C]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq C] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [3239/3264] Replayed FreeEntropy.ConstantWeightPhase
+warning: FreeEntropy/ConstantWeightPhase.lean:71:0: automatically included section variable(s) unused in theorem `FreeEntropy.CartanChannel.subsingleton_matrix_scalar`:
+  [Fintype B]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype B] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: FreeEntropy/ConstantWeightPhase.lean:82:66: This simp argument is unused:
+  Matrix.smul_mul
+
+Hint: Omit it from the simp argument list.
+  simp only [Matrix.conjTranspose_smul, Matrix.conjTranspose_one, Matrix.s̵mul_m̵u̵l̵,̵
+  ̵ ̵ ̵ ̵ ̵M̵a̵t̵r̵i̵x̵.̵m̵u̵l̵_̵smul, Matrix.one_mul,
+  ̲  ̲ ̲ ̲smul_smul, Matrix.smul_apply, Matrix.one_apply_eq,
+  ̵  ̵ ̵ ̵smul_eq_mul, mul_one] at h
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: FreeEntropy/ConstantWeightPhase.lean:83:21: This simp argument is unused:
+  Matrix.one_mul
+
+Hint: Omit it from the simp argument list.
+  simp only [Matrix.conjTranspose_smul, Matrix.conjTranspose_one, Matrix.smul_mul, Matrix.mul_smul,
+  ̲  ̲ ̲ ̲M̵a̵t̵r̵i̵x̵.̵o̵n̵e̵_̵m̵u̵l̵,̵ ̵smul_smul, Matrix.smul_apply, Matrix.one_apply_eq, smul_eq_mul, mul_one] at h
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: FreeEntropy/ConstantWeightPhase.lean:83:37: This simp argument is unused:
+  smul_smul
+
+Hint: Omit it from the simp argument list.
+  simp only [Matrix.conjTranspose_smul, Matrix.conjTranspose_one, Matrix.smul_mul,
+  ̵  ̵ ̵ ̵Matrix.mul_smul,
+  ̲  ̲ ̲ ̲Matrix.one_mul, s̵m̵u̵l̵_̵s̵m̵u̵l̵,̵ ̵Matrix.smul_apply, Matrix.one_apply_eq,
+  ̵  ̵ ̵ ̵smul_eq_mul, mul_one] at h
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: FreeEntropy/ConstantWeightPhase.lean:88:0: automatically included section variable(s) unused in theorem `FreeEntropy.CartanChannel.basisEmbedding_coisometry`:
+  [Fintype B]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype B] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: FreeEntropy/ConstantWeightPhase.lean:103:42: This simp argument is unused:
+  Matrix.kronecker_apply
+
+Hint: Omit it from the simp argument list.
+  simp [basisEmbedding, Matrix.mul_apply, M̵a̵t̵r̵i̵x̵.̵k̵r̵o̵n̵e̵c̵k̵e̵r̵_̵a̵p̵p̵l̵y̵,̵ ̵Fintype.sum_prod_type, Matrix.smul_apply,
+  ̲  ̲ ̲ ̲Matrix.one_apply, ha, mul_comm]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [3240/3264] Replayed FreeEntropy.TensorPowersPair
+warning: FreeEntropy/TensorPowersPair.lean:68:0: automatically included section variable(s) unused in theorem `FreeEntropy.TensorPowers.pairEmbedding_isometry`:
+  [Fintype A]
+  [Fintype B]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype A] [Fintype B] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: FreeEntropy/TensorPowersPair.lean:77:0: automatically included section variable(s) unused in theorem `FreeEntropy.TensorPowers.pairEmbedding_intertwines`:
+  [DecidableEq A]
+  [DecidableEq B]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq A] [DecidableEq B] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [3241/3264] Replayed FreeEntropy.CanonicalCartanCovariance
+warning: FreeEntropy/CanonicalCartanCovariance.lean:82:29: This simp argument is unused:
+  Matrix.one_kronecker_one
+
+Hint: Omit it from the simp argument list.
+  simp [Generators.tensor, Generators.shift, hij, Matrix.kronecker_add, Matrix.kronecker_smul,
+  ̲  ̲ ̲ ̲ ̲ ̲M̵a̵t̵r̵i̵x̵.̵o̵n̵e̵_̵k̵r̵o̵n̵e̵c̵k̵e̵r̵_̵o̵n̵e̵,̵ ̵add_assoc]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: FreeEntropy/CanonicalCartanCovariance.lean:115:65: This simp argument is unused:
+  smul_eq_mul
+
+Hint: Omit it from the simp argument list.
+  simp only [ite_true, Matrix.smul_apply, Matrix.one_apply_eq, s̵m̵u̵l̵_̵e̵q̵_̵m̵u̵l̵,̵ ̵mul_one, one_smul,
+  ̲  ̲ ̲ ̲ ̲ ̲Generators.shift_diagonal, Matrix.mul_add]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: FreeEntropy/CanonicalCartanCovariance.lean:115:78: This simp argument is unused:
+  mul_one
+
+Hint: Omit it from the simp argument list.
+  simp only [ite_true, Matrix.smul_apply, Matrix.one_apply_eq, smul_eq_mul, m̵u̵l̵_̵one,̵
+  ̵ ̵ ̵ ̵ ̵ ̵ ̵o̵n̵e̵_smul,
+  ̲  ̲ ̲ ̲ ̲ ̲Generators.shift_diagonal, Matrix.mul_add]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: FreeEntropy/CanonicalCartanCovariance.lean:120:15: This simp argument is unused:
+  Generators.shift_offdiagonal S c i j hij
+
+Hint: Omit it from the simp argument list.
+  simp [hij,̵ ̵G̵e̵n̵e̵r̵a̵t̵o̵r̵s̵.̵s̵h̵i̵f̵t̵_̵o̵f̵f̵d̵i̵a̵g̵o̵n̵a̵l̵ ̵S̵ ̵c̵ ̵i̵ ̵j̵ ̵h̵i̵j̵]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [3245/3264] Replayed FreeEntropy.PhysicalUniformError
+warning: FreeEntropy/PhysicalUniformError.lean:27:0: automatically included section variable(s) unused in theorem `FreeEntropy.SchurWeyl.physical_error_le_one`:
+  [DecidableEq B]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq B] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: FreeEntropy/PhysicalUniformError.lean:48:0: automatically included section variable(s) unused in theorem `FreeEntropy.SchurWeyl.mixedWorstError_le`:
+  [DecidableEq B]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq B] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [3249/3264] Replayed FreeEntropy.CartanReshuffle
+warning: FreeEntropy/CartanReshuffle.lean:26:8: automatically included section variable(s) unused in theorem `FreeEntropy.CartanChoi.reshuffle_unreshuffle`:
+  [Fintype A]
+  [DecidableEq A]
+  [Fintype B]
+  [DecidableEq B]
+  [Fintype C]
+  [DecidableEq C]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype A] [DecidableEq A] [Fintype B] [DecidableEq B] [Fintype C] [DecidableEq C] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: FreeEntropy/CartanReshuffle.lean:27:8: automatically included section variable(s) unused in theorem `FreeEntropy.CartanChoi.unreshuffle_reshuffle`:
+  [Fintype A]
+  [DecidableEq A]
+  [Fintype B]
+  [DecidableEq B]
+  [Fintype C]
+  [DecidableEq C]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype A] [DecidableEq A] [Fintype B] [DecidableEq B] [Fintype C] [DecidableEq C] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: FreeEntropy/CartanReshuffle.lean:29:0: automatically included section variable(s) unused in theorem `FreeEntropy.CartanChoi.reshuffle_injective`:
+  [Fintype A]
+  [DecidableEq A]
+  [Fintype B]
+  [DecidableEq B]
+  [Fintype C]
+  [DecidableEq C]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype A] [DecidableEq A] [Fintype B] [DecidableEq B] [Fintype C] [DecidableEq C] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: FreeEntropy/CartanReshuffle.lean:33:8: automatically included section variable(s) unused in theorem `FreeEntropy.CartanChoi.reshuffle_smul`:
+  [Fintype A]
+  [DecidableEq A]
+  [Fintype B]
+  [DecidableEq B]
+  [Fintype C]
+  [DecidableEq C]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype A] [DecidableEq A] [Fintype B] [DecidableEq B] [Fintype C] [DecidableEq C] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: FreeEntropy/CartanReshuffle.lean:36:0: automatically included section variable(s) unused in theorem `FreeEntropy.CartanChoi.tensor_mul_entry`:
+  [Fintype C]
+  [DecidableEq C]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype C] [DecidableEq C] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: FreeEntropy/CartanReshuffle.lean:42:4: This simp argument is unused:
+  Matrix.kronecker_apply
+
+Hint: Omit it from the simp argument list.
+  simp [Generators.tensor, Matrix.mul_apply, Fintype.sum_prod_type, M̵a̵t̵r̵i̵x̵.̵k̵r̵o̵n̵e̵c̵k̵e̵r̵_̵a̵p̵p̵l̵y̵,̵ ̵Matrix.one_apply, add_mul,
+  ̲  ̲ ̲ ̲Finset.sum_add_distrib, mul_ite, ite_mul]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: FreeEntropy/CartanReshuffle.lean:45:0: automatically included section variable(s) unused in theorem `FreeEntropy.CartanChoi.reshuffle_dual_tensor_entry`:
+  [Fintype B]
+  [DecidableEq B]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype B] [DecidableEq B] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: FreeEntropy/CartanReshuffle.lean:51:27: This simp argument is unused:
+  Matrix.kronecker_apply
+
+Hint: Omit it from the simp argument list.
+  simp [Generators.tensor, Generators.dual, reshuffle, Matrix.mul_apply, Fintype.sum_prod_type,
+  ̲  ̲ ̲ ̲M̵a̵t̵r̵i̵x̵.̵k̵r̵o̵n̵e̵c̵k̵e̵r̵_̵a̵p̵p̵l̵y̵,̵ ̵Matrix.one_apply, mul_add, Finset.sum_add_distrib, mul_ite, ite_mul, mul_comm,
+      Finset.sum_neg_distrib]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [3250/3264] Replayed FreeEntropy.CartanChoi
+warning: FreeEntropy/CartanChoi.lean:34:4: This simp argument is unused:
+  Finset.sum_mul
+
+Hint: Omit it from the simp argument list.
+  simp [choi, sectorMap, core_eq_kraus, Channels.krausMap, sliceKraus, Matrix.mul_apply,
+  ̲  ̲ ̲ ̲Matrix.sum_apply, Matrix.single_apply, reshuffle, Matrix.conjTranspose_apply, F̵i̵n̵s̵e̵t̵.̵s̵u̵m̵_̵m̵u̵l̵,̵ ̵Finset.mul_sum,
+  ̲  ̲ ̲ ̲mul_assoc, ite_and]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: FreeEntropy/CartanChoi.lean:43:4: This simp argument is unused:
+  smul_eq_mul
+
+Hint: Omit it from the simp argument list.
+  simp only [choiMap, sectorMap, core_eq_kraus, Channels.krausMap, sliceKraus,
+  ̵  ̵ ̵ ̵Matrix.mul_apply,
+  ̲  ̲ ̲ ̲Matrix.conjTranspose_apply, Matrix.sum_apply,
+  ̵  ̵ ̵ ̵Matrix.smul_apply, reshuffle, Finset.mul_sum,
+  ̲  ̲ ̲ ̲Finset.sum_mul, Complex.real_smul,
+  ̵  ̵ ̵ ̵sm̵u̵l̵_̵e̵q̵_̵m̵u̵l̵,̵ ̵s̵tar_star]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: FreeEntropy/CartanChoi.lean:60:0: automatically included section variable(s) unused in theorem `FreeEntropy.CartanChoi.reshuffle_trace`:
+  [DecidableEq A]
+  [DecidableEq B]
+  [DecidableEq C]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq A] [DecidableEq B] [DecidableEq C] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: FreeEntropy/CartanChoi.lean:107:0: automatically included section variable(s) unused in theorem `FreeEntropy.CartanChoi.projector_hermitian`:
+  [Fintype A]
+  [DecidableEq A]
+  [DecidableEq B]
+  [DecidableEq C]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype A] [DecidableEq A] [DecidableEq B] [DecidableEq C] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: FreeEntropy/CartanChoi.lean:111:0: automatically included section variable(s) unused in theorem `FreeEntropy.CartanChoi.projector_positive`:
+  [DecidableEq A]
+  [DecidableEq B]
+  [DecidableEq C]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq A] [DecidableEq B] [DecidableEq C] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: FreeEntropy/CartanChoi.lean:144:0: automatically included section variable(s) unused in theorem `FreeEntropy.CartanChoi.embedding_projector`:
+  [Fintype A]
+  [DecidableEq A]
+  [DecidableEq B]
+  [DecidableEq C]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype A] [DecidableEq A] [DecidableEq B] [DecidableEq C] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: FreeEntropy/CartanChoi.lean:161:15: This simp argument is unused:
+  Real.mul_self_sqrt (show 0 ≤ (Fintype.card B : ℝ) / Fintype.card C by positivity)
+
+Hint: Omit it from the simp argument list.
+  simp only [embedding, Matrix.conjTranspose_smul, star_trivial, Matrix.conjTranspose_conjTranspose,
+  ̲  ̲ ̲ ̲Matrix.smul_mul, Matrix.mul_smul, smul_smul, R̵e̵a̵l̵.̵m̵u̵l̵_̵s̵e̵l̵f̵_̵s̵q̵r̵t̵ ̵(̵s̵h̵o̵w̵ ̵0̵ ̵≤̵ ̵(̵F̵i̵n̵t̵y̵p̵e̵.̵c̵a̵r̵d̵ ̵B̵ ̵:̵ ̵ℝ̵)̵ ̵/̵ ̵F̵i̵n̵t̵y̵p̵e̵.̵c̵a̵r̵d̵ ̵C̵ ̵b̵y̵ ̵p̵o̵s̵i̵t̵i̵v̵i̵t̵y̵)̵,̵reshuffle_gram M N S V hV hE]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [3253/3264] Replayed FreeEntropy.CanonicalCloningSelf
+warning: FreeEntropy/CanonicalCloningSelf.lean:58:0: automatically included section variable(s) unused in theorem `FreeEntropy.CartanLieCloning.trivial_environment_maps_identity`:
+  [Nonempty B]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Nonempty B] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: FreeEntropy/CanonicalCloningSelf.lean:74:24: This simp argument is unused:
+  Matrix.kronecker_apply
+
+Hint: Omit it from the simp argument list.
+  simp [partialTrace,̵ ̵M̵a̵t̵r̵i̵x̵.̵k̵r̵o̵n̵e̵c̵k̵e̵r̵_̵a̵p̵p̵l̵y̵]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: FreeEntropy/CanonicalCloningSelf.lean:81:10: This simp argument is unused:
+  hphase
+
+Hint: Omit it from the simp argument list.
+  simp only [Matrix.conjTranspose_smul, Matrix.smul_mul, Matrix.mul_smul, smul_smul, ha, h̵p̵h̵a̵s̵e̵,̵ ̵one_smul,
+  ̲  ̲ ̲ ̲ ̲ ̲hcore]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: FreeEntropy/CanonicalCloningSelf.lean:85:6: This simp argument is unused:
+  ha
+
+Hint: Omit it from the simp argument list.
+  simp only [Matrix.conjTranspose_smul, Matrix.smul_mul, Matrix.mul_smul, smul_smul,
+  ̵  ̵ ̵ ̵ ̵ ̵ha̵,̵ ̵h̵phase,
+  ̲  ̲ ̲ ̲ ̲ ̲one_smul, hemb, hpart]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [3254/3264] Replayed FreeEntropy.CanonicalChoi
+warning: FreeEntropy/CanonicalChoi.lean:111:4: 'change _ *ᵥ (W *ᵥ N.highestVector) = _' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+⚠ [3257/3264] Replayed FreeEntropy.LieDualTensor
+warning: FreeEntropy/LieDualTensor.lean:16:0: automatically included section variable(s) unused in theorem `FreeEntropy.LieMatrixCasimir.Generators.dual_dual_E`:
+  [DecidableEq H]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq H] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: FreeEntropy/LieDualTensor.lean:23:46: This simp argument is unused:
+  Matrix.kronecker_apply
+
+Hint: Omit it from the simp argument list.
+  simp [Generators.dual, Generators.tensor, M̵a̵t̵r̵i̵x̵.̵k̵r̵o̵n̵e̵c̵k̵e̵r̵_̵a̵p̵p̵l̵y̵,̵ ̵Matrix.one_apply, h1, h2, eq_comm, add_comm]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: FreeEntropy/LieDualTensor.lean:23:70: This simp argument is unused:
+  Matrix.one_apply
+
+Hint: Omit it from the simp argument list.
+  simp [Generators.dual, Generators.tensor, Matrix.kronecker_apply, M̵a̵t̵r̵i̵x̵.̵o̵n̵e̵_̵a̵p̵p̵l̵y̵,̵
+  ̵ ̵ ̵ ̵ ̵ ̵ ̵h1, h2, eq_comm, add_comm]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: FreeEntropy/LieDualTensor.lean:26:0: automatically included section variable(s) unused in theorem `FreeEntropy.LieMatrixCasimir.Generators.conjugate_eq_neg_dual`:
+  [DecidableEq H]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq H] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [3264/3266] Replayed FreeEntropy.ChoiContraction
+warning: FreeEntropy/ChoiContraction.lean:21:0: automatically included section variable(s) unused in theorem `FreeEntropy.CartanChoi.choiMap_eq_partialTraceInput`:
+  [DecidableEq A]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq A] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+Build completed successfully (3266 jobs).

@@ -234,3 +234,34 @@ Every definition page now has: concrete examples, expanded intuition, connection
 - Added reproducible audit checks, rejection controls and a website build hook
   binding the reports to the reviewed sources. Linked the audit from the
   correspondence page, verification section and README.
+
+## 2026-10-06 — Dead-code sweep and measured elaboration cleanup
+
+- Removed one unused private weight-equality lemma, then completed the requested
+  before test, measured cleanup and second test using the pinned elaboration
+  skills. Both project-only cold builds compiled all 270 proof modules and four
+  entry/facade modules with stable sources and warm pinned dependency artifacts.
+- Narrowed the sole `Mathlib.Tactic` umbrella import in `GTDeterminant` to its
+  Linarith and Positivity providers. Three serial profiles per variant observed
+  GT median wall time 39.11s→11.24s and total CPU 12.45s→6.11s. No retained source
+  statement text or proof body changed; no heartbeat limits or suppressions grew.
+- Published detailed before/after reports, raw evidence, source identities and
+  reproducible benchmark/profile commands. Full-build wall time fell 4.15%,
+  but total CPU rose 5.83%; shared load prevents a causal whole-project speedup
+  claim. Warning counts remained 131. Five baseline and nine after hotspots were
+  profiled separately.
+- Preserved the strict compiled comparison's 15 raw syntactic differences.
+  Two exact closed foundation instance pairs passed literal kernel `Eq.refl`
+  checks; a false equality was rejected. The separately qualified comparison has
+  zero residual type/data changes across 4,526 retained declarations, and all
+  four final theorem signatures match raw. The fresh scratch reproducer and
+  its 15 guard controls passed.
+- Refreshed the actual 2,499-public-declaration axiom audit, seven anonymous
+  statement applications, compiled catalog and correspondence checks. All three
+  fresh Comparator comparisons/replays and rebuilt pinned Nanoda checks passed,
+  including Nanoda's seven rejection/acceptance control groups. These local runs
+  were unsandboxed; no new human or source-first manuscript review is asserted.
+- Preserved historical verification bytes and dates, added a bounded cleanup
+  review bridge, refreshed current source-bound evidence, and linked the new
+  elaboration guide in the README and Verification navigation. Manuscript bytes
+  and dependency pins remain unchanged.

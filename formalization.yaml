@@ -107,9 +107,12 @@ status:
     proof_modules: 270
     proved_declarations_audited: 1873
     public_declarations_audited: 2499
-    proof_sources_sha256: f4efe7d88eb576d8ad579c57a2dd1b4ddc3a6b628d5cb023d9f42a326c0dbfee
-    note: A fresh isolated source build, all reader entrypoints and the transitive kernel-axiom audit passed.
-      The generated verification summary identifies the checked source bytes. Comparator specification
+    proof_sources_sha256: e7068771d301aaac3156ecc7cd0a1a4b3868a894a1d0988ce897420786ba2c3f
+    note: All production modules and reader entrypoints passed project-only cold rebuilds with warm,
+      source- and pin-verified dependency caches. A fresh transitive kernel-axiom audit passed for
+      the cleaned sources. This is not a fresh dependency installation. The original reproduction
+      records are preserved under metadata/elaboration/2026-10-06/historical; current checks and
+      the bounded cleanup preservation bridge are recorded separately. Comparator specification
       placeholders are not unresolved development proofs; Comparator execution is recorded separately.
 automation:
   methods:
@@ -140,13 +143,18 @@ review:
   status: agent-reviewed
   reviewers:
   - Codex agents
-  notes: Lean kernel checking and automated axiom collection passed in a fresh isolated build of the release sources.
-    Agents also checked manuscript alignment and concrete endpoint definitions. All three local Comparator
-    diagnostics passed exact exported statement/definition comparison, allowed-axiom checking and Lean
-    kernel replay. All three solution exports also passed the separately implemented Nanoda kernel with
-    exactly the three permitted standard axioms. These runs were unsandboxed. Independent human peer review,
-    source-author endorsement and Linux-sandboxed Comparator execution are not asserted. Consult the generated
-    Comparator and Nanoda reports for exact inputs and execution status.
+  notes: The cleaned sources passed project-only cold builds and a fresh kernel-axiom audit with
+    verified warm dependency caches. The earlier source-first agent review retains its original date
+    and revision; metadata/elaboration/2026-10-06/cleanup-review-bridge.json carries it over the bounded
+    cleanup using fresh statement probes and two exact kernel-witnessed foundation instance equalities.
+    All three solution exports passed a newly rebuilt pinned Nanoda kernel with exactly the three
+    permitted standard axioms. All three fresh Comparator comparisons, axiom checks and Lean kernel
+    replays also passed; their exact inputs and execution context are recorded separately in its
+    source-bound report.
+    These local independent checks are unsandboxed. Independent human peer review, source-author
+    endorsement and Linux-sandboxed Comparator execution are not asserted. Consult the generated
+    Comparator and Nanoda reports for exact inputs and execution status; preserved historical records
+    do not establish new runs for the cleaned sources.
 alignment:
   namespace: FreeEntropy
   mapping_file: metadata/natural-language-map.json

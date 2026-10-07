@@ -1,0 +1,62 @@
+import took 20.9s
+typeclass inference of CoeFun took 206ms
+simp took 404ms
+typeclass inference took 108ms
+typeclass inference took 807ms
+tactic execution of Lean.Parser.Tactic.refine took 136ms
+tactic execution of Lean.Parser.Tactic.change took 110ms
+tactic execution of Lean.Parser.Tactic.refine took 221ms
+tactic execution of Lean.Parser.Tactic.exact took 123ms
+tactic execution of Lean.Parser.Tactic.refine took 291ms
+typeclass inference of NormedAddCommGroup took 103ms
+typeclass inference of Fintype took 106ms
+typeclass inference of DecidableEq took 101ms
+tactic execution of Lean.Parser.Tactic.refine took 6.82s
+typeclass inference of Fintype took 128ms
+tactic execution of Lean.Parser.Tactic.refine took 5.61s
+tactic execution of Lean.Parser.Tactic.refine took 5.64s
+simp took 113ms
+tactic execution of Lean.Parser.Tactic.simpa took 377ms
+type checking took 284ms
+elaboration took 324ms
+cumulative profiling times:
+	attribute application 0.183ms
+	congr simp thm 11ms
+	elaboration 468ms
+	fix level params 3.22ms
+	import 20.9s
+	initialization 78.6ms
+	instantiate metavars 16.4ms
+	interpretation 2.16s
+	let-to-have transformation 2.44ms
+	linting 41.1ms
+	parsing 22.2ms
+	process pre-definitions 33.3ms
+	share common exprs 13.7ms
+	simp 739ms
+	tactic execution 20.3s
+	type checking 655ms
+	typeclass inference 13.6s
+	Command being timed: "/Users/jw/.elan/bin/lake env lean --profile FreeEntropy/TensorWeightBasis.lean"
+	User time (seconds): 28.67
+	System time (seconds): 8.45
+	Percent of CPU this job got: 59%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 1:02.76
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 2656912
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 118989
+	Minor (reclaiming a frame) page faults: 229790
+	Voluntary context switches: 14047
+	Involuntary context switches: 390927
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 0
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 16384
+	Exit status: 0

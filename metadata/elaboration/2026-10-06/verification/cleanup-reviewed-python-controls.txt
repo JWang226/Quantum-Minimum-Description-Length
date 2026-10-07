@@ -1,0 +1,7 @@
+...................................CLEANUP COMPARISON FAILED: reviewed output must not overwrite input/strict evidence
+.CLEANUP COMPARISON FAILED: reviewed mode requires pairs, witnesses and strict report
+.................................
+----------------------------------------------------------------------
+Ran 69 tests in 2.105s
+
+OK

@@ -114,6 +114,16 @@ What the authors have tried or conjectured.
 
 ## Maintenance Workflow
 
+### Lean Performance Changes
+Measure the affected file before changing elaboration tactics. Prefer precise
+Mathlib tactic-provider imports when an umbrella import dominates the profile;
+verify every downstream consumer with `lake build All`. Keep project-only cold
+builds separate from warm single-file profiles, and report measured CPU separately
+from elapsed module timings. Shared-machine timings do not establish a causal
+whole-project speedup. Preserve source-bound audit records when cleanup changes
+the proof-source fingerprint; use fresh checks and an explicit reviewed bridge
+instead of relabeling old evidence.
+
 ### After Any Wiki Edits
 When the user asks to commit, commit all changes and push to `origin main`. The GitHub Actions workflow will automatically rebuild and deploy the live site at https://jwang226.github.io/Quantum-Minimum-Description-Length/.
 

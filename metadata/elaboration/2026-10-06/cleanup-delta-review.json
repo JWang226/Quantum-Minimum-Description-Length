@@ -1,0 +1,221 @@
+{
+  "schema_version": "qmdl-cleanup-delta-review-v1",
+  "review_kind": "independent_bounded_source_delta_agent_review",
+  "reviewer": "/root/cleanup_validation_review",
+  "reviewed_at_utc": "2026-10-06T23:25:58.246999+00:00",
+  "human_review": "not_established",
+  "source_first_manuscript_review_rerun": false,
+  "exposure": "Reviewer saw the cleanup author's intended scope before inspecting the actual Git diff and source files. This is not a blind review or a fresh source-first manuscript audit.",
+  "status": "source_delta_review_passed_with_bounded_kernel_witnessed_compiled_preservation",
+  "before_source_revision": "9c97dbf8cb5d7913fcc7b33d812f94cb1f1738bf",
+  "after_source_revision": "4c2054c47d6c81615f5687fe5ac3f1c4dd1ea1d9",
+  "original_semantic_review_revision": "490356f620c1ab963ff99585d6835c93e4324b37",
+  "original_semantic_review_proof_sources_sha256": "f4efe7d88eb576d8ad579c57a2dd1b4ddc3a6b628d5cb023d9f42a326c0dbfee",
+  "after_proof_sources_sha256": "e7068771d301aaac3156ecc7cd0a1a4b3868a894a1d0988ce897420786ba2c3f",
+  "production_diff_sha256": "b3cae938e24c8cf5ed29b1abfc1f3a0f21a6dd9d5ed05d78dac5c8726fe24562",
+  "production_module_count": 270,
+  "changed_source_files": [
+    {
+      "file": "lean/FreeEntropy/ExteriorMultiplicity.lean",
+      "before_sha256": "1acedff8e192c4166773d2ac1ea2973e8130f50d73d5d9c7e10bfdb632b46f76",
+      "after_sha256": "4ceec12b4ef2164467d18a772ac9fffe75590296276ef262b303d81703043a7f"
+    },
+    {
+      "file": "lean/FreeEntropy/GTDeterminant.lean",
+      "before_sha256": "6af9a884d352729a6ffc7d186d8c1cd43a8ace8afe233db8096039f41fa06e55",
+      "after_sha256": "c9735432180f29c8ac1df5a15448c088769c586d0f9ac404c18ce562ceb0257b"
+    }
+  ],
+  "source_checks": [
+    {
+      "check": "Exactly two production source files changed between the reviewed publication and cleanup commits.",
+      "status": "passed"
+    },
+    {
+      "check": "ExteriorMultiplicity differs only by the exact eight nonblank lines and one following blank line of the unused private theorem. All retained statements, definitions, proof bodies, parameters, scopes and options in that file are byte-identical.",
+      "status": "passed"
+    },
+    {
+      "check": "GTDeterminant differs only by replacing import Mathlib.Tactic with the Linarith and Positivity imports. All declaration statements, data definition bodies, proof bodies, parameters, scopes and options in that file are byte-identical.",
+      "status": "passed"
+    },
+    {
+      "check": "The other 268 production modules have unchanged Git blobs. The four final endpoints occur in unchanged modules.",
+      "status": "passed"
+    },
+    {
+      "check": "Manuscripts, bibliography, toolchain/dependency pins, public audit seed list and production reader entrypoints have unchanged Git blobs.",
+      "status": "passed"
+    },
+    {
+      "check": "Current working production sources have no tracked difference from the cleanup source commit.",
+      "status": "passed"
+    }
+  ],
+  "dead_private_proof": {
+    "name": "_private.FreeEntropy.ExteriorMultiplicity.0.FreeEntropy.ExteriorRepresentation.complex_weight_eq_iff",
+    "kind": "theorem",
+    "source_before_lines": [
+      21,
+      28
+    ],
+    "public_audit_seed": false,
+    "compiled_reverse_consumers": [],
+    "reference_evidence_catalog_sha256": "938935cd8c6cc60df56d4b67b1583e4d5c948fa857527917dfe427d5f8b77b24",
+    "reference_evidence_proof_sources_sha256": "f4efe7d88eb576d8ad579c57a2dd1b4ddc3a6b628d5cb023d9f42a326c0dbfee",
+    "reference_scope": "All indexed project type, value and structural constant references in the previously generated compiled catalog. This is prior evidence; it is not a new compiled export or kernel run.",
+    "source_reference_finding": "The helper is declared private and no retained source declaration references its source identifier."
+  },
+  "retained_private_proof_identity": {
+    "source_identifier": "actualWeight_finrank_le_of_cyclic",
+    "before_catalog_name": "_private.FreeEntropy.ExteriorMultiplicity.0.FreeEntropy.ExteriorRepresentation.actualWeight_finrank_le_of_cyclic",
+    "source_body": "unchanged",
+    "compiled_ordinal_rename": "not_established_pending_actual_raw_compiled_snapshots",
+    "policy": "Start structural comparison without a rename exception. If actual compiled snapshots expose a compiler-generated rename, permit only an explicitly reviewed exact private-proof pair with an identical compiled signature; never infer a prefix rename from profiling output."
+  },
+  "import_change": {
+    "removed": [
+      "Mathlib.Tactic"
+    ],
+    "added": [
+      "Mathlib.Tactic.Linarith",
+      "Mathlib.Tactic.Positivity"
+    ],
+    "semantic_preservation_limit": "Source statements and definition bodies are unchanged, but an import change may affect elaboration context. Actual compiled public types and data values still require the structural comparison and a fresh successful production build/axiom audit."
+  },
+  "execution_evidence_status": {
+    "compiled_public_types_and_data_values": "pending; not run or inspected in this review",
+    "fresh_production_lean_axiom_audit": "pending integration; no completed kernel check claimed here",
+    "fresh_statement_probes": "pending integration",
+    "fresh_comparator_replay": "pending integration",
+    "fresh_nanoda_replay": "pending integration",
+    "elaboration_measurements": "separately executed and reported by the coordinating agent; no timing claim made in this review"
+  },
+  "verdict": "The bounded source delta preserves every retained source-level mathematical statement and data-definition/proof body. The removed private theorem has no indexed compiled consumers in the original catalog. No manuscript premise, definition or endpoint was weakened in the source. Compiled preservation and fresh verification remain explicit conditions before rebinding current evidence.",
+  "historical_review_policy": "Preserve the original semantic reports' revisions, timestamps, manuscript links and verdicts. Extend their applicability only through this restricted delta review and actual new compiled/check evidence; do not claim a new comprehensive semantic or human review.",
+  "refresh_conditions": [
+    "Complete the second measured elaboration test before any additional CPU-heavy Lean/Comparator/Nanoda work.",
+    "Require unchanged public compiled types and project data values in the structural comparison; investigate every unexpected difference.",
+    "Run the full fresh production axiom audit and regenerate source-bound catalog/map/probe evidence.",
+    "Run or explicitly preserve as historical any Comparator/Nanoda/reproduction evidence; never change their proof hashes to promote old runs to current passes.",
+    "Bind this review and the actual new evidence in an explicit cleanup-review bridge while retaining original semantic review provenance."
+  ],
+  "proof_source_identity_checks": {
+    "status": "passed",
+    "method": "Independently read all 270 production Git source blobs at both before/after revisions, calculated the filename-and-byte source fingerprints, and compared every working production source with the cleanup commit. Pins, manuscripts and reader entrypoints were also byte-compared.",
+    "before_proof_sources_sha256": "f4efe7d88eb576d8ad579c57a2dd1b4ddc3a6b628d5cb023d9f42a326c0dbfee",
+    "after_proof_sources_sha256": "e7068771d301aaac3156ecc7cd0a1a4b3868a894a1d0988ce897420786ba2c3f",
+    "before_module_count": 270,
+    "after_module_count": 270,
+    "unchanged_production_modules": 268,
+    "compiled_artifact_freshness": "not established by source-byte comparison; remains pending separate compiled checks"
+  },
+  "initial_status": "source_delta_review_passed_pending_compiled_preservation_and_fresh_checks",
+  "subsequent_validation": [
+    {
+      "validated_at_utc": "2026-10-07T00:45:58.002466+00:00",
+      "review_kind": "independent_compiled_delta_agent_review_with_bounded_kernel_definitional_equality",
+      "human_review": "not_established",
+      "source_first_manuscript_review_rerun": false,
+      "status": "passed_with_exactly_two_explicitly_kernel_witnessed_foundation_instance_equivalences",
+      "strict_raw_expression_result": {
+        "artifact": {
+          "path": "metadata/elaboration/2026-10-06/cleanup-comparison.json",
+          "sha256": "4463feaaf517b55028d1d4c2949a8a9f21f7fd452e98351eb6c0fc4e9757e1d4"
+        },
+        "status": "review_required",
+        "changed_declarations": 15,
+        "public_signature_changes": 3,
+        "data_value_changes": 4,
+        "meaning": "These are actual retained compiled-expression differences caused by inferred foundation instance paths after narrowing imports; they are preserved, not relabeled as raw AST identity."
+      },
+      "bounded_reviewed_result": {
+        "artifact": {
+          "path": "metadata/elaboration/2026-10-06/cleanup-reviewed-comparison.json",
+          "sha256": "89201736ea75cd748e30d923391af2859e4dd4a35ae0b55113ebc731a36923fc"
+        },
+        "status": "passed",
+        "remaining_changed_declarations": 0,
+        "remaining_public_signature_changes": 0,
+        "remaining_data_value_changes": 0,
+        "pair_ids": [
+          "IntPartialOrder",
+          "RealCharZero"
+        ],
+        "policy": "Only exact whole closed foundation const/app terms on both sides are canonicalized through the two registered kernel Eq.refl witnesses. All other retained types, data values, names, kinds, universes, binder annotations, safety flags and declaration metadata remain structurally compared. No generic unfolding, normalization, instance/proof erasure or name-prefix substitution."
+      },
+      "kernel_witnesses": {
+        "artifact": {
+          "path": "metadata/elaboration/2026-10-06/instance-witnesses.json",
+          "sha256": "6d538b5b233543ca33d37efff8cf05560e45b62570c3fdfa2689de5984a11a5d"
+        },
+        "pair_input": {
+          "path": "metadata/elaboration/2026-10-06/instance-pairs.json",
+          "sha256": "d4d08c18e7c28855067d6b1a441382e26a100ea04616109718f0362841b9e34b"
+        },
+        "pair_count": 2,
+        "method": "Literal Eq.refl witnesses checked by Environment.addDeclCore with doCheck=true, at explicit full instance types, importing only the two pinned Mathlib foundation modules. Raw inferred types, complete certificate expression trees, actual source/log/input/pin hashes and standard-only transitive axiom checks are retained. A false Nat.zero = Nat.succ Nat.zero control was rejected by the kernel."
+      },
+      "final_endpoint_raw_types": {
+        "status": "unchanged",
+        "count": 4,
+        "names": [
+          "FreeEntropy.theorem1_achievability",
+          "FreeEntropy.theorem1_converse",
+          "FreeEntropy.theorem1_converse_of_uniform",
+          "FreeEntropy.ExteriorRepresentation.theorem2_cloning_accuracy_choi"
+        ],
+        "scope": "Names, kinds, full compiled types and universe parameters in the actual raw before/after snapshots; proposition proof values are outside this structural comparison."
+      },
+      "private_proof_change": {
+        "removed": "_private.FreeEntropy.ExteriorMultiplicity.0.FreeEntropy.ExteriorRepresentation.complex_weight_eq_iff",
+        "only_observed_removal": true,
+        "retained_private_helper_name": "_private.FreeEntropy.ExteriorMultiplicity.0.FreeEntropy.ExteriorRepresentation.actualWeight_finrank_le_of_cyclic",
+        "retained_helper_name_unchanged": true,
+        "compiled_ordinal_renames_observed": false
+      },
+      "actual_source_freshness": {
+        "path": "metadata/elaboration/2026-10-06/verification/cleanup-source-provenance.json",
+        "sha256": "dcdbfd2eb51c89959066ce4d53727429ffdb182d61a9c9f83f1ea548a3c52a5d"
+      },
+      "fresh_lean_verification": {
+        "artifact": {
+          "path": "metadata/elaboration/2026-10-06/verification/lean-summary.json",
+          "sha256": "8b1c8e46831450466406d339932d51207c55e1ea57d644f844d622e82071500a"
+        },
+        "status": "passed",
+        "public_declarations": 2499,
+        "proved_declarations": 1873,
+        "modules": 270,
+        "allowed_axioms": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      },
+      "fresh_statement_probes": {
+        "artifact": {
+          "path": "metadata/elaboration/2026-10-06/verification/statement-checks.json",
+          "sha256": "c46d1200d6cc3763ba1d4dba57bece37401f0641ee27c8650f3b12a2d7eb1e87"
+        },
+        "status": "passed",
+        "scope": "Actual compiled exact-type applications for both theorem probe bundles, including compiled binder evidence; existing source-first semantic reviews are not rerun."
+      },
+      "fresh_compiled_catalog": {
+        "artifact": {
+          "path": "docs/assets/lean-catalog.json",
+          "sha256": "a4ca2b77eba4948192087e11fe0a36fdb9d6c0f20a89571c35705a232ddebfd7"
+        },
+        "counts": {
+          "declarations": 2499,
+          "modules": 270,
+          "proved": 1873,
+          "supplemental_declarations": 2027
+        },
+        "checks": "Catalog and 33 Article/9 Letter correspondence checks reported passed by the coordinating agent; this review independently inspected the current catalog source binding and counts."
+      },
+      "comparator_status_at_followup": "pending; no completed fresh Comparator claim made here",
+      "historical_review_policy": "The original source review timestamp, initial status, source facts and manuscript-review provenance are retained. This restricted compiled delta review and actual kernel/check artifacts extend applicability; they do not establish a new comprehensive source-first or human review."
+    }
+  ]
+}

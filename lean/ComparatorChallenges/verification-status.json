@@ -2,13 +2,13 @@
   "schema_version": 1,
   "lean_toolchain": "leanprover/lean4:v4.29.0-rc6",
   "comparator_commit": "a4f696825c583ed8a5b4060d9a0faa5b882d365b",
-  "challenge_elaboration": "passed_clean_isolated_build",
+  "challenge_elaboration": "passed_incremental_source_matching_build",
   "comparator_and_exporter_build": "passed",
   "sandboxed_comparator": "not_run",
   "sandboxed_reason": "Development host is macOS; real Landrun requires Linux",
   "unsandboxed_local_diagnostic": "passed",
-  "nanoda": "disabled_in_recorded_baseline_comparator_run",
-  "proof_sources_sha256": "f4efe7d88eb576d8ad579c57a2dd1b4ddc3a6b628d5cb023d9f42a326c0dbfee",
+  "nanoda": "not_requested_in_this_comparator_invocation",
+  "proof_sources_sha256": "e7068771d301aaac3156ecc7cd0a1a4b3868a894a1d0988ce897420786ba2c3f",
   "artifact_sha256": {
     "ComparatorChallenges/ChannelInterface.lean": "98cae4065c68e28b5c8fe518783e49209d94cb7c40e367a603abc78405071017",
     "ComparatorChallenges/ErrorScale.lean": "70524794e3ddaaa41e5db855fc64ac7ad3052d9f438e0ffb6a7b7779b0b65d4e",
@@ -29,7 +29,6 @@
   },
   "strict_linux_preflight": "configured_not_run",
   "strict_linux_requirement": "Full Landlock ABI 9 support for pinned Landrun; Linux 7.1 or newer",
-  "independent_theorem1_interface_constant_info": "passed; 38587 transitive constants exactly equal",
   "cases": {
     "ComparatorChallenges/Theorem1Achievability.json": {
       "statement_and_constants": "passed",
@@ -60,8 +59,7 @@
       ]
     }
   },
-  "execution_context": "Fresh clone of published commit dc226a55023a47d1f4868a042d87d39238b7e2dd; all 270 project modules rebuilt without pre-existing project proof artifacts. Dependency caches were reused after verifying clean source checkouts at all twelve locked revisions. All three statement comparisons, axiom checks and Lean kernel replays passed in that rebuilt tree.",
-  "completed_at_utc": "2026-10-01T07:56:11.603365+00:00",
+  "execution_context": "Fresh current-source Comparator invocation after the successful project-only cold All build and fresh kernel-axiom audit. Challenge/solution modules built incrementally against source-matching artifacts and verified pinned public dependency sources. Existing dependency caches and symlinks were retained. All three statement/constant comparisons, solution axiom checks and Lean kernel replays passed; wrapper exit status 0. This is not a fresh upstream dependency installation or a Linux-sandboxed run.",
   "checks": [
     "Pinned Comparator.compareAt",
     "Pinned Comparator.checkAxioms",
@@ -73,5 +71,28 @@
     "evidence": "ComparatorConfig/nanoda-status.json",
     "mode": "unsandboxed_independent_kernel",
     "status": "passed"
-  }
+  },
+  "current_source_revision": "4c2054c47d6c81615f5687fe5ac3f1c4dd1ea1d9",
+  "checked_at_utc": "2026-10-07T01:21:35.797734+00:00",
+  "historical_evidence": {
+    "path": "metadata/elaboration/2026-10-06/historical/comparator-status.json",
+    "sha256": "b8679538a979ce7ff9eb17b33a6de16e1c70466ccacc2a2c7c3eef189e1d2e80",
+    "scope": "Original report bytes, dates and extra interface-constant check are preserved as historical evidence only"
+  },
+  "wrapper_command": "bash scripts/verify.sh comparator",
+  "completed_case_count": 3,
+  "execution_evidence": {
+    "wrapper_sha256": "95a4b99188783b3e52cea047bc6a6521e5184de0797b81b3f9950fd73aecaecc",
+    "run_info": {
+      "path": "metadata/elaboration/2026-10-06/verification/comparator-run-info.json",
+      "sha256": "f3045b55f92879e7baa625dbb8deeb93efef58dc0cefedb1b525b99786c1e71c"
+    },
+    "raw_log": {
+      "path": "metadata/elaboration/2026-10-06/verification/comparator.log",
+      "sha256": "a11c4e833cdea93f4d9f73dc1244f08cf02ada1d39a12b4c9392eaef83925b07"
+    },
+    "raw_log_scope": "Complete actual wrapper stdout/stderr, including all three case verdicts, stage pass and final wrapper pass; no historical run output is relabeled",
+    "exit_status": 0
+  },
+  "completed_at_utc": "2026-10-07T01:20:11.842054+00:00"
 }

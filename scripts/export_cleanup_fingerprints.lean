@@ -30,8 +30,8 @@ private def kind : ConstantInfo → String
 
 private def nameTree : Name → Json
   | .anonymous => Json.arr #[toJson "anonymous"]
-  | .str prefix value => Json.arr #[toJson "str", nameTree prefix, toJson value]
-  | .num prefix value => Json.arr #[toJson "num", nameTree prefix, toJson value]
+  | .str parentName value => Json.arr #[toJson "str", nameTree parentName, toJson value]
+  | .num parentName value => Json.arr #[toJson "num", nameTree parentName, toJson value]
 
 private def levelTree : Level → Json
   | .zero => Json.arr #[toJson "zero"]

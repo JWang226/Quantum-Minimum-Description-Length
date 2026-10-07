@@ -1,0 +1,2007 @@
+{
+  "source_commit": "4c496959aa1462a6b6a6faf5535ea2a3caf9c119",
+  "counting_method": "Exact requested skill code_line_flags and has_module_header functions, with Git cat-file batch input rather than per-file Git forks.",
+  "tree_lean_files": 285,
+  "counted_lean_files": 285,
+  "total_lines": 38921,
+  "non_comment_code_lines": 30880,
+  "comment_only_excluded": [],
+  "non_module_header_count": 285,
+  "files": [
+    {
+      "path": "lean/All.lean",
+      "physical_lines": 11,
+      "non_comment_code_lines": 3,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/Audit.lean",
+      "physical_lines": 2535,
+      "non_comment_code_lines": 2520,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/ComparatorChallenges/ChannelInterface.lean",
+      "physical_lines": 34,
+      "non_comment_code_lines": 25,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/ComparatorChallenges/ErrorScale.lean",
+      "physical_lines": 14,
+      "non_comment_code_lines": 6,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/ComparatorChallenges/PhysicalInterface.lean",
+      "physical_lines": 80,
+      "non_comment_code_lines": 57,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/ComparatorChallenges/Qmdl.lean",
+      "physical_lines": 19,
+      "non_comment_code_lines": 11,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/ComparatorChallenges/Theorem1Achievability.lean",
+      "physical_lines": 27,
+      "non_comment_code_lines": 17,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/ComparatorChallenges/Theorem1Converse.lean",
+      "physical_lines": 34,
+      "non_comment_code_lines": 23,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/ComparatorChallenges/Theorem2Choi.lean",
+      "physical_lines": 60,
+      "non_comment_code_lines": 44,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/ComparatorConfig/ReplayExports.lean",
+      "physical_lines": 51,
+      "non_comment_code_lines": 39,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy.lean",
+      "physical_lines": 275,
+      "non_comment_code_lines": 270,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/AtypicalChannels.lean",
+      "physical_lines": 138,
+      "non_comment_code_lines": 87,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/CanonicalAmbientCloning.lean",
+      "physical_lines": 144,
+      "non_comment_code_lines": 132,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/CanonicalCartanCovariance.lean",
+      "physical_lines": 244,
+      "non_comment_code_lines": 203,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/CanonicalCharacter.lean",
+      "physical_lines": 68,
+      "non_comment_code_lines": 49,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/CanonicalCharacterEigen.lean",
+      "physical_lines": 83,
+      "non_comment_code_lines": 65,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/CanonicalCharacterIdentity.lean",
+      "physical_lines": 120,
+      "non_comment_code_lines": 89,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/CanonicalChoi.lean",
+      "physical_lines": 195,
+      "non_comment_code_lines": 166,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/CanonicalClassification.lean",
+      "physical_lines": 72,
+      "non_comment_code_lines": 57,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/CanonicalCloning.lean",
+      "physical_lines": 57,
+      "non_comment_code_lines": 42,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/CanonicalCloningBounds.lean",
+      "physical_lines": 64,
+      "non_comment_code_lines": 48,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/CanonicalCloningCore.lean",
+      "physical_lines": 150,
+      "non_comment_code_lines": 135,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/CanonicalCloningOrbit.lean",
+      "physical_lines": 81,
+      "non_comment_code_lines": 66,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/CanonicalCloningSelf.lean",
+      "physical_lines": 154,
+      "non_comment_code_lines": 131,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/CanonicalConverse.lean",
+      "physical_lines": 50,
+      "non_comment_code_lines": 35,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/CanonicalDimension.lean",
+      "physical_lines": 91,
+      "non_comment_code_lines": 66,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/CanonicalDimensionRatio.lean",
+      "physical_lines": 111,
+      "non_comment_code_lines": 92,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/CanonicalDualCyclicHighest.lean",
+      "physical_lines": 32,
+      "non_comment_code_lines": 20,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/CanonicalDualHighest.lean",
+      "physical_lines": 151,
+      "non_comment_code_lines": 124,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/CanonicalFullCloning.lean",
+      "physical_lines": 113,
+      "non_comment_code_lines": 90,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/CanonicalMonomialState.lean",
+      "physical_lines": 188,
+      "non_comment_code_lines": 151,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/CanonicalOrbit.lean",
+      "physical_lines": 89,
+      "non_comment_code_lines": 66,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/CanonicalPetz.lean",
+      "physical_lines": 173,
+      "non_comment_code_lines": 133,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/CanonicalPhysicalOrbit.lean",
+      "physical_lines": 107,
+      "non_comment_code_lines": 87,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/CanonicalReverseChoi.lean",
+      "physical_lines": 107,
+      "non_comment_code_lines": 85,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/CanonicalRowBounds.lean",
+      "physical_lines": 82,
+      "non_comment_code_lines": 62,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/CartanBalance.lean",
+      "physical_lines": 118,
+      "non_comment_code_lines": 86,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/CartanChannel.lean",
+      "physical_lines": 433,
+      "non_comment_code_lines": 322,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/CartanChoi.lean",
+      "physical_lines": 190,
+      "non_comment_code_lines": 160,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/CartanChoiMultiplicity.lean",
+      "physical_lines": 140,
+      "non_comment_code_lines": 111,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/CartanCloning.lean",
+      "physical_lines": 233,
+      "non_comment_code_lines": 193,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/CartanGroupCovariance.lean",
+      "physical_lines": 100,
+      "non_comment_code_lines": 75,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/CartanHomMultiplicity.lean",
+      "physical_lines": 167,
+      "non_comment_code_lines": 140,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/CartanLieCloning.lean",
+      "physical_lines": 379,
+      "non_comment_code_lines": 323,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/CartanMultiplicity.lean",
+      "physical_lines": 145,
+      "non_comment_code_lines": 123,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/CartanReshuffle.lean",
+      "physical_lines": 79,
+      "non_comment_code_lines": 61,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/CartanTraceCloning.lean",
+      "physical_lines": 384,
+      "non_comment_code_lines": 343,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/CartanTraceCloningBalance.lean",
+      "physical_lines": 89,
+      "non_comment_code_lines": 79,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/CasimirCentral.lean",
+      "physical_lines": 108,
+      "non_comment_code_lines": 80,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/CasimirDecomposition.lean",
+      "physical_lines": 241,
+      "non_comment_code_lines": 200,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/CasimirTrace.lean",
+      "physical_lines": 354,
+      "non_comment_code_lines": 276,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/CasimirWeights.lean",
+      "physical_lines": 181,
+      "non_comment_code_lines": 133,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/Channels.lean",
+      "physical_lines": 179,
+      "non_comment_code_lines": 123,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/ChoiContraction.lean",
+      "physical_lines": 34,
+      "non_comment_code_lines": 22,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/Cloning.lean",
+      "physical_lines": 351,
+      "non_comment_code_lines": 279,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/CloningFromRows.lean",
+      "physical_lines": 101,
+      "non_comment_code_lines": 75,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/CloningMatrices.lean",
+      "physical_lines": 316,
+      "non_comment_code_lines": 265,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/Concentration.lean",
+      "physical_lines": 87,
+      "non_comment_code_lines": 66,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/ConstantWeightPhase.lean",
+      "physical_lines": 106,
+      "non_comment_code_lines": 84,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/ConstructedLieCloning.lean",
+      "physical_lines": 153,
+      "non_comment_code_lines": 134,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/ConstructedTensorDecomposition.lean",
+      "physical_lines": 59,
+      "non_comment_code_lines": 45,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/CoordinateWeightSpace.lean",
+      "physical_lines": 42,
+      "non_comment_code_lines": 31,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/CyclicHighestRepresentation.lean",
+      "physical_lines": 123,
+      "non_comment_code_lines": 92,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/CyclicWeightHighest.lean",
+      "physical_lines": 149,
+      "non_comment_code_lines": 120,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/CyclicWeightOrbit.lean",
+      "physical_lines": 83,
+      "non_comment_code_lines": 65,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/CyclicWeightShift.lean",
+      "physical_lines": 79,
+      "non_comment_code_lines": 61,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/CyclicWeightStateBlocks.lean",
+      "physical_lines": 154,
+      "non_comment_code_lines": 127,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/CyclicWeightStates.lean",
+      "physical_lines": 107,
+      "non_comment_code_lines": 81,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/ExteriorCanonicalCyclicity.lean",
+      "physical_lines": 79,
+      "non_comment_code_lines": 65,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/ExteriorCanonicalHighest.lean",
+      "physical_lines": 135,
+      "non_comment_code_lines": 111,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/ExteriorCartan.lean",
+      "physical_lines": 77,
+      "non_comment_code_lines": 56,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/ExteriorCartanChannels.lean",
+      "physical_lines": 62,
+      "non_comment_code_lines": 42,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/ExteriorCartanEmbedding.lean",
+      "physical_lines": 224,
+      "non_comment_code_lines": 187,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/ExteriorColumnEquiv.lean",
+      "physical_lines": 134,
+      "non_comment_code_lines": 108,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/ExteriorCommutant.lean",
+      "physical_lines": 186,
+      "non_comment_code_lines": 151,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/ExteriorDominant.lean",
+      "physical_lines": 134,
+      "non_comment_code_lines": 107,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/ExteriorHighestRepresentation.lean",
+      "physical_lines": 70,
+      "non_comment_code_lines": 48,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/ExteriorLowerMinors.lean",
+      "physical_lines": 81,
+      "non_comment_code_lines": 64,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/ExteriorMatrixIrreducible.lean",
+      "physical_lines": 54,
+      "non_comment_code_lines": 34,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/ExteriorMonomialColumns.lean",
+      "physical_lines": 221,
+      "non_comment_code_lines": 172,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/ExteriorMonomialWeights.lean",
+      "physical_lines": 121,
+      "non_comment_code_lines": 100,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/ExteriorMultiplicity.lean",
+      "physical_lines": 223,
+      "non_comment_code_lines": 185,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/ExteriorPhysicalIrrep.lean",
+      "physical_lines": 80,
+      "non_comment_code_lines": 55,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/ExteriorRepresentation.lean",
+      "physical_lines": 128,
+      "non_comment_code_lines": 97,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/ExteriorRootCounting.lean",
+      "physical_lines": 62,
+      "non_comment_code_lines": 47,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/ExteriorRootSupport.lean",
+      "physical_lines": 71,
+      "non_comment_code_lines": 55,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/ExteriorSimpleOffsets.lean",
+      "physical_lines": 94,
+      "non_comment_code_lines": 78,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/ExteriorSupportedMonomials.lean",
+      "physical_lines": 105,
+      "non_comment_code_lines": 80,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/ExteriorSupportedOffsets.lean",
+      "physical_lines": 101,
+      "non_comment_code_lines": 83,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/ExteriorTensor.lean",
+      "physical_lines": 140,
+      "non_comment_code_lines": 114,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/ExteriorTensorEmbedding.lean",
+      "physical_lines": 174,
+      "non_comment_code_lines": 139,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/ExteriorTensorEmbeddingProduct.lean",
+      "physical_lines": 122,
+      "non_comment_code_lines": 89,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/ExteriorTensorPermutation.lean",
+      "physical_lines": 145,
+      "non_comment_code_lines": 107,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/ExteriorTensorSum.lean",
+      "physical_lines": 64,
+      "non_comment_code_lines": 46,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/ExteriorWeightCoordinates.lean",
+      "physical_lines": 134,
+      "non_comment_code_lines": 106,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/ExteriorWeightDimension.lean",
+      "physical_lines": 161,
+      "non_comment_code_lines": 129,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/ExteriorWeightMultiplicity.lean",
+      "physical_lines": 122,
+      "non_comment_code_lines": 100,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/ExteriorWeights.lean",
+      "physical_lines": 215,
+      "non_comment_code_lines": 172,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/FiniteConcentration.lean",
+      "physical_lines": 297,
+      "non_comment_code_lines": 235,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/GTCardinality.lean",
+      "physical_lines": 87,
+      "non_comment_code_lines": 59,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/GTCharacterEndpoints.lean",
+      "physical_lines": 53,
+      "non_comment_code_lines": 29,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/GTDeterminant.lean",
+      "physical_lines": 123,
+      "non_comment_code_lines": 99,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/GTDimension.lean",
+      "physical_lines": 176,
+      "non_comment_code_lines": 134,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/GTDimensionEndpoints.lean",
+      "physical_lines": 117,
+      "non_comment_code_lines": 80,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/GTDimensionFormula.lean",
+      "physical_lines": 121,
+      "non_comment_code_lines": 86,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/GTFiniteSupport.lean",
+      "physical_lines": 137,
+      "non_comment_code_lines": 100,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/GTOrbit.lean",
+      "physical_lines": 144,
+      "non_comment_code_lines": 102,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/GTPartitions.lean",
+      "physical_lines": 423,
+      "non_comment_code_lines": 337,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/GTRankSupport.lean",
+      "physical_lines": 279,
+      "non_comment_code_lines": 222,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/GTWeylProduct.lean",
+      "physical_lines": 117,
+      "non_comment_code_lines": 96,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/GelfandTsetlin.lean",
+      "physical_lines": 188,
+      "non_comment_code_lines": 128,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/GeometricOrbit.lean",
+      "physical_lines": 199,
+      "non_comment_code_lines": 153,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/HighestWeightDominance.lean",
+      "physical_lines": 60,
+      "non_comment_code_lines": 48,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/IdentityCloning.lean",
+      "physical_lines": 64,
+      "non_comment_code_lines": 46,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/IsometricCompression.lean",
+      "physical_lines": 101,
+      "non_comment_code_lines": 73,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/KostantCounting.lean",
+      "physical_lines": 341,
+      "non_comment_code_lines": 269,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/KostantWeightData.lean",
+      "physical_lines": 79,
+      "non_comment_code_lines": 50,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/LieCartanBalance.lean",
+      "physical_lines": 107,
+      "non_comment_code_lines": 87,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/LieCharacterCanonical.lean",
+      "physical_lines": 83,
+      "non_comment_code_lines": 61,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/LieCharacterFinite.lean",
+      "physical_lines": 109,
+      "non_comment_code_lines": 88,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/LieCharacterRadial.lean",
+      "physical_lines": 284,
+      "non_comment_code_lines": 227,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/LieCharacterSymmetry.lean",
+      "physical_lines": 176,
+      "non_comment_code_lines": 144,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/LieCyclicIrreducible.lean",
+      "physical_lines": 124,
+      "non_comment_code_lines": 103,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/LieCyclicMaps.lean",
+      "physical_lines": 79,
+      "non_comment_code_lines": 65,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/LieDecomposition.lean",
+      "physical_lines": 189,
+      "non_comment_code_lines": 157,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/LieDepthMultiplicity.lean",
+      "physical_lines": 183,
+      "non_comment_code_lines": 154,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/LieDeterminantTwist.lean",
+      "physical_lines": 143,
+      "non_comment_code_lines": 121,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/LieDirectSum.lean",
+      "physical_lines": 86,
+      "non_comment_code_lines": 69,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/LieDual.lean",
+      "physical_lines": 28,
+      "non_comment_code_lines": 18,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/LieDualCyclicity.lean",
+      "physical_lines": 57,
+      "non_comment_code_lines": 45,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/LieDualTensor.lean",
+      "physical_lines": 52,
+      "non_comment_code_lines": 36,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/LieHighestEquivalence.lean",
+      "physical_lines": 89,
+      "non_comment_code_lines": 75,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/LieHighestExistence.lean",
+      "physical_lines": 102,
+      "non_comment_code_lines": 87,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/LieHighestUnitary.lean",
+      "physical_lines": 113,
+      "non_comment_code_lines": 99,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/LieMatrixCasimir.lean",
+      "physical_lines": 297,
+      "non_comment_code_lines": 241,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/LiePBW.lean",
+      "physical_lines": 112,
+      "non_comment_code_lines": 86,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/LiePBWDimension.lean",
+      "physical_lines": 145,
+      "non_comment_code_lines": 120,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/LiePBWHighest.lean",
+      "physical_lines": 123,
+      "non_comment_code_lines": 102,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/LiePBWMultiplicity.lean",
+      "physical_lines": 245,
+      "non_comment_code_lines": 204,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/LiePBWOrderedLowering.lean",
+      "physical_lines": 150,
+      "non_comment_code_lines": 126,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/LiePBWUnique.lean",
+      "physical_lines": 78,
+      "non_comment_code_lines": 63,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/LiePBWWeights.lean",
+      "physical_lines": 140,
+      "non_comment_code_lines": 116,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/LieWeightModel.lean",
+      "physical_lines": 90,
+      "non_comment_code_lines": 74,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/MeanDepth.lean",
+      "physical_lines": 146,
+      "non_comment_code_lines": 108,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/MultiplicityChannels.lean",
+      "physical_lines": 127,
+      "non_comment_code_lines": 83,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/Occupation.lean",
+      "physical_lines": 147,
+      "non_comment_code_lines": 114,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/OccupationCloning.lean",
+      "physical_lines": 59,
+      "non_comment_code_lines": 35,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/OccupationCloningExact.lean",
+      "physical_lines": 68,
+      "non_comment_code_lines": 48,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/OccupationCommutant.lean",
+      "physical_lines": 99,
+      "non_comment_code_lines": 83,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/OccupationCounting.lean",
+      "physical_lines": 97,
+      "non_comment_code_lines": 79,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/OccupationDimension.lean",
+      "physical_lines": 56,
+      "non_comment_code_lines": 32,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/OccupationForward.lean",
+      "physical_lines": 85,
+      "non_comment_code_lines": 62,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/OccupationIrreducible.lean",
+      "physical_lines": 48,
+      "non_comment_code_lines": 27,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/OccupationRatio.lean",
+      "physical_lines": 43,
+      "non_comment_code_lines": 29,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/OccupationRepresentation.lean",
+      "physical_lines": 136,
+      "non_comment_code_lines": 99,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/OccupationSplit.lean",
+      "physical_lines": 157,
+      "non_comment_code_lines": 119,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/OccupationSplitRepresentation.lean",
+      "physical_lines": 64,
+      "non_comment_code_lines": 45,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/OccupationTheorem2.lean",
+      "physical_lines": 95,
+      "non_comment_code_lines": 67,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/OccupationTorus.lean",
+      "physical_lines": 119,
+      "non_comment_code_lines": 101,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/OccupationWerner.lean",
+      "physical_lines": 54,
+      "non_comment_code_lines": 34,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/OneDimensionalSource.lean",
+      "physical_lines": 86,
+      "non_comment_code_lines": 66,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/OptimalMemory.lean",
+      "physical_lines": 212,
+      "non_comment_code_lines": 154,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/OrbitEigenvalues.lean",
+      "physical_lines": 118,
+      "non_comment_code_lines": 90,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/OrbitMemory.lean",
+      "physical_lines": 301,
+      "non_comment_code_lines": 233,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/OrbitTraceDistance.lean",
+      "physical_lines": 338,
+      "non_comment_code_lines": 274,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/PhysicalCanonicalChannels.lean",
+      "physical_lines": 105,
+      "non_comment_code_lines": 81,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/PhysicalCanonicalConverse.lean",
+      "physical_lines": 125,
+      "non_comment_code_lines": 101,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/PhysicalCanonicalSector.lean",
+      "physical_lines": 206,
+      "non_comment_code_lines": 165,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/PhysicalCloningAccuracy.lean",
+      "physical_lines": 76,
+      "non_comment_code_lines": 58,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/PhysicalCloningChannels.lean",
+      "physical_lines": 153,
+      "non_comment_code_lines": 123,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/PhysicalOrbitChannels.lean",
+      "physical_lines": 137,
+      "non_comment_code_lines": 107,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/PhysicalSchurApproximation.lean",
+      "physical_lines": 83,
+      "non_comment_code_lines": 70,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/PhysicalSchurProtocol.lean",
+      "physical_lines": 141,
+      "non_comment_code_lines": 104,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/PhysicalUniformError.lean",
+      "physical_lines": 119,
+      "non_comment_code_lines": 97,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/PolynomialOrbitDimension.lean",
+      "physical_lines": 55,
+      "non_comment_code_lines": 38,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/ProjectorGeometry.lean",
+      "physical_lines": 117,
+      "non_comment_code_lines": 87,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/Proofs.lean",
+      "physical_lines": 126,
+      "non_comment_code_lines": 94,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/Protocol.lean",
+      "physical_lines": 76,
+      "non_comment_code_lines": 53,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/PureAchievability.lean",
+      "physical_lines": 48,
+      "non_comment_code_lines": 25,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/PureConverse.lean",
+      "physical_lines": 181,
+      "non_comment_code_lines": 146,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/PureTensorCompression.lean",
+      "physical_lines": 64,
+      "non_comment_code_lines": 37,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/QuantumProtocol.lean",
+      "physical_lines": 122,
+      "non_comment_code_lines": 93,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/QuantumTransfer.lean",
+      "physical_lines": 222,
+      "non_comment_code_lines": 168,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/RaisingKernel.lean",
+      "physical_lines": 118,
+      "non_comment_code_lines": 96,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/RankOneEndpoints.lean",
+      "physical_lines": 144,
+      "non_comment_code_lines": 104,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/RankOneStates.lean",
+      "physical_lines": 70,
+      "non_comment_code_lines": 49,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/RankRootCounting.lean",
+      "physical_lines": 139,
+      "non_comment_code_lines": 122,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/ReverseChoi.lean",
+      "physical_lines": 120,
+      "non_comment_code_lines": 93,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/ReverseChoiMultiplicity.lean",
+      "physical_lines": 187,
+      "non_comment_code_lines": 152,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/ReverseChoiRepresentation.lean",
+      "physical_lines": 110,
+      "non_comment_code_lines": 94,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/RootPartitionFunction.lean",
+      "physical_lines": 268,
+      "non_comment_code_lines": 214,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/ScalarCommutantIrreducible.lean",
+      "physical_lines": 89,
+      "non_comment_code_lines": 74,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/SchurAchievability.lean",
+      "physical_lines": 239,
+      "non_comment_code_lines": 173,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/SchurProbability.lean",
+      "physical_lines": 144,
+      "non_comment_code_lines": 108,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/SchurProbabilityCharacter.lean",
+      "physical_lines": 150,
+      "non_comment_code_lines": 120,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/SchurProbabilityConcentration.lean",
+      "physical_lines": 92,
+      "non_comment_code_lines": 67,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/SchurProbabilityTableaux.lean",
+      "physical_lines": 116,
+      "non_comment_code_lines": 85,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/SchurProtocol.lean",
+      "physical_lines": 181,
+      "non_comment_code_lines": 126,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/SchurWeylBlocks.lean",
+      "physical_lines": 146,
+      "non_comment_code_lines": 109,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/SchurWeylConcentration.lean",
+      "physical_lines": 108,
+      "non_comment_code_lines": 83,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/SchurWeylConcentrationGrouping.lean",
+      "physical_lines": 73,
+      "non_comment_code_lines": 51,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/SchurWeylConcentrationMonomial.lean",
+      "physical_lines": 90,
+      "non_comment_code_lines": 71,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/SchurWeylConcentrationProbability.lean",
+      "physical_lines": 75,
+      "non_comment_code_lines": 55,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/SchurWeylConcentrationSupport.lean",
+      "physical_lines": 81,
+      "non_comment_code_lines": 66,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/SchurWeylConcentrationTail.lean",
+      "physical_lines": 186,
+      "non_comment_code_lines": 160,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/SchurWeylMultiplicity.lean",
+      "physical_lines": 77,
+      "non_comment_code_lines": 53,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/SchurWeylNormalization.lean",
+      "physical_lines": 98,
+      "non_comment_code_lines": 67,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/SchurWeylPhysical.lean",
+      "physical_lines": 154,
+      "non_comment_code_lines": 107,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/SchurWeylSource.lean",
+      "physical_lines": 95,
+      "non_comment_code_lines": 60,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/SchurWeylWeightExistence.lean",
+      "physical_lines": 123,
+      "non_comment_code_lines": 95,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/SchurWeylWeightMultiplicity.lean",
+      "physical_lines": 149,
+      "non_comment_code_lines": 116,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/SectorChannels.lean",
+      "physical_lines": 285,
+      "non_comment_code_lines": 220,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/SectorProtocol.lean",
+      "physical_lines": 123,
+      "non_comment_code_lines": 92,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/SignedAuxiliaryModel.lean",
+      "physical_lines": 77,
+      "non_comment_code_lines": 55,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/SignedCartan.lean",
+      "physical_lines": 103,
+      "non_comment_code_lines": 78,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/SpecifiedCloningChannels.lean",
+      "physical_lines": 35,
+      "non_comment_code_lines": 23,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/SpecifiedLieCloning.lean",
+      "physical_lines": 186,
+      "non_comment_code_lines": 164,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/SpectralProjector.lean",
+      "physical_lines": 131,
+      "non_comment_code_lines": 97,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/SpectrumBounds.lean",
+      "physical_lines": 153,
+      "non_comment_code_lines": 95,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/Statements.lean",
+      "physical_lines": 96,
+      "non_comment_code_lines": 63,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/SupportedWeightStates.lean",
+      "physical_lines": 90,
+      "non_comment_code_lines": 72,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/TensorConstituentDecomposition.lean",
+      "physical_lines": 100,
+      "non_comment_code_lines": 72,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/TensorConstituentWeights.lean",
+      "physical_lines": 107,
+      "non_comment_code_lines": 87,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/TensorHighestWeight.lean",
+      "physical_lines": 173,
+      "non_comment_code_lines": 144,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/TensorInfinitesimal.lean",
+      "physical_lines": 116,
+      "non_comment_code_lines": 87,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/TensorLieCyclicity.lean",
+      "physical_lines": 179,
+      "non_comment_code_lines": 140,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/TensorLieCyclicityPhysical.lean",
+      "physical_lines": 92,
+      "non_comment_code_lines": 69,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/TensorLieCyclicitySubspace.lean",
+      "physical_lines": 144,
+      "non_comment_code_lines": 121,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/TensorLieIntertwiners.lean",
+      "physical_lines": 53,
+      "non_comment_code_lines": 43,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/TensorLieRestriction.lean",
+      "physical_lines": 65,
+      "non_comment_code_lines": 50,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/TensorPowers.lean",
+      "physical_lines": 103,
+      "non_comment_code_lines": 73,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/TensorPowersPair.lean",
+      "physical_lines": 101,
+      "non_comment_code_lines": 80,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/TensorSectorCasimir.lean",
+      "physical_lines": 68,
+      "non_comment_code_lines": 53,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/TensorSectorDimension.lean",
+      "physical_lines": 43,
+      "non_comment_code_lines": 29,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/TensorSites.lean",
+      "physical_lines": 155,
+      "non_comment_code_lines": 126,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/TensorTopExistence.lean",
+      "physical_lines": 94,
+      "non_comment_code_lines": 74,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/TensorTorusIntertwiner.lean",
+      "physical_lines": 50,
+      "non_comment_code_lines": 38,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/TensorWeightBasis.lean",
+      "physical_lines": 182,
+      "non_comment_code_lines": 149,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/TensorWeightCoordinates.lean",
+      "physical_lines": 139,
+      "non_comment_code_lines": 113,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/TensorWeightModel.lean",
+      "physical_lines": 104,
+      "non_comment_code_lines": 78,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/TensorWeightSource.lean",
+      "physical_lines": 84,
+      "non_comment_code_lines": 60,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/Theorem1Complete.lean",
+      "physical_lines": 68,
+      "non_comment_code_lines": 49,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/Theorem2.lean",
+      "physical_lines": 106,
+      "non_comment_code_lines": 64,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/Theorem2Canonical.lean",
+      "physical_lines": 93,
+      "non_comment_code_lines": 66,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/Theorem2Choi.lean",
+      "physical_lines": 98,
+      "non_comment_code_lines": 72,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/Theorem2GT.lean",
+      "physical_lines": 242,
+      "non_comment_code_lines": 187,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/Theorem2Petz.lean",
+      "physical_lines": 41,
+      "non_comment_code_lines": 28,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/Theorem2RankOneGT.lean",
+      "physical_lines": 113,
+      "non_comment_code_lines": 94,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/TorusWeightEigenline.lean",
+      "physical_lines": 124,
+      "non_comment_code_lines": 98,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/TorusWeightProjection.lean",
+      "physical_lines": 100,
+      "non_comment_code_lines": 83,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/TraceCloning.lean",
+      "physical_lines": 219,
+      "non_comment_code_lines": 186,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/TraceDistance.lean",
+      "physical_lines": 318,
+      "non_comment_code_lines": 242,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/TraceMetric.lean",
+      "physical_lines": 110,
+      "non_comment_code_lines": 84,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/Twirling.lean",
+      "physical_lines": 211,
+      "non_comment_code_lines": 149,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/TypicalCanonicalRows.lean",
+      "physical_lines": 167,
+      "non_comment_code_lines": 138,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/TypicalRows.lean",
+      "physical_lines": 218,
+      "non_comment_code_lines": 171,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/UnitaryColumn.lean",
+      "physical_lines": 69,
+      "non_comment_code_lines": 49,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/UnitaryCoordinates.lean",
+      "physical_lines": 76,
+      "non_comment_code_lines": 60,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/UnitaryDecomposition.lean",
+      "physical_lines": 81,
+      "non_comment_code_lines": 51,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/UnitaryDecompositionBasic.lean",
+      "physical_lines": 153,
+      "non_comment_code_lines": 118,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/UnitaryDecompositionMatrices.lean",
+      "physical_lines": 183,
+      "non_comment_code_lines": 146,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/UnitaryDecompositionOrthogonal.lean",
+      "physical_lines": 97,
+      "non_comment_code_lines": 74,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/UnitaryHaar.lean",
+      "physical_lines": 63,
+      "non_comment_code_lines": 35,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/WeightNormalization.lean",
+      "physical_lines": 162,
+      "non_comment_code_lines": 120,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/WeightSectors.lean",
+      "physical_lines": 218,
+      "non_comment_code_lines": 178,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/Weyl.lean",
+      "physical_lines": 123,
+      "non_comment_code_lines": 86,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/WeylAlternantCoefficients.lean",
+      "physical_lines": 92,
+      "non_comment_code_lines": 70,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/WeylAlternating.lean",
+      "physical_lines": 138,
+      "non_comment_code_lines": 109,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/WeylCharacterAlgebra.lean",
+      "physical_lines": 124,
+      "non_comment_code_lines": 91,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/WeylCharacterCone.lean",
+      "physical_lines": 163,
+      "non_comment_code_lines": 138,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/WeylCharacterSupport.lean",
+      "physical_lines": 85,
+      "non_comment_code_lines": 70,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/WeylCoefficient.lean",
+      "physical_lines": 85,
+      "non_comment_code_lines": 67,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/WeylCombinatorics.lean",
+      "physical_lines": 238,
+      "non_comment_code_lines": 195,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/WeylDenominator.lean",
+      "physical_lines": 81,
+      "non_comment_code_lines": 56,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/WeylDifferentialProduct.lean",
+      "physical_lines": 148,
+      "non_comment_code_lines": 121,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/WeylDimensionExtraction.lean",
+      "physical_lines": 70,
+      "non_comment_code_lines": 51,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/WeylFinite.lean",
+      "physical_lines": 107,
+      "non_comment_code_lines": 82,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/WeylFiniteSupplement.lean",
+      "physical_lines": 143,
+      "non_comment_code_lines": 106,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/WeylTranslation.lean",
+      "physical_lines": 87,
+      "non_comment_code_lines": 68,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/WordPermutations.lean",
+      "physical_lines": 91,
+      "non_comment_code_lines": 67,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/FreeEntropy/WordTypes.lean",
+      "physical_lines": 115,
+      "non_comment_code_lines": 84,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/Theorem1.lean",
+      "physical_lines": 9,
+      "non_comment_code_lines": 1,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "lean/Theorem2.lean",
+      "physical_lines": 11,
+      "non_comment_code_lines": 3,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "scripts/export_proof_catalog.lean",
+      "physical_lines": 89,
+      "non_comment_code_lines": 76,
+      "comment_only": false,
+      "module_header": false
+    },
+    {
+      "path": "scripts/export_statement_audit.lean",
+      "physical_lines": 51,
+      "non_comment_code_lines": 41,
+      "comment_only": false,
+      "module_header": false
+    }
+  ]
+}

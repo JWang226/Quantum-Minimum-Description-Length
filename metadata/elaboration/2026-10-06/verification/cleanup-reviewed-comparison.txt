@@ -1,0 +1,2 @@
+CLEANUP STRUCTURAL COMPARISON PASSED: {'before_declarations': 4527, 'after_declarations': 4526, 'before_public_declarations': 2499, 'after_public_declarations': 2499, 'before_data_values': 863, 'after_data_values': 863, 'public_signature_changes': 0, 'data_value_changes': 0, 'changed_declarations': 0}
+Comparison record: metadata/elaboration/2026-10-06/cleanup-reviewed-comparison.json

@@ -1,0 +1,23 @@
+{
+  "checked_at_utc": "2026-10-07T00:38:00.565000+00:00",
+  "status": "passed",
+  "scope": "Source/pin/Audit-byte checks after actual snapshot exports and successful foundation kernel witnesses; no source mutation or verification rebinding.",
+  "checks": [
+    {
+      "side": "before",
+      "source_match": true,
+      "pin_match": true,
+      "audit_seed_file_match": true,
+      "module_count": 270,
+      "proof_sources_sha256": "f4efe7d88eb576d8ad579c57a2dd1b4ddc3a6b628d5cb023d9f42a326c0dbfee"
+    },
+    {
+      "side": "after",
+      "source_match": true,
+      "pin_match": true,
+      "audit_seed_file_match": true,
+      "module_count": 270,
+      "proof_sources_sha256": "e7068771d301aaac3156ecc7cd0a1a4b3868a894a1d0988ce897420786ba2c3f"
+    }
+  ]
+}

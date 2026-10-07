@@ -1,0 +1,82 @@
+{
+  "schema_version": "qmdl-cleanup-review-bridge-v1",
+  "status": "passed_bounded_cleanup_preservation",
+  "reviewed_at_utc": "2026-10-07T00:47:10.093954+00:00",
+  "review_kind": "bounded_source_delta_and_compiled_equivalence_review",
+  "human_review": "not_established",
+  "source_first_review_rerun": false,
+  "original_semantic_review_revision": "490356f620c1ab963ff99585d6835c93e4324b37",
+  "before_source_revision": "9c97dbf8cb5d7913fcc7b33d812f94cb1f1738bf",
+  "current_source_revision": "4c2054c47d6c81615f5687fe5ac3f1c4dd1ea1d9",
+  "before_proof_sources_sha256": "f4efe7d88eb576d8ad579c57a2dd1b4ddc3a6b628d5cb023d9f42a326c0dbfee",
+  "current_proof_sources_sha256": "e7068771d301aaac3156ecc7cd0a1a4b3868a894a1d0988ce897420786ba2c3f",
+  "source_delta": {
+    "path": "metadata/elaboration/2026-10-06/cleanup-delta-review.json",
+    "sha256": "62bf47ce8e7597c0d50daae083b42cf4d806d01c0244228857030592a7ff6859"
+  },
+  "original_manifest": {
+    "path": "metadata/elaboration/2026-10-06/historical/statement-manifest.json",
+    "sha256": "7de60a4373d1fd0a8bf87dfb02ea4f676c013d7546e57c35bf87bdd8d7f90912"
+  },
+  "raw_structural_comparison": {
+    "path": "metadata/elaboration/2026-10-06/cleanup-comparison.json",
+    "sha256": "4463feaaf517b55028d1d4c2949a8a9f21f7fd452e98351eb6c0fc4e9757e1d4"
+  },
+  "raw_differences": {
+    "before_declarations": 4527,
+    "after_declarations": 4526,
+    "before_public_declarations": 2499,
+    "after_public_declarations": 2499,
+    "before_data_values": 863,
+    "after_data_values": 863,
+    "public_signature_changes": 3,
+    "data_value_changes": 4,
+    "changed_declarations": 15
+  },
+  "reviewed_comparison": {
+    "path": "metadata/elaboration/2026-10-06/cleanup-reviewed-comparison.json",
+    "sha256": "89201736ea75cd748e30d923391af2859e4dd4a35ae0b55113ebc731a36923fc"
+  },
+  "remaining_differences": {
+    "before_declarations": 4527,
+    "after_declarations": 4526,
+    "before_public_declarations": 2499,
+    "after_public_declarations": 2499,
+    "before_data_values": 863,
+    "after_data_values": 863,
+    "public_signature_changes": 0,
+    "data_value_changes": 0,
+    "changed_declarations": 0
+  },
+  "instance_pairs": {
+    "path": "metadata/elaboration/2026-10-06/instance-pairs.json",
+    "sha256": "d4d08c18e7c28855067d6b1a441382e26a100ea04616109718f0362841b9e34b"
+  },
+  "instance_witnesses": {
+    "path": "metadata/elaboration/2026-10-06/instance-witnesses.json",
+    "sha256": "6d538b5b233543ca33d37efff8cf05560e45b62570c3fdfa2689de5984a11a5d"
+  },
+  "fresh_statement_applications": {
+    "path": "metadata/statement-audit/checks.json",
+    "sha256": "c46d1200d6cc3763ba1d4dba57bece37401f0641ee27c8650f3b12a2d7eb1e87"
+  },
+  "fresh_compiled_binders": {
+    "path": "metadata/statement-audit/compiled-binders.json",
+    "sha256": "02d31b308cbd2a06983fd2db0e6c92b0a53c5d7fb2f8611baf821991a8fa0139"
+  },
+  "fresh_library_audit": {
+    "path": "lean/verification/summary.json",
+    "sha256": "8b1c8e46831450466406d339932d51207c55e1ea57d644f844d622e82071500a"
+  },
+  "compiled_catalog": {
+    "path": "docs/assets/lean-catalog.json",
+    "sha256": "a4ca2b77eba4948192087e11fe0a36fdb9d6c0f20a89571c35705a232ddebfd7"
+  },
+  "final_endpoint_raw_types": {
+    "status": "unchanged",
+    "count": 4
+  },
+  "same_dependency_pins": true,
+  "policy": "Source-first reports retain their original dates, revision and review status. All retained source declaration/proof bodies are byte-identical. Four final endpoint types are raw-structurally unchanged. Fifteen internal compiled declarations differ syntactically, including three public signatures and four data values. Only the exact IntPartialOrder and RealCharZero instance expressions are canonicalized through two literal Eq.refl equalities accepted by the Lean kernel in a foundation-only environment. All retained declaration types and available non-proposition data values then match exactly; only the named unused private proof is removed. This bridge extends the old review over that bounded, witnessed cleanup; it is not a new source-first or human review.",
+  "separate_export_checks": "Recorded independently in ComparatorChallenges/verification-status.json and ComparatorConfig/nanoda-status.json; the bridge does not infer them from structural comparison."
+}

@@ -117,3 +117,10 @@ Local macOS checks do not establish a sandboxed Comparator result.
 For individual helper commands, evidence history, metadata validation,
 source-only archives and CI details, see
 [Reproducibility](https://github.com/JWang226/Quantum-Minimum-Description-Length/blob/main/docs/REPRODUCIBILITY.md).
+
+## Measure elaboration
+
+[[elaboration|The elaboration reports]] give the cleanup's before/after source
+checkpoints, full-build measurements, serial profiles and reproducer commands.
+That workflow preserves dependency caches and measures all production modules.
+Use the proof checks above to verify correctness.

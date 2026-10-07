@@ -1,0 +1,4 @@
+uncaught exception: Kernel rejected instance pair NegativeNat: (kernel) declaration type mismatch, 'QMDLCleanupFoundationWitness.NegativeNat' has type
+  Nat.zero = Nat.zero
+but it is expected to have type
+  Nat.zero = Nat.zero.succ

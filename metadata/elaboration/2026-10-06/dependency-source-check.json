@@ -1,0 +1,98 @@
+[
+  {
+    "package": "mathlib",
+    "head": "f156f7abd91ac67adb22bf999e5a71ba22e22e41",
+    "expected": "f156f7abd91ac67adb22bf999e5a71ba22e22e41",
+    "source_tracked_clean": true,
+    "matches_pin": true,
+    "directory_symlink": true
+  },
+  {
+    "package": "plausible",
+    "head": "e84e3e16aea6b72cc5d311ca1bb25caad417e162",
+    "expected": "e84e3e16aea6b72cc5d311ca1bb25caad417e162",
+    "source_tracked_clean": true,
+    "matches_pin": true,
+    "directory_symlink": true
+  },
+  {
+    "package": "LeanSearchClient",
+    "head": "c5d5b8fe6e5158def25cd28eb94e4141ad97c843",
+    "expected": "c5d5b8fe6e5158def25cd28eb94e4141ad97c843",
+    "source_tracked_clean": true,
+    "matches_pin": true,
+    "directory_symlink": true
+  },
+  {
+    "package": "importGraph",
+    "head": "f207d9fcf0cef00ba79962a33ef156061914d9c7",
+    "expected": "f207d9fcf0cef00ba79962a33ef156061914d9c7",
+    "source_tracked_clean": true,
+    "matches_pin": true,
+    "directory_symlink": true
+  },
+  {
+    "package": "proofwidgets",
+    "head": "2e58165a9dcdca9837b666528f974299ee1a51cc",
+    "expected": "2e58165a9dcdca9837b666528f974299ee1a51cc",
+    "source_tracked_clean": true,
+    "matches_pin": true,
+    "directory_symlink": true
+  },
+  {
+    "package": "aesop",
+    "head": "c3361708f266893de5d1769192b60d4b1831f2bb",
+    "expected": "c3361708f266893de5d1769192b60d4b1831f2bb",
+    "source_tracked_clean": true,
+    "matches_pin": true,
+    "directory_symlink": true
+  },
+  {
+    "package": "Qq",
+    "head": "221e8088e3a066b8676dc471ff10638cf1c10835",
+    "expected": "221e8088e3a066b8676dc471ff10638cf1c10835",
+    "source_tracked_clean": true,
+    "matches_pin": true,
+    "directory_symlink": true
+  },
+  {
+    "package": "batteries",
+    "head": "77a5160a74772214ef37caba2847cfe9ab600285",
+    "expected": "77a5160a74772214ef37caba2847cfe9ab600285",
+    "source_tracked_clean": true,
+    "matches_pin": true,
+    "directory_symlink": true
+  },
+  {
+    "package": "Cli",
+    "head": "3de531c1135f5e3a01f3ac04830996fda476b28e",
+    "expected": "3de531c1135f5e3a01f3ac04830996fda476b28e",
+    "source_tracked_clean": true,
+    "matches_pin": true,
+    "directory_symlink": true
+  },
+  {
+    "package": "Comparator",
+    "head": "a4f696825c583ed8a5b4060d9a0faa5b882d365b",
+    "expected": "a4f696825c583ed8a5b4060d9a0faa5b882d365b",
+    "source_tracked_clean": true,
+    "matches_pin": true,
+    "directory_symlink": false
+  },
+  {
+    "package": "lean4export",
+    "head": "048394e1afeeb52b0fa27bcf3f1ade2ff0f0ab6d",
+    "expected": "048394e1afeeb52b0fa27bcf3f1ade2ff0f0ab6d",
+    "source_tracked_clean": true,
+    "matches_pin": true,
+    "directory_symlink": false
+  },
+  {
+    "package": "Lean4Checker",
+    "head": "b7398199245524275543dec6113229c9bb4902e5",
+    "expected": "b7398199245524275543dec6113229c9bb4902e5",
+    "source_tracked_clean": true,
+    "matches_pin": true,
+    "directory_symlink": false
+  }
+]

@@ -1,0 +1,4222 @@
+{
+  "schema_version": 1,
+  "generated_at_utc": "2026-10-06T23:12:44.692600+00:00",
+  "run_directory": "/Users/jw/Downloads/Free_Entropy/.codex-work/qmdl-cleanup/.verify-work/elaboration-2026-10-06/before",
+  "setup": {
+    "source_commit": "4c496959aa1462a6b6a6faf5535ea2a3caf9c119",
+    "started_at_utc": "2026-10-06T22:32:09.100305+00:00",
+    "host": "macOS-27.2-arm64-arm-64bit",
+    "logical_cpus": 8,
+    "timing_tool": "GNU time -v",
+    "command": [
+      "/opt/homebrew/bin/gtime",
+      "-v",
+      "/Users/jw/.elan/bin/lake",
+      "--no-ansi",
+      "--no-cache",
+      "build",
+      "All"
+    ],
+    "lean_num_threads": 4,
+    "lean_version": "Lean (version 4.29.0-rc6, arm64-apple-darwin24.6.0, commit 00659f8e6071d7e46131ed643bf8003b99b044e9, Release)",
+    "cache_condition": "own proof artifacts invalidated; dependency oleans retained; OS cache uncontrolled",
+    "source_snapshot_sha256": "08fd4c03d6a037c5964d3299ae8e4cdb2d3cc94b89d0f5005f2b5477d3fd3f3b",
+    "dependencies_before": {
+      "Cli": {
+        "oleans": 0,
+        "artifact_stat_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      "Comparator": {
+        "oleans": 5,
+        "artifact_stat_sha256": "a311b543b3636a2b3d768f2c09a50ae3bd74e8f540287f5e4a6a580d8aa1269b"
+      },
+      "Lean4Checker": {
+        "oleans": 1,
+        "artifact_stat_sha256": "db1893388376cad64ebb2ff01390ae10ac128224f1c695da632a9c45727b9b67"
+      },
+      "LeanSearchClient": {
+        "oleans": 4,
+        "artifact_stat_sha256": "bb4dee5a863eb4c7066809008d07343cfd65a3d113114002b568fd6f011b6770"
+      },
+      "Qq": {
+        "oleans": 14,
+        "artifact_stat_sha256": "bddfa9f14d1ecd4926a52cbc55492a574b2a2d76641a15b9f165a318f75156d2"
+      },
+      "aesop": {
+        "oleans": 135,
+        "artifact_stat_sha256": "f158ddcf3918283c03445ff3ba89086bb71da70487103d6ab543d6dfd5e8d5d8"
+      },
+      "batteries": {
+        "oleans": 174,
+        "artifact_stat_sha256": "33d0995faf4672111158a1445cd67eaa4eea1f97cac995f7cada00315767cbd5"
+      },
+      "importGraph": {
+        "oleans": 10,
+        "artifact_stat_sha256": "5c2e5c4e7189875a43fdb20fed69a5d827f685072e18fa4ffd4bcbe03ddb956e"
+      },
+      "lean4export": {
+        "oleans": 3,
+        "artifact_stat_sha256": "a6109e49305b48f04b277c94aa4365b5d78b0fce0234e04796ba3b043f9202a9"
+      },
+      "mathlib": {
+        "oleans": 7805,
+        "artifact_stat_sha256": "03e13aa03731d31093c5cc9527af3cf36002dba86cc419533c5832e533b0cb60"
+      },
+      "plausible": {
+        "oleans": 11,
+        "artifact_stat_sha256": "73d11435f357c3853eb6f7c677b8e4d78a4211766c1e7b6be2ab14182fa24d78"
+      },
+      "proofwidgets": {
+        "oleans": 12,
+        "artifact_stat_sha256": "bddb409a3f71c31712c2034aac6e311214cb16d3cbc4a90c95fe56b6bdc5e2c6"
+      }
+    },
+    "invalidated": [
+      "lean/.lake/build/lib/lean/FreeEntropy",
+      "lean/.lake/build/ir/FreeEntropy"
+    ],
+    "status": "passed",
+    "finished_at_utc": "2026-10-06T23:11:35.870228+00:00",
+    "observer_elapsed_seconds": 2362.965245042,
+    "exit_status": 0,
+    "invalid_upstream_compiles": [],
+    "dependencies_after": {
+      "Cli": {
+        "oleans": 0,
+        "artifact_stat_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      "Comparator": {
+        "oleans": 5,
+        "artifact_stat_sha256": "a311b543b3636a2b3d768f2c09a50ae3bd74e8f540287f5e4a6a580d8aa1269b"
+      },
+      "Lean4Checker": {
+        "oleans": 1,
+        "artifact_stat_sha256": "db1893388376cad64ebb2ff01390ae10ac128224f1c695da632a9c45727b9b67"
+      },
+      "LeanSearchClient": {
+        "oleans": 4,
+        "artifact_stat_sha256": "bb4dee5a863eb4c7066809008d07343cfd65a3d113114002b568fd6f011b6770"
+      },
+      "Qq": {
+        "oleans": 14,
+        "artifact_stat_sha256": "bddfa9f14d1ecd4926a52cbc55492a574b2a2d76641a15b9f165a318f75156d2"
+      },
+      "aesop": {
+        "oleans": 135,
+        "artifact_stat_sha256": "f158ddcf3918283c03445ff3ba89086bb71da70487103d6ab543d6dfd5e8d5d8"
+      },
+      "batteries": {
+        "oleans": 174,
+        "artifact_stat_sha256": "33d0995faf4672111158a1445cd67eaa4eea1f97cac995f7cada00315767cbd5"
+      },
+      "importGraph": {
+        "oleans": 10,
+        "artifact_stat_sha256": "5c2e5c4e7189875a43fdb20fed69a5d827f685072e18fa4ffd4bcbe03ddb956e"
+      },
+      "lean4export": {
+        "oleans": 3,
+        "artifact_stat_sha256": "a6109e49305b48f04b277c94aa4365b5d78b0fce0234e04796ba3b043f9202a9"
+      },
+      "mathlib": {
+        "oleans": 7805,
+        "artifact_stat_sha256": "03e13aa03731d31093c5cc9527af3cf36002dba86cc419533c5832e533b0cb60"
+      },
+      "plausible": {
+        "oleans": 11,
+        "artifact_stat_sha256": "73d11435f357c3853eb6f7c677b8e4d78a4211766c1e7b6be2ab14182fa24d78"
+      },
+      "proofwidgets": {
+        "oleans": 12,
+        "artifact_stat_sha256": "bddb409a3f71c31712c2034aac6e311214cb16d3cbc4a90c95fe56b6bdc5e2c6"
+      }
+    },
+    "source_snapshot_after_sha256": "08fd4c03d6a037c5964d3299ae8e4cdb2d3cc94b89d0f5005f2b5477d3fd3f3b",
+    "user_cpu_seconds": 1249.26,
+    "sys_cpu_seconds": 1534.45,
+    "elapsed_seconds": 2362.93,
+    "max_rss_bytes": 3318497280,
+    "cpu_percent": 117.80755248780117,
+    "build_log_sha256": "a7149000a5f6fc36bf70cd79d82ac2c836f72c356620635a69f2b48debbd2ceb",
+    "runner_sha256": "363f92aaadef7b4c6151fd4c43a17148f6c213a1ff30d92fb737440687985098",
+    "runner_provenance_note": "Executed helper archived at launch; hash bound after completion. Subsequent helper guard revisions were outside the timed command."
+  },
+  "size": {
+    "source_commit": "4c496959aa1462a6b6a6faf5535ea2a3caf9c119",
+    "proof_module_count": 274,
+    "non_comment_only_module_count": 274,
+    "total_lines": 35927,
+    "non_comment_code_lines": 28021,
+    "comment_only_modules_excluded": [],
+    "legacy_no_module_header_count": 274,
+    "all_import_closure_count": 274,
+    "off_facade_modules": [],
+    "built_module_count": 274,
+    "timing_visible_module_count": 274,
+    "timing_visible_fraction": 1.0,
+    "expected_modules_without_build_event": [],
+    "repeated_module_builds": {}
+  },
+  "headline": {
+    "elapsed_seconds": 2362.93,
+    "user_cpu_seconds": 1249.26,
+    "sys_cpu_seconds": 1534.45,
+    "cpu_percent": 117.80755248780117,
+    "max_rss_bytes": 3318497280,
+    "logged_module_elapsed_seconds": 9188.8,
+    "logged_elapsed_to_wall_ratio": 3.888731363180458,
+    "logged_elapsed_ms_per_code_line": 327.925484458085,
+    "planned_jobs": 3752,
+    "own_module_build_events": 274,
+    "warning_count": 131
+  },
+  "build_health": {
+    "exit_status": 0,
+    "complete_project_rebuild": true,
+    "measurement_valid": true,
+    "measurement_requirements": {
+      "runner_status_passed": true,
+      "process_exit_zero": true,
+      "complete_project_rebuild": true,
+      "source_snapshot_unchanged": true,
+      "dependency_olean_snapshot_unchanged": true,
+      "no_upstream_built": true,
+      "no_error_messages": true,
+      "no_sorry_warnings_or_axioms": true
+    },
+    "measurement_invalid_reasons": [],
+    "error_count": 0,
+    "sorry_warning_or_axiom_line_count": 0,
+    "warning_count": 131,
+    "warning_kinds": {
+      "deprecated_declaration": 2,
+      "unnecessary_sequence_focus": 2,
+      "unnecessary_simpa": 9,
+      "unreachable_tactic": 2,
+      "unused_section_variables": 51,
+      "unused_simp_argument": 61,
+      "unused_tactic": 3,
+      "unused_variable": 1
+    },
+    "warning_linters": {
+      "linter.unnecessarySeqFocus": 2,
+      "linter.unnecessarySimpa": 9,
+      "linter.unreachableTactic": 2,
+      "linter.unusedSectionVars": 51,
+      "linter.unusedSimpArgs": 61,
+      "linter.unusedTactic": 3,
+      "linter.unusedVariables": 1,
+      "unclassified": 2
+    },
+    "no_upstream_built": true,
+    "upstream_built_events": [],
+    "replayed_event_count": 0,
+    "source_snapshot_unchanged": true,
+    "dependency_olean_snapshot_unchanged": true,
+    "heartbeat_overrides": [
+      {
+        "module": "FreeEntropy.CanonicalAmbientCloning",
+        "line": 17,
+        "option": "maxHeartbeats",
+        "value": "1500000"
+      },
+      {
+        "module": "FreeEntropy.CanonicalCartanCovariance",
+        "line": 21,
+        "option": "maxHeartbeats",
+        "value": "1000000"
+      },
+      {
+        "module": "FreeEntropy.CanonicalCartanCovariance",
+        "line": 127,
+        "option": "maxHeartbeats",
+        "value": "1000000"
+      },
+      {
+        "module": "FreeEntropy.CanonicalCharacterIdentity",
+        "line": 18,
+        "option": "maxHeartbeats",
+        "value": "800000"
+      },
+      {
+        "module": "FreeEntropy.CanonicalChoi",
+        "line": 19,
+        "option": "maxHeartbeats",
+        "value": "1500000"
+      },
+      {
+        "module": "FreeEntropy.CanonicalClassification",
+        "line": 18,
+        "option": "maxHeartbeats",
+        "value": "1000000"
+      },
+      {
+        "module": "FreeEntropy.CanonicalCloningCore",
+        "line": 21,
+        "option": "maxHeartbeats",
+        "value": "1500000"
+      },
+      {
+        "module": "FreeEntropy.CanonicalCloningSelf",
+        "line": 18,
+        "option": "maxHeartbeats",
+        "value": "800000"
+      },
+      {
+        "module": "FreeEntropy.CanonicalCloningSelf",
+        "line": 92,
+        "option": "maxHeartbeats",
+        "value": "800000"
+      },
+      {
+        "module": "FreeEntropy.CanonicalDualHighest",
+        "line": 19,
+        "option": "maxHeartbeats",
+        "value": "1000000"
+      },
+      {
+        "module": "FreeEntropy.CanonicalDualHighest",
+        "line": 106,
+        "option": "maxHeartbeats",
+        "value": "1000000"
+      },
+      {
+        "module": "FreeEntropy.CanonicalFullCloning",
+        "line": 18,
+        "option": "maxHeartbeats",
+        "value": "1000000"
+      },
+      {
+        "module": "FreeEntropy.CanonicalMonomialState",
+        "line": 19,
+        "option": "maxHeartbeats",
+        "value": "800000"
+      },
+      {
+        "module": "FreeEntropy.CanonicalMonomialState",
+        "line": 115,
+        "option": "maxHeartbeats",
+        "value": "800000"
+      },
+      {
+        "module": "FreeEntropy.CanonicalPetz",
+        "line": 19,
+        "option": "maxHeartbeats",
+        "value": "600000"
+      },
+      {
+        "module": "FreeEntropy.CanonicalPetz",
+        "line": 72,
+        "option": "maxHeartbeats",
+        "value": "600000"
+      },
+      {
+        "module": "FreeEntropy.CanonicalPhysicalOrbit",
+        "line": 17,
+        "option": "maxHeartbeats",
+        "value": "1000000"
+      },
+      {
+        "module": "FreeEntropy.CanonicalReverseChoi",
+        "line": 17,
+        "option": "maxHeartbeats",
+        "value": "1500000"
+      },
+      {
+        "module": "FreeEntropy.CartanChoi",
+        "line": 17,
+        "option": "maxHeartbeats",
+        "value": "1000000"
+      },
+      {
+        "module": "FreeEntropy.CartanChoiMultiplicity",
+        "line": 17,
+        "option": "maxHeartbeats",
+        "value": "800000"
+      },
+      {
+        "module": "FreeEntropy.CartanCloning",
+        "line": 30,
+        "option": "maxHeartbeats",
+        "value": "600000"
+      },
+      {
+        "module": "FreeEntropy.CartanHomMultiplicity",
+        "line": 51,
+        "option": "maxHeartbeats",
+        "value": "700000"
+      },
+      {
+        "module": "FreeEntropy.CartanLieCloning",
+        "line": 26,
+        "option": "maxHeartbeats",
+        "value": "800000"
+      },
+      {
+        "module": "FreeEntropy.CartanMultiplicity",
+        "line": 19,
+        "option": "maxHeartbeats",
+        "value": "1000000"
+      },
+      {
+        "module": "FreeEntropy.CartanReshuffle",
+        "line": 15,
+        "option": "maxHeartbeats",
+        "value": "800000"
+      },
+      {
+        "module": "FreeEntropy.CartanTraceCloning",
+        "line": 28,
+        "option": "maxHeartbeats",
+        "value": "600000"
+      },
+      {
+        "module": "FreeEntropy.CasimirCentral",
+        "line": 21,
+        "option": "maxHeartbeats",
+        "value": "800000"
+      },
+      {
+        "module": "FreeEntropy.CloningMatrices",
+        "line": 25,
+        "option": "maxHeartbeats",
+        "value": "400000"
+      },
+      {
+        "module": "FreeEntropy.ConstructedLieCloning",
+        "line": 20,
+        "option": "maxHeartbeats",
+        "value": "800000"
+      },
+      {
+        "module": "FreeEntropy.CyclicWeightStateBlocks",
+        "line": 18,
+        "option": "maxHeartbeats",
+        "value": "1000000"
+      },
+      {
+        "module": "FreeEntropy.CyclicWeightStates",
+        "line": 18,
+        "option": "maxHeartbeats",
+        "value": "1000000"
+      },
+      {
+        "module": "FreeEntropy.ExteriorCanonicalCyclicity",
+        "line": 15,
+        "option": "maxHeartbeats",
+        "value": "1000000"
+      },
+      {
+        "module": "FreeEntropy.ExteriorCanonicalHighest",
+        "line": 19,
+        "option": "maxHeartbeats",
+        "value": "1000000"
+      },
+      {
+        "module": "FreeEntropy.ExteriorCartan",
+        "line": 16,
+        "option": "maxHeartbeats",
+        "value": "1000000"
+      },
+      {
+        "module": "FreeEntropy.ExteriorCartanEmbedding",
+        "line": 19,
+        "option": "maxHeartbeats",
+        "value": "1000000"
+      },
+      {
+        "module": "FreeEntropy.ExteriorColumnEquiv",
+        "line": 15,
+        "option": "maxHeartbeats",
+        "value": "1000000"
+      },
+      {
+        "module": "FreeEntropy.ExteriorCommutant",
+        "line": 19,
+        "option": "maxHeartbeats",
+        "value": "1000000"
+      },
+      {
+        "module": "FreeEntropy.ExteriorDominant",
+        "line": 14,
+        "option": "maxHeartbeats",
+        "value": "800000"
+      },
+      {
+        "module": "FreeEntropy.ExteriorMonomialColumns",
+        "line": 16,
+        "option": "maxHeartbeats",
+        "value": "1000000"
+      },
+      {
+        "module": "FreeEntropy.ExteriorMonomialWeights",
+        "line": 16,
+        "option": "maxHeartbeats",
+        "value": "1000000"
+      },
+      {
+        "module": "FreeEntropy.ExteriorMultiplicity",
+        "line": 18,
+        "option": "maxHeartbeats",
+        "value": "1000000"
+      },
+      {
+        "module": "FreeEntropy.ExteriorRepresentation",
+        "line": 19,
+        "option": "maxHeartbeats",
+        "value": "800000"
+      },
+      {
+        "module": "FreeEntropy.ExteriorSimpleOffsets",
+        "line": 17,
+        "option": "maxHeartbeats",
+        "value": "1000000"
+      },
+      {
+        "module": "FreeEntropy.ExteriorSupportedMonomials",
+        "line": 16,
+        "option": "maxHeartbeats",
+        "value": "1000000"
+      },
+      {
+        "module": "FreeEntropy.ExteriorSupportedOffsets",
+        "line": 16,
+        "option": "maxHeartbeats",
+        "value": "1000000"
+      },
+      {
+        "module": "FreeEntropy.ExteriorTensor",
+        "line": 15,
+        "option": "maxHeartbeats",
+        "value": "800000"
+      },
+      {
+        "module": "FreeEntropy.ExteriorTensorEmbedding",
+        "line": 18,
+        "option": "maxHeartbeats",
+        "value": "1000000"
+      },
+      {
+        "module": "FreeEntropy.ExteriorTensorEmbeddingProduct",
+        "line": 17,
+        "option": "maxHeartbeats",
+        "value": "1000000"
+      },
+      {
+        "module": "FreeEntropy.ExteriorWeightCoordinates",
+        "line": 20,
+        "option": "maxHeartbeats",
+        "value": "1000000"
+      },
+      {
+        "module": "FreeEntropy.ExteriorWeightDimension",
+        "line": 20,
+        "option": "maxHeartbeats",
+        "value": "800000"
+      },
+      {
+        "module": "FreeEntropy.ExteriorWeightMultiplicity",
+        "line": 17,
+        "option": "maxHeartbeats",
+        "value": "1000000"
+      },
+      {
+        "module": "FreeEntropy.ExteriorWeights",
+        "line": 16,
+        "option": "maxHeartbeats",
+        "value": "800000"
+      },
+      {
+        "module": "FreeEntropy.FiniteConcentration",
+        "line": 28,
+        "option": "maxHeartbeats",
+        "value": "600000"
+      },
+      {
+        "module": "FreeEntropy.GTDeterminant",
+        "line": 19,
+        "option": "maxHeartbeats",
+        "value": "600000"
+      },
+      {
+        "module": "FreeEntropy.GeometricOrbit",
+        "line": 29,
+        "option": "maxHeartbeats",
+        "value": "400000"
+      },
+      {
+        "module": "FreeEntropy.IsometricCompression",
+        "line": 20,
+        "option": "maxHeartbeats",
+        "value": "600000"
+      },
+      {
+        "module": "FreeEntropy.LieCharacterRadial",
+        "line": 18,
+        "option": "maxHeartbeats",
+        "value": "1200000"
+      },
+      {
+        "module": "FreeEntropy.LieCharacterSymmetry",
+        "line": 21,
+        "option": "maxHeartbeats",
+        "value": "1200000"
+      },
+      {
+        "module": "FreeEntropy.LieCharacterSymmetry",
+        "line": 118,
+        "option": "maxHeartbeats",
+        "value": "1200000"
+      },
+      {
+        "module": "FreeEntropy.LieCyclicIrreducible",
+        "line": 18,
+        "option": "maxHeartbeats",
+        "value": "1000000"
+      },
+      {
+        "module": "FreeEntropy.LieCyclicMaps",
+        "line": 16,
+        "option": "maxHeartbeats",
+        "value": "1000000"
+      },
+      {
+        "module": "FreeEntropy.LieDepthMultiplicity",
+        "line": 18,
+        "option": "maxHeartbeats",
+        "value": "1000000"
+      },
+      {
+        "module": "FreeEntropy.LieDeterminantTwist",
+        "line": 17,
+        "option": "maxHeartbeats",
+        "value": "1000000"
+      },
+      {
+        "module": "FreeEntropy.LieDualCyclicity",
+        "line": 17,
+        "option": "maxHeartbeats",
+        "value": "600000"
+      },
+      {
+        "module": "FreeEntropy.LieHighestEquivalence",
+        "line": 17,
+        "option": "maxHeartbeats",
+        "value": "1000000"
+      },
+      {
+        "module": "FreeEntropy.LieHighestExistence",
+        "line": 16,
+        "option": "maxHeartbeats",
+        "value": "800000"
+      },
+      {
+        "module": "FreeEntropy.LieHighestUnitary",
+        "line": 17,
+        "option": "maxHeartbeats",
+        "value": "1000000"
+      },
+      {
+        "module": "FreeEntropy.LieMatrixCasimir",
+        "line": 28,
+        "option": "maxHeartbeats",
+        "value": "800000"
+      },
+      {
+        "module": "FreeEntropy.LiePBW",
+        "line": 19,
+        "option": "maxHeartbeats",
+        "value": "1000000"
+      },
+      {
+        "module": "FreeEntropy.LiePBWDimension",
+        "line": 18,
+        "option": "maxHeartbeats",
+        "value": "1000000"
+      },
+      {
+        "module": "FreeEntropy.LiePBWHighest",
+        "line": 16,
+        "option": "maxHeartbeats",
+        "value": "1000000"
+      },
+      {
+        "module": "FreeEntropy.LiePBWMultiplicity",
+        "line": 18,
+        "option": "maxHeartbeats",
+        "value": "1000000"
+      },
+      {
+        "module": "FreeEntropy.LiePBWOrderedLowering",
+        "line": 18,
+        "option": "maxHeartbeats",
+        "value": "1000000"
+      },
+      {
+        "module": "FreeEntropy.LiePBWWeights",
+        "line": 18,
+        "option": "maxHeartbeats",
+        "value": "800000"
+      },
+      {
+        "module": "FreeEntropy.Occupation",
+        "line": 21,
+        "option": "maxHeartbeats",
+        "value": "600000"
+      },
+      {
+        "module": "FreeEntropy.OccupationCommutant",
+        "line": 15,
+        "option": "maxHeartbeats",
+        "value": "600000"
+      },
+      {
+        "module": "FreeEntropy.OccupationRepresentation",
+        "line": 21,
+        "option": "maxHeartbeats",
+        "value": "600000"
+      },
+      {
+        "module": "FreeEntropy.OccupationSplit",
+        "line": 23,
+        "option": "maxHeartbeats",
+        "value": "700000"
+      },
+      {
+        "module": "FreeEntropy.OccupationSplitRepresentation",
+        "line": 22,
+        "option": "maxHeartbeats",
+        "value": "600000"
+      },
+      {
+        "module": "FreeEntropy.OccupationTorus",
+        "line": 16,
+        "option": "maxHeartbeats",
+        "value": "600000"
+      },
+      {
+        "module": "FreeEntropy.OrbitMemory",
+        "line": 29,
+        "option": "maxHeartbeats",
+        "value": "200000"
+      },
+      {
+        "module": "FreeEntropy.PhysicalCanonicalChannels",
+        "line": 17,
+        "option": "maxHeartbeats",
+        "value": "800000"
+      },
+      {
+        "module": "FreeEntropy.PhysicalCanonicalSector",
+        "line": 19,
+        "option": "maxHeartbeats",
+        "value": "1000000"
+      },
+      {
+        "module": "FreeEntropy.PhysicalCanonicalSector",
+        "line": 107,
+        "option": "maxHeartbeats",
+        "value": "1000000"
+      },
+      {
+        "module": "FreeEntropy.PhysicalCloningChannels",
+        "line": 19,
+        "option": "maxHeartbeats",
+        "value": "1000000"
+      },
+      {
+        "module": "FreeEntropy.PhysicalOrbitChannels",
+        "line": 19,
+        "option": "maxHeartbeats",
+        "value": "1000000"
+      },
+      {
+        "module": "FreeEntropy.PhysicalSchurApproximation",
+        "line": 16,
+        "option": "maxHeartbeats",
+        "value": "800000"
+      },
+      {
+        "module": "FreeEntropy.PhysicalSchurProtocol",
+        "line": 20,
+        "option": "maxHeartbeats",
+        "value": "800000"
+      },
+      {
+        "module": "FreeEntropy.ProjectorGeometry",
+        "line": 28,
+        "option": "maxHeartbeats",
+        "value": "600000"
+      },
+      {
+        "module": "FreeEntropy.QuantumTransfer",
+        "line": 29,
+        "option": "maxHeartbeats",
+        "value": "600000"
+      },
+      {
+        "module": "FreeEntropy.RaisingKernel",
+        "line": 18,
+        "option": "maxHeartbeats",
+        "value": "1000000"
+      },
+      {
+        "module": "FreeEntropy.RankRootCounting",
+        "line": 16,
+        "option": "maxHeartbeats",
+        "value": "1000000"
+      },
+      {
+        "module": "FreeEntropy.ReverseChoi",
+        "line": 16,
+        "option": "maxHeartbeats",
+        "value": "1000000"
+      },
+      {
+        "module": "FreeEntropy.ReverseChoiMultiplicity",
+        "line": 18,
+        "option": "maxHeartbeats",
+        "value": "800000"
+      },
+      {
+        "module": "FreeEntropy.ReverseChoiRepresentation",
+        "line": 16,
+        "option": "maxHeartbeats",
+        "value": "1000000"
+      },
+      {
+        "module": "FreeEntropy.RootPartitionFunction",
+        "line": 27,
+        "option": "maxHeartbeats",
+        "value": "600000"
+      },
+      {
+        "module": "FreeEntropy.SchurProbability",
+        "line": 26,
+        "option": "maxHeartbeats",
+        "value": "800000"
+      },
+      {
+        "module": "FreeEntropy.SchurProbabilityCharacter",
+        "line": 21,
+        "option": "maxHeartbeats",
+        "value": "800000"
+      },
+      {
+        "module": "FreeEntropy.SchurProbabilityTableaux",
+        "line": 20,
+        "option": "maxHeartbeats",
+        "value": "600000"
+      },
+      {
+        "module": "FreeEntropy.SchurWeylBlocks",
+        "line": 22,
+        "option": "maxHeartbeats",
+        "value": "600000"
+      },
+      {
+        "module": "FreeEntropy.SchurWeylConcentration",
+        "line": 17,
+        "option": "maxHeartbeats",
+        "value": "600000"
+      },
+      {
+        "module": "FreeEntropy.SchurWeylConcentrationTail",
+        "line": 16,
+        "option": "maxHeartbeats",
+        "value": "600000"
+      },
+      {
+        "module": "FreeEntropy.SchurWeylMultiplicity",
+        "line": 22,
+        "option": "maxHeartbeats",
+        "value": "600000"
+      },
+      {
+        "module": "FreeEntropy.SchurWeylPhysical",
+        "line": 28,
+        "option": "maxHeartbeats",
+        "value": "600000"
+      },
+      {
+        "module": "FreeEntropy.SchurWeylSource",
+        "line": 28,
+        "option": "maxHeartbeats",
+        "value": "600000"
+      },
+      {
+        "module": "FreeEntropy.SchurWeylWeightExistence",
+        "line": 23,
+        "option": "maxHeartbeats",
+        "value": "600000"
+      },
+      {
+        "module": "FreeEntropy.SchurWeylWeightMultiplicity",
+        "line": 24,
+        "option": "maxHeartbeats",
+        "value": "600000"
+      },
+      {
+        "module": "FreeEntropy.SpecifiedLieCloning",
+        "line": 19,
+        "option": "maxHeartbeats",
+        "value": "1000000"
+      },
+      {
+        "module": "FreeEntropy.SupportedWeightStates",
+        "line": 18,
+        "option": "maxHeartbeats",
+        "value": "1000000"
+      },
+      {
+        "module": "FreeEntropy.TensorHighestWeight",
+        "line": 20,
+        "option": "maxHeartbeats",
+        "value": "600000"
+      },
+      {
+        "module": "FreeEntropy.TensorPowers",
+        "line": 21,
+        "option": "maxHeartbeats",
+        "value": "600000"
+      },
+      {
+        "module": "FreeEntropy.TensorPowersPair",
+        "line": 17,
+        "option": "maxHeartbeats",
+        "value": "800000"
+      },
+      {
+        "module": "FreeEntropy.TensorWeightBasis",
+        "line": 17,
+        "option": "maxHeartbeats",
+        "value": "800000"
+      },
+      {
+        "module": "FreeEntropy.TensorWeightBasis",
+        "line": 89,
+        "option": "maxHeartbeats",
+        "value": "800000"
+      },
+      {
+        "module": "FreeEntropy.TraceCloning",
+        "line": 25,
+        "option": "maxHeartbeats",
+        "value": "400000"
+      },
+      {
+        "module": "FreeEntropy.TraceDistance",
+        "line": 27,
+        "option": "maxHeartbeats",
+        "value": "400000"
+      },
+      {
+        "module": "FreeEntropy.WeylAlternating",
+        "line": 17,
+        "option": "maxHeartbeats",
+        "value": "800000"
+      },
+      {
+        "module": "FreeEntropy.WeylCharacterCone",
+        "line": 16,
+        "option": "maxHeartbeats",
+        "value": "1000000"
+      },
+      {
+        "module": "FreeEntropy.WeylTranslation",
+        "line": 17,
+        "option": "maxHeartbeats",
+        "value": "800000"
+      },
+      {
+        "module": "FreeEntropy.WordPermutations",
+        "line": 15,
+        "option": "maxHeartbeats",
+        "value": "600000"
+      },
+      {
+        "module": "FreeEntropy.WordTypes",
+        "line": 21,
+        "option": "maxHeartbeats",
+        "value": "600000"
+      }
+    ],
+    "linter_suppression_count": 68,
+    "files_over_1500_lines": [],
+    "warnings": [
+      {
+        "path": "FreeEntropy/LiePBW.lean",
+        "source_line": 72,
+        "source_column": 25,
+        "message": "Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice",
+        "kind": "unnecessary_sequence_focus",
+        "linter": "linter.unnecessarySeqFocus",
+        "log_line": 35
+      },
+      {
+        "path": "FreeEntropy/LiePBW.lean",
+        "source_line": 96,
+        "source_column": 25,
+        "message": "Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice",
+        "kind": "unnecessary_sequence_focus",
+        "linter": "linter.unnecessarySeqFocus",
+        "log_line": 38
+      },
+      {
+        "path": "FreeEntropy/HighestWeightDominance.lean",
+        "source_line": 18,
+        "source_column": 0,
+        "message": "automatically included section variable(s) unused in theorem `FreeEntropy.LieMatrixCasimir.Generators.raising_weight`:",
+        "kind": "unused_section_variables",
+        "linter": "linter.unusedSectionVars",
+        "log_line": 42
+      },
+      {
+        "path": "FreeEntropy/HighestWeightDominance.lean",
+        "source_line": 37,
+        "source_column": 0,
+        "message": "automatically included section variable(s) unused in theorem `FreeEntropy.LieMatrixCasimir.Generators.highest_weight_dominant`:",
+        "kind": "unused_section_variables",
+        "linter": "linter.unusedSectionVars",
+        "log_line": 48
+      },
+      {
+        "path": "FreeEntropy/CyclicHighestRepresentation.lean",
+        "source_line": 24,
+        "source_column": 0,
+        "message": "automatically included section variable(s) unused in theorem `FreeEntropy.UnitaryDecomposition.orbit_mem_cyclicSubspace`:",
+        "kind": "unused_section_variables",
+        "linter": "linter.unusedSectionVars",
+        "log_line": 69
+      },
+      {
+        "path": "FreeEntropy/CyclicHighestRepresentation.lean",
+        "source_line": 39,
+        "source_column": 12,
+        "message": "try 'simp' instead of 'simpa'",
+        "kind": "unnecessary_simpa",
+        "linter": "linter.unnecessarySimpa",
+        "log_line": 75
+      },
+      {
+        "path": "FreeEntropy/CyclicHighestRepresentation.lean",
+        "source_line": 43,
+        "source_column": 0,
+        "message": "automatically included section variable(s) unused in theorem `FreeEntropy.UnitaryDecomposition.cyclicSubspace_le`:",
+        "kind": "unused_section_variables",
+        "linter": "linter.unusedSectionVars",
+        "log_line": 78
+      },
+      {
+        "path": "FreeEntropy/CyclicHighestRepresentation.lean",
+        "source_line": 63,
+        "source_column": 0,
+        "message": "automatically included section variable(s) unused in theorem `FreeEntropy.UnitaryDecomposition.operator_on_cyclicSubspace`:",
+        "kind": "unused_section_variables",
+        "linter": "linter.unusedSectionVars",
+        "log_line": 84
+      },
+      {
+        "path": "FreeEntropy/RaisingKernel.lean",
+        "source_line": 31,
+        "source_column": 56,
+        "message": "This simp argument is unused:",
+        "kind": "unused_simp_argument",
+        "linter": "linter.unusedSimpArgs",
+        "log_line": 95
+      },
+      {
+        "path": "FreeEntropy/RaisingKernel.lean",
+        "source_line": 34,
+        "source_column": 13,
+        "message": "This simp argument is unused:",
+        "kind": "unused_simp_argument",
+        "linter": "linter.unusedSimpArgs",
+        "log_line": 102
+      },
+      {
+        "path": "FreeEntropy/ExteriorColumnEquiv.lean",
+        "source_line": 68,
+        "source_column": 4,
+        "message": "try 'simp' instead of 'simpa'",
+        "kind": "unnecessary_simpa",
+        "linter": "linter.unnecessarySimpa",
+        "log_line": 111
+      },
+      {
+        "path": "FreeEntropy/ExteriorTensorSum.lean",
+        "source_line": 43,
+        "source_column": 58,
+        "message": "This simp argument is unused:",
+        "kind": "unused_simp_argument",
+        "linter": "linter.unusedSimpArgs",
+        "log_line": 122
+      },
+      {
+        "path": "FreeEntropy/TensorConstituentWeights.lean",
+        "source_line": 35,
+        "source_column": 0,
+        "message": "automatically included section variable(s) unused in theorem `FreeEntropy.CartanLieCloning.isometry_column_nonzero`:",
+        "kind": "unused_section_variables",
+        "linter": "linter.unusedSectionVars",
+        "log_line": 135
+      },
+      {
+        "path": "FreeEntropy/TensorTopExistence.lean",
+        "source_line": 45,
+        "source_column": 59,
+        "message": "This simp argument is unused:",
+        "kind": "unused_simp_argument",
+        "linter": "linter.unusedSimpArgs",
+        "log_line": 143
+      },
+      {
+        "path": "FreeEntropy/TensorTopExistence.lean",
+        "source_line": 56,
+        "source_column": 0,
+        "message": "automatically included section variable(s) unused in theorem `FreeEntropy.CartanLieCloning.resolution_detects_vector`:",
+        "kind": "unused_section_variables",
+        "linter": "linter.unusedSectionVars",
+        "log_line": 151
+      },
+      {
+        "path": "FreeEntropy/ExteriorTensorEmbedding.lean",
+        "source_line": 50,
+        "source_column": 4,
+        "message": "This simp argument is unused:",
+        "kind": "unused_simp_argument",
+        "linter": "linter.unusedSimpArgs",
+        "log_line": 162
+      },
+      {
+        "path": "FreeEntropy/ExteriorTensorEmbedding.lean",
+        "source_line": 50,
+        "source_column": 44,
+        "message": "This simp argument is unused:",
+        "kind": "unused_simp_argument",
+        "linter": "linter.unusedSimpArgs",
+        "log_line": 170
+      },
+      {
+        "path": "FreeEntropy/ExteriorTensorEmbedding.lean",
+        "source_line": 113,
+        "source_column": 15,
+        "message": "This simp argument is unused:",
+        "kind": "unused_simp_argument",
+        "linter": "linter.unusedSimpArgs",
+        "log_line": 179
+      },
+      {
+        "path": "FreeEntropy/TorusWeightEigenline.lean",
+        "source_line": 77,
+        "source_column": 10,
+        "message": "This simp argument is unused:",
+        "kind": "unused_simp_argument",
+        "linter": "linter.unusedSimpArgs",
+        "log_line": 189
+      },
+      {
+        "path": "FreeEntropy/TorusWeightEigenline.lean",
+        "source_line": 84,
+        "source_column": 2,
+        "message": "Try `simp at this` instead of `simpa using this`",
+        "kind": "unnecessary_simpa",
+        "linter": "linter.unnecessarySimpa",
+        "log_line": 196
+      },
+      {
+        "path": "FreeEntropy/TorusWeightEigenline.lean",
+        "source_line": 81,
+        "source_column": 0,
+        "message": "automatically included section variable(s) unused in theorem `FreeEntropy.TorusWeights.highestVector_ne_zero`:",
+        "kind": "unused_section_variables",
+        "linter": "linter.unusedSectionVars",
+        "log_line": 199
+      },
+      {
+        "path": "FreeEntropy/TorusWeightEigenline.lean",
+        "source_line": 111,
+        "source_column": 27,
+        "message": "This simp argument is unused:",
+        "kind": "unused_simp_argument",
+        "linter": "linter.unusedSimpArgs",
+        "log_line": 205
+      },
+      {
+        "path": "FreeEntropy/ExteriorTensorEmbeddingProduct.lean",
+        "source_line": 57,
+        "source_column": 30,
+        "message": "unused variable `i`",
+        "kind": "unused_variable",
+        "linter": "linter.unusedVariables",
+        "log_line": 214
+      },
+      {
+        "path": "FreeEntropy/TensorInfinitesimal.lean",
+        "source_line": 28,
+        "source_column": 0,
+        "message": "automatically included section variable(s) unused in theorem `FreeEntropy.TensorPowers.differential_add`:",
+        "kind": "unused_section_variables",
+        "linter": "linter.unusedSectionVars",
+        "log_line": 218
+      },
+      {
+        "path": "FreeEntropy/TensorInfinitesimal.lean",
+        "source_line": 33,
+        "source_column": 0,
+        "message": "automatically included section variable(s) unused in theorem `FreeEntropy.TensorPowers.differential_smul`:",
+        "kind": "unused_section_variables",
+        "linter": "linter.unusedSectionVars",
+        "log_line": 224
+      },
+      {
+        "path": "FreeEntropy/TensorInfinitesimal.lean",
+        "source_line": 38,
+        "source_column": 0,
+        "message": "automatically included section variable(s) unused in theorem `FreeEntropy.TensorPowers.differential_sub`:",
+        "kind": "unused_section_variables",
+        "linter": "linter.unusedSectionVars",
+        "log_line": 230
+      },
+      {
+        "path": "FreeEntropy/TensorInfinitesimal.lean",
+        "source_line": 45,
+        "source_column": 0,
+        "message": "automatically included section variable(s) unused in theorem `FreeEntropy.TensorPowers.hasDerivAt_matrix_identity`:",
+        "kind": "unused_section_variables",
+        "linter": "linter.unusedSectionVars",
+        "log_line": 236
+      },
+      {
+        "path": "FreeEntropy/TensorInfinitesimal.lean",
+        "source_line": 104,
+        "source_column": 6,
+        "message": "This simp argument is unused:",
+        "kind": "unused_simp_argument",
+        "linter": "linter.unusedSimpArgs",
+        "log_line": 242
+      },
+      {
+        "path": "FreeEntropy/TensorInfinitesimal.lean",
+        "source_line": 104,
+        "source_column": 32,
+        "message": "This simp argument is unused:",
+        "kind": "unused_simp_argument",
+        "linter": "linter.unusedSimpArgs",
+        "log_line": 252
+      },
+      {
+        "path": "FreeEntropy/TorusWeightProjection.lean",
+        "source_line": 93,
+        "source_column": 0,
+        "message": "automatically included section variable(s) unused in theorem `FreeEntropy.TorusWeights.projector_mem_weightSpace`:",
+        "kind": "unused_section_variables",
+        "linter": "linter.unusedSectionVars",
+        "log_line": 265
+      },
+      {
+        "path": "FreeEntropy/ExteriorHighestRepresentation.lean",
+        "source_line": 58,
+        "source_column": 53,
+        "message": "This simp argument is unused:",
+        "kind": "unused_simp_argument",
+        "linter": "linter.unusedSimpArgs",
+        "log_line": 274
+      },
+      {
+        "path": "FreeEntropy/WeylCharacterAlgebra.lean",
+        "source_line": 23,
+        "source_column": 28,
+        "message": "This simp argument is unused:",
+        "kind": "unused_simp_argument",
+        "linter": "linter.unusedSimpArgs",
+        "log_line": 286
+      },
+      {
+        "path": "FreeEntropy/WeylCharacterAlgebra.lean",
+        "source_line": 40,
+        "source_column": 32,
+        "message": "This simp argument is unused:",
+        "kind": "unused_simp_argument",
+        "linter": "linter.unusedSimpArgs",
+        "log_line": 293
+      },
+      {
+        "path": "FreeEntropy/TensorLieRestriction.lean",
+        "source_line": 28,
+        "source_column": 8,
+        "message": "automatically included section variable(s) unused in theorem `_private.FreeEntropy.TensorLieRestriction.0.FreeEntropy.SchurWeyl.compressed_product`:",
+        "kind": "unused_section_variables",
+        "linter": "linter.unusedSectionVars",
+        "log_line": 301
+      },
+      {
+        "path": "FreeEntropy/LieCharacterRadial.lean",
+        "source_line": 146,
+        "source_column": 0,
+        "message": "automatically included section variable(s) unused in theorem `FreeEntropy.LieCharacter.euler_character`:",
+        "kind": "unused_section_variables",
+        "linter": "linter.unusedSectionVars",
+        "log_line": 314
+      },
+      {
+        "path": "FreeEntropy/LieCharacterRadial.lean",
+        "source_line": 157,
+        "source_column": 0,
+        "message": "automatically included section variable(s) unused in theorem `FreeEntropy.LieCharacter.euler_sq_character`:",
+        "kind": "unused_section_variables",
+        "linter": "linter.unusedSectionVars",
+        "log_line": 320
+      },
+      {
+        "path": "FreeEntropy/LieCharacterRadial.lean",
+        "source_line": 174,
+        "source_column": 13,
+        "message": "This simp argument is unused:",
+        "kind": "unused_simp_argument",
+        "linter": "linter.unusedSimpArgs",
+        "log_line": 326
+      },
+      {
+        "path": "FreeEntropy/LieCharacterRadial.lean",
+        "source_line": 197,
+        "source_column": 72,
+        "message": "This simp argument is unused:",
+        "kind": "unused_simp_argument",
+        "linter": "linter.unusedSimpArgs",
+        "log_line": 333
+      },
+      {
+        "path": "FreeEntropy/LieCharacterRadial.lean",
+        "source_line": 224,
+        "source_column": 43,
+        "message": "This simp argument is unused:",
+        "kind": "unused_simp_argument",
+        "linter": "linter.unusedSimpArgs",
+        "log_line": 340
+      },
+      {
+        "path": "FreeEntropy/ExteriorCartanEmbedding.lean",
+        "source_line": 62,
+        "source_column": 4,
+        "message": "try 'simp' instead of 'simpa'",
+        "kind": "unnecessary_simpa",
+        "linter": "linter.unnecessarySimpa",
+        "log_line": 350
+      },
+      {
+        "path": "FreeEntropy/ExteriorCartanEmbedding.lean",
+        "source_line": 64,
+        "source_column": 4,
+        "message": "try 'simp' instead of 'simpa'",
+        "kind": "unnecessary_simpa",
+        "linter": "linter.unnecessarySimpa",
+        "log_line": 353
+      },
+      {
+        "path": "FreeEntropy/WeylDenominator.lean",
+        "source_line": 27,
+        "source_column": 2,
+        "message": "try 'simp' instead of 'simpa'",
+        "kind": "unnecessary_simpa",
+        "linter": "linter.unnecessarySimpa",
+        "log_line": 358
+      },
+      {
+        "path": "FreeEntropy/WeylDenominator.lean",
+        "source_line": 27,
+        "source_column": 100,
+        "message": "'simp' tactic does nothing",
+        "kind": "unused_tactic",
+        "linter": "linter.unusedTactic",
+        "log_line": 361
+      },
+      {
+        "path": "FreeEntropy/WeylDenominator.lean",
+        "source_line": 27,
+        "source_column": 100,
+        "message": "this tactic is never executed",
+        "kind": "unreachable_tactic",
+        "linter": "linter.unreachableTactic",
+        "log_line": 364
+      },
+      {
+        "path": "FreeEntropy/WeylDenominator.lean",
+        "source_line": 36,
+        "source_column": 26,
+        "message": "This simp argument is unused:",
+        "kind": "unused_simp_argument",
+        "linter": "linter.unusedSimpArgs",
+        "log_line": 367
+      },
+      {
+        "path": "FreeEntropy/LieCartanBalance.lean",
+        "source_line": 21,
+        "source_column": 0,
+        "message": "automatically included section variable(s) unused in theorem `FreeEntropy.CartanBalance.partialTrace_left`:",
+        "kind": "unused_section_variables",
+        "linter": "linter.unusedSectionVars",
+        "log_line": 375
+      },
+      {
+        "path": "FreeEntropy/LieCartanBalance.lean",
+        "source_line": 30,
+        "source_column": 0,
+        "message": "automatically included section variable(s) unused in theorem `FreeEntropy.CartanBalance.partialTrace_right`:",
+        "kind": "unused_section_variables",
+        "linter": "linter.unusedSectionVars",
+        "log_line": 381
+      },
+      {
+        "path": "FreeEntropy/LieCartanBalance.lean",
+        "source_line": 39,
+        "source_column": 0,
+        "message": "automatically included section variable(s) unused in theorem `FreeEntropy.CartanBalance.partialTrace_environment`:",
+        "kind": "unused_section_variables",
+        "linter": "linter.unusedSectionVars",
+        "log_line": 387
+      },
+      {
+        "path": "FreeEntropy/LieCartanBalance.lean",
+        "source_line": 54,
+        "source_column": 0,
+        "message": "automatically included section variable(s) unused in theorem `FreeEntropy.CartanBalance.partialTrace_add`:",
+        "kind": "unused_section_variables",
+        "linter": "linter.unusedSectionVars",
+        "log_line": 393
+      },
+      {
+        "path": "FreeEntropy/LieCartanBalance.lean",
+        "source_line": 71,
+        "source_column": 0,
+        "message": "automatically included section variable(s) unused in theorem `FreeEntropy.CartanBalance.lie_range_commutes`:",
+        "kind": "unused_section_variables",
+        "linter": "linter.unusedSectionVars",
+        "log_line": 401
+      },
+      {
+        "path": "FreeEntropy/ExteriorCommutant.lean",
+        "source_line": 84,
+        "source_column": 40,
+        "message": "This simp argument is unused:",
+        "kind": "unused_simp_argument",
+        "linter": "linter.unusedSimpArgs",
+        "log_line": 408
+      },
+      {
+        "path": "FreeEntropy/ExteriorCommutant.lean",
+        "source_line": 86,
+        "source_column": 12,
+        "message": "This simp argument is unused:",
+        "kind": "unused_simp_argument",
+        "linter": "linter.unusedSimpArgs",
+        "log_line": 415
+      },
+      {
+        "path": "FreeEntropy/ExteriorCommutant.lean",
+        "source_line": 86,
+        "source_column": 33,
+        "message": "This simp argument is unused:",
+        "kind": "unused_simp_argument",
+        "linter": "linter.unusedSimpArgs",
+        "log_line": 422
+      },
+      {
+        "path": "FreeEntropy/ExteriorCommutant.lean",
+        "source_line": 86,
+        "source_column": 37,
+        "message": "This simp argument is unused:",
+        "kind": "unused_simp_argument",
+        "linter": "linter.unusedSimpArgs",
+        "log_line": 429
+      },
+      {
+        "path": "FreeEntropy/ExteriorCommutant.lean",
+        "source_line": 111,
+        "source_column": 46,
+        "message": "This simp argument is unused:",
+        "kind": "unused_simp_argument",
+        "linter": "linter.unusedSimpArgs",
+        "log_line": 436
+      },
+      {
+        "path": "FreeEntropy/LieCharacterFinite.lean",
+        "source_line": 29,
+        "source_column": 8,
+        "message": "automatically included section variable(s) unused in theorem `FreeEntropy.LieCharacter.character_eval_one`:",
+        "kind": "unused_section_variables",
+        "linter": "linter.unusedSectionVars",
+        "log_line": 445
+      },
+      {
+        "path": "FreeEntropy/LieCharacterFinite.lean",
+        "source_line": 50,
+        "source_column": 0,
+        "message": "automatically included section variable(s) unused in theorem `FreeEntropy.LieCharacter.character_coeff`:",
+        "kind": "unused_section_variables",
+        "linter": "linter.unusedSectionVars",
+        "log_line": 451
+      },
+      {
+        "path": "FreeEntropy/LieCharacterFinite.lean",
+        "source_line": 55,
+        "source_column": 13,
+        "message": "This simp argument is unused:",
+        "kind": "unused_simp_argument",
+        "linter": "linter.unusedSimpArgs",
+        "log_line": 457
+      },
+      {
+        "path": "FreeEntropy/WeylDifferentialProduct.lean",
+        "source_line": 28,
+        "source_column": 26,
+        "message": "This simp argument is unused:",
+        "kind": "unused_simp_argument",
+        "linter": "linter.unusedSimpArgs",
+        "log_line": 468
+      },
+      {
+        "path": "FreeEntropy/WeylCoefficient.lean",
+        "source_line": 26,
+        "source_column": 61,
+        "message": "'simp' tactic does nothing",
+        "kind": "unused_tactic",
+        "linter": "linter.unusedTactic",
+        "log_line": 479
+      },
+      {
+        "path": "FreeEntropy/WeylCoefficient.lean",
+        "source_line": 26,
+        "source_column": 61,
+        "message": "this tactic is never executed",
+        "kind": "unreachable_tactic",
+        "linter": "linter.unreachableTactic",
+        "log_line": 482
+      },
+      {
+        "path": "FreeEntropy/LieDeterminantTwist.lean",
+        "source_line": 31,
+        "source_column": 26,
+        "message": "This simp argument is unused:",
+        "kind": "unused_simp_argument",
+        "linter": "linter.unusedSimpArgs",
+        "log_line": 489
+      },
+      {
+        "path": "FreeEntropy/LieDeterminantTwist.lean",
+        "source_line": 31,
+        "source_column": 43,
+        "message": "This simp argument is unused:",
+        "kind": "unused_simp_argument",
+        "linter": "linter.unusedSimpArgs",
+        "log_line": 496
+      },
+      {
+        "path": "FreeEntropy/LieDeterminantTwist.lean",
+        "source_line": 34,
+        "source_column": 26,
+        "message": "This simp argument is unused:",
+        "kind": "unused_simp_argument",
+        "linter": "linter.unusedSimpArgs",
+        "log_line": 503
+      },
+      {
+        "path": "FreeEntropy/LieDeterminantTwist.lean",
+        "source_line": 34,
+        "source_column": 43,
+        "message": "This simp argument is unused:",
+        "kind": "unused_simp_argument",
+        "linter": "linter.unusedSimpArgs",
+        "log_line": 510
+      },
+      {
+        "path": "FreeEntropy/LieDeterminantTwist.lean",
+        "source_line": 137,
+        "source_column": 6,
+        "message": "try 'simp' instead of 'simpa'",
+        "kind": "unnecessary_simpa",
+        "linter": "linter.unnecessarySimpa",
+        "log_line": 517
+      },
+      {
+        "path": "FreeEntropy/ExteriorMonomialWeights.lean",
+        "source_line": 31,
+        "source_column": 6,
+        "message": "try 'simp' instead of 'simpa'",
+        "kind": "unnecessary_simpa",
+        "linter": "linter.unnecessarySimpa",
+        "log_line": 522
+      },
+      {
+        "path": "FreeEntropy/ExteriorMonomialWeights.lean",
+        "source_line": 36,
+        "source_column": 6,
+        "message": "try 'simp' instead of 'simpa'",
+        "kind": "unnecessary_simpa",
+        "linter": "linter.unnecessarySimpa",
+        "log_line": 525
+      },
+      {
+        "path": "FreeEntropy/CoordinateWeightSpace.lean",
+        "source_line": 34,
+        "source_column": 0,
+        "message": "automatically included section variable(s) unused in theorem `FreeEntropy.LiePBW.coordinateWeightSpace_finrank`:",
+        "kind": "unused_section_variables",
+        "linter": "linter.unusedSectionVars",
+        "log_line": 556
+      },
+      {
+        "path": "FreeEntropy/CartanMultiplicity.lean",
+        "source_line": 24,
+        "source_column": 0,
+        "message": "automatically included section variable(s) unused in theorem `FreeEntropy.CartanLieCloning.tensor_basisEmbedding_raise`:",
+        "kind": "unused_section_variables",
+        "linter": "linter.unusedSectionVars",
+        "log_line": 568
+      },
+      {
+        "path": "FreeEntropy/CartanMultiplicity.lean",
+        "source_line": 33,
+        "source_column": 76,
+        "message": "This simp argument is unused:",
+        "kind": "unused_simp_argument",
+        "linter": "linter.unusedSimpArgs",
+        "log_line": 574
+      },
+      {
+        "path": "FreeEntropy/CartanMultiplicity.lean",
+        "source_line": 34,
+        "source_column": 4,
+        "message": "This simp argument is unused:",
+        "kind": "unused_simp_argument",
+        "linter": "linter.unusedSimpArgs",
+        "log_line": 583
+      },
+      {
+        "path": "FreeEntropy/CartanMultiplicity.lean",
+        "source_line": 34,
+        "source_column": 28,
+        "message": "This simp argument is unused:",
+        "kind": "unused_simp_argument",
+        "linter": "linter.unusedSimpArgs",
+        "log_line": 591
+      },
+      {
+        "path": "FreeEntropy/CartanMultiplicity.lean",
+        "source_line": 34,
+        "source_column": 37,
+        "message": "This simp argument is unused:",
+        "kind": "unused_simp_argument",
+        "linter": "linter.unusedSimpArgs",
+        "log_line": 599
+      },
+      {
+        "path": "FreeEntropy/CartanMultiplicity.lean",
+        "source_line": 34,
+        "source_column": 46,
+        "message": "This simp argument is unused:",
+        "kind": "unused_simp_argument",
+        "linter": "linter.unusedSimpArgs",
+        "log_line": 607
+      },
+      {
+        "path": "FreeEntropy/CartanMultiplicity.lean",
+        "source_line": 36,
+        "source_column": 0,
+        "message": "automatically included section variable(s) unused in theorem `FreeEntropy.CartanLieCloning.cartanSlice_raise`:",
+        "kind": "unused_section_variables",
+        "linter": "linter.unusedSectionVars",
+        "log_line": 615
+      },
+      {
+        "path": "FreeEntropy/CartanMultiplicity.lean",
+        "source_line": 84,
+        "source_column": 0,
+        "message": "automatically included section variable(s) unused in theorem `FreeEntropy.CartanLieCloning.cartanSlice_weight`:",
+        "kind": "unused_section_variables",
+        "linter": "linter.unusedSectionVars",
+        "log_line": 621
+      },
+      {
+        "path": "FreeEntropy/CyclicWeightStateBlocks.lean",
+        "source_line": 107,
+        "source_column": 42,
+        "message": "This simp argument is unused:",
+        "kind": "unused_simp_argument",
+        "linter": "linter.unusedSimpArgs",
+        "log_line": 637
+      },
+      {
+        "path": "FreeEntropy/CyclicWeightStateBlocks.lean",
+        "source_line": 108,
+        "source_column": 32,
+        "message": "This simp argument is unused:",
+        "kind": "unused_simp_argument",
+        "linter": "linter.unusedSimpArgs",
+        "log_line": 645
+      },
+      {
+        "path": "FreeEntropy/CyclicWeightStateBlocks.lean",
+        "source_line": 108,
+        "source_column": 51,
+        "message": "This simp argument is unused:",
+        "kind": "unused_simp_argument",
+        "linter": "linter.unusedSimpArgs",
+        "log_line": 653
+      },
+      {
+        "path": "FreeEntropy/LiePBWDimension.lean",
+        "source_line": 125,
+        "source_column": 22,
+        "message": "This simp argument is unused:",
+        "kind": "unused_simp_argument",
+        "linter": "linter.unusedSimpArgs",
+        "log_line": 667
+      },
+      {
+        "path": "FreeEntropy/ExteriorSimpleOffsets.lean",
+        "source_line": 39,
+        "source_column": 18,
+        "message": "This simp argument is unused:",
+        "kind": "unused_simp_argument",
+        "linter": "linter.unusedSimpArgs",
+        "log_line": 679
+      },
+      {
+        "path": "FreeEntropy/TensorPowersPair.lean",
+        "source_line": 68,
+        "source_column": 0,
+        "message": "automatically included section variable(s) unused in theorem `FreeEntropy.TensorPowers.pairEmbedding_isometry`:",
+        "kind": "unused_section_variables",
+        "linter": "linter.unusedSectionVars",
+        "log_line": 693
+      },
+      {
+        "path": "FreeEntropy/TensorPowersPair.lean",
+        "source_line": 77,
+        "source_column": 0,
+        "message": "automatically included section variable(s) unused in theorem `FreeEntropy.TensorPowers.pairEmbedding_intertwines`:",
+        "kind": "unused_section_variables",
+        "linter": "linter.unusedSectionVars",
+        "log_line": 700
+      },
+      {
+        "path": "FreeEntropy/WeylCharacterCone.lean",
+        "source_line": 54,
+        "source_column": 34,
+        "message": "This simp argument is unused:",
+        "kind": "unused_simp_argument",
+        "linter": "linter.unusedSimpArgs",
+        "log_line": 708
+      },
+      {
+        "path": "FreeEntropy/WeylCharacterCone.lean",
+        "source_line": 81,
+        "source_column": 69,
+        "message": "This simp argument is unused:",
+        "kind": "unused_simp_argument",
+        "linter": "linter.unusedSimpArgs",
+        "log_line": 715
+      },
+      {
+        "path": "FreeEntropy/WeylCharacterCone.lean",
+        "source_line": 81,
+        "source_column": 74,
+        "message": "This simp argument is unused:",
+        "kind": "unused_simp_argument",
+        "linter": "linter.unusedSimpArgs",
+        "log_line": 722
+      },
+      {
+        "path": "FreeEntropy/CartanReshuffle.lean",
+        "source_line": 26,
+        "source_column": 8,
+        "message": "automatically included section variable(s) unused in theorem `FreeEntropy.CartanChoi.reshuffle_unreshuffle`:",
+        "kind": "unused_section_variables",
+        "linter": "linter.unusedSectionVars",
+        "log_line": 739
+      },
+      {
+        "path": "FreeEntropy/CartanReshuffle.lean",
+        "source_line": 27,
+        "source_column": 8,
+        "message": "automatically included section variable(s) unused in theorem `FreeEntropy.CartanChoi.unreshuffle_reshuffle`:",
+        "kind": "unused_section_variables",
+        "linter": "linter.unusedSectionVars",
+        "log_line": 750
+      },
+      {
+        "path": "FreeEntropy/CartanReshuffle.lean",
+        "source_line": 29,
+        "source_column": 0,
+        "message": "automatically included section variable(s) unused in theorem `FreeEntropy.CartanChoi.reshuffle_injective`:",
+        "kind": "unused_section_variables",
+        "linter": "linter.unusedSectionVars",
+        "log_line": 761
+      },
+      {
+        "path": "FreeEntropy/CartanReshuffle.lean",
+        "source_line": 33,
+        "source_column": 8,
+        "message": "automatically included section variable(s) unused in theorem `FreeEntropy.CartanChoi.reshuffle_smul`:",
+        "kind": "unused_section_variables",
+        "linter": "linter.unusedSectionVars",
+        "log_line": 772
+      },
+      {
+        "path": "FreeEntropy/CartanReshuffle.lean",
+        "source_line": 36,
+        "source_column": 0,
+        "message": "automatically included section variable(s) unused in theorem `FreeEntropy.CartanChoi.tensor_mul_entry`:",
+        "kind": "unused_section_variables",
+        "linter": "linter.unusedSectionVars",
+        "log_line": 783
+      },
+      {
+        "path": "FreeEntropy/CartanReshuffle.lean",
+        "source_line": 42,
+        "source_column": 4,
+        "message": "This simp argument is unused:",
+        "kind": "unused_simp_argument",
+        "linter": "linter.unusedSimpArgs",
+        "log_line": 790
+      },
+      {
+        "path": "FreeEntropy/CartanReshuffle.lean",
+        "source_line": 45,
+        "source_column": 0,
+        "message": "automatically included section variable(s) unused in theorem `FreeEntropy.CartanChoi.reshuffle_dual_tensor_entry`:",
+        "kind": "unused_section_variables",
+        "linter": "linter.unusedSectionVars",
+        "log_line": 798
+      },
+      {
+        "path": "FreeEntropy/CartanReshuffle.lean",
+        "source_line": 51,
+        "source_column": 27,
+        "message": "This simp argument is unused:",
+        "kind": "unused_simp_argument",
+        "linter": "linter.unusedSimpArgs",
+        "log_line": 805
+      },
+      {
+        "path": "FreeEntropy/CartanChoi.lean",
+        "source_line": 34,
+        "source_column": 4,
+        "message": "This simp argument is unused:",
+        "kind": "unused_simp_argument",
+        "linter": "linter.unusedSimpArgs",
+        "log_line": 819
+      },
+      {
+        "path": "FreeEntropy/CartanChoi.lean",
+        "source_line": 43,
+        "source_column": 4,
+        "message": "This simp argument is unused:",
+        "kind": "unused_simp_argument",
+        "linter": "linter.unusedSimpArgs",
+        "log_line": 828
+      },
+      {
+        "path": "FreeEntropy/CartanChoi.lean",
+        "source_line": 60,
+        "source_column": 0,
+        "message": "automatically included section variable(s) unused in theorem `FreeEntropy.CartanChoi.reshuffle_trace`:",
+        "kind": "unused_section_variables",
+        "linter": "linter.unusedSectionVars",
+        "log_line": 840
+      },
+      {
+        "path": "FreeEntropy/CartanChoi.lean",
+        "source_line": 107,
+        "source_column": 0,
+        "message": "automatically included section variable(s) unused in theorem `FreeEntropy.CartanChoi.projector_hermitian`:",
+        "kind": "unused_section_variables",
+        "linter": "linter.unusedSectionVars",
+        "log_line": 848
+      },
+      {
+        "path": "FreeEntropy/CartanChoi.lean",
+        "source_line": 111,
+        "source_column": 0,
+        "message": "automatically included section variable(s) unused in theorem `FreeEntropy.CartanChoi.projector_positive`:",
+        "kind": "unused_section_variables",
+        "linter": "linter.unusedSectionVars",
+        "log_line": 857
+      },
+      {
+        "path": "FreeEntropy/CartanChoi.lean",
+        "source_line": 144,
+        "source_column": 0,
+        "message": "automatically included section variable(s) unused in theorem `FreeEntropy.CartanChoi.embedding_projector`:",
+        "kind": "unused_section_variables",
+        "linter": "linter.unusedSectionVars",
+        "log_line": 865
+      },
+      {
+        "path": "FreeEntropy/CartanChoi.lean",
+        "source_line": 161,
+        "source_column": 15,
+        "message": "This simp argument is unused:",
+        "kind": "unused_simp_argument",
+        "linter": "linter.unusedSimpArgs",
+        "log_line": 874
+      },
+      {
+        "path": "FreeEntropy/SupportedWeightStates.lean",
+        "source_line": 40,
+        "source_column": 34,
+        "message": "`_root_.not_imp` has been deprecated: Use `Classical.not_imp` instead",
+        "kind": "deprecated_declaration",
+        "linter": null,
+        "log_line": 883
+      },
+      {
+        "path": "FreeEntropy/SupportedWeightStates.lean",
+        "source_line": 41,
+        "source_column": 29,
+        "message": "`_root_.not_imp` has been deprecated: Use `Classical.not_imp` instead",
+        "kind": "deprecated_declaration",
+        "linter": null,
+        "log_line": 884
+      },
+      {
+        "path": "FreeEntropy/ChoiContraction.lean",
+        "source_line": 21,
+        "source_column": 0,
+        "message": "automatically included section variable(s) unused in theorem `FreeEntropy.CartanChoi.choiMap_eq_partialTraceInput`:",
+        "kind": "unused_section_variables",
+        "linter": "linter.unusedSectionVars",
+        "log_line": 890
+      },
+      {
+        "path": "FreeEntropy/CanonicalMonomialState.lean",
+        "source_line": 143,
+        "source_column": 0,
+        "message": "automatically included section variable(s) unused in theorem `FreeEntropy.CanonicalMonomials.normalized_diagonal_factor`:",
+        "kind": "unused_section_variables",
+        "linter": "linter.unusedSectionVars",
+        "log_line": 913
+      },
+      {
+        "path": "FreeEntropy/CanonicalMonomialState.lean",
+        "source_line": 158,
+        "source_column": 29,
+        "message": "This simp argument is unused:",
+        "kind": "unused_simp_argument",
+        "linter": "linter.unusedSimpArgs",
+        "log_line": 919
+      },
+      {
+        "path": "FreeEntropy/PhysicalCanonicalChannels.lean",
+        "source_line": 52,
+        "source_column": 0,
+        "message": "automatically included section variable(s) unused in theorem `FreeEntropy.SchurWeyl.sectorCanonicalForward_state`:",
+        "kind": "unused_section_variables",
+        "linter": "linter.unusedSectionVars",
+        "log_line": 927
+      },
+      {
+        "path": "FreeEntropy/PhysicalCanonicalChannels.lean",
+        "source_line": 61,
+        "source_column": 0,
+        "message": "automatically included section variable(s) unused in theorem `FreeEntropy.SchurWeyl.sectorCanonicalReverse_error`:",
+        "kind": "unused_section_variables",
+        "linter": "linter.unusedSectionVars",
+        "log_line": 933
+      },
+      {
+        "path": "FreeEntropy/LieDualTensor.lean",
+        "source_line": 16,
+        "source_column": 0,
+        "message": "automatically included section variable(s) unused in theorem `FreeEntropy.LieMatrixCasimir.Generators.dual_dual_E`:",
+        "kind": "unused_section_variables",
+        "linter": "linter.unusedSectionVars",
+        "log_line": 941
+      },
+      {
+        "path": "FreeEntropy/LieDualTensor.lean",
+        "source_line": 23,
+        "source_column": 46,
+        "message": "This simp argument is unused:",
+        "kind": "unused_simp_argument",
+        "linter": "linter.unusedSimpArgs",
+        "log_line": 947
+      },
+      {
+        "path": "FreeEntropy/LieDualTensor.lean",
+        "source_line": 23,
+        "source_column": 70,
+        "message": "This simp argument is unused:",
+        "kind": "unused_simp_argument",
+        "linter": "linter.unusedSimpArgs",
+        "log_line": 954
+      },
+      {
+        "path": "FreeEntropy/LieDualTensor.lean",
+        "source_line": 26,
+        "source_column": 0,
+        "message": "automatically included section variable(s) unused in theorem `FreeEntropy.LieMatrixCasimir.Generators.conjugate_eq_neg_dual`:",
+        "kind": "unused_section_variables",
+        "linter": "linter.unusedSectionVars",
+        "log_line": 962
+      },
+      {
+        "path": "FreeEntropy/CartanGroupCovariance.lean",
+        "source_line": 77,
+        "source_column": 0,
+        "message": "automatically included section variable(s) unused in theorem `FreeEntropy.CartanChannel.phase_conjugation`:",
+        "kind": "unused_section_variables",
+        "linter": "linter.unusedSectionVars",
+        "log_line": 973
+      },
+      {
+        "path": "FreeEntropy/ConstantWeightPhase.lean",
+        "source_line": 71,
+        "source_column": 0,
+        "message": "automatically included section variable(s) unused in theorem `FreeEntropy.CartanChannel.subsingleton_matrix_scalar`:",
+        "kind": "unused_section_variables",
+        "linter": "linter.unusedSectionVars",
+        "log_line": 983
+      },
+      {
+        "path": "FreeEntropy/ConstantWeightPhase.lean",
+        "source_line": 82,
+        "source_column": 66,
+        "message": "This simp argument is unused:",
+        "kind": "unused_simp_argument",
+        "linter": "linter.unusedSimpArgs",
+        "log_line": 989
+      },
+      {
+        "path": "FreeEntropy/ConstantWeightPhase.lean",
+        "source_line": 83,
+        "source_column": 21,
+        "message": "This simp argument is unused:",
+        "kind": "unused_simp_argument",
+        "linter": "linter.unusedSimpArgs",
+        "log_line": 999
+      },
+      {
+        "path": "FreeEntropy/ConstantWeightPhase.lean",
+        "source_line": 83,
+        "source_column": 37,
+        "message": "This simp argument is unused:",
+        "kind": "unused_simp_argument",
+        "linter": "linter.unusedSimpArgs",
+        "log_line": 1007
+      },
+      {
+        "path": "FreeEntropy/ConstantWeightPhase.lean",
+        "source_line": 88,
+        "source_column": 0,
+        "message": "automatically included section variable(s) unused in theorem `FreeEntropy.CartanChannel.basisEmbedding_coisometry`:",
+        "kind": "unused_section_variables",
+        "linter": "linter.unusedSectionVars",
+        "log_line": 1017
+      },
+      {
+        "path": "FreeEntropy/ConstantWeightPhase.lean",
+        "source_line": 103,
+        "source_column": 42,
+        "message": "This simp argument is unused:",
+        "kind": "unused_simp_argument",
+        "linter": "linter.unusedSimpArgs",
+        "log_line": 1023
+      },
+      {
+        "path": "FreeEntropy/CanonicalCartanCovariance.lean",
+        "source_line": 82,
+        "source_column": 29,
+        "message": "This simp argument is unused:",
+        "kind": "unused_simp_argument",
+        "linter": "linter.unusedSimpArgs",
+        "log_line": 1036
+      },
+      {
+        "path": "FreeEntropy/CanonicalCartanCovariance.lean",
+        "source_line": 115,
+        "source_column": 65,
+        "message": "This simp argument is unused:",
+        "kind": "unused_simp_argument",
+        "linter": "linter.unusedSimpArgs",
+        "log_line": 1044
+      },
+      {
+        "path": "FreeEntropy/CanonicalCartanCovariance.lean",
+        "source_line": 115,
+        "source_column": 78,
+        "message": "This simp argument is unused:",
+        "kind": "unused_simp_argument",
+        "linter": "linter.unusedSimpArgs",
+        "log_line": 1052
+      },
+      {
+        "path": "FreeEntropy/CanonicalCartanCovariance.lean",
+        "source_line": 120,
+        "source_column": 15,
+        "message": "This simp argument is unused:",
+        "kind": "unused_simp_argument",
+        "linter": "linter.unusedSimpArgs",
+        "log_line": 1061
+      },
+      {
+        "path": "FreeEntropy/CanonicalCloningSelf.lean",
+        "source_line": 58,
+        "source_column": 0,
+        "message": "automatically included section variable(s) unused in theorem `FreeEntropy.CartanLieCloning.trivial_environment_maps_identity`:",
+        "kind": "unused_section_variables",
+        "linter": "linter.unusedSectionVars",
+        "log_line": 1075
+      },
+      {
+        "path": "FreeEntropy/CanonicalCloningSelf.lean",
+        "source_line": 74,
+        "source_column": 24,
+        "message": "This simp argument is unused:",
+        "kind": "unused_simp_argument",
+        "linter": "linter.unusedSimpArgs",
+        "log_line": 1081
+      },
+      {
+        "path": "FreeEntropy/CanonicalCloningSelf.lean",
+        "source_line": 81,
+        "source_column": 10,
+        "message": "This simp argument is unused:",
+        "kind": "unused_simp_argument",
+        "linter": "linter.unusedSimpArgs",
+        "log_line": 1088
+      },
+      {
+        "path": "FreeEntropy/CanonicalCloningSelf.lean",
+        "source_line": 85,
+        "source_column": 6,
+        "message": "This simp argument is unused:",
+        "kind": "unused_simp_argument",
+        "linter": "linter.unusedSimpArgs",
+        "log_line": 1096
+      },
+      {
+        "path": "FreeEntropy/PhysicalUniformError.lean",
+        "source_line": 27,
+        "source_column": 0,
+        "message": "automatically included section variable(s) unused in theorem `FreeEntropy.SchurWeyl.physical_error_le_one`:",
+        "kind": "unused_section_variables",
+        "linter": "linter.unusedSectionVars",
+        "log_line": 1110
+      },
+      {
+        "path": "FreeEntropy/PhysicalUniformError.lean",
+        "source_line": 48,
+        "source_column": 0,
+        "message": "automatically included section variable(s) unused in theorem `FreeEntropy.SchurWeyl.mixedWorstError_le`:",
+        "kind": "unused_section_variables",
+        "linter": "linter.unusedSectionVars",
+        "log_line": 1116
+      },
+      {
+        "path": "FreeEntropy/CanonicalChoi.lean",
+        "source_line": 111,
+        "source_column": 4,
+        "message": "'change _ *ᵥ (W *ᵥ N.highestVector) = _' tactic does nothing",
+        "kind": "unused_tactic",
+        "linter": "linter.unusedTactic",
+        "log_line": 1125
+      }
+    ],
+    "errors": [],
+    "sorry_lines": []
+  },
+  "heavy_tail": {
+    "at_least_10s": 264,
+    "at_least_20s": 161,
+    "at_least_30s": 115,
+    "at_least_40s": 89
+  },
+  "top_30_modules": [
+    {
+      "module": "FreeEntropy.TensorWeightBasis",
+      "logged_elapsed_seconds": 148.0,
+      "family": "FreeEntropy.Tensor"
+    },
+    {
+      "module": "FreeEntropy.WeylTranslation",
+      "logged_elapsed_seconds": 123.0,
+      "family": "FreeEntropy.Weyl"
+    },
+    {
+      "module": "FreeEntropy.WeylCoefficient",
+      "logged_elapsed_seconds": 99.0,
+      "family": "FreeEntropy.Weyl"
+    },
+    {
+      "module": "FreeEntropy.LieDeterminantTwist",
+      "logged_elapsed_seconds": 97.0,
+      "family": "FreeEntropy.Lie"
+    },
+    {
+      "module": "FreeEntropy.LiePBWDimension",
+      "logged_elapsed_seconds": 96.0,
+      "family": "FreeEntropy.Lie"
+    },
+    {
+      "module": "FreeEntropy.SchurAchievability",
+      "logged_elapsed_seconds": 96.0,
+      "family": "FreeEntropy.Schur"
+    },
+    {
+      "module": "FreeEntropy.CyclicWeightOrbit",
+      "logged_elapsed_seconds": 95.0,
+      "family": "FreeEntropy.Cyclic"
+    },
+    {
+      "module": "FreeEntropy.ExteriorMonomialWeights",
+      "logged_elapsed_seconds": 95.0,
+      "family": "FreeEntropy.Exterior"
+    },
+    {
+      "module": "FreeEntropy.CyclicWeightStateBlocks",
+      "logged_elapsed_seconds": 93.0,
+      "family": "FreeEntropy.Cyclic"
+    },
+    {
+      "module": "FreeEntropy.ExteriorCanonicalCyclicity",
+      "logged_elapsed_seconds": 90.0,
+      "family": "FreeEntropy.Exterior"
+    },
+    {
+      "module": "FreeEntropy.ExteriorMonomialColumns",
+      "logged_elapsed_seconds": 84.0,
+      "family": "FreeEntropy.Exterior"
+    },
+    {
+      "module": "FreeEntropy.CanonicalOrbit",
+      "logged_elapsed_seconds": 82.0,
+      "family": "FreeEntropy.Canonical"
+    },
+    {
+      "module": "FreeEntropy.SchurWeylConcentrationMonomial",
+      "logged_elapsed_seconds": 82.0,
+      "family": "FreeEntropy.Schur"
+    },
+    {
+      "module": "FreeEntropy.ExteriorPhysicalIrrep",
+      "logged_elapsed_seconds": 80.0,
+      "family": "FreeEntropy.Exterior"
+    },
+    {
+      "module": "FreeEntropy.ExteriorCanonicalHighest",
+      "logged_elapsed_seconds": 77.0,
+      "family": "FreeEntropy.Exterior"
+    },
+    {
+      "module": "FreeEntropy.ConstructedLieCloning",
+      "logged_elapsed_seconds": 74.0,
+      "family": "FreeEntropy.Constructed"
+    },
+    {
+      "module": "FreeEntropy.ExteriorRootCounting",
+      "logged_elapsed_seconds": 74.0,
+      "family": "FreeEntropy.Exterior"
+    },
+    {
+      "module": "FreeEntropy.SchurWeylConcentrationGrouping",
+      "logged_elapsed_seconds": 74.0,
+      "family": "FreeEntropy.Schur"
+    },
+    {
+      "module": "FreeEntropy.UnitaryDecomposition",
+      "logged_elapsed_seconds": 74.0,
+      "family": "FreeEntropy.Unitary"
+    },
+    {
+      "module": "FreeEntropy.ExteriorMultiplicity",
+      "logged_elapsed_seconds": 73.0,
+      "family": "FreeEntropy.Exterior"
+    },
+    {
+      "module": "FreeEntropy.SchurWeylConcentrationSupport",
+      "logged_elapsed_seconds": 73.0,
+      "family": "FreeEntropy.Schur"
+    },
+    {
+      "module": "FreeEntropy.CoordinateWeightSpace",
+      "logged_elapsed_seconds": 72.0,
+      "family": "FreeEntropy.Coordinate"
+    },
+    {
+      "module": "FreeEntropy.QuantumTransfer",
+      "logged_elapsed_seconds": 72.0,
+      "family": "FreeEntropy.Quantum"
+    },
+    {
+      "module": "FreeEntropy.SignedCartan",
+      "logged_elapsed_seconds": 71.0,
+      "family": "FreeEntropy.Signed"
+    },
+    {
+      "module": "FreeEntropy.SpecifiedLieCloning",
+      "logged_elapsed_seconds": 71.0,
+      "family": "FreeEntropy.Specified"
+    },
+    {
+      "module": "FreeEntropy.UnitaryCoordinates",
+      "logged_elapsed_seconds": 70.0,
+      "family": "FreeEntropy.Unitary"
+    },
+    {
+      "module": "FreeEntropy.WeylDimensionExtraction",
+      "logged_elapsed_seconds": 70.0,
+      "family": "FreeEntropy.Weyl"
+    },
+    {
+      "module": "FreeEntropy.TensorLieCyclicityPhysical",
+      "logged_elapsed_seconds": 69.0,
+      "family": "FreeEntropy.Tensor"
+    },
+    {
+      "module": "FreeEntropy.ExteriorWeightCoordinates",
+      "logged_elapsed_seconds": 68.0,
+      "family": "FreeEntropy.Exterior"
+    },
+    {
+      "module": "FreeEntropy.KostantWeightData",
+      "logged_elapsed_seconds": 68.0,
+      "family": "FreeEntropy.Kostant"
+    }
+  ],
+  "module_elapsed_seconds": {
+    "All": 11.0,
+    "FreeEntropy": 17.0,
+    "FreeEntropy.AtypicalChannels": 9.6,
+    "FreeEntropy.CanonicalAmbientCloning": 26.0,
+    "FreeEntropy.CanonicalCartanCovariance": 35.0,
+    "FreeEntropy.CanonicalCharacter": 52.0,
+    "FreeEntropy.CanonicalCharacterEigen": 48.0,
+    "FreeEntropy.CanonicalCharacterIdentity": 13.0,
+    "FreeEntropy.CanonicalChoi": 15.0,
+    "FreeEntropy.CanonicalClassification": 16.0,
+    "FreeEntropy.CanonicalCloning": 17.0,
+    "FreeEntropy.CanonicalCloningBounds": 22.0,
+    "FreeEntropy.CanonicalCloningCore": 40.0,
+    "FreeEntropy.CanonicalCloningOrbit": 14.0,
+    "FreeEntropy.CanonicalCloningSelf": 21.0,
+    "FreeEntropy.CanonicalConverse": 60.0,
+    "FreeEntropy.CanonicalDimension": 15.0,
+    "FreeEntropy.CanonicalDimensionRatio": 59.0,
+    "FreeEntropy.CanonicalDualCyclicHighest": 38.0,
+    "FreeEntropy.CanonicalDualHighest": 59.0,
+    "FreeEntropy.CanonicalFullCloning": 22.0,
+    "FreeEntropy.CanonicalMonomialState": 17.0,
+    "FreeEntropy.CanonicalOrbit": 82.0,
+    "FreeEntropy.CanonicalPetz": 18.0,
+    "FreeEntropy.CanonicalPhysicalOrbit": 18.0,
+    "FreeEntropy.CanonicalReverseChoi": 11.0,
+    "FreeEntropy.CanonicalRowBounds": 38.0,
+    "FreeEntropy.CartanBalance": 12.0,
+    "FreeEntropy.CartanChannel": 24.0,
+    "FreeEntropy.CartanChoi": 15.0,
+    "FreeEntropy.CartanChoiMultiplicity": 15.0,
+    "FreeEntropy.CartanCloning": 23.0,
+    "FreeEntropy.CartanGroupCovariance": 18.0,
+    "FreeEntropy.CartanHomMultiplicity": 12.0,
+    "FreeEntropy.CartanLieCloning": 19.0,
+    "FreeEntropy.CartanMultiplicity": 62.0,
+    "FreeEntropy.CartanReshuffle": 13.0,
+    "FreeEntropy.CartanTraceCloning": 17.0,
+    "FreeEntropy.CartanTraceCloningBalance": 37.0,
+    "FreeEntropy.CasimirCentral": 14.0,
+    "FreeEntropy.CasimirDecomposition": 12.0,
+    "FreeEntropy.CasimirTrace": 12.0,
+    "FreeEntropy.CasimirWeights": 8.4,
+    "FreeEntropy.Channels": 24.0,
+    "FreeEntropy.ChoiContraction": 34.0,
+    "FreeEntropy.Cloning": 20.0,
+    "FreeEntropy.CloningFromRows": 38.0,
+    "FreeEntropy.CloningMatrices": 12.0,
+    "FreeEntropy.Concentration": 19.0,
+    "FreeEntropy.ConstantWeightPhase": 22.0,
+    "FreeEntropy.ConstructedLieCloning": 74.0,
+    "FreeEntropy.ConstructedTensorDecomposition": 51.0,
+    "FreeEntropy.CoordinateWeightSpace": 72.0,
+    "FreeEntropy.CyclicHighestRepresentation": 11.0,
+    "FreeEntropy.CyclicWeightHighest": 9.8,
+    "FreeEntropy.CyclicWeightOrbit": 95.0,
+    "FreeEntropy.CyclicWeightShift": 41.0,
+    "FreeEntropy.CyclicWeightStateBlocks": 93.0,
+    "FreeEntropy.CyclicWeightStates": 61.0,
+    "FreeEntropy.ExteriorCanonicalCyclicity": 90.0,
+    "FreeEntropy.ExteriorCanonicalHighest": 77.0,
+    "FreeEntropy.ExteriorCartan": 12.0,
+    "FreeEntropy.ExteriorCartanChannels": 19.0,
+    "FreeEntropy.ExteriorCartanEmbedding": 23.0,
+    "FreeEntropy.ExteriorColumnEquiv": 43.0,
+    "FreeEntropy.ExteriorCommutant": 50.0,
+    "FreeEntropy.ExteriorDominant": 11.0,
+    "FreeEntropy.ExteriorHighestRepresentation": 22.0,
+    "FreeEntropy.ExteriorLowerMinors": 45.0,
+    "FreeEntropy.ExteriorMatrixIrreducible": 12.0,
+    "FreeEntropy.ExteriorMonomialColumns": 84.0,
+    "FreeEntropy.ExteriorMonomialWeights": 95.0,
+    "FreeEntropy.ExteriorMultiplicity": 73.0,
+    "FreeEntropy.ExteriorPhysicalIrrep": 80.0,
+    "FreeEntropy.ExteriorRepresentation": 15.0,
+    "FreeEntropy.ExteriorRootCounting": 74.0,
+    "FreeEntropy.ExteriorRootSupport": 46.0,
+    "FreeEntropy.ExteriorSimpleOffsets": 19.0,
+    "FreeEntropy.ExteriorSupportedMonomials": 48.0,
+    "FreeEntropy.ExteriorSupportedOffsets": 19.0,
+    "FreeEntropy.ExteriorTensor": 11.0,
+    "FreeEntropy.ExteriorTensorEmbedding": 22.0,
+    "FreeEntropy.ExteriorTensorEmbeddingProduct": 30.0,
+    "FreeEntropy.ExteriorTensorPermutation": 40.0,
+    "FreeEntropy.ExteriorTensorSum": 58.0,
+    "FreeEntropy.ExteriorWeightCoordinates": 68.0,
+    "FreeEntropy.ExteriorWeightDimension": 66.0,
+    "FreeEntropy.ExteriorWeightMultiplicity": 67.0,
+    "FreeEntropy.ExteriorWeights": 10.0,
+    "FreeEntropy.FiniteConcentration": 25.0,
+    "FreeEntropy.GTCardinality": 62.0,
+    "FreeEntropy.GTCharacterEndpoints": 14.0,
+    "FreeEntropy.GTDeterminant": 47.0,
+    "FreeEntropy.GTDimension": 25.0,
+    "FreeEntropy.GTDimensionEndpoints": 17.0,
+    "FreeEntropy.GTDimensionFormula": 56.0,
+    "FreeEntropy.GTFiniteSupport": 24.0,
+    "FreeEntropy.GTOrbit": 61.0,
+    "FreeEntropy.GTPartitions": 43.0,
+    "FreeEntropy.GTRankSupport": 12.0,
+    "FreeEntropy.GTWeylProduct": 30.0,
+    "FreeEntropy.GelfandTsetlin": 29.0,
+    "FreeEntropy.GeometricOrbit": 50.0,
+    "FreeEntropy.HighestWeightDominance": 15.0,
+    "FreeEntropy.IdentityCloning": 10.0,
+    "FreeEntropy.IsometricCompression": 17.0,
+    "FreeEntropy.KostantCounting": 23.0,
+    "FreeEntropy.KostantWeightData": 68.0,
+    "FreeEntropy.LieCartanBalance": 34.0,
+    "FreeEntropy.LieCharacterCanonical": 48.0,
+    "FreeEntropy.LieCharacterFinite": 66.0,
+    "FreeEntropy.LieCharacterRadial": 15.0,
+    "FreeEntropy.LieCharacterSymmetry": 67.0,
+    "FreeEntropy.LieCyclicIrreducible": 45.0,
+    "FreeEntropy.LieCyclicMaps": 38.0,
+    "FreeEntropy.LieDecomposition": 51.0,
+    "FreeEntropy.LieDepthMultiplicity": 62.0,
+    "FreeEntropy.LieDeterminantTwist": 97.0,
+    "FreeEntropy.LieDirectSum": 22.0,
+    "FreeEntropy.LieDual": 11.0,
+    "FreeEntropy.LieDualCyclicity": 35.0,
+    "FreeEntropy.LieDualTensor": 23.0,
+    "FreeEntropy.LieHighestEquivalence": 12.0,
+    "FreeEntropy.LieHighestExistence": 65.0,
+    "FreeEntropy.LieHighestUnitary": 13.0,
+    "FreeEntropy.LieMatrixCasimir": 13.0,
+    "FreeEntropy.LiePBW": 14.0,
+    "FreeEntropy.LiePBWDimension": 96.0,
+    "FreeEntropy.LiePBWHighest": 11.0,
+    "FreeEntropy.LiePBWMultiplicity": 54.0,
+    "FreeEntropy.LiePBWOrderedLowering": 39.0,
+    "FreeEntropy.LiePBWUnique": 10.0,
+    "FreeEntropy.LiePBWWeights": 14.0,
+    "FreeEntropy.LieWeightModel": 47.0,
+    "FreeEntropy.MeanDepth": 19.0,
+    "FreeEntropy.MultiplicityChannels": 10.0,
+    "FreeEntropy.Occupation": 60.0,
+    "FreeEntropy.OccupationCloning": 28.0,
+    "FreeEntropy.OccupationCloningExact": 27.0,
+    "FreeEntropy.OccupationCommutant": 28.0,
+    "FreeEntropy.OccupationCounting": 28.0,
+    "FreeEntropy.OccupationDimension": 21.0,
+    "FreeEntropy.OccupationForward": 35.0,
+    "FreeEntropy.OccupationIrreducible": 20.0,
+    "FreeEntropy.OccupationRatio": 11.0,
+    "FreeEntropy.OccupationRepresentation": 50.0,
+    "FreeEntropy.OccupationSplit": 18.0,
+    "FreeEntropy.OccupationSplitRepresentation": 21.0,
+    "FreeEntropy.OccupationTheorem2": 25.0,
+    "FreeEntropy.OccupationTorus": 20.0,
+    "FreeEntropy.OccupationWerner": 10.0,
+    "FreeEntropy.OneDimensionalSource": 10.0,
+    "FreeEntropy.OptimalMemory": 10.0,
+    "FreeEntropy.OrbitEigenvalues": 20.0,
+    "FreeEntropy.OrbitMemory": 47.0,
+    "FreeEntropy.OrbitTraceDistance": 44.0,
+    "FreeEntropy.PhysicalCanonicalChannels": 17.0,
+    "FreeEntropy.PhysicalCanonicalConverse": 20.0,
+    "FreeEntropy.PhysicalCanonicalSector": 22.0,
+    "FreeEntropy.PhysicalCloningAccuracy": 25.0,
+    "FreeEntropy.PhysicalCloningChannels": 27.0,
+    "FreeEntropy.PhysicalOrbitChannels": 14.0,
+    "FreeEntropy.PhysicalSchurApproximation": 35.0,
+    "FreeEntropy.PhysicalSchurProtocol": 35.0,
+    "FreeEntropy.PhysicalUniformError": 35.0,
+    "FreeEntropy.PolynomialOrbitDimension": 19.0,
+    "FreeEntropy.ProjectorGeometry": 26.0,
+    "FreeEntropy.Proofs": 7.5,
+    "FreeEntropy.Protocol": 18.0,
+    "FreeEntropy.PureAchievability": 35.0,
+    "FreeEntropy.PureConverse": 15.0,
+    "FreeEntropy.PureTensorCompression": 22.0,
+    "FreeEntropy.QuantumProtocol": 8.5,
+    "FreeEntropy.QuantumTransfer": 72.0,
+    "FreeEntropy.RaisingKernel": 19.0,
+    "FreeEntropy.RankOneEndpoints": 41.0,
+    "FreeEntropy.RankOneStates": 10.0,
+    "FreeEntropy.RankRootCounting": 15.0,
+    "FreeEntropy.ReverseChoi": 34.0,
+    "FreeEntropy.ReverseChoiMultiplicity": 27.0,
+    "FreeEntropy.ReverseChoiRepresentation": 11.0,
+    "FreeEntropy.RootPartitionFunction": 62.0,
+    "FreeEntropy.ScalarCommutantIrreducible": 16.0,
+    "FreeEntropy.SchurAchievability": 96.0,
+    "FreeEntropy.SchurProbability": 15.0,
+    "FreeEntropy.SchurProbabilityCharacter": 15.0,
+    "FreeEntropy.SchurProbabilityConcentration": 23.0,
+    "FreeEntropy.SchurProbabilityTableaux": 19.0,
+    "FreeEntropy.SchurProtocol": 10.0,
+    "FreeEntropy.SchurWeylBlocks": 40.0,
+    "FreeEntropy.SchurWeylConcentration": 15.0,
+    "FreeEntropy.SchurWeylConcentrationGrouping": 74.0,
+    "FreeEntropy.SchurWeylConcentrationMonomial": 82.0,
+    "FreeEntropy.SchurWeylConcentrationProbability": 19.0,
+    "FreeEntropy.SchurWeylConcentrationSupport": 73.0,
+    "FreeEntropy.SchurWeylConcentrationTail": 15.0,
+    "FreeEntropy.SchurWeylMultiplicity": 19.0,
+    "FreeEntropy.SchurWeylNormalization": 11.0,
+    "FreeEntropy.SchurWeylPhysical": 13.0,
+    "FreeEntropy.SchurWeylSource": 37.0,
+    "FreeEntropy.SchurWeylWeightExistence": 13.0,
+    "FreeEntropy.SchurWeylWeightMultiplicity": 11.0,
+    "FreeEntropy.SectorChannels": 25.0,
+    "FreeEntropy.SectorProtocol": 11.0,
+    "FreeEntropy.SignedAuxiliaryModel": 53.0,
+    "FreeEntropy.SignedCartan": 71.0,
+    "FreeEntropy.SpecifiedCloningChannels": 62.0,
+    "FreeEntropy.SpecifiedLieCloning": 71.0,
+    "FreeEntropy.SpectralProjector": 29.0,
+    "FreeEntropy.SpectrumBounds": 61.0,
+    "FreeEntropy.Statements": 7.0,
+    "FreeEntropy.SupportedWeightStates": 59.0,
+    "FreeEntropy.TensorConstituentDecomposition": 42.0,
+    "FreeEntropy.TensorConstituentWeights": 50.0,
+    "FreeEntropy.TensorHighestWeight": 18.0,
+    "FreeEntropy.TensorInfinitesimal": 38.0,
+    "FreeEntropy.TensorLieCyclicity": 14.0,
+    "FreeEntropy.TensorLieCyclicityPhysical": 69.0,
+    "FreeEntropy.TensorLieCyclicitySubspace": 35.0,
+    "FreeEntropy.TensorLieIntertwiners": 19.0,
+    "FreeEntropy.TensorLieRestriction": 12.0,
+    "FreeEntropy.TensorPowers": 14.0,
+    "FreeEntropy.TensorPowersPair": 17.0,
+    "FreeEntropy.TensorSectorCasimir": 9.5,
+    "FreeEntropy.TensorSectorDimension": 17.0,
+    "FreeEntropy.TensorSites": 20.0,
+    "FreeEntropy.TensorTopExistence": 50.0,
+    "FreeEntropy.TensorTorusIntertwiner": 10.0,
+    "FreeEntropy.TensorWeightBasis": 148.0,
+    "FreeEntropy.TensorWeightCoordinates": 58.0,
+    "FreeEntropy.TensorWeightModel": 34.0,
+    "FreeEntropy.TensorWeightSource": 58.0,
+    "FreeEntropy.Theorem1Complete": 41.0,
+    "FreeEntropy.Theorem2": 17.0,
+    "FreeEntropy.Theorem2Canonical": 27.0,
+    "FreeEntropy.Theorem2Choi": 41.0,
+    "FreeEntropy.Theorem2GT": 15.0,
+    "FreeEntropy.Theorem2Petz": 25.0,
+    "FreeEntropy.Theorem2RankOneGT": 25.0,
+    "FreeEntropy.TorusWeightEigenline": 35.0,
+    "FreeEntropy.TorusWeightProjection": 41.0,
+    "FreeEntropy.TraceCloning": 20.0,
+    "FreeEntropy.TraceDistance": 33.0,
+    "FreeEntropy.TraceMetric": 20.0,
+    "FreeEntropy.Twirling": 16.0,
+    "FreeEntropy.TypicalCanonicalRows": 13.0,
+    "FreeEntropy.TypicalRows": 12.0,
+    "FreeEntropy.UnitaryColumn": 21.0,
+    "FreeEntropy.UnitaryCoordinates": 70.0,
+    "FreeEntropy.UnitaryDecomposition": 74.0,
+    "FreeEntropy.UnitaryDecompositionBasic": 14.0,
+    "FreeEntropy.UnitaryDecompositionMatrices": 50.0,
+    "FreeEntropy.UnitaryDecompositionOrthogonal": 56.0,
+    "FreeEntropy.UnitaryHaar": 8.2,
+    "FreeEntropy.WeightNormalization": 35.0,
+    "FreeEntropy.WeightSectors": 18.0,
+    "FreeEntropy.Weyl": 17.0,
+    "FreeEntropy.WeylAlternantCoefficients": 19.0,
+    "FreeEntropy.WeylAlternating": 17.0,
+    "FreeEntropy.WeylCharacterAlgebra": 11.0,
+    "FreeEntropy.WeylCharacterCone": 19.0,
+    "FreeEntropy.WeylCharacterSupport": 12.0,
+    "FreeEntropy.WeylCoefficient": 99.0,
+    "FreeEntropy.WeylCombinatorics": 32.0,
+    "FreeEntropy.WeylDenominator": 43.0,
+    "FreeEntropy.WeylDifferentialProduct": 60.0,
+    "FreeEntropy.WeylDimensionExtraction": 70.0,
+    "FreeEntropy.WeylFinite": 7.0,
+    "FreeEntropy.WeylFiniteSupplement": 8.3,
+    "FreeEntropy.WeylTranslation": 123.0,
+    "FreeEntropy.WordPermutations": 68.0,
+    "FreeEntropy.WordTypes": 48.0,
+    "Theorem1": 17.0,
+    "Theorem2": 17.0
+  },
+  "module_families": {
+    "FreeEntropy.Atypical": {
+      "modules": 1,
+      "logged_elapsed_seconds": 9.6
+    },
+    "FreeEntropy.Canonical": {
+      "modules": 24,
+      "logged_elapsed_seconds": 756.0
+    },
+    "FreeEntropy.Cartan": {
+      "modules": 12,
+      "logged_elapsed_seconds": 267.0
+    },
+    "FreeEntropy.Casimir": {
+      "modules": 4,
+      "logged_elapsed_seconds": 46.4
+    },
+    "FreeEntropy.Channels": {
+      "modules": 1,
+      "logged_elapsed_seconds": 24.0
+    },
+    "FreeEntropy.Choi": {
+      "modules": 1,
+      "logged_elapsed_seconds": 34.0
+    },
+    "FreeEntropy.Cloning": {
+      "modules": 3,
+      "logged_elapsed_seconds": 70.0
+    },
+    "FreeEntropy.Concentration": {
+      "modules": 1,
+      "logged_elapsed_seconds": 19.0
+    },
+    "FreeEntropy.Constant": {
+      "modules": 1,
+      "logged_elapsed_seconds": 22.0
+    },
+    "FreeEntropy.Constructed": {
+      "modules": 2,
+      "logged_elapsed_seconds": 125.0
+    },
+    "FreeEntropy.Coordinate": {
+      "modules": 1,
+      "logged_elapsed_seconds": 72.0
+    },
+    "FreeEntropy.Cyclic": {
+      "modules": 6,
+      "logged_elapsed_seconds": 310.8
+    },
+    "FreeEntropy.Exterior": {
+      "modules": 30,
+      "logged_elapsed_seconds": 1329.0
+    },
+    "FreeEntropy.Finite": {
+      "modules": 1,
+      "logged_elapsed_seconds": 25.0
+    },
+    "FreeEntropy.GT": {
+      "modules": 11,
+      "logged_elapsed_seconds": 391.0
+    },
+    "FreeEntropy.Gelfand": {
+      "modules": 1,
+      "logged_elapsed_seconds": 29.0
+    },
+    "FreeEntropy.Geometric": {
+      "modules": 1,
+      "logged_elapsed_seconds": 50.0
+    },
+    "FreeEntropy.Highest": {
+      "modules": 1,
+      "logged_elapsed_seconds": 15.0
+    },
+    "FreeEntropy.Identity": {
+      "modules": 1,
+      "logged_elapsed_seconds": 10.0
+    },
+    "FreeEntropy.Isometric": {
+      "modules": 1,
+      "logged_elapsed_seconds": 17.0
+    },
+    "FreeEntropy.Kostant": {
+      "modules": 2,
+      "logged_elapsed_seconds": 91.0
+    },
+    "FreeEntropy.Lie": {
+      "modules": 26,
+      "logged_elapsed_seconds": 1002.0
+    },
+    "FreeEntropy.Mean": {
+      "modules": 1,
+      "logged_elapsed_seconds": 19.0
+    },
+    "FreeEntropy.Multiplicity": {
+      "modules": 1,
+      "logged_elapsed_seconds": 10.0
+    },
+    "FreeEntropy.Occupation": {
+      "modules": 15,
+      "logged_elapsed_seconds": 402.0
+    },
+    "FreeEntropy.One": {
+      "modules": 1,
+      "logged_elapsed_seconds": 10.0
+    },
+    "FreeEntropy.Optimal": {
+      "modules": 1,
+      "logged_elapsed_seconds": 10.0
+    },
+    "FreeEntropy.Orbit": {
+      "modules": 3,
+      "logged_elapsed_seconds": 111.0
+    },
+    "FreeEntropy.Physical": {
+      "modules": 9,
+      "logged_elapsed_seconds": 230.0
+    },
+    "FreeEntropy.Polynomial": {
+      "modules": 1,
+      "logged_elapsed_seconds": 19.0
+    },
+    "FreeEntropy.Projector": {
+      "modules": 1,
+      "logged_elapsed_seconds": 26.0
+    },
+    "FreeEntropy.Proofs": {
+      "modules": 1,
+      "logged_elapsed_seconds": 7.5
+    },
+    "FreeEntropy.Protocol": {
+      "modules": 1,
+      "logged_elapsed_seconds": 18.0
+    },
+    "FreeEntropy.Pure": {
+      "modules": 3,
+      "logged_elapsed_seconds": 72.0
+    },
+    "FreeEntropy.Quantum": {
+      "modules": 2,
+      "logged_elapsed_seconds": 80.5
+    },
+    "FreeEntropy.Raising": {
+      "modules": 1,
+      "logged_elapsed_seconds": 19.0
+    },
+    "FreeEntropy.Rank": {
+      "modules": 3,
+      "logged_elapsed_seconds": 66.0
+    },
+    "FreeEntropy.Reverse": {
+      "modules": 3,
+      "logged_elapsed_seconds": 72.0
+    },
+    "FreeEntropy.Root": {
+      "modules": 1,
+      "logged_elapsed_seconds": 62.0
+    },
+    "FreeEntropy.Scalar": {
+      "modules": 1,
+      "logged_elapsed_seconds": 16.0
+    },
+    "FreeEntropy.Schur": {
+      "modules": 19,
+      "logged_elapsed_seconds": 600.0
+    },
+    "FreeEntropy.Sector": {
+      "modules": 2,
+      "logged_elapsed_seconds": 36.0
+    },
+    "FreeEntropy.Signed": {
+      "modules": 2,
+      "logged_elapsed_seconds": 124.0
+    },
+    "FreeEntropy.Specified": {
+      "modules": 2,
+      "logged_elapsed_seconds": 133.0
+    },
+    "FreeEntropy.Spectral": {
+      "modules": 1,
+      "logged_elapsed_seconds": 29.0
+    },
+    "FreeEntropy.Spectrum": {
+      "modules": 1,
+      "logged_elapsed_seconds": 61.0
+    },
+    "FreeEntropy.Statements": {
+      "modules": 1,
+      "logged_elapsed_seconds": 7.0
+    },
+    "FreeEntropy.Supported": {
+      "modules": 1,
+      "logged_elapsed_seconds": 59.0
+    },
+    "FreeEntropy.Tensor": {
+      "modules": 20,
+      "logged_elapsed_seconds": 732.5
+    },
+    "FreeEntropy.Theorem": {
+      "modules": 7,
+      "logged_elapsed_seconds": 191.0
+    },
+    "FreeEntropy.Torus": {
+      "modules": 2,
+      "logged_elapsed_seconds": 76.0
+    },
+    "FreeEntropy.Trace": {
+      "modules": 3,
+      "logged_elapsed_seconds": 73.0
+    },
+    "FreeEntropy.Twirling": {
+      "modules": 1,
+      "logged_elapsed_seconds": 16.0
+    },
+    "FreeEntropy.Typical": {
+      "modules": 2,
+      "logged_elapsed_seconds": 25.0
+    },
+    "FreeEntropy.Unitary": {
+      "modules": 7,
+      "logged_elapsed_seconds": 293.2
+    },
+    "FreeEntropy.Weight": {
+      "modules": 2,
+      "logged_elapsed_seconds": 53.0
+    },
+    "FreeEntropy.Weyl": {
+      "modules": 14,
+      "logged_elapsed_seconds": 537.3
+    },
+    "FreeEntropy.Word": {
+      "modules": 2,
+      "logged_elapsed_seconds": 116.0
+    },
+    "facades": {
+      "modules": 4,
+      "logged_elapsed_seconds": 62.0
+    }
+  },
+  "weighted_import_path": {
+    "logged_elapsed_seconds": 1442.5,
+    "modules_dependency_first": [
+      "FreeEntropy.Weyl",
+      "FreeEntropy.WeylCombinatorics",
+      "FreeEntropy.Proofs",
+      "FreeEntropy.Statements",
+      "FreeEntropy.TypicalRows",
+      "FreeEntropy.FiniteConcentration",
+      "FreeEntropy.WordTypes",
+      "FreeEntropy.WordPermutations",
+      "FreeEntropy.OccupationRepresentation",
+      "FreeEntropy.OccupationTorus",
+      "FreeEntropy.TorusWeightEigenline",
+      "FreeEntropy.ExteriorHighestRepresentation",
+      "FreeEntropy.ExteriorCartan",
+      "FreeEntropy.ExteriorCartanEmbedding",
+      "FreeEntropy.ExteriorCommutant",
+      "FreeEntropy.ExteriorMonomialColumns",
+      "FreeEntropy.ExteriorMonomialWeights",
+      "FreeEntropy.ExteriorSupportedMonomials",
+      "FreeEntropy.ExteriorRootCounting",
+      "FreeEntropy.LiePBWOrderedLowering",
+      "FreeEntropy.LiePBWMultiplicity",
+      "FreeEntropy.CoordinateWeightSpace",
+      "FreeEntropy.LieDepthMultiplicity",
+      "FreeEntropy.CyclicWeightStates",
+      "FreeEntropy.CyclicWeightOrbit",
+      "FreeEntropy.CanonicalOrbit",
+      "FreeEntropy.CanonicalCloningCore",
+      "FreeEntropy.CanonicalCloning",
+      "FreeEntropy.CanonicalAmbientCloning",
+      "FreeEntropy.CanonicalFullCloning",
+      "FreeEntropy.CanonicalCloningBounds",
+      "FreeEntropy.PhysicalCloningChannels",
+      "FreeEntropy.PhysicalCloningAccuracy",
+      "FreeEntropy.Theorem1Complete",
+      "FreeEntropy",
+      "All"
+    ],
+    "module_seconds": [
+      17.0,
+      32.0,
+      7.5,
+      7.0,
+      12.0,
+      25.0,
+      48.0,
+      68.0,
+      50.0,
+      20.0,
+      35.0,
+      22.0,
+      12.0,
+      23.0,
+      50.0,
+      84.0,
+      95.0,
+      48.0,
+      74.0,
+      39.0,
+      54.0,
+      72.0,
+      62.0,
+      61.0,
+      95.0,
+      82.0,
+      40.0,
+      17.0,
+      26.0,
+      22.0,
+      22.0,
+      27.0,
+      25.0,
+      41.0,
+      17.0,
+      11.0
+    ],
+    "missing_duration_modules": [],
+    "interpretation": "Longest weighted project import path to All, using one observed elapsed duration per module. Missing logged durations contribute zero. Parallel-build contention is embedded in the weights; this is a scheduling diagnostic, not an independently measured serial critical-path duration."
+  },
+  "project_import_graph": {
+    "All": [
+      "FreeEntropy",
+      "Theorem1",
+      "Theorem2"
+    ],
+    "FreeEntropy": [
+      "FreeEntropy.AtypicalChannels",
+      "FreeEntropy.CanonicalAmbientCloning",
+      "FreeEntropy.CanonicalCartanCovariance",
+      "FreeEntropy.CanonicalCharacter",
+      "FreeEntropy.CanonicalCharacterEigen",
+      "FreeEntropy.CanonicalCharacterIdentity",
+      "FreeEntropy.CanonicalChoi",
+      "FreeEntropy.CanonicalClassification",
+      "FreeEntropy.CanonicalCloning",
+      "FreeEntropy.CanonicalCloningBounds",
+      "FreeEntropy.CanonicalCloningCore",
+      "FreeEntropy.CanonicalCloningOrbit",
+      "FreeEntropy.CanonicalCloningSelf",
+      "FreeEntropy.CanonicalConverse",
+      "FreeEntropy.CanonicalDimension",
+      "FreeEntropy.CanonicalDimensionRatio",
+      "FreeEntropy.CanonicalDualCyclicHighest",
+      "FreeEntropy.CanonicalDualHighest",
+      "FreeEntropy.CanonicalFullCloning",
+      "FreeEntropy.CanonicalMonomialState",
+      "FreeEntropy.CanonicalOrbit",
+      "FreeEntropy.CanonicalPetz",
+      "FreeEntropy.CanonicalPhysicalOrbit",
+      "FreeEntropy.CanonicalReverseChoi",
+      "FreeEntropy.CanonicalRowBounds",
+      "FreeEntropy.CartanBalance",
+      "FreeEntropy.CartanChannel",
+      "FreeEntropy.CartanChoi",
+      "FreeEntropy.CartanChoiMultiplicity",
+      "FreeEntropy.CartanCloning",
+      "FreeEntropy.CartanGroupCovariance",
+      "FreeEntropy.CartanHomMultiplicity",
+      "FreeEntropy.CartanLieCloning",
+      "FreeEntropy.CartanMultiplicity",
+      "FreeEntropy.CartanReshuffle",
+      "FreeEntropy.CartanTraceCloning",
+      "FreeEntropy.CartanTraceCloningBalance",
+      "FreeEntropy.CasimirCentral",
+      "FreeEntropy.CasimirDecomposition",
+      "FreeEntropy.CasimirTrace",
+      "FreeEntropy.CasimirWeights",
+      "FreeEntropy.Channels",
+      "FreeEntropy.ChoiContraction",
+      "FreeEntropy.Cloning",
+      "FreeEntropy.CloningFromRows",
+      "FreeEntropy.CloningMatrices",
+      "FreeEntropy.Concentration",
+      "FreeEntropy.ConstantWeightPhase",
+      "FreeEntropy.ConstructedLieCloning",
+      "FreeEntropy.ConstructedTensorDecomposition",
+      "FreeEntropy.CoordinateWeightSpace",
+      "FreeEntropy.CyclicHighestRepresentation",
+      "FreeEntropy.CyclicWeightHighest",
+      "FreeEntropy.CyclicWeightOrbit",
+      "FreeEntropy.CyclicWeightShift",
+      "FreeEntropy.CyclicWeightStateBlocks",
+      "FreeEntropy.CyclicWeightStates",
+      "FreeEntropy.ExteriorCanonicalCyclicity",
+      "FreeEntropy.ExteriorCanonicalHighest",
+      "FreeEntropy.ExteriorCartan",
+      "FreeEntropy.ExteriorCartanChannels",
+      "FreeEntropy.ExteriorCartanEmbedding",
+      "FreeEntropy.ExteriorColumnEquiv",
+      "FreeEntropy.ExteriorCommutant",
+      "FreeEntropy.ExteriorDominant",
+      "FreeEntropy.ExteriorHighestRepresentation",
+      "FreeEntropy.ExteriorLowerMinors",
+      "FreeEntropy.ExteriorMatrixIrreducible",
+      "FreeEntropy.ExteriorMonomialColumns",
+      "FreeEntropy.ExteriorMonomialWeights",
+      "FreeEntropy.ExteriorMultiplicity",
+      "FreeEntropy.ExteriorPhysicalIrrep",
+      "FreeEntropy.ExteriorRepresentation",
+      "FreeEntropy.ExteriorRootCounting",
+      "FreeEntropy.ExteriorRootSupport",
+      "FreeEntropy.ExteriorSimpleOffsets",
+      "FreeEntropy.ExteriorSupportedMonomials",
+      "FreeEntropy.ExteriorSupportedOffsets",
+      "FreeEntropy.ExteriorTensor",
+      "FreeEntropy.ExteriorTensorEmbedding",
+      "FreeEntropy.ExteriorTensorEmbeddingProduct",
+      "FreeEntropy.ExteriorTensorPermutation",
+      "FreeEntropy.ExteriorTensorSum",
+      "FreeEntropy.ExteriorWeightCoordinates",
+      "FreeEntropy.ExteriorWeightDimension",
+      "FreeEntropy.ExteriorWeightMultiplicity",
+      "FreeEntropy.ExteriorWeights",
+      "FreeEntropy.FiniteConcentration",
+      "FreeEntropy.GTCardinality",
+      "FreeEntropy.GTCharacterEndpoints",
+      "FreeEntropy.GTDeterminant",
+      "FreeEntropy.GTDimension",
+      "FreeEntropy.GTDimensionEndpoints",
+      "FreeEntropy.GTDimensionFormula",
+      "FreeEntropy.GTFiniteSupport",
+      "FreeEntropy.GTOrbit",
+      "FreeEntropy.GTPartitions",
+      "FreeEntropy.GTRankSupport",
+      "FreeEntropy.GTWeylProduct",
+      "FreeEntropy.GelfandTsetlin",
+      "FreeEntropy.GeometricOrbit",
+      "FreeEntropy.HighestWeightDominance",
+      "FreeEntropy.IdentityCloning",
+      "FreeEntropy.IsometricCompression",
+      "FreeEntropy.KostantCounting",
+      "FreeEntropy.KostantWeightData",
+      "FreeEntropy.LieCartanBalance",
+      "FreeEntropy.LieCharacterCanonical",
+      "FreeEntropy.LieCharacterFinite",
+      "FreeEntropy.LieCharacterRadial",
+      "FreeEntropy.LieCharacterSymmetry",
+      "FreeEntropy.LieCyclicIrreducible",
+      "FreeEntropy.LieCyclicMaps",
+      "FreeEntropy.LieDecomposition",
+      "FreeEntropy.LieDepthMultiplicity",
+      "FreeEntropy.LieDeterminantTwist",
+      "FreeEntropy.LieDirectSum",
+      "FreeEntropy.LieDual",
+      "FreeEntropy.LieDualCyclicity",
+      "FreeEntropy.LieDualTensor",
+      "FreeEntropy.LieHighestEquivalence",
+      "FreeEntropy.LieHighestExistence",
+      "FreeEntropy.LieHighestUnitary",
+      "FreeEntropy.LieMatrixCasimir",
+      "FreeEntropy.LiePBW",
+      "FreeEntropy.LiePBWDimension",
+      "FreeEntropy.LiePBWHighest",
+      "FreeEntropy.LiePBWMultiplicity",
+      "FreeEntropy.LiePBWOrderedLowering",
+      "FreeEntropy.LiePBWUnique",
+      "FreeEntropy.LiePBWWeights",
+      "FreeEntropy.LieWeightModel",
+      "FreeEntropy.MeanDepth",
+      "FreeEntropy.MultiplicityChannels",
+      "FreeEntropy.Occupation",
+      "FreeEntropy.OccupationCloning",
+      "FreeEntropy.OccupationCloningExact",
+      "FreeEntropy.OccupationCommutant",
+      "FreeEntropy.OccupationCounting",
+      "FreeEntropy.OccupationDimension",
+      "FreeEntropy.OccupationForward",
+      "FreeEntropy.OccupationIrreducible",
+      "FreeEntropy.OccupationRatio",
+      "FreeEntropy.OccupationRepresentation",
+      "FreeEntropy.OccupationSplit",
+      "FreeEntropy.OccupationSplitRepresentation",
+      "FreeEntropy.OccupationTheorem2",
+      "FreeEntropy.OccupationTorus",
+      "FreeEntropy.OccupationWerner",
+      "FreeEntropy.OneDimensionalSource",
+      "FreeEntropy.OptimalMemory",
+      "FreeEntropy.OrbitEigenvalues",
+      "FreeEntropy.OrbitMemory",
+      "FreeEntropy.OrbitTraceDistance",
+      "FreeEntropy.PhysicalCanonicalChannels",
+      "FreeEntropy.PhysicalCanonicalConverse",
+      "FreeEntropy.PhysicalCanonicalSector",
+      "FreeEntropy.PhysicalCloningAccuracy",
+      "FreeEntropy.PhysicalCloningChannels",
+      "FreeEntropy.PhysicalOrbitChannels",
+      "FreeEntropy.PhysicalSchurApproximation",
+      "FreeEntropy.PhysicalSchurProtocol",
+      "FreeEntropy.PhysicalUniformError",
+      "FreeEntropy.PolynomialOrbitDimension",
+      "FreeEntropy.ProjectorGeometry",
+      "FreeEntropy.Proofs",
+      "FreeEntropy.Protocol",
+      "FreeEntropy.PureAchievability",
+      "FreeEntropy.PureConverse",
+      "FreeEntropy.PureTensorCompression",
+      "FreeEntropy.QuantumProtocol",
+      "FreeEntropy.QuantumTransfer",
+      "FreeEntropy.RaisingKernel",
+      "FreeEntropy.RankOneEndpoints",
+      "FreeEntropy.RankOneStates",
+      "FreeEntropy.RankRootCounting",
+      "FreeEntropy.ReverseChoi",
+      "FreeEntropy.ReverseChoiMultiplicity",
+      "FreeEntropy.ReverseChoiRepresentation",
+      "FreeEntropy.RootPartitionFunction",
+      "FreeEntropy.ScalarCommutantIrreducible",
+      "FreeEntropy.SchurAchievability",
+      "FreeEntropy.SchurProbability",
+      "FreeEntropy.SchurProbabilityCharacter",
+      "FreeEntropy.SchurProbabilityConcentration",
+      "FreeEntropy.SchurProbabilityTableaux",
+      "FreeEntropy.SchurProtocol",
+      "FreeEntropy.SchurWeylBlocks",
+      "FreeEntropy.SchurWeylConcentration",
+      "FreeEntropy.SchurWeylConcentrationGrouping",
+      "FreeEntropy.SchurWeylConcentrationMonomial",
+      "FreeEntropy.SchurWeylConcentrationProbability",
+      "FreeEntropy.SchurWeylConcentrationSupport",
+      "FreeEntropy.SchurWeylConcentrationTail",
+      "FreeEntropy.SchurWeylMultiplicity",
+      "FreeEntropy.SchurWeylNormalization",
+      "FreeEntropy.SchurWeylPhysical",
+      "FreeEntropy.SchurWeylSource",
+      "FreeEntropy.SchurWeylWeightExistence",
+      "FreeEntropy.SchurWeylWeightMultiplicity",
+      "FreeEntropy.SectorChannels",
+      "FreeEntropy.SectorProtocol",
+      "FreeEntropy.SignedAuxiliaryModel",
+      "FreeEntropy.SignedCartan",
+      "FreeEntropy.SpecifiedCloningChannels",
+      "FreeEntropy.SpecifiedLieCloning",
+      "FreeEntropy.SpectralProjector",
+      "FreeEntropy.SpectrumBounds",
+      "FreeEntropy.Statements",
+      "FreeEntropy.SupportedWeightStates",
+      "FreeEntropy.TensorConstituentDecomposition",
+      "FreeEntropy.TensorConstituentWeights",
+      "FreeEntropy.TensorHighestWeight",
+      "FreeEntropy.TensorInfinitesimal",
+      "FreeEntropy.TensorLieCyclicity",
+      "FreeEntropy.TensorLieCyclicityPhysical",
+      "FreeEntropy.TensorLieCyclicitySubspace",
+      "FreeEntropy.TensorLieIntertwiners",
+      "FreeEntropy.TensorLieRestriction",
+      "FreeEntropy.TensorPowers",
+      "FreeEntropy.TensorPowersPair",
+      "FreeEntropy.TensorSectorCasimir",
+      "FreeEntropy.TensorSectorDimension",
+      "FreeEntropy.TensorSites",
+      "FreeEntropy.TensorTopExistence",
+      "FreeEntropy.TensorTorusIntertwiner",
+      "FreeEntropy.TensorWeightBasis",
+      "FreeEntropy.TensorWeightCoordinates",
+      "FreeEntropy.TensorWeightModel",
+      "FreeEntropy.TensorWeightSource",
+      "FreeEntropy.Theorem1Complete",
+      "FreeEntropy.Theorem2",
+      "FreeEntropy.Theorem2Canonical",
+      "FreeEntropy.Theorem2Choi",
+      "FreeEntropy.Theorem2GT",
+      "FreeEntropy.Theorem2Petz",
+      "FreeEntropy.Theorem2RankOneGT",
+      "FreeEntropy.TorusWeightEigenline",
+      "FreeEntropy.TorusWeightProjection",
+      "FreeEntropy.TraceCloning",
+      "FreeEntropy.TraceDistance",
+      "FreeEntropy.TraceMetric",
+      "FreeEntropy.Twirling",
+      "FreeEntropy.TypicalCanonicalRows",
+      "FreeEntropy.TypicalRows",
+      "FreeEntropy.UnitaryColumn",
+      "FreeEntropy.UnitaryCoordinates",
+      "FreeEntropy.UnitaryDecomposition",
+      "FreeEntropy.UnitaryDecompositionBasic",
+      "FreeEntropy.UnitaryDecompositionMatrices",
+      "FreeEntropy.UnitaryDecompositionOrthogonal",
+      "FreeEntropy.UnitaryHaar",
+      "FreeEntropy.WeightNormalization",
+      "FreeEntropy.WeightSectors",
+      "FreeEntropy.Weyl",
+      "FreeEntropy.WeylAlternantCoefficients",
+      "FreeEntropy.WeylAlternating",
+      "FreeEntropy.WeylCharacterAlgebra",
+      "FreeEntropy.WeylCharacterCone",
+      "FreeEntropy.WeylCharacterSupport",
+      "FreeEntropy.WeylCoefficient",
+      "FreeEntropy.WeylCombinatorics",
+      "FreeEntropy.WeylDenominator",
+      "FreeEntropy.WeylDifferentialProduct",
+      "FreeEntropy.WeylDimensionExtraction",
+      "FreeEntropy.WeylFinite",
+      "FreeEntropy.WeylFiniteSupplement",
+      "FreeEntropy.WeylTranslation",
+      "FreeEntropy.WordPermutations",
+      "FreeEntropy.WordTypes"
+    ],
+    "FreeEntropy.AtypicalChannels": [
+      "FreeEntropy.SchurProtocol",
+      "FreeEntropy.SpectralProjector"
+    ],
+    "FreeEntropy.CanonicalAmbientCloning": [
+      "FreeEntropy.CanonicalCloning"
+    ],
+    "FreeEntropy.CanonicalCartanCovariance": [
+      "FreeEntropy.CanonicalCloning",
+      "FreeEntropy.ConstantWeightPhase",
+      "FreeEntropy.SignedAuxiliaryModel",
+      "FreeEntropy.SpecifiedCloningChannels",
+      "FreeEntropy.TensorPowersPair"
+    ],
+    "FreeEntropy.CanonicalCharacter": [
+      "FreeEntropy.ExteriorWeightCoordinates",
+      "FreeEntropy.LieCharacterFinite"
+    ],
+    "FreeEntropy.CanonicalCharacterEigen": [
+      "FreeEntropy.CanonicalCharacter",
+      "FreeEntropy.WeylDifferentialProduct"
+    ],
+    "FreeEntropy.CanonicalCharacterIdentity": [
+      "FreeEntropy.WeylAlternantCoefficients",
+      "FreeEntropy.WeylAlternating",
+      "FreeEntropy.WeylCharacterSupport"
+    ],
+    "FreeEntropy.CanonicalChoi": [
+      "FreeEntropy.CanonicalCloningSelf",
+      "FreeEntropy.CartanChoi",
+      "FreeEntropy.CartanChoiMultiplicity"
+    ],
+    "FreeEntropy.CanonicalClassification": [
+      "FreeEntropy.ExteriorCanonicalHighest",
+      "FreeEntropy.LieHighestUnitary",
+      "FreeEntropy.TensorLieCyclicityPhysical",
+      "FreeEntropy.TensorLieIntertwiners"
+    ],
+    "FreeEntropy.CanonicalCloning": [
+      "FreeEntropy.CanonicalCloningCore",
+      "FreeEntropy.CanonicalRowBounds",
+      "FreeEntropy.SignedAuxiliaryModel"
+    ],
+    "FreeEntropy.CanonicalCloningBounds": [
+      "FreeEntropy.CanonicalFullCloning"
+    ],
+    "FreeEntropy.CanonicalCloningCore": [
+      "FreeEntropy.CanonicalDimensionRatio",
+      "FreeEntropy.CanonicalOrbit",
+      "FreeEntropy.SpecifiedCloningChannels",
+      "FreeEntropy.SupportedWeightStates"
+    ],
+    "FreeEntropy.CanonicalCloningOrbit": [
+      "FreeEntropy.CanonicalCartanCovariance",
+      "FreeEntropy.CanonicalFullCloning"
+    ],
+    "FreeEntropy.CanonicalCloningSelf": [
+      "FreeEntropy.CanonicalCartanCovariance",
+      "FreeEntropy.CanonicalFullCloning"
+    ],
+    "FreeEntropy.CanonicalConverse": [
+      "FreeEntropy.CanonicalDimension",
+      "FreeEntropy.CanonicalOrbit",
+      "FreeEntropy.UnitaryHaar"
+    ],
+    "FreeEntropy.CanonicalDimension": [
+      "FreeEntropy.CanonicalCharacterIdentity",
+      "FreeEntropy.WeylDimensionExtraction"
+    ],
+    "FreeEntropy.CanonicalDimensionRatio": [
+      "FreeEntropy.CanonicalDimension",
+      "FreeEntropy.WeylFiniteSupplement"
+    ],
+    "FreeEntropy.CanonicalDualCyclicHighest": [
+      "FreeEntropy.CanonicalDualHighest",
+      "FreeEntropy.LieDualCyclicity"
+    ],
+    "FreeEntropy.CanonicalDualHighest": [
+      "FreeEntropy.LieCharacterCanonical",
+      "FreeEntropy.LieDual",
+      "FreeEntropy.SignedAuxiliaryModel"
+    ],
+    "FreeEntropy.CanonicalFullCloning": [
+      "FreeEntropy.CanonicalAmbientCloning",
+      "FreeEntropy.IdentityCloning"
+    ],
+    "FreeEntropy.CanonicalMonomialState": [
+      "FreeEntropy.CyclicWeightStates",
+      "FreeEntropy.PhysicalCanonicalSector",
+      "FreeEntropy.SpectrumBounds"
+    ],
+    "FreeEntropy.CanonicalOrbit": [
+      "FreeEntropy.CyclicWeightOrbit",
+      "FreeEntropy.ExteriorWeightCoordinates",
+      "FreeEntropy.UnitaryCoordinates"
+    ],
+    "FreeEntropy.CanonicalPetz": [
+      "FreeEntropy.CanonicalCloningSelf",
+      "FreeEntropy.MultiplicityChannels"
+    ],
+    "FreeEntropy.CanonicalPhysicalOrbit": [
+      "FreeEntropy.CanonicalOrbit",
+      "FreeEntropy.PhysicalCanonicalChannels"
+    ],
+    "FreeEntropy.CanonicalReverseChoi": [
+      "FreeEntropy.CanonicalChoi",
+      "FreeEntropy.ReverseChoi"
+    ],
+    "FreeEntropy.CanonicalRowBounds": [
+      "FreeEntropy.CanonicalDimensionRatio"
+    ],
+    "FreeEntropy.CartanBalance": [
+      "FreeEntropy.CartanChannel",
+      "FreeEntropy.Twirling"
+    ],
+    "FreeEntropy.CartanChannel": [
+      "FreeEntropy.Channels"
+    ],
+    "FreeEntropy.CartanChoi": [
+      "FreeEntropy.CartanReshuffle",
+      "FreeEntropy.SpecifiedCloningChannels"
+    ],
+    "FreeEntropy.CartanChoiMultiplicity": [
+      "FreeEntropy.CartanHomMultiplicity",
+      "FreeEntropy.CartanReshuffle"
+    ],
+    "FreeEntropy.CartanCloning": [
+      "FreeEntropy.CartanBalance",
+      "FreeEntropy.CartanChannel",
+      "FreeEntropy.CloningMatrices",
+      "FreeEntropy.ProjectorGeometry"
+    ],
+    "FreeEntropy.CartanGroupCovariance": [
+      "FreeEntropy.CanonicalMonomialState",
+      "FreeEntropy.CanonicalOrbit",
+      "FreeEntropy.SpecifiedLieCloning",
+      "FreeEntropy.TensorLieIntertwiners"
+    ],
+    "FreeEntropy.CartanHomMultiplicity": [
+      "FreeEntropy.LieCyclicMaps",
+      "FreeEntropy.TensorConstituentWeights"
+    ],
+    "FreeEntropy.CartanLieCloning": [
+      "FreeEntropy.CartanTraceCloning",
+      "FreeEntropy.CasimirDecomposition"
+    ],
+    "FreeEntropy.CartanMultiplicity": [
+      "FreeEntropy.CoordinateWeightSpace",
+      "FreeEntropy.RaisingKernel",
+      "FreeEntropy.SignedCartan"
+    ],
+    "FreeEntropy.CartanReshuffle": [
+      "FreeEntropy.LieDual"
+    ],
+    "FreeEntropy.CartanTraceCloning": [
+      "FreeEntropy.CartanCloning",
+      "FreeEntropy.CasimirTrace",
+      "FreeEntropy.TraceCloning"
+    ],
+    "FreeEntropy.CartanTraceCloningBalance": [
+      "FreeEntropy.CartanTraceCloning"
+    ],
+    "FreeEntropy.CasimirCentral": [
+      "FreeEntropy.LieMatrixCasimir"
+    ],
+    "FreeEntropy.CasimirDecomposition": [
+      "FreeEntropy.CasimirCentral",
+      "FreeEntropy.LieMatrixCasimir",
+      "FreeEntropy.SectorChannels"
+    ],
+    "FreeEntropy.CasimirTrace": [
+      "FreeEntropy.TraceDistance"
+    ],
+    "FreeEntropy.CasimirWeights": [
+      "FreeEntropy.WeylFinite"
+    ],
+    "FreeEntropy.Channels": [],
+    "FreeEntropy.ChoiContraction": [
+      "FreeEntropy.CartanChoi"
+    ],
+    "FreeEntropy.Cloning": [],
+    "FreeEntropy.CloningFromRows": [
+      "FreeEntropy.CloningMatrices",
+      "FreeEntropy.ProjectorGeometry",
+      "FreeEntropy.WeylFiniteSupplement"
+    ],
+    "FreeEntropy.CloningMatrices": [
+      "FreeEntropy.Channels",
+      "FreeEntropy.Theorem2",
+      "FreeEntropy.TraceDistance"
+    ],
+    "FreeEntropy.Concentration": [],
+    "FreeEntropy.ConstantWeightPhase": [
+      "FreeEntropy.CanonicalDimension",
+      "FreeEntropy.CartanGroupCovariance"
+    ],
+    "FreeEntropy.ConstructedLieCloning": [
+      "FreeEntropy.CartanTraceCloningBalance",
+      "FreeEntropy.ConstructedTensorDecomposition",
+      "FreeEntropy.LieCartanBalance"
+    ],
+    "FreeEntropy.ConstructedTensorDecomposition": [
+      "FreeEntropy.TensorConstituentDecomposition",
+      "FreeEntropy.TensorConstituentWeights",
+      "FreeEntropy.TensorTopExistence"
+    ],
+    "FreeEntropy.CoordinateWeightSpace": [
+      "FreeEntropy.LiePBWMultiplicity"
+    ],
+    "FreeEntropy.CyclicHighestRepresentation": [
+      "FreeEntropy.UnitaryDecompositionBasic"
+    ],
+    "FreeEntropy.CyclicWeightHighest": [
+      "FreeEntropy.CartanLieCloning",
+      "FreeEntropy.LiePBWUnique",
+      "FreeEntropy.LiePBWWeights"
+    ],
+    "FreeEntropy.CyclicWeightOrbit": [
+      "FreeEntropy.CyclicWeightStates",
+      "FreeEntropy.GTOrbit",
+      "FreeEntropy.GeometricOrbit"
+    ],
+    "FreeEntropy.CyclicWeightShift": [
+      "FreeEntropy.CyclicWeightHighest",
+      "FreeEntropy.LieDeterminantTwist",
+      "FreeEntropy.TensorWeightCoordinates"
+    ],
+    "FreeEntropy.CyclicWeightStateBlocks": [
+      "FreeEntropy.CartanMultiplicity",
+      "FreeEntropy.CyclicWeightStates"
+    ],
+    "FreeEntropy.CyclicWeightStates": [
+      "FreeEntropy.LieDepthMultiplicity",
+      "FreeEntropy.WeightNormalization"
+    ],
+    "FreeEntropy.ExteriorCanonicalCyclicity": [
+      "FreeEntropy.ExteriorCanonicalHighest",
+      "FreeEntropy.LieCyclicMaps"
+    ],
+    "FreeEntropy.ExteriorCanonicalHighest": [
+      "FreeEntropy.ExteriorPhysicalIrrep",
+      "FreeEntropy.HighestWeightDominance",
+      "FreeEntropy.TensorTorusIntertwiner"
+    ],
+    "FreeEntropy.ExteriorCartan": [
+      "FreeEntropy.ExteriorHighestRepresentation"
+    ],
+    "FreeEntropy.ExteriorCartanChannels": [
+      "FreeEntropy.CartanBalance",
+      "FreeEntropy.ExteriorCartanEmbedding"
+    ],
+    "FreeEntropy.ExteriorCartanEmbedding": [
+      "FreeEntropy.ExteriorCartan",
+      "FreeEntropy.ExteriorColumnEquiv",
+      "FreeEntropy.ExteriorMatrixIrreducible",
+      "FreeEntropy.ExteriorTensorSum"
+    ],
+    "FreeEntropy.ExteriorColumnEquiv": [
+      "FreeEntropy.ExteriorDominant"
+    ],
+    "FreeEntropy.ExteriorCommutant": [
+      "FreeEntropy.ExteriorCartanEmbedding"
+    ],
+    "FreeEntropy.ExteriorDominant": [
+      "FreeEntropy.ExteriorTensor"
+    ],
+    "FreeEntropy.ExteriorHighestRepresentation": [
+      "FreeEntropy.ExteriorDominant",
+      "FreeEntropy.TorusWeightEigenline"
+    ],
+    "FreeEntropy.ExteriorLowerMinors": [
+      "FreeEntropy.ExteriorWeights"
+    ],
+    "FreeEntropy.ExteriorMatrixIrreducible": [
+      "FreeEntropy.ExteriorHighestRepresentation",
+      "FreeEntropy.UnitaryDecompositionMatrices"
+    ],
+    "FreeEntropy.ExteriorMonomialColumns": [
+      "FreeEntropy.ExteriorCommutant",
+      "FreeEntropy.ExteriorLowerMinors"
+    ],
+    "FreeEntropy.ExteriorMonomialWeights": [
+      "FreeEntropy.ExteriorMonomialColumns"
+    ],
+    "FreeEntropy.ExteriorMultiplicity": [
+      "FreeEntropy.ExteriorCanonicalCyclicity",
+      "FreeEntropy.ExteriorWeightDimension",
+      "FreeEntropy.LiePBWMultiplicity"
+    ],
+    "FreeEntropy.ExteriorPhysicalIrrep": [
+      "FreeEntropy.ExteriorMatrixIrreducible",
+      "FreeEntropy.ExteriorTensorEmbeddingProduct",
+      "FreeEntropy.TensorLieCyclicitySubspace"
+    ],
+    "FreeEntropy.ExteriorRepresentation": [
+      "FreeEntropy.UnitaryHaar"
+    ],
+    "FreeEntropy.ExteriorRootCounting": [
+      "FreeEntropy.ExteriorSupportedMonomials"
+    ],
+    "FreeEntropy.ExteriorRootSupport": [
+      "FreeEntropy.ExteriorSupportedMonomials"
+    ],
+    "FreeEntropy.ExteriorSimpleOffsets": [
+      "FreeEntropy.CyclicWeightStates",
+      "FreeEntropy.ExteriorWeightMultiplicity"
+    ],
+    "FreeEntropy.ExteriorSupportedMonomials": [
+      "FreeEntropy.ExteriorMonomialWeights",
+      "FreeEntropy.KostantCounting"
+    ],
+    "FreeEntropy.ExteriorSupportedOffsets": [
+      "FreeEntropy.CartanMultiplicity",
+      "FreeEntropy.ExteriorSimpleOffsets"
+    ],
+    "FreeEntropy.ExteriorTensor": [
+      "FreeEntropy.ExteriorWeights"
+    ],
+    "FreeEntropy.ExteriorTensorEmbedding": [
+      "FreeEntropy.ExteriorWeights",
+      "FreeEntropy.TensorPowers"
+    ],
+    "FreeEntropy.ExteriorTensorEmbeddingProduct": [
+      "FreeEntropy.ExteriorTensorEmbedding",
+      "FreeEntropy.ExteriorTensorPermutation"
+    ],
+    "FreeEntropy.ExteriorTensorPermutation": [
+      "FreeEntropy.ExteriorTensor"
+    ],
+    "FreeEntropy.ExteriorTensorSum": [
+      "FreeEntropy.ExteriorTensorPermutation"
+    ],
+    "FreeEntropy.ExteriorWeightCoordinates": [
+      "FreeEntropy.CoordinateWeightSpace",
+      "FreeEntropy.CyclicWeightHighest",
+      "FreeEntropy.ExteriorMultiplicity",
+      "FreeEntropy.LieWeightModel"
+    ],
+    "FreeEntropy.ExteriorWeightDimension": [
+      "FreeEntropy.ExteriorCommutant",
+      "FreeEntropy.ExteriorMonomialWeights",
+      "FreeEntropy.ExteriorRootSupport",
+      "FreeEntropy.ExteriorSupportedMonomials",
+      "FreeEntropy.PolynomialOrbitDimension",
+      "FreeEntropy.TorusWeightProjection"
+    ],
+    "FreeEntropy.ExteriorWeightMultiplicity": [
+      "FreeEntropy.ExteriorWeightCoordinates"
+    ],
+    "FreeEntropy.ExteriorWeights": [
+      "FreeEntropy.ExteriorRepresentation"
+    ],
+    "FreeEntropy.FiniteConcentration": [
+      "FreeEntropy.Concentration",
+      "FreeEntropy.TypicalRows"
+    ],
+    "FreeEntropy.GTCardinality": [
+      "FreeEntropy.GTDeterminant",
+      "FreeEntropy.GTDimension"
+    ],
+    "FreeEntropy.GTCharacterEndpoints": [
+      "FreeEntropy.GTDimensionFormula",
+      "FreeEntropy.SchurProbabilityConcentration"
+    ],
+    "FreeEntropy.GTDeterminant": [],
+    "FreeEntropy.GTDimension": [
+      "FreeEntropy.GelfandTsetlin"
+    ],
+    "FreeEntropy.GTDimensionEndpoints": [
+      "FreeEntropy.GTDimensionFormula",
+      "FreeEntropy.GTOrbit",
+      "FreeEntropy.SchurAchievability"
+    ],
+    "FreeEntropy.GTDimensionFormula": [
+      "FreeEntropy.GTCardinality",
+      "FreeEntropy.GTPartitions",
+      "FreeEntropy.GTWeylProduct",
+      "FreeEntropy.TypicalRows"
+    ],
+    "FreeEntropy.GTFiniteSupport": [
+      "FreeEntropy.GTRankSupport",
+      "FreeEntropy.Theorem2GT"
+    ],
+    "FreeEntropy.GTOrbit": [
+      "FreeEntropy.GTPartitions",
+      "FreeEntropy.KostantWeightData",
+      "FreeEntropy.QuantumTransfer",
+      "FreeEntropy.RootPartitionFunction",
+      "FreeEntropy.SpectrumBounds"
+    ],
+    "FreeEntropy.GTPartitions": [
+      "FreeEntropy.GelfandTsetlin",
+      "FreeEntropy.KostantCounting"
+    ],
+    "FreeEntropy.GTRankSupport": [
+      "FreeEntropy.GTPartitions"
+    ],
+    "FreeEntropy.GTWeylProduct": [
+      "FreeEntropy.WeylCombinatorics"
+    ],
+    "FreeEntropy.GelfandTsetlin": [],
+    "FreeEntropy.GeometricOrbit": [
+      "FreeEntropy.OrbitTraceDistance",
+      "FreeEntropy.SpectralProjector",
+      "FreeEntropy.WeightNormalization"
+    ],
+    "FreeEntropy.HighestWeightDominance": [
+      "FreeEntropy.LieMatrixCasimir"
+    ],
+    "FreeEntropy.IdentityCloning": [
+      "FreeEntropy.TraceCloning"
+    ],
+    "FreeEntropy.IsometricCompression": [
+      "FreeEntropy.AtypicalChannels"
+    ],
+    "FreeEntropy.KostantCounting": [
+      "FreeEntropy.MeanDepth",
+      "FreeEntropy.WeylFinite"
+    ],
+    "FreeEntropy.KostantWeightData": [
+      "FreeEntropy.GeometricOrbit",
+      "FreeEntropy.KostantCounting"
+    ],
+    "FreeEntropy.LieCartanBalance": [
+      "FreeEntropy.CartanChannel",
+      "FreeEntropy.CyclicWeightHighest",
+      "FreeEntropy.LieHighestUnitary"
+    ],
+    "FreeEntropy.LieCharacterCanonical": [
+      "FreeEntropy.LieCharacterFinite",
+      "FreeEntropy.LieCharacterSymmetry"
+    ],
+    "FreeEntropy.LieCharacterFinite": [
+      "FreeEntropy.CyclicWeightHighest",
+      "FreeEntropy.LieCharacterRadial",
+      "FreeEntropy.WeylDenominator"
+    ],
+    "FreeEntropy.LieCharacterRadial": [
+      "FreeEntropy.CartanLieCloning",
+      "FreeEntropy.WeylCharacterAlgebra"
+    ],
+    "FreeEntropy.LieCharacterSymmetry": [
+      "FreeEntropy.ExteriorPhysicalIrrep",
+      "FreeEntropy.ExteriorWeightCoordinates",
+      "FreeEntropy.LieCharacterRadial",
+      "FreeEntropy.TensorWeightSource"
+    ],
+    "FreeEntropy.LieCyclicIrreducible": [
+      "FreeEntropy.LiePBWUnique",
+      "FreeEntropy.UnitaryDecompositionBasic"
+    ],
+    "FreeEntropy.LieCyclicMaps": [
+      "FreeEntropy.LieCyclicIrreducible"
+    ],
+    "FreeEntropy.LieDecomposition": [
+      "FreeEntropy.TensorWeightCoordinates",
+      "FreeEntropy.UnitaryDecompositionMatrices"
+    ],
+    "FreeEntropy.LieDepthMultiplicity": [
+      "FreeEntropy.CoordinateWeightSpace",
+      "FreeEntropy.RaisingKernel"
+    ],
+    "FreeEntropy.LieDeterminantTwist": [
+      "FreeEntropy.ExteriorCanonicalHighest",
+      "FreeEntropy.LieHighestUnitary"
+    ],
+    "FreeEntropy.LieDirectSum": [
+      "FreeEntropy.LieCyclicMaps"
+    ],
+    "FreeEntropy.LieDual": [
+      "FreeEntropy.LieMatrixCasimir"
+    ],
+    "FreeEntropy.LieDualCyclicity": [
+      "FreeEntropy.CyclicWeightHighest",
+      "FreeEntropy.LieDual",
+      "FreeEntropy.LieHighestUnitary"
+    ],
+    "FreeEntropy.LieDualTensor": [
+      "FreeEntropy.CartanReshuffle"
+    ],
+    "FreeEntropy.LieHighestEquivalence": [
+      "FreeEntropy.LieDirectSum"
+    ],
+    "FreeEntropy.LieHighestExistence": [
+      "FreeEntropy.LiePBWWeights",
+      "FreeEntropy.TensorWeightBasis"
+    ],
+    "FreeEntropy.LieHighestUnitary": [
+      "FreeEntropy.LieHighestEquivalence"
+    ],
+    "FreeEntropy.LieMatrixCasimir": [
+      "FreeEntropy.CasimirWeights",
+      "FreeEntropy.WeightSectors"
+    ],
+    "FreeEntropy.LiePBW": [
+      "FreeEntropy.LieMatrixCasimir"
+    ],
+    "FreeEntropy.LiePBWDimension": [
+      "FreeEntropy.LiePBWMultiplicity"
+    ],
+    "FreeEntropy.LiePBWHighest": [
+      "FreeEntropy.LiePBW"
+    ],
+    "FreeEntropy.LiePBWMultiplicity": [
+      "FreeEntropy.HighestWeightDominance",
+      "FreeEntropy.LiePBWOrderedLowering"
+    ],
+    "FreeEntropy.LiePBWOrderedLowering": [
+      "FreeEntropy.ExteriorRootCounting",
+      "FreeEntropy.LiePBWHighest"
+    ],
+    "FreeEntropy.LiePBWUnique": [
+      "FreeEntropy.LiePBWHighest"
+    ],
+    "FreeEntropy.LiePBWWeights": [
+      "FreeEntropy.HighestWeightDominance",
+      "FreeEntropy.LiePBWHighest"
+    ],
+    "FreeEntropy.LieWeightModel": [
+      "FreeEntropy.CartanLieCloning",
+      "FreeEntropy.LieHighestExistence",
+      "FreeEntropy.TensorWeightCoordinates"
+    ],
+    "FreeEntropy.MeanDepth": [],
+    "FreeEntropy.MultiplicityChannels": [
+      "FreeEntropy.CartanChannel",
+      "FreeEntropy.TraceDistance"
+    ],
+    "FreeEntropy.Occupation": [
+      "FreeEntropy.TensorPowers",
+      "FreeEntropy.WordTypes"
+    ],
+    "FreeEntropy.OccupationCloning": [
+      "FreeEntropy.CartanBalance",
+      "FreeEntropy.MultiplicityChannels",
+      "FreeEntropy.OccupationSplitRepresentation",
+      "FreeEntropy.PureTensorCompression"
+    ],
+    "FreeEntropy.OccupationCloningExact": [
+      "FreeEntropy.OccupationWerner"
+    ],
+    "FreeEntropy.OccupationCommutant": [
+      "FreeEntropy.OccupationTorus"
+    ],
+    "FreeEntropy.OccupationCounting": [
+      "FreeEntropy.GTDimensionFormula"
+    ],
+    "FreeEntropy.OccupationDimension": [
+      "FreeEntropy.Occupation",
+      "FreeEntropy.OccupationCounting"
+    ],
+    "FreeEntropy.OccupationForward": [
+      "FreeEntropy.OccupationCloning",
+      "FreeEntropy.OccupationDimension"
+    ],
+    "FreeEntropy.OccupationIrreducible": [
+      "FreeEntropy.OccupationCommutant",
+      "FreeEntropy.ScalarCommutantIrreducible",
+      "FreeEntropy.UnitaryColumn",
+      "FreeEntropy.UnitaryHaar"
+    ],
+    "FreeEntropy.OccupationRatio": [
+      "FreeEntropy.Cloning",
+      "FreeEntropy.OccupationCounting",
+      "FreeEntropy.OccupationForward"
+    ],
+    "FreeEntropy.OccupationRepresentation": [
+      "FreeEntropy.Occupation",
+      "FreeEntropy.WordPermutations"
+    ],
+    "FreeEntropy.OccupationSplit": [
+      "FreeEntropy.CartanChannel",
+      "FreeEntropy.Occupation"
+    ],
+    "FreeEntropy.OccupationSplitRepresentation": [
+      "FreeEntropy.OccupationRepresentation",
+      "FreeEntropy.OccupationSplit"
+    ],
+    "FreeEntropy.OccupationTheorem2": [
+      "FreeEntropy.OccupationCloningExact",
+      "FreeEntropy.OccupationRatio"
+    ],
+    "FreeEntropy.OccupationTorus": [
+      "FreeEntropy.OccupationRepresentation"
+    ],
+    "FreeEntropy.OccupationWerner": [
+      "FreeEntropy.OccupationForward",
+      "FreeEntropy.OccupationIrreducible"
+    ],
+    "FreeEntropy.OneDimensionalSource": [
+      "FreeEntropy.AtypicalChannels",
+      "FreeEntropy.PhysicalUniformError"
+    ],
+    "FreeEntropy.OptimalMemory": [],
+    "FreeEntropy.OrbitEigenvalues": [
+      "FreeEntropy.OrbitTraceDistance",
+      "FreeEntropy.SpectralProjector"
+    ],
+    "FreeEntropy.OrbitMemory": [],
+    "FreeEntropy.OrbitTraceDistance": [
+      "FreeEntropy.Channels",
+      "FreeEntropy.SpectrumBounds",
+      "FreeEntropy.TraceDistance",
+      "FreeEntropy.Twirling"
+    ],
+    "FreeEntropy.PhysicalCanonicalChannels": [
+      "FreeEntropy.PhysicalCanonicalSector"
+    ],
+    "FreeEntropy.PhysicalCanonicalConverse": [
+      "FreeEntropy.CanonicalConverse",
+      "FreeEntropy.PhysicalSchurProtocol",
+      "FreeEntropy.QuantumTransfer"
+    ],
+    "FreeEntropy.PhysicalCanonicalSector": [
+      "FreeEntropy.CanonicalClassification",
+      "FreeEntropy.LieCharacterSymmetry",
+      "FreeEntropy.PhysicalSchurProtocol"
+    ],
+    "FreeEntropy.PhysicalCloningAccuracy": [
+      "FreeEntropy.CanonicalCloningOrbit",
+      "FreeEntropy.PhysicalCanonicalConverse",
+      "FreeEntropy.PhysicalCloningChannels"
+    ],
+    "FreeEntropy.PhysicalCloningChannels": [
+      "FreeEntropy.AtypicalChannels",
+      "FreeEntropy.CanonicalCloningBounds",
+      "FreeEntropy.TypicalCanonicalRows"
+    ],
+    "FreeEntropy.PhysicalOrbitChannels": [
+      "FreeEntropy.CanonicalMonomialState",
+      "FreeEntropy.CanonicalPhysicalOrbit",
+      "FreeEntropy.PhysicalSchurApproximation"
+    ],
+    "FreeEntropy.PhysicalSchurApproximation": [
+      "FreeEntropy.PhysicalSchurProtocol"
+    ],
+    "FreeEntropy.PhysicalSchurProtocol": [
+      "FreeEntropy.SchurAchievability",
+      "FreeEntropy.SchurWeylConcentration",
+      "FreeEntropy.SectorProtocol"
+    ],
+    "FreeEntropy.PhysicalUniformError": [
+      "FreeEntropy.PhysicalCanonicalConverse"
+    ],
+    "FreeEntropy.PolynomialOrbitDimension": [],
+    "FreeEntropy.ProjectorGeometry": [
+      "FreeEntropy.OrbitMemory"
+    ],
+    "FreeEntropy.Proofs": [
+      "FreeEntropy.Cloning",
+      "FreeEntropy.Concentration",
+      "FreeEntropy.OptimalMemory",
+      "FreeEntropy.Protocol",
+      "FreeEntropy.Weyl",
+      "FreeEntropy.WeylCombinatorics"
+    ],
+    "FreeEntropy.Protocol": [],
+    "FreeEntropy.PureAchievability": [
+      "FreeEntropy.OccupationDimension",
+      "FreeEntropy.PureTensorCompression"
+    ],
+    "FreeEntropy.PureConverse": [
+      "FreeEntropy.OccupationIrreducible",
+      "FreeEntropy.PureAchievability",
+      "FreeEntropy.QuantumTransfer"
+    ],
+    "FreeEntropy.PureTensorCompression": [
+      "FreeEntropy.IsometricCompression",
+      "FreeEntropy.Occupation"
+    ],
+    "FreeEntropy.QuantumProtocol": [
+      "FreeEntropy.Protocol",
+      "FreeEntropy.Statements",
+      "FreeEntropy.TraceMetric"
+    ],
+    "FreeEntropy.QuantumTransfer": [
+      "FreeEntropy.GeometricOrbit",
+      "FreeEntropy.QuantumProtocol",
+      "FreeEntropy.TraceMetric"
+    ],
+    "FreeEntropy.RaisingKernel": [
+      "FreeEntropy.CyclicWeightHighest"
+    ],
+    "FreeEntropy.RankOneEndpoints": [
+      "FreeEntropy.OccupationTheorem2",
+      "FreeEntropy.PureConverse",
+      "FreeEntropy.RankOneStates"
+    ],
+    "FreeEntropy.RankOneStates": [
+      "FreeEntropy.TensorPowers"
+    ],
+    "FreeEntropy.RankRootCounting": [
+      "FreeEntropy.ExteriorRootCounting",
+      "FreeEntropy.ExteriorSupportedOffsets"
+    ],
+    "FreeEntropy.ReverseChoi": [
+      "FreeEntropy.CartanChoi"
+    ],
+    "FreeEntropy.ReverseChoiMultiplicity": [
+      "FreeEntropy.CanonicalReverseChoi",
+      "FreeEntropy.CartanChoiMultiplicity",
+      "FreeEntropy.ReverseChoiRepresentation"
+    ],
+    "FreeEntropy.ReverseChoiRepresentation": [
+      "FreeEntropy.CanonicalDualCyclicHighest",
+      "FreeEntropy.LieDualTensor",
+      "FreeEntropy.ReverseChoi"
+    ],
+    "FreeEntropy.RootPartitionFunction": [
+      "FreeEntropy.KostantWeightData",
+      "FreeEntropy.SpectrumBounds"
+    ],
+    "FreeEntropy.ScalarCommutantIrreducible": [
+      "FreeEntropy.Twirling"
+    ],
+    "FreeEntropy.SchurAchievability": [
+      "FreeEntropy.FiniteConcentration",
+      "FreeEntropy.SchurProtocol",
+      "FreeEntropy.TypicalRows"
+    ],
+    "FreeEntropy.SchurProbability": [
+      "FreeEntropy.GTPartitions",
+      "FreeEntropy.RootPartitionFunction",
+      "FreeEntropy.SchurProbabilityTableaux"
+    ],
+    "FreeEntropy.SchurProbabilityCharacter": [
+      "FreeEntropy.SchurProbability"
+    ],
+    "FreeEntropy.SchurProbabilityConcentration": [
+      "FreeEntropy.SchurAchievability",
+      "FreeEntropy.SchurProbabilityCharacter"
+    ],
+    "FreeEntropy.SchurProbabilityTableaux": [
+      "FreeEntropy.WordTypes"
+    ],
+    "FreeEntropy.SchurProtocol": [
+      "FreeEntropy.MultiplicityChannels",
+      "FreeEntropy.SectorProtocol"
+    ],
+    "FreeEntropy.SchurWeylBlocks": [
+      "FreeEntropy.SchurWeylSource",
+      "FreeEntropy.Twirling"
+    ],
+    "FreeEntropy.SchurWeylConcentration": [
+      "FreeEntropy.SchurWeylConcentrationTail"
+    ],
+    "FreeEntropy.SchurWeylConcentrationGrouping": [
+      "FreeEntropy.CyclicWeightHighest",
+      "FreeEntropy.SchurWeylWeightMultiplicity",
+      "FreeEntropy.TensorWeightSource"
+    ],
+    "FreeEntropy.SchurWeylConcentrationMonomial": [
+      "FreeEntropy.SchurWeylConcentrationGrouping"
+    ],
+    "FreeEntropy.SchurWeylConcentrationProbability": [
+      "FreeEntropy.SchurWeylConcentrationMonomial",
+      "FreeEntropy.SchurWeylConcentrationSupport",
+      "FreeEntropy.TensorSectorDimension"
+    ],
+    "FreeEntropy.SchurWeylConcentrationSupport": [
+      "FreeEntropy.WordTypes"
+    ],
+    "FreeEntropy.SchurWeylConcentrationTail": [
+      "FreeEntropy.SchurWeylConcentrationProbability"
+    ],
+    "FreeEntropy.SchurWeylMultiplicity": [
+      "FreeEntropy.MultiplicityChannels",
+      "FreeEntropy.SchurWeylBlocks"
+    ],
+    "FreeEntropy.SchurWeylNormalization": [
+      "FreeEntropy.SchurWeylMultiplicity"
+    ],
+    "FreeEntropy.SchurWeylPhysical": [
+      "FreeEntropy.SchurWeylNormalization",
+      "FreeEntropy.UnitaryDecomposition"
+    ],
+    "FreeEntropy.SchurWeylSource": [
+      "FreeEntropy.OccupationTorus",
+      "FreeEntropy.TensorPowers"
+    ],
+    "FreeEntropy.SchurWeylWeightExistence": [
+      "FreeEntropy.SchurWeylWeightMultiplicity",
+      "FreeEntropy.UnitaryDecompositionMatrices"
+    ],
+    "FreeEntropy.SchurWeylWeightMultiplicity": [
+      "FreeEntropy.SchurWeylMultiplicity"
+    ],
+    "FreeEntropy.SectorChannels": [
+      "FreeEntropy.CartanChannel"
+    ],
+    "FreeEntropy.SectorProtocol": [
+      "FreeEntropy.QuantumProtocol",
+      "FreeEntropy.SectorChannels"
+    ],
+    "FreeEntropy.SignedAuxiliaryModel": [
+      "FreeEntropy.CyclicWeightShift",
+      "FreeEntropy.ExteriorWeightCoordinates"
+    ],
+    "FreeEntropy.SignedCartan": [
+      "FreeEntropy.ConstructedTensorDecomposition",
+      "FreeEntropy.CyclicWeightShift",
+      "FreeEntropy.LieCartanBalance"
+    ],
+    "FreeEntropy.SpecifiedCloningChannels": [
+      "FreeEntropy.SpecifiedLieCloning"
+    ],
+    "FreeEntropy.SpecifiedLieCloning": [
+      "FreeEntropy.ConstructedLieCloning",
+      "FreeEntropy.SignedCartan"
+    ],
+    "FreeEntropy.SpectralProjector": [
+      "FreeEntropy.OrbitMemory"
+    ],
+    "FreeEntropy.SpectrumBounds": [
+      "FreeEntropy.Statements"
+    ],
+    "FreeEntropy.Statements": [
+      "FreeEntropy.Proofs"
+    ],
+    "FreeEntropy.SupportedWeightStates": [
+      "FreeEntropy.CyclicWeightStateBlocks",
+      "FreeEntropy.RankRootCounting"
+    ],
+    "FreeEntropy.TensorConstituentDecomposition": [
+      "FreeEntropy.LieDecomposition",
+      "FreeEntropy.LieWeightModel"
+    ],
+    "FreeEntropy.TensorConstituentWeights": [
+      "FreeEntropy.CyclicWeightHighest"
+    ],
+    "FreeEntropy.TensorHighestWeight": [
+      "FreeEntropy.CyclicHighestRepresentation",
+      "FreeEntropy.HighestWeightDominance",
+      "FreeEntropy.SchurWeylPhysical",
+      "FreeEntropy.SchurWeylWeightExistence",
+      "FreeEntropy.TensorLieRestriction"
+    ],
+    "FreeEntropy.TensorInfinitesimal": [
+      "FreeEntropy.SchurWeylSource"
+    ],
+    "FreeEntropy.TensorLieCyclicity": [
+      "FreeEntropy.TensorSites"
+    ],
+    "FreeEntropy.TensorLieCyclicityPhysical": [
+      "FreeEntropy.LiePBWUnique",
+      "FreeEntropy.TensorHighestWeight",
+      "FreeEntropy.TensorLieCyclicitySubspace"
+    ],
+    "FreeEntropy.TensorLieCyclicitySubspace": [
+      "FreeEntropy.LiePBWHighest",
+      "FreeEntropy.TensorLieCyclicity",
+      "FreeEntropy.TensorLieRestriction",
+      "FreeEntropy.UnitaryDecompositionBasic"
+    ],
+    "FreeEntropy.TensorLieIntertwiners": [
+      "FreeEntropy.TensorLieCyclicitySubspace"
+    ],
+    "FreeEntropy.TensorLieRestriction": [
+      "FreeEntropy.SchurWeylBlocks",
+      "FreeEntropy.TensorSites"
+    ],
+    "FreeEntropy.TensorPowers": [
+      "FreeEntropy.TraceDistance"
+    ],
+    "FreeEntropy.TensorPowersPair": [
+      "FreeEntropy.ExteriorTensorPermutation",
+      "FreeEntropy.TensorLieIntertwiners"
+    ],
+    "FreeEntropy.TensorSectorCasimir": [
+      "FreeEntropy.CasimirCentral",
+      "FreeEntropy.TensorLieCyclicityPhysical"
+    ],
+    "FreeEntropy.TensorSectorDimension": [
+      "FreeEntropy.LiePBWDimension",
+      "FreeEntropy.TensorWeightModel"
+    ],
+    "FreeEntropy.TensorSites": [
+      "FreeEntropy.LieMatrixCasimir",
+      "FreeEntropy.TensorInfinitesimal"
+    ],
+    "FreeEntropy.TensorTopExistence": [
+      "FreeEntropy.CyclicWeightHighest"
+    ],
+    "FreeEntropy.TensorTorusIntertwiner": [
+      "FreeEntropy.TensorSites",
+      "FreeEntropy.TorusWeightEigenline"
+    ],
+    "FreeEntropy.TensorWeightBasis": [
+      "FreeEntropy.TensorLieCyclicityPhysical"
+    ],
+    "FreeEntropy.TensorWeightCoordinates": [
+      "FreeEntropy.CasimirCentral",
+      "FreeEntropy.TensorWeightBasis"
+    ],
+    "FreeEntropy.TensorWeightModel": [
+      "FreeEntropy.CartanLieCloning",
+      "FreeEntropy.LiePBWWeights",
+      "FreeEntropy.TensorWeightCoordinates"
+    ],
+    "FreeEntropy.TensorWeightSource": [
+      "FreeEntropy.TensorWeightModel"
+    ],
+    "FreeEntropy.Theorem1Complete": [
+      "FreeEntropy.OneDimensionalSource",
+      "FreeEntropy.PhysicalCloningAccuracy",
+      "FreeEntropy.PhysicalUniformError"
+    ],
+    "FreeEntropy.Theorem2": [
+      "FreeEntropy.Cloning",
+      "FreeEntropy.MeanDepth"
+    ],
+    "FreeEntropy.Theorem2Canonical": [
+      "FreeEntropy.CanonicalCloningBounds",
+      "FreeEntropy.CanonicalCloningOrbit",
+      "FreeEntropy.CanonicalCloningSelf"
+    ],
+    "FreeEntropy.Theorem2Choi": [
+      "FreeEntropy.CanonicalChoi",
+      "FreeEntropy.CanonicalReverseChoi",
+      "FreeEntropy.ChoiContraction",
+      "FreeEntropy.ReverseChoiMultiplicity",
+      "FreeEntropy.ReverseChoiRepresentation",
+      "FreeEntropy.Theorem2Canonical"
+    ],
+    "FreeEntropy.Theorem2GT": [
+      "FreeEntropy.GTPartitions",
+      "FreeEntropy.TraceCloning",
+      "FreeEntropy.WeightNormalization"
+    ],
+    "FreeEntropy.Theorem2Petz": [
+      "FreeEntropy.CanonicalPetz",
+      "FreeEntropy.Theorem2Canonical"
+    ],
+    "FreeEntropy.Theorem2RankOneGT": [
+      "FreeEntropy.Theorem2GT"
+    ],
+    "FreeEntropy.TorusWeightEigenline": [
+      "FreeEntropy.CyclicHighestRepresentation",
+      "FreeEntropy.OccupationTorus"
+    ],
+    "FreeEntropy.TorusWeightProjection": [
+      "FreeEntropy.TorusWeightEigenline",
+      "FreeEntropy.UnitaryDecompositionMatrices"
+    ],
+    "FreeEntropy.TraceCloning": [
+      "FreeEntropy.CloningMatrices",
+      "FreeEntropy.WeylFiniteSupplement"
+    ],
+    "FreeEntropy.TraceDistance": [
+      "FreeEntropy.OrbitMemory"
+    ],
+    "FreeEntropy.TraceMetric": [
+      "FreeEntropy.CloningMatrices",
+      "FreeEntropy.TraceDistance"
+    ],
+    "FreeEntropy.Twirling": [
+      "FreeEntropy.OrbitMemory"
+    ],
+    "FreeEntropy.TypicalCanonicalRows": [
+      "FreeEntropy.CanonicalConverse",
+      "FreeEntropy.CanonicalRowBounds",
+      "FreeEntropy.PhysicalOrbitChannels"
+    ],
+    "FreeEntropy.TypicalRows": [
+      "FreeEntropy.Statements",
+      "FreeEntropy.WeylFinite"
+    ],
+    "FreeEntropy.UnitaryColumn": [],
+    "FreeEntropy.UnitaryCoordinates": [
+      "FreeEntropy.UnitaryDecompositionMatrices"
+    ],
+    "FreeEntropy.UnitaryDecomposition": [
+      "FreeEntropy.UnitaryDecompositionMatrices"
+    ],
+    "FreeEntropy.UnitaryDecompositionBasic": [
+      "FreeEntropy.ScalarCommutantIrreducible"
+    ],
+    "FreeEntropy.UnitaryDecompositionMatrices": [
+      "FreeEntropy.UnitaryDecompositionOrthogonal"
+    ],
+    "FreeEntropy.UnitaryDecompositionOrthogonal": [
+      "FreeEntropy.UnitaryDecompositionBasic"
+    ],
+    "FreeEntropy.UnitaryHaar": [],
+    "FreeEntropy.WeightNormalization": [
+      "FreeEntropy.CloningMatrices",
+      "FreeEntropy.MeanDepth"
+    ],
+    "FreeEntropy.WeightSectors": [
+      "FreeEntropy.CartanChannel",
+      "FreeEntropy.CasimirTrace"
+    ],
+    "FreeEntropy.Weyl": [],
+    "FreeEntropy.WeylAlternantCoefficients": [
+      "FreeEntropy.CanonicalCharacterEigen"
+    ],
+    "FreeEntropy.WeylAlternating": [
+      "FreeEntropy.LieCharacterCanonical",
+      "FreeEntropy.WeylDenominator"
+    ],
+    "FreeEntropy.WeylCharacterAlgebra": [
+      "FreeEntropy.CasimirDecomposition"
+    ],
+    "FreeEntropy.WeylCharacterCone": [
+      "FreeEntropy.CanonicalCharacterEigen"
+    ],
+    "FreeEntropy.WeylCharacterSupport": [
+      "FreeEntropy.WeylCharacterCone"
+    ],
+    "FreeEntropy.WeylCoefficient": [
+      "FreeEntropy.WeylDenominator"
+    ],
+    "FreeEntropy.WeylCombinatorics": [
+      "FreeEntropy.Weyl"
+    ],
+    "FreeEntropy.WeylDenominator": [
+      "FreeEntropy.WeylCharacterAlgebra"
+    ],
+    "FreeEntropy.WeylDifferentialProduct": [
+      "FreeEntropy.WeylDenominator"
+    ],
+    "FreeEntropy.WeylDimensionExtraction": [
+      "FreeEntropy.GTDimensionFormula",
+      "FreeEntropy.WeylCoefficient",
+      "FreeEntropy.WeylTranslation"
+    ],
+    "FreeEntropy.WeylFinite": [
+      "FreeEntropy.Cloning",
+      "FreeEntropy.WeylCombinatorics"
+    ],
+    "FreeEntropy.WeylFiniteSupplement": [
+      "FreeEntropy.WeylFinite"
+    ],
+    "FreeEntropy.WeylTranslation": [
+      "FreeEntropy.WeylDenominator"
+    ],
+    "FreeEntropy.WordPermutations": [
+      "FreeEntropy.TensorPowers",
+      "FreeEntropy.WordTypes"
+    ],
+    "FreeEntropy.WordTypes": [
+      "FreeEntropy.FiniteConcentration"
+    ],
+    "Theorem1": [
+      "FreeEntropy.Theorem1Complete"
+    ],
+    "Theorem2": [
+      "FreeEntropy.Theorem2Canonical",
+      "FreeEntropy.Theorem2Choi",
+      "FreeEntropy.Theorem2Petz"
+    ]
+  },
+  "caveats": [
+    "This is a project-cold, dependency-warm build; upstream olean creation is outside scope.",
+    "The sum of per-module logged elapsed durations is not cumulative CPU; simultaneous modules include overlap and contention.",
+    "Maximum RSS follows the recorded timer's process/child accounting; it is not the sum of concurrent Lean process memory.",
+    "No timing is imputed for own module events lacking elapsed values.",
+    "Snapshot line counts include only the production proof library and four facade/entry modules; Comparator challenges and Audit probes are excluded.",
+    "Legacy Lean module syntax is retained; the skill's new module-header convention is not satisfied.",
+    "Host CPU work floor assumes all recorded logical cores are equally available; Apple performance/efficiency cores and competing load limit that model."
+  ],
+  "host_work_floor_seconds": 347.96375
+}

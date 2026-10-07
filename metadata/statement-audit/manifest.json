@@ -4,13 +4,13 @@
   "human_review": "not_established",
   "source_revision": "490356f620c1ab963ff99585d6835c93e4324b37",
   "method_revision": "601fe274276d93052ef645f0ff2c1a355e8e5b16",
-  "proof_sources_sha256": "f4efe7d88eb576d8ad579c57a2dd1b4ddc3a6b628d5cb023d9f42a326c0dbfee",
+  "proof_sources_sha256": "e7068771d301aaac3156ecc7cd0a1a4b3868a894a1d0988ce897420786ba2c3f",
   "endpoints": [
     {
       "name": "FreeEntropy.theorem1_achievability",
       "file": "lean/FreeEntropy/Theorem1Complete.lean",
       "line": 23,
-      "compiled_statement": "∀ {d r : ℕ} (s : FreeEntropy.FixedSpectrum d r),\n  ∃ (memory : ℕ → ℕ) (E : (n : ℕ) → FreeEntropy.Channels.MatrixChannel (Fin n → Fin d) (Fin (memory n))) (D :\n    (n : ℕ) → FreeEntropy.Channels.MatrixChannel (Fin (memory n)) (Fin n → Fin d)),\n    Filter.Tendsto (fun (n : ℕ) => Real.logb 2 ↑(memory n) - FreeEntropy.Weyl.qmdl d r s.eigenvalue n) Filter.atTop\n        (nhds 0) ∧\n      (fun (n : ℕ) => FreeEntropy.SchurWeyl.mixedWorstError s n (E n) (D n)) =O[Filter.atTop]\n          FreeEntropy.Weyl.errorScale ∧\n        Filter.Tendsto (fun (n : ℕ) => FreeEntropy.SchurWeyl.mixedWorstError s n (E n) (D n)) Filter.atTop (nhds 0)",
+      "compiled_statement": "\u2200 {d r : \u2115} (s : FreeEntropy.FixedSpectrum d r),\n  \u2203 (memory : \u2115 \u2192 \u2115) (E : (n : \u2115) \u2192 FreeEntropy.Channels.MatrixChannel (Fin n \u2192 Fin d) (Fin (memory n))) (D :\n    (n : \u2115) \u2192 FreeEntropy.Channels.MatrixChannel (Fin (memory n)) (Fin n \u2192 Fin d)),\n    Filter.Tendsto (fun (n : \u2115) => Real.logb 2 \u2191(memory n) - FreeEntropy.Weyl.qmdl d r s.eigenvalue n) Filter.atTop\n        (nhds 0) \u2227\n      (fun (n : \u2115) => FreeEntropy.SchurWeyl.mixedWorstError s n (E n) (D n)) =O[Filter.atTop]\n          FreeEntropy.Weyl.errorScale \u2227\n        Filter.Tendsto (fun (n : \u2115) => FreeEntropy.SchurWeyl.mixedWorstError s n (E n) (D n)) Filter.atTop (nhds 0)",
       "compiled_statement_sha256": "bc798eb5054b03f6c5230a66803c13ae7972bf04cbdd5285357c375e7bdb947c",
       "top_level_binders": [
         {
@@ -31,7 +31,7 @@
       "name": "FreeEntropy.theorem1_converse",
       "file": "lean/FreeEntropy/Theorem1Complete.lean",
       "line": 43,
-      "compiled_statement": "∀ {d r : ℕ} (s : FreeEntropy.FixedSpectrum d r) (memory : ℕ → ℕ)\n  (E : (n : ℕ) → FreeEntropy.Channels.MatrixChannel (Fin n → Fin d) (Fin (memory n)))\n  (D : (n : ℕ) → FreeEntropy.Channels.MatrixChannel (Fin (memory n)) (Fin n → Fin d)),\n  Filter.Tendsto (fun (n : ℕ) => FreeEntropy.SchurWeyl.mixedAverageError s n (E n) (D n)) Filter.atTop (nhds 0) →\n    0 ≤\n      Filter.liminf (fun (n : ℕ) => ↑(Real.logb 2 ↑(memory n) - FreeEntropy.Weyl.qmdl d r s.eigenvalue n)) Filter.atTop",
+      "compiled_statement": "\u2200 {d r : \u2115} (s : FreeEntropy.FixedSpectrum d r) (memory : \u2115 \u2192 \u2115)\n  (E : (n : \u2115) \u2192 FreeEntropy.Channels.MatrixChannel (Fin n \u2192 Fin d) (Fin (memory n)))\n  (D : (n : \u2115) \u2192 FreeEntropy.Channels.MatrixChannel (Fin (memory n)) (Fin n \u2192 Fin d)),\n  Filter.Tendsto (fun (n : \u2115) => FreeEntropy.SchurWeyl.mixedAverageError s n (E n) (D n)) Filter.atTop (nhds 0) \u2192\n    0 \u2264\n      Filter.liminf (fun (n : \u2115) => \u2191(Real.logb 2 \u2191(memory n) - FreeEntropy.Weyl.qmdl d r s.eigenvalue n)) Filter.atTop",
       "compiled_statement_sha256": "29e0af015e6e2e4662354eb96f80fb5eed384bf0d2f2550421b408331ad086f4",
       "top_level_binders": [
         {
@@ -68,7 +68,7 @@
       "name": "FreeEntropy.theorem1_converse_of_uniform",
       "file": "lean/FreeEntropy/Theorem1Complete.lean",
       "line": 60,
-      "compiled_statement": "∀ {d r : ℕ} (s : FreeEntropy.FixedSpectrum d r) (memory : ℕ → ℕ)\n  (E : (n : ℕ) → FreeEntropy.Channels.MatrixChannel (Fin n → Fin d) (Fin (memory n)))\n  (D : (n : ℕ) → FreeEntropy.Channels.MatrixChannel (Fin (memory n)) (Fin n → Fin d)),\n  Filter.Tendsto (fun (n : ℕ) => FreeEntropy.SchurWeyl.mixedWorstError s n (E n) (D n)) Filter.atTop (nhds 0) →\n    0 ≤\n      Filter.liminf (fun (n : ℕ) => ↑(Real.logb 2 ↑(memory n) - FreeEntropy.Weyl.qmdl d r s.eigenvalue n)) Filter.atTop",
+      "compiled_statement": "\u2200 {d r : \u2115} (s : FreeEntropy.FixedSpectrum d r) (memory : \u2115 \u2192 \u2115)\n  (E : (n : \u2115) \u2192 FreeEntropy.Channels.MatrixChannel (Fin n \u2192 Fin d) (Fin (memory n)))\n  (D : (n : \u2115) \u2192 FreeEntropy.Channels.MatrixChannel (Fin (memory n)) (Fin n \u2192 Fin d)),\n  Filter.Tendsto (fun (n : \u2115) => FreeEntropy.SchurWeyl.mixedWorstError s n (E n) (D n)) Filter.atTop (nhds 0) \u2192\n    0 \u2264\n      Filter.liminf (fun (n : \u2115) => \u2191(Real.logb 2 \u2191(memory n) - FreeEntropy.Weyl.qmdl d r s.eigenvalue n)) Filter.atTop",
       "compiled_statement_sha256": "638322dfbe72637518e73fc3031b429e11930c144e10dc8074729f5e63efdfe2",
       "top_level_binders": [
         {
@@ -105,7 +105,7 @@
       "name": "FreeEntropy.ExteriorRepresentation.theorem2_cloning_accuracy_choi",
       "file": "lean/FreeEntropy/Theorem2Choi.lean",
       "line": 79,
-      "compiled_statement": "∀ {d r : ℕ} (s : FreeEntropy.FixedSpectrum d r) (hd : 2 ≤ d) (mu nu : Fin d → ℕ) (hmu : Antitone mu)\n  (hnu : Antitone nu),\n  (∀ (i : Fin d), r ≤ ↑i → mu i = 0) →\n    (∀ (i : Fin d), r ≤ ↑i → nu i = 0) →\n      ∀ (hinc : Antitone fun (i : Fin d) => ↑(nu i) - ↑(mu i)) (U : ↥(Matrix.unitaryGroup (Fin d) ℂ)),\n        FreeEntropy.TraceDistance.traceDistance\n              (FreeEntropy.ExteriorRepresentation.prvForward mu nu hmu hnu hinc\n                (FreeEntropy.ExteriorRepresentation.canonicalOrbitState s mu U))\n              (FreeEntropy.ExteriorRepresentation.canonicalOrbitState s nu U) ≤\n            FreeEntropy.Theorem2.cloningConstant d r s.qx * ↑(FreeEntropy.ExteriorRepresentation.differenceNorm mu nu) /\n              (↑(FreeEntropy.ExteriorRepresentation.minimumRowGap mu r hd ⋯) + 1) ∧\n          FreeEntropy.TraceDistance.traceDistance\n              (FreeEntropy.ExteriorRepresentation.prvReverse mu nu hmu hnu hinc\n                (FreeEntropy.ExteriorRepresentation.canonicalOrbitState s nu U))\n              (FreeEntropy.ExteriorRepresentation.canonicalOrbitState s mu U) ≤\n            FreeEntropy.Theorem2.cloningConstant d r s.qx * ↑(FreeEntropy.ExteriorRepresentation.differenceNorm mu nu) /\n              (↑(FreeEntropy.ExteriorRepresentation.minimumRowGap mu r hd ⋯) + 1)",
+      "compiled_statement": "\u2200 {d r : \u2115} (s : FreeEntropy.FixedSpectrum d r) (hd : 2 \u2264 d) (mu nu : Fin d \u2192 \u2115) (hmu : Antitone mu)\n  (hnu : Antitone nu),\n  (\u2200 (i : Fin d), r \u2264 \u2191i \u2192 mu i = 0) \u2192\n    (\u2200 (i : Fin d), r \u2264 \u2191i \u2192 nu i = 0) \u2192\n      \u2200 (hinc : Antitone fun (i : Fin d) => \u2191(nu i) - \u2191(mu i)) (U : \u21a5(Matrix.unitaryGroup (Fin d) \u2102)),\n        FreeEntropy.TraceDistance.traceDistance\n              (FreeEntropy.ExteriorRepresentation.prvForward mu nu hmu hnu hinc\n                (FreeEntropy.ExteriorRepresentation.canonicalOrbitState s mu U))\n              (FreeEntropy.ExteriorRepresentation.canonicalOrbitState s nu U) \u2264\n            FreeEntropy.Theorem2.cloningConstant d r s.qx * \u2191(FreeEntropy.ExteriorRepresentation.differenceNorm mu nu) /\n              (\u2191(FreeEntropy.ExteriorRepresentation.minimumRowGap mu r hd \u22ef) + 1) \u2227\n          FreeEntropy.TraceDistance.traceDistance\n              (FreeEntropy.ExteriorRepresentation.prvReverse mu nu hmu hnu hinc\n                (FreeEntropy.ExteriorRepresentation.canonicalOrbitState s nu U))\n              (FreeEntropy.ExteriorRepresentation.canonicalOrbitState s mu U) \u2264\n            FreeEntropy.Theorem2.cloningConstant d r s.qx * \u2191(FreeEntropy.ExteriorRepresentation.differenceNorm mu nu) /\n              (\u2191(FreeEntropy.ExteriorRepresentation.minimumRowGap mu r hd \u22ef) + 1)",
       "compiled_statement_sha256": "933ef0789f3ab7d358acfb28268ff9031bcd1d8895c877abc54a8529314adfad",
       "top_level_binders": [
         {
@@ -161,8 +161,8 @@
   ],
   "file_sha256": {
     "article.tex": "09fc0a6bb205180cd820be94d843a1dc0d4342a543492e30dde54e367ae843a9",
-    "docs/assets/lean-catalog.json": "938935cd8c6cc60df56d4b67b1583e4d5c948fa857527917dfe427d5f8b77b24",
-    "docs/audit.md": "d113b375f5987fbdbe36da9eea93a6af6845dd1f6a7013d3c0cc5836b36b49d9",
+    "docs/assets/lean-catalog.json": "a4ca2b77eba4948192087e11fe0a36fdb9d6c0f20a89571c35705a232ddebfd7",
+    "docs/audit.md": "702185c89978fe9e1daefae44d8d35e3b65b49333974964594b2ea48c8451362",
     "docs/audit/independent-review.md": "912e8d719e32124e1449c6ce4f8bba81f42322d90e0dce6d76ace35f696f382d",
     "docs/audit/source-coverage.md": "fdde724b9d67da773e89d4b44815077e7dc7811aecc65058c3306ab90e90da6d",
     "docs/audit/theorem1.md": "aa13768f73c712ad13c725cb97fd6829f56ba6cd647f7c68a0864eb3e9cbd070",
@@ -183,7 +183,7 @@
     "metadata/letter-source-map.json": "a2e09ce75eb2df452fcb170a8fa5fb9ff6f10543919ca235f05c184916e13739",
     "metadata/natural-language-map.json": "bbc430d1c5197f4d40db702471a1dec8e0a9456ea0ec55ae3ddd83392a85a37b",
     "metadata/statement-audit/adversarial-review.json": "fd9aa6535c02c42256efc771161ef77fd40d671d8b81e8d68d4ce71d58f0bf8b",
-    "metadata/statement-audit/checks.json": "94c92f26af7e89aedcc24d7a72fdc9f561a6d011687fbe7e797d9dd65cb665ea",
+    "metadata/statement-audit/checks.json": "c46d1200d6cc3763ba1d4dba57bece37401f0641ee27c8650f3b12a2d7eb1e87",
     "metadata/statement-audit/compiled-binders.json": "02d31b308cbd2a06983fd2db0e6c92b0a53c5d7fb2f8611baf821991a8fa0139",
     "metadata/statement-audit/probes.json": "9a8d10e24ee04e8ca34a6ffe12f34918cf5dc790cc57f2b7a321a482a0ba1730",
     "metadata/statement-audit/source-coverage.json": "017288cee637e6d3fc98dcb50200e8c6abd9f92ecc6ae92164ea860901eb786c",
@@ -194,7 +194,16 @@
     "metadata/statement-audit/theorem2.json": "60d5c30d19bd531fc18fa8cec5742f5f7113ee59ef70373a7fbeb2d7ba6af532",
     "scripts/check_statement_audit.py": "cbff31873d9d7a5763a06ef81c758d832a74b70dd704a2e8a207cd6f8aa6c047",
     "scripts/export_statement_audit.lean": "5916c46af85d9728543e8c01b98b8d2af0c9e354ec10e4d059e1575ff75d347e",
-    "scripts/test_statement_audit.py": "d63ef81d774c4fc938795fdf0ad0c24168490bb1ddd86f83e473527c3fb32482"
+    "scripts/test_statement_audit.py": "d63ef81d774c4fc938795fdf0ad0c24168490bb1ddd86f83e473527c3fb32482",
+    "metadata/elaboration/2026-10-06/cleanup-review-bridge.json": "f77c1f18d83682adc29f0dcfc55ec02c1330d417c63cfe04bb7c66dca5a21204",
+    "metadata/elaboration/2026-10-06/cleanup-delta-review.json": "62bf47ce8e7597c0d50daae083b42cf4d806d01c0244228857030592a7ff6859",
+    "metadata/elaboration/2026-10-06/cleanup-comparison.json": "4463feaaf517b55028d1d4c2949a8a9f21f7fd452e98351eb6c0fc4e9757e1d4",
+    "metadata/elaboration/2026-10-06/cleanup-reviewed-comparison.json": "89201736ea75cd748e30d923391af2859e4dd4a35ae0b55113ebc731a36923fc",
+    "metadata/elaboration/2026-10-06/instance-pairs.json": "d4d08c18e7c28855067d6b1a441382e26a100ea04616109718f0362841b9e34b",
+    "metadata/elaboration/2026-10-06/instance-witnesses.json": "6d538b5b233543ca33d37efff8cf05560e45b62570c3fdfa2689de5984a11a5d",
+    "metadata/elaboration/2026-10-06/historical/statement-manifest.json": "7de60a4373d1fd0a8bf87dfb02ea4f676c013d7546e57c35bf87bdd8d7f90912",
+    "scripts/check_cleanup_instance_pairs.lean": "f910509d40ad393f54f932f676e7df10cc2495c43ba46b881f52f4e71d7c03c8",
+    "scripts/compare_cleanup_fingerprints.py": "ca6cb4bd7d319293d10b2a0a4ea84c5fa6814f7f5a195d3cc0fda2e8140f2720"
   },
   "reviewers": [
     {
@@ -218,5 +227,7 @@
       "role": "Integration, fresh Lean checks and checker implementation"
     }
   ],
-  "policy": "Source/report identity and evidence snapshots, not a human-approved frozen-statement seal. Changes require review before rebinding. Structural validation does not decide mathematical meaning."
+  "policy": "Source/report identity and evidence snapshots, not a human-approved frozen-statement seal. Changes require review before rebinding. Structural validation does not decide mathematical meaning.",
+  "current_source_revision": "4c2054c47d6c81615f5687fe5ac3f1c4dd1ea1d9",
+  "cleanup_review_bridge": "metadata/elaboration/2026-10-06/cleanup-review-bridge.json"
 }

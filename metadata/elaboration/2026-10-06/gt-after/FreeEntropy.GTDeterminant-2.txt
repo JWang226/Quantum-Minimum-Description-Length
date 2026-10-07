@@ -1,0 +1,50 @@
+import took 5.67s
+tactic execution of Lean.Parser.Tactic.apply took 153ms
+cumulative profiling times:
+	attribute application 0.0887ms
+	compilation (IR) 0.198ms
+	compilation (LCNF base) 1.37ms
+	compilation (LCNF impure) 0.365ms
+	compilation (LCNF mono) 1.13ms
+	congr simp thm 2.84ms
+	dsimp 2.13ms
+	elaboration 22ms
+	fix level params 0.434ms
+	import 5.67s
+	initialization 33.6ms
+	instantiate metavars 1.7ms
+	interpretation 1.21s
+	let-to-have transformation 0.0863ms
+	linting 8.27ms
+	norm_num 3.09ms
+	parsing 6.69ms
+	process pre-definitions 4.61ms
+	ring 32.2ms
+	share common exprs 3.58ms
+	simp 133ms
+	tactic execution 283ms
+	type checking 33.8ms
+	typeclass inference 475ms
+	Command being timed: "/Users/jw/.elan/bin/lake env lean --profile FreeEntropy/GTDeterminant.lean"
+	User time (seconds): 3.03
+	System time (seconds): 3.07
+	Percent of CPU this job got: 59%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:10.30
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 2098800
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 16035
+	Minor (reclaiming a frame) page faults: 227234
+	Voluntary context switches: 7508
+	Involuntary context switches: 65150
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 0
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 16384
+	Exit status: 0

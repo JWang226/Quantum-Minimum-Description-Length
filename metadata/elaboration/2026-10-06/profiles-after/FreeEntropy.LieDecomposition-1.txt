@@ -1,0 +1,59 @@
+import took 31.3s
+typeclass inference of CoeFun took 125ms
+tactic execution of Lean.Parser.Tactic.rewriteSeq took 138ms
+type checking took 149ms
+typeclass inference of Semiring took 211ms
+typeclass inference of Semiring took 105ms
+typeclass inference of Module.Free took 132ms
+typeclass inference of FiniteDimensional took 119ms
+typeclass inference of Submodule.HasOrthogonalProjection took 151ms
+typeclass inference of InnerProductSpace took 401ms
+typeclass inference of CoeFun took 432ms
+typeclass inference of CoeT took 366ms
+typeclass inference of Submodule.HasOrthogonalProjection took 122ms
+tactic execution of Lean.Parser.Tactic.refine took 222ms
+simp took 418ms
+tactic execution of Lean.Parser.Tactic.simpa took 154ms
+type checking took 100ms
+cumulative profiling times:
+	attribute application 0.265ms
+	blocked (unaccounted) 375ms
+	congr simp thm 9.07ms
+	elaboration 219ms
+	fix level params 8.06ms
+	import 31.3s
+	initialization 39.5ms
+	instantiate metavars 52ms
+	interpretation 2.14s
+	let-to-have transformation 1.7ms
+	linting 66.1ms
+	parsing 17.5ms
+	process pre-definitions 69ms
+	share common exprs 28.5ms
+	simp 984ms
+	tactic execution 1.71s
+	type checking 625ms
+	typeclass inference 5.89s
+	Command being timed: "/Users/jw/.elan/bin/lake env lean --profile FreeEntropy/LieDecomposition.lean"
+	User time (seconds): 10.04
+	System time (seconds): 8.11
+	Percent of CPU this job got: 43%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:41.72
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 2366368
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 171967
+	Minor (reclaiming a frame) page faults: 243678
+	Voluntary context switches: 12437
+	Involuntary context switches: 267032
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 0
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 16384
+	Exit status: 0

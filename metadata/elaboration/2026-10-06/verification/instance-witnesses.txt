@@ -1,0 +1,3 @@
+Kernel-checked exact foundation pair IntPartialOrder; axioms: #[propext, Classical.choice, Quot.sound]
+Kernel-checked exact foundation pair RealCharZero; axioms: #[propext, Quot.sound, Classical.choice]
+Kernel-checked 2 exact foundation instance pairs.

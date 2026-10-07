@@ -92,6 +92,9 @@ Keep the pins; do not run `lake update`.
 success markers and the separate Linux/Landrun sandbox procedure.
 Metadata validation checks evidence bindings; it does not execute the checkers.
 
+[Elaboration cleanup and reports](https://jwang226.github.io/Quantum-Minimum-Description-Length/elaboration/)
+give before/after measurements, raw evidence and commands to reproduce the two source variants.
+
 ## Read the proof
 
 Start with [the proof route](https://jwang226.github.io/Quantum-Minimum-Description-Length/proof-structure/),

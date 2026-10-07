@@ -1,0 +1,77 @@
+{
+  "recorded_at_utc": "2026-10-06T23:18:11.220219+00:00",
+  "lean_num_threads": 4,
+  "serial": true,
+  "cache_condition": "warm imports; no olean/IR output requested",
+  "samples": [
+    {
+      "module": "FreeEntropy.GTDeterminant",
+      "repeat": 1,
+      "exit_status": 0,
+      "command": [
+        "/opt/homebrew/bin/gtime",
+        "-v",
+        "/Users/jw/.elan/bin/lake",
+        "env",
+        "lean",
+        "--profile",
+        "FreeEntropy/GTDeterminant.lean"
+      ],
+      "source_sha256": "6af9a884d352729a6ffc7d186d8c1cd43a8ace8afe233db8096039f41fa06e55",
+      "source_after_sha256": "6af9a884d352729a6ffc7d186d8c1cd43a8ace8afe233db8096039f41fa06e55",
+      "source_unchanged": true,
+      "output": "FreeEntropy.GTDeterminant-1.txt",
+      "output_sha256": "4e0faff77dd6d999f818068978e477e85f6c99ae9d2e128ae468e092379a7ce6",
+      "user_cpu_seconds": 5.85,
+      "sys_cpu_seconds": 9.71,
+      "elapsed_seconds": 52.44,
+      "cumulative_profile_block": "cumulative profiling times:\n\tattribute application 0.408ms\n\tcompilation (IR) 0.485ms\n\tcompilation (LCNF base) 5.72ms\n\tcompilation (LCNF impure) 1.22ms\n\tcompilation (LCNF mono) 1.53ms\n\tcongr simp thm 18.7ms\n\tdsimp 8.28ms\n\telaboration 77.5ms\n\tfix level params 0.756ms\n\timport 43.5s\n\tinitialization 32.8ms\n\tinstantiate metavars 3.67ms\n\tinterpretation 3.66s\n\tlet-to-have transformation 0.167ms\n\tlinting 51.5ms\n\tnorm_num 10.9ms\n\tparsing 16.2ms\n\tprocess pre-definitions 13.4ms\n\tring 66.7ms\n\tshare common exprs 7.23ms\n\tsimp 892ms\n\ttactic execution 1.85s\n\ttype checking 122ms\n\ttypeclass inference 3.75s"
+    },
+    {
+      "module": "FreeEntropy.GTDeterminant",
+      "repeat": 2,
+      "exit_status": 0,
+      "command": [
+        "/opt/homebrew/bin/gtime",
+        "-v",
+        "/Users/jw/.elan/bin/lake",
+        "env",
+        "lean",
+        "--profile",
+        "FreeEntropy/GTDeterminant.lean"
+      ],
+      "source_sha256": "6af9a884d352729a6ffc7d186d8c1cd43a8ace8afe233db8096039f41fa06e55",
+      "source_after_sha256": "6af9a884d352729a6ffc7d186d8c1cd43a8ace8afe233db8096039f41fa06e55",
+      "source_unchanged": true,
+      "output": "FreeEntropy.GTDeterminant-2.txt",
+      "output_sha256": "36beeb9d668f15729909d190c57e6fc842a42d694c86dab981b2be3647f26ed6",
+      "user_cpu_seconds": 5.06,
+      "sys_cpu_seconds": 6.65,
+      "elapsed_seconds": 26.35,
+      "cumulative_profile_block": "cumulative profiling times:\n\tattribute application 0.179ms\n\tcompilation (IR) 0.18ms\n\tcompilation (LCNF base) 2.4ms\n\tcompilation (LCNF impure) 0.393ms\n\tcompilation (LCNF mono) 1.27ms\n\tcongr simp thm 4.15ms\n\tdsimp 3.23ms\n\telaboration 35.7ms\n\tfix level params 0.752ms\n\timport 17.8s\n\tinitialization 55.3ms\n\tinstantiate metavars 2.68ms\n\tinterpretation 2.33s\n\tlet-to-have transformation 0.114ms\n\tlinting 12.8ms\n\tnorm_num 2.64ms\n\tparsing 9.34ms\n\tprocess pre-definitions 6.23ms\n\tring 26.1ms\n\tshare common exprs 4.38ms\n\tsimp 194ms\n\ttactic execution 444ms\n\ttype checking 63.4ms\n\ttypeclass inference 1.03s"
+    },
+    {
+      "module": "FreeEntropy.GTDeterminant",
+      "repeat": 3,
+      "exit_status": 0,
+      "command": [
+        "/opt/homebrew/bin/gtime",
+        "-v",
+        "/Users/jw/.elan/bin/lake",
+        "env",
+        "lean",
+        "--profile",
+        "FreeEntropy/GTDeterminant.lean"
+      ],
+      "source_sha256": "6af9a884d352729a6ffc7d186d8c1cd43a8ace8afe233db8096039f41fa06e55",
+      "source_after_sha256": "6af9a884d352729a6ffc7d186d8c1cd43a8ace8afe233db8096039f41fa06e55",
+      "source_unchanged": true,
+      "output": "FreeEntropy.GTDeterminant-3.txt",
+      "output_sha256": "8558676037fdfc42b4e5e4af9df460333fabd6c8a71f281f158d1ac8bd7ac5c2",
+      "user_cpu_seconds": 4.13,
+      "sys_cpu_seconds": 8.32,
+      "elapsed_seconds": 39.11,
+      "cumulative_profile_block": "cumulative profiling times:\n\tattribute application 0.0926ms\n\tcompilation (IR) 0.174ms\n\tcompilation (LCNF base) 3.34ms\n\tcompilation (LCNF impure) 0.327ms\n\tcompilation (LCNF mono) 1.36ms\n\tcongr simp thm 2.58ms\n\tdsimp 2.39ms\n\telaboration 30.8ms\n\tfix level params 0.378ms\n\timport 32.7s\n\tinitialization 50.8ms\n\tinstantiate metavars 2.04ms\n\tinterpretation 2.21s\n\tlet-to-have transformation 0.109ms\n\tlinting 9.09ms\n\tnorm_num 3.78ms\n\tparsing 6.83ms\n\tprocess pre-definitions 5.22ms\n\tring 30.9ms\n\tshare common exprs 3.57ms\n\tsimp 152ms\n\ttactic execution 309ms\n\ttype checking 58ms\n\ttypeclass inference 811ms"
+    }
+  ]
+}

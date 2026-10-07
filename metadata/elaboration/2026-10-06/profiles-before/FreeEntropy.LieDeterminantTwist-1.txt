@@ -1,0 +1,77 @@
+import took 23.2s
+tactic execution of Lean.Parser.Tactic.rewriteSeq took 181ms
+simp took 145ms
+FreeEntropy/LieDeterminantTwist.lean:31:26: warning: This simp argument is unused:
+  Matrix.smul_mul
+
+Hint: Omit it from the simp argument list.
+  simp [̵M̵a̵t̵r̵i̵x̵.̵s̵m̵u̵l̵_̵m̵u̵l̵,̵ ̵M̵a̵t̵r̵i̵x̵.̵m̵u̵l̵_̵s̵m̵u̵l̵]̵[̲M̲a̲t̲r̲i̲x̲.̲m̲u̲l̲_̲s̲m̲u̲l̲]̲
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+FreeEntropy/LieDeterminantTwist.lean:31:43: warning: This simp argument is unused:
+  Matrix.mul_smul
+
+Hint: Omit it from the simp argument list.
+  simp [Matrix.smul_mul,̵ ̵M̵a̵t̵r̵i̵x̵.̵m̵u̵l̵_̵s̵m̵u̵l̵]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+FreeEntropy/LieDeterminantTwist.lean:34:26: warning: This simp argument is unused:
+  Matrix.smul_mul
+
+Hint: Omit it from the simp argument list.
+  simp [̵M̵a̵t̵r̵i̵x̵.̵s̵m̵u̵l̵_̵m̵u̵l̵,̵ ̵M̵a̵t̵r̵i̵x̵.̵m̵u̵l̵_̵s̵m̵u̵l̵]̵[̲M̲a̲t̲r̲i̲x̲.̲m̲u̲l̲_̲s̲m̲u̲l̲]̲
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+FreeEntropy/LieDeterminantTwist.lean:34:43: warning: This simp argument is unused:
+  Matrix.mul_smul
+
+Hint: Omit it from the simp argument list.
+  simp [Matrix.smul_mul,̵ ̵M̵a̵t̵r̵i̵x̵.̵m̵u̵l̵_̵s̵m̵u̵l̵]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+typeclass inference of CoeT took 156ms
+FreeEntropy/LieDeterminantTwist.lean:137:6: warning: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+cumulative profiling times:
+	attribute application 2.47ms
+	congr simp thm 7.42ms
+	elaboration 254ms
+	fix level params 17.8ms
+	import 23.2s
+	initialization 47.4ms
+	instantiate metavars 30.8ms
+	interpretation 2.95s
+	let-to-have transformation 1.14ms
+	linting 37.3ms
+	norm_num 12.1ms
+	parsing 16.3ms
+	process pre-definitions 42.2ms
+	share common exprs 12.7ms
+	simp 656ms
+	tactic execution 580ms
+	type checking 194ms
+	typeclass inference 1.35s
+	Command being timed: "/Users/jw/.elan/bin/lake env lean --profile FreeEntropy/LieDeterminantTwist.lean"
+	User time (seconds): 5.76
+	System time (seconds): 7.47
+	Percent of CPU this job got: 37%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:35.49
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 2609840
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 83610
+	Minor (reclaiming a frame) page faults: 242782
+	Voluntary context switches: 12069
+	Involuntary context switches: 162984
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 0
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 16384
+	Exit status: 0
