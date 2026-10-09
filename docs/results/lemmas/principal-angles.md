@@ -1,6 +1,6 @@
 # Principal Angles — Historical Proof Background
 
-**Status:** Background for the older fidelity argument. The historical wiki referred to `lem:principle_angles`; that label is absent from the current root `article.tex`. It is not a current Article lemma number or a separate audited Lean endpoint.
+**Status:** Background for the older fidelity argument. The historical wiki referred to `lem:principle_angles`; that label is absent from the current `manuscript/article.tex`. It is not a current Article lemma number or a separate audited Lean endpoint.
 
 ## Linear-algebra identity
 

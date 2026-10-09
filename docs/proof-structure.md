@@ -175,7 +175,7 @@ and [[formalization|formalization scope]].
 
 ## Relation to the current Letter
 
-The [current Letter](https://github.com/JWang226/Quantum-Minimum-Description-Length/blob/main/letter.tex)
+The [current Letter](https://github.com/JWang226/Quantum-Minimum-Description-Length/blob/main/manuscript/letter.tex)
 states the full-rank memory formula at `eq:result_qmdl` and its distinct-positive,
 rank-deficient extension at `eq:rank_def_qmdl`. These follow the Article's
 checked achievability and converse above. Its entropy identity compares that

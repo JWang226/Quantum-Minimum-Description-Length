@@ -1,7 +1,7 @@
 # Multiplicity Monotonicity and Shallow Equality
 
 **Labels:** `lem:kostka` and `lem:shallow_multiplicities` in the current Article.
-**Source:** [monotonicity](https://github.com/JWang226/Quantum-Minimum-Description-Length/blob/main/article.tex#L1200) and [shallow multiplicities](https://github.com/JWang226/Quantum-Minimum-Description-Length/blob/main/article.tex#L1397).
+**Source:** [monotonicity](https://github.com/JWang226/Quantum-Minimum-Description-Length/blob/main/manuscript/article.tex#L1200) and [shallow multiplicities](https://github.com/JWang226/Quantum-Minimum-Description-Length/blob/main/manuscript/article.tex#L1397).
 
 These are two distinct assertions. “Adding a dominant weight” allows a signed integral difference; it need not mean adding boxes to every row.
 

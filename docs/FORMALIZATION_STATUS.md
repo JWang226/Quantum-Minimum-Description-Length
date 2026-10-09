@@ -1,6 +1,6 @@
 # Formalization status and scope
 
-The Lean development proves the requested conclusions of manuscript Theorems 1 and 2 for actual finite complex matrices and completely positive trace-preserving channels. It does **not** claim to formalize the entire manuscript. The source manuscript is [article.tex](../article.tex); the primary statement locators are its TeX labels, not theorem numbering alone.
+The Lean development proves the requested conclusions of manuscript Theorems 1 and 2 for actual finite complex matrices and completely positive trace-preserving channels. It does **not** claim to formalize the entire manuscript. The source manuscript is [article.tex](../manuscript/article.tex); the primary statement locators are its TeX labels, not theorem numbering alone.
 
 ## Main results
 
@@ -46,8 +46,8 @@ scope; the extension does not independently rebuild representation theory.
 
 ## Fidelity and boundaries
 
-The current companion [Letter](../letter.tex) is bundled with
-[its figure](../compression.pdf) and the shared bibliography. The
+The current companion [Letter](../manuscript/letter.tex) is bundled with
+[its figure](../manuscript/compression.pdf) and the shared bibliography. The
 [companion source map](../metadata/letter-source-map.json) records exact
 source hashes and relates its labeled equations to the Article declarations.
 The Letter's known-spectrum QMDL formulas (`eq:result_qmdl`,

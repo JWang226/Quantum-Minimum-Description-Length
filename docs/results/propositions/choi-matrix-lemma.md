@@ -1,7 +1,7 @@
 # Cartan Intertwiner and Choi Projector (Article Proposition 1)
 
 **Label:** `prop:choi`; original channel definition `eq:gen_cloner`.
-**Source:** [current Article](https://github.com/JWang226/Quantum-Minimum-Description-Length/blob/main/article.tex#L442). The Notes used the label `lem:choi_prv`; that is a separate version's reference.
+**Source:** [current Article](https://github.com/JWang226/Quantum-Minimum-Description-Length/blob/main/manuscript/article.tex#L442). The Notes used the label `lem:choi_prv`; that is a separate version's reference.
 
 ## Statement
 

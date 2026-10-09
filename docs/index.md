@@ -2,8 +2,8 @@
 
 Lean 4 proofs of Article Theorems 1 and 2, by **Patrick Hayden, Alexander Maloney,
 Jinzhao Wang and Yuxiang Yang**. The formalization was developed with assistance
-from Codex. The current [Article](https://github.com/JWang226/Quantum-Minimum-Description-Length/blob/main/article.tex)
-and [Letter](https://github.com/JWang226/Quantum-Minimum-Description-Length/blob/main/letter.tex) are included in
+from Codex. The current [Article](https://github.com/JWang226/Quantum-Minimum-Description-Length/blob/main/manuscript/article.tex)
+and [Letter](https://github.com/JWang226/Quantum-Minimum-Description-Length/blob/main/manuscript/letter.tex) are included in
 the [repository](https://github.com/JWang226/Quantum-Minimum-Description-Length).
 
 The frozen [**v0.1.0-rc1 release**](https://github.com/JWang226/Quantum-Minimum-Description-Length/releases/tag/v0.1.0-rc1) includes the source archive,

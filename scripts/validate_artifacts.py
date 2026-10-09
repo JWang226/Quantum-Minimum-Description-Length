@@ -525,29 +525,29 @@ class Validator:
                      "Unexpected companion mapping format")
         sources = data["source_files"]
         self.require(Counter(s["file"] for s in sources) ==
-                     Counter(["article.tex", "letter.tex", "free.bib", "compression.pdf"]),
+                     Counter(["manuscript/article.tex", "manuscript/letter.tex", "manuscript/free.bib", "manuscript/compression.pdf"]),
                      "Companion source inventory is incomplete or duplicated")
         by_file = {s["file"]: s for s in sources}
         for source in sources:
             self.require(digest(self.path(source["file"]).read_bytes()) == source["sha256"],
                          f"Companion source checksum differs: {source['file']}")
-        self.require(data["manuscript"]["file"] == "letter.tex" and
-                     data["manuscript"]["sha256"] == by_file["letter.tex"]["sha256"] and
-                     article["manuscript"]["sha256"] == by_file["article.tex"]["sha256"],
+        self.require(data["manuscript"]["file"] == "manuscript/letter.tex" and
+                     data["manuscript"]["sha256"] == by_file["manuscript/letter.tex"]["sha256"] and
+                     article["manuscript"]["sha256"] == by_file["manuscript/article.tex"]["sha256"],
                      "Inconsistent manuscript identity in companion map")
         formalization = self.read_yaml("formalization.yaml")
-        letter_id = "letter.tex; SHA-256 " + by_file["letter.tex"]["sha256"]
+        letter_id = "manuscript/letter.tex; SHA-256 " + by_file["manuscript/letter.tex"]["sha256"]
         self.require(sum(s.get("id") == letter_id for s in formalization["sources"]) == 1,
                      "formalization.yaml does not identify the current Letter")
         article_entries = {e["id"]: e for e in article["entries"]}
         entries = data["entries"]
         ids = [entry["id"] for entry in entries]
         self.require(entries and len(ids) == len(set(ids)), "Empty or duplicate Letter entry ids")
-        lines = self.text("letter.tex").splitlines()
+        lines = self.text("manuscript/letter.tex").splitlines()
         statuses = {"consequence-of-article", "definition-correspondence", "not-formalized"}
         for entry in entries:
             self.require(entry["status"] in statuses, f"Unknown Letter coverage: {entry['id']}")
-            self.require(entry["manuscript"]["file"] == "letter.tex", "Unexpected Letter entry source")
+            self.require(entry["manuscript"]["file"] == "manuscript/letter.tex", "Unexpected Letter entry source")
             self.require(entry["manuscript"]["anchors"], "Letter entry has no source anchor")
             for anchor in entry["manuscript"]["anchors"]:
                 token = "\\label{" + anchor["label"] + "}"
@@ -610,7 +610,7 @@ class Validator:
             "total_public_declarations_audited": sum(kinds.values()),
             "lean_toolchain": TOOLCHAIN,
             "mathlib_revision": MATHLIB_REVISION,
-            "manuscript_sha256": digest(self.path("article.tex").read_bytes()),
+            "manuscript_sha256": digest(self.path("manuscript/article.tex").read_bytes()),
         }
         wrong = [key for key, value in expected.items() if summary.get(key) != value]
         self.require(set(summary.get("allowed_axioms", [])) == ALLOWED_AXIOMS, "Unexpected audit axiom policy")

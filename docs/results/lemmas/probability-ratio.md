@@ -1,7 +1,7 @@
 # Eigenvalue Ratio
 
 **Label:** `lem:ratio`.
-**Source:** [current Article](https://github.com/JWang226/Quantum-Minimum-Description-Length/blob/main/article.tex#L1551).
+**Source:** [current Article](https://github.com/JWang226/Quantum-Minimum-Description-Length/blob/main/manuscript/article.tex#L1551).
 
 ## Statement
 

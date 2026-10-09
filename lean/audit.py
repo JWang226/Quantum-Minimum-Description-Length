@@ -122,7 +122,7 @@ else:
         "lean_toolchain": (ROOT / "lean-toolchain").read_text().strip(),
         "mathlib_revision": "f156f7abd91ac67adb22bf999e5a71ba22e22e41",
         "allowed_axioms": sorted(ALLOWED),
-        "manuscript_sha256": hashlib.sha256((ROOT.parent / "article.tex").read_bytes()).hexdigest(),
+        "manuscript_sha256": hashlib.sha256((ROOT.parent / "manuscript/article.tex").read_bytes()).hexdigest(),
     }
     (ROOT / "verification/summary.json").write_text(json.dumps(summary, indent=2) + "\n")
     print(f"PASS: {len(items)} declarations; no placeholders or custom axioms.")

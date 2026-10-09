@@ -1,6 +1,6 @@
 # Davis–Kahan Perturbation Theory — Historical Background
 
-**Status:** Background for an older fidelity proof route. The historical wiki used `lem:davis_kahan`; this label is absent from the current root `article.tex`. It is not a current Article lemma number or a separately certified theorem in this development.
+**Status:** Background for an older fidelity proof route. The historical wiki used `lem:davis_kahan`; this label is absent from the current `manuscript/article.tex`. It is not a current Article lemma number or a separately certified theorem in this development.
 
 ## Idea
 

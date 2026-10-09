@@ -1,7 +1,7 @@
 # Highest-Weight Subspace Perturbation and Trace Deficits
 
 **Label:** `lem:perturbation`; equations `eq:projector_casimir_bound`, `eq:casimir_slice_gap`, `eq:casimir_deficit_compression`.
-**Source:** [current Article](https://github.com/JWang226/Quantum-Minimum-Description-Length/blob/main/article.tex#L1412).
+**Source:** [current Article](https://github.com/JWang226/Quantum-Minimum-Description-Length/blob/main/manuscript/article.tex#L1412).
 
 ## Statement
 

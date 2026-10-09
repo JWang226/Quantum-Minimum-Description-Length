@@ -1,7 +1,7 @@
 # Schur Concentration and Atypical Mass
 
 **Labels:** `lem:tail_prob`, `eq:tail_prob_bound` in the current [[Article]].
-**Source:** [Article concentration lemma and tail estimate](https://github.com/JWang226/Quantum-Minimum-Description-Length/blob/main/article.tex#L788).
+**Source:** [Article concentration lemma and tail estimate](https://github.com/JWang226/Quantum-Minimum-Description-Length/blob/main/manuscript/article.tex#L788).
 **Lean endpoint used by Theorem 1:** [FreeEntropy.SchurWeyl.physicalAtypicalMass_le_tailBound](https://github.com/JWang226/Quantum-Minimum-Description-Length/blob/main/lean/FreeEntropy/SchurWeylConcentration.lean#L48).
 
 ## Statement

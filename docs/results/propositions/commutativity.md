@@ -1,7 +1,7 @@
 # Commutativity (Article Proposition 3)
 
 **Label:** `prop:commutativity` in the current Article; the Notes used `lem:commutativity`.
-**Source:** [current Article](https://github.com/JWang226/Quantum-Minimum-Description-Length/blob/main/article.tex#L589).
+**Source:** [current Article](https://github.com/JWang226/Quantum-Minimum-Description-Length/blob/main/manuscript/article.tex#L589).
 
 ## Statement
 

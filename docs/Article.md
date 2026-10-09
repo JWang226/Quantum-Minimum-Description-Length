@@ -2,7 +2,7 @@
 
 **Authors:** Patrick Hayden, Alexander Maloney, Jinzhao Wang, Yuxiang Yang
 
-**Current source:** [repository-root `article.tex`](https://github.com/JWang226/Quantum-Minimum-Description-Length/blob/main/article.tex)
+**Current source:** [`manuscript/article.tex`](https://github.com/JWang226/Quantum-Minimum-Description-Length/blob/main/manuscript/article.tex)
 
 **Source identity:** the manuscript hash and exact statement labels are recorded in
 [the manuscript-to-Lean map](https://github.com/JWang226/Quantum-Minimum-Description-Length/blob/main/metadata/natural-language-map.json).

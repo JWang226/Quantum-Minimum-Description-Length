@@ -3,28 +3,28 @@
   "version": 1,
   "path_base": "repository root",
   "manuscript": {
-    "file": "letter.tex",
+    "file": "manuscript/letter.tex",
     "title": "Free entropy and quantum minimum description length",
     "sha256": "0b6a2c45b1565c3e9aadcdaa1c6631a2d7e2e2ec259b7382d04bcbce83622260"
   },
   "source_files": [
     {
-      "file": "article.tex",
+      "file": "manuscript/article.tex",
       "sha256": "b16105860b6db50b877e1bc4ea74dc04e8d55d74e9511e77e68b0b6921933da7",
       "role": "Current companion proof manuscript; Article Theorems 1 and 2 are formalized"
     },
     {
-      "file": "letter.tex",
+      "file": "manuscript/letter.tex",
       "sha256": "0b6a2c45b1565c3e9aadcdaa1c6631a2d7e2e2ec259b7382d04bcbce83622260",
       "role": "Current companion Letter; equation-level correspondence and geometric scope recorded below"
     },
     {
-      "file": "free.bib",
+      "file": "manuscript/free.bib",
       "sha256": "a58aa8cf71c1534c4fc48345dea5457a8c4bf692eb86326f28defbdb926c2b11",
       "role": "Shared bibliography"
     },
     {
-      "file": "compression.pdf",
+      "file": "manuscript/compression.pdf",
       "sha256": "6707de047ac16f44d3a5cf9549f34128bc1972b66d2edb0ed4635a3acd234be1",
       "role": "Figure required by the Letter"
     }
@@ -40,7 +40,7 @@
       "id": "letter-full-rank-qmdl",
       "title": "Full-rank known-spectrum QMDL",
       "manuscript": {
-        "file": "letter.tex",
+        "file": "manuscript/letter.tex",
         "anchors": [
           {
             "label": "eq:result_qmdl",
@@ -80,7 +80,7 @@
       "id": "letter-rank-deficient-qmdl",
       "title": "Rank-deficient known-spectrum QMDL",
       "manuscript": {
-        "file": "letter.tex",
+        "file": "manuscript/letter.tex",
         "anchors": [
           {
             "label": "eq:rank_def_qmdl",
@@ -120,7 +120,7 @@
       "id": "letter-error",
       "title": "Global reconstruction-error criterion",
       "manuscript": {
-        "file": "letter.tex",
+        "file": "manuscript/letter.tex",
         "anchors": [
           {
             "label": "eq:error",
@@ -143,7 +143,7 @@
       "id": "letter-weyl",
       "title": "Dimension of the retained representation",
       "manuscript": {
-        "file": "letter.tex",
+        "file": "manuscript/letter.tex",
         "anchors": [
           {
             "label": "eq:weyl_geometry",
@@ -182,7 +182,7 @@
       "id": "letter-physical-entropy",
       "title": "Physical free entropy and regularized spectral term",
       "manuscript": {
-        "file": "letter.tex",
+        "file": "manuscript/letter.tex",
         "anchors": [
           {
             "label": "eq:free_phys_def",
@@ -203,7 +203,7 @@
       "id": "letter-hs-geometry",
       "title": "Hilbert-Schmidt Jacobian and full-rank tube expansion",
       "manuscript": {
-        "file": "letter.tex",
+        "file": "manuscript/letter.tex",
         "anchors": [
           {
             "label": "eq:hs_volume_element",
@@ -224,7 +224,7 @@
       "id": "letter-entropy-relation",
       "title": "Half-physical-entropy identity and spectrum-independent offset",
       "manuscript": {
-        "file": "letter.tex",
+        "file": "manuscript/letter.tex",
         "anchors": [
           {
             "label": "eq:result",
@@ -252,7 +252,7 @@
       "id": "letter-degenerate-geometry",
       "title": "General-multiplicity tube volume",
       "manuscript": {
-        "file": "letter.tex",
+        "file": "manuscript/letter.tex",
         "anchors": [
           {
             "label": "eq:degenerate_volume",
@@ -273,7 +273,7 @@
       "id": "letter-double-scaling",
       "title": "Conditional large-dimension bridge to Voiculescu entropy",
       "manuscript": {
-        "file": "letter.tex",
+        "file": "manuscript/letter.tex",
         "anchors": [
           {
             "label": "rem:bridge",

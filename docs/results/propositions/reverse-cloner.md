@@ -1,7 +1,7 @@
 # Reverse Cloner and Petz Recovery (Article Proposition 2)
 
 **Label:** `prop:reverse`.
-**Source:** [current Article](https://github.com/JWang226/Quantum-Minimum-Description-Length/blob/main/article.tex#L540).
+**Source:** [current Article](https://github.com/JWang226/Quantum-Minimum-Description-Length/blob/main/manuscript/article.tex#L540).
 
 ## Statement
 

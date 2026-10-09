@@ -1,7 +1,7 @@
 # Positive-Order and Retained-Branch Bounds
 
 **Labels:** `eq:forward_monotonicity`, `eq:branch_trace_comparison`, `eq:positive_deficit_trace` in the current [[Article]].
-**Source:** [retaining the highest-weight branch](https://github.com/JWang226/Quantum-Minimum-Description-Length/blob/main/article.tex#L1364), [positive remainder bound](https://github.com/JWang226/Quantum-Minimum-Description-Length/blob/main/article.tex#L1686).
+**Source:** [retaining the highest-weight branch](https://github.com/JWang226/Quantum-Minimum-Description-Length/blob/main/manuscript/article.tex#L1364), [positive remainder bound](https://github.com/JWang226/Quantum-Minimum-Description-Length/blob/main/manuscript/article.tex#L1686).
 **Lean theorem:** [FreeEntropy.TraceDistance.retained_branch_error_bound](https://github.com/JWang226/Quantum-Minimum-Description-Length/blob/main/lean/FreeEntropy/TraceDistance.lean#L172).
 
 ## Statement

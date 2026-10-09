@@ -1,7 +1,7 @@
 # Weyl Dimension-Ratio Bound
 
 **Label:** `lem:dim_ratio` in the current [[Article]].
-**Source:** [Article finite dimension-ratio lemma](https://github.com/JWang226/Quantum-Minimum-Description-Length/blob/main/article.tex#L1598).
+**Source:** [Article finite dimension-ratio lemma](https://github.com/JWang226/Quantum-Minimum-Description-Length/blob/main/manuscript/article.tex#L1598).
 **Lean theorem:** [FreeEntropy.ExteriorRepresentation.canonical_dimensionRatio_deficit](https://github.com/JWang226/Quantum-Minimum-Description-Length/blob/main/lean/FreeEntropy/CanonicalDimensionRatio.lean#L72).
 
 ## Statement

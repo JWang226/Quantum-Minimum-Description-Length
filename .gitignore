@@ -33,7 +33,6 @@ sources/
 
 # Other drafts in the working folder are outside this release
 /letter*
-!/letter.tex
 /notes/
 /prv_channel_optimality.tex
 /JHEP.bst
@@ -47,11 +46,6 @@ sources/
 /lean/verification/check-output.txt
 /lean/verification/comparator-*.log
 
-# The supplied PDF is an optional release asset, not part of the proof build
-/article.pdf
-
 # Author-requested manuscript PDFs and bibliography support files
-!/article.pdf
-!/letter.pdf
-!/articleNotes.bib
-!/letterNotes.bib
+!/manuscript/articleNotes.bib
+!/manuscript/letterNotes.bib

@@ -17,7 +17,7 @@ sources:
   - Alexander Maloney
   - Jinzhao Wang
   - Yuxiang Yang
-  id: article.tex; SHA-256 b16105860b6db50b877e1bc4ea74dc04e8d55d74e9511e77e68b0b6921933da7
+  id: manuscript/article.tex; SHA-256 b16105860b6db50b877e1bc4ea74dc04e8d55d74e9511e77e68b0b6921933da7
   type: manuscript
   license: unspecified
   note: Bundled source manuscript. Theorems thm:qmdl and thm:main are the requested scope. Publication
@@ -29,7 +29,7 @@ sources:
   - Alexander Maloney
   - Jinzhao Wang
   - Yuxiang Yang
-  id: letter.tex; SHA-256 0b6a2c45b1565c3e9aadcdaa1c6631a2d7e2e2ec259b7382d04bcbce83622260
+  id: manuscript/letter.tex; SHA-256 0b6a2c45b1565c3e9aadcdaa1c6631a2d7e2e2ec259b7382d04bcbce83622260
   type: manuscript
   license: unspecified
   note: Current author-supplied companion Letter, with compression.pdf and the shared free.bib. Its QMDL

@@ -1,7 +1,7 @@
 # Converse (Theorem 1, lower bound)
 
 **Labels:** `thm:qmdl`, `thm:converse` in the current [[Article]].
-**Source:** [main statement](https://github.com/JWang226/Quantum-Minimum-Description-Length/blob/main/article.tex#L85), [converse proof](https://github.com/JWang226/Quantum-Minimum-Description-Length/blob/main/article.tex#L923).
+**Source:** [main statement](https://github.com/JWang226/Quantum-Minimum-Description-Length/blob/main/manuscript/article.tex#L85), [converse proof](https://github.com/JWang226/Quantum-Minimum-Description-Length/blob/main/manuscript/article.tex#L923).
 **Lean endpoints:** [FreeEntropy.theorem1_converse](https://github.com/JWang226/Quantum-Minimum-Description-Length/blob/main/lean/FreeEntropy/Theorem1Complete.lean#L43) and [FreeEntropy.theorem1_converse_of_uniform](https://github.com/JWang226/Quantum-Minimum-Description-Length/blob/main/lean/FreeEntropy/Theorem1Complete.lean#L60).
 
 The current [[Letter]] states the full-rank liminf converse immediately after `eq:result_qmdl` and refers to the companion Article for its proof. The Article supplies the rank-$r$ and Haar-average formulations stated here. The Letter's entropy equality describes an attaining sequence; arbitrary reliable codes satisfy a lower bound, not the same equality.

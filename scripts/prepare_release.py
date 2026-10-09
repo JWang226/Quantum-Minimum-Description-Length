@@ -23,7 +23,7 @@ PREFIX = "free-entropy-formalization"
 # Every non-proof file is individually named. New files require an explicit
 # review of this list; recursive copies of the manuscript directory are unsafe.
 CORE_FILES = (
-    "article.tex", "letter.tex", "compression.pdf", "free.bib", "quantumarticle.cls", "utphys.bst",
+    "manuscript/article.tex", "manuscript/letter.tex", "manuscript/compression.pdf", "manuscript/free.bib", "manuscript/quantumarticle.cls", "manuscript/utphys.bst",
     "lean/lakefile.toml", "lean/lake-manifest.json", "lean/lean-toolchain",
     "lean/FreeEntropy.lean", "lean/Audit.lean", "lean/audit.py", "lean/check.sh",
     "lean/Theorem1.lean", "lean/Theorem2.lean", "lean/All.lean",
@@ -227,11 +227,11 @@ def collect(root: Path, args: argparse.Namespace) -> tuple[dict[str, bytes], dic
     for pattern in SOURCE_PATTERNS:
         names.update(path.relative_to(root).as_posix() for path in root.glob(pattern))
     if args.include_manuscript_pdf:
-        names.add("article.pdf")
+        names.add("manuscript/article.pdf")
     files = {name: read_regular(root, name) for name in sorted(names)}
-    if digest(files["article.tex"]) != MANUSCRIPT_SHA256:
+    if digest(files["manuscript/article.tex"]) != MANUSCRIPT_SHA256:
         raise ValueError("article.tex differs from the authorized original manuscript")
-    if digest(files["letter.tex"]) != LETTER_SHA256:
+    if digest(files["manuscript/letter.tex"]) != LETTER_SHA256:
         raise ValueError("letter.tex differs from the supplied companion Letter")
     if files["lean/lean-toolchain"].decode().strip() != LEAN_TOOLCHAIN:
         raise ValueError("Lean toolchain does not match the pinned release toolchain")
@@ -384,9 +384,9 @@ def main() -> None:
         else:
             export_archive(args.output, files)
         # Confirm the input remained intact throughout collection/export.
-        if digest(read_regular(root, "article.tex")) != MANUSCRIPT_SHA256:
+        if digest(read_regular(root, "manuscript/article.tex")) != MANUSCRIPT_SHA256:
             raise ValueError("Manuscript changed during export")
-        if digest(read_regular(root, "letter.tex")) != LETTER_SHA256:
+        if digest(read_regular(root, "manuscript/letter.tex")) != LETTER_SHA256:
             raise ValueError("Companion Letter changed during export")
         print(f"Selected {len(files)} files; manuscript SHA-256 {MANUSCRIPT_SHA256}.")
         print("Verification: " + manifest["verification"] + ".")

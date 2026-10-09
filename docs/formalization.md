@@ -117,8 +117,8 @@ Comparator and Nanoda execution is local and unsandboxed.
 
 ## Limits of the claim
 
-The current author-supplied [Article](https://github.com/JWang226/Quantum-Minimum-Description-Length/blob/main/article.tex)
-and [Letter](https://github.com/JWang226/Quantum-Minimum-Description-Length/blob/main/letter.tex) are included
+The current author-supplied [Article](https://github.com/JWang226/Quantum-Minimum-Description-Length/blob/main/manuscript/article.tex)
+and [Letter](https://github.com/JWang226/Quantum-Minimum-Description-Length/blob/main/manuscript/letter.tex) are included
 at the repository root, with their shared bibliography and the Letter's figure.
 The Article source is unchanged from the independent proof check. The
 [Letter source map](https://github.com/JWang226/Quantum-Minimum-Description-Length/blob/main/metadata/letter-source-map.json)

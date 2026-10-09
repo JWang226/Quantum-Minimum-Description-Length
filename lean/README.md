@@ -10,7 +10,7 @@ The final statements concern actual finite complex matrices and completely
 positive trace-preserving (CPTP) channels. The physical source is
 `(U diag(x) U†)^{⊗n}` on the literal tensor-word space. The spectrum is fixed,
 its positive eigenvalues are distinct, and the unknown unitary ranges over
-`U(d)`. Zero eigenvalues are included. The manuscript `../article.tex` is
+`U(d)`. Zero eigenvalues are included. The manuscript `../manuscript/article.tex` is
 unchanged.
 
 ## Main theorems

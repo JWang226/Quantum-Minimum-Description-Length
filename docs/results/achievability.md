@@ -1,7 +1,7 @@
 # Achievability (Theorem 1, upper bound)
 
 **Labels:** `thm:qmdl`, `thm:achievability`, `eq:result` in the current [[Article]].
-**Source:** [main statement](https://github.com/JWang226/Quantum-Minimum-Description-Length/blob/main/article.tex#L85), [achievability section](https://github.com/JWang226/Quantum-Minimum-Description-Length/blob/main/article.tex#L607).
+**Source:** [main statement](https://github.com/JWang226/Quantum-Minimum-Description-Length/blob/main/manuscript/article.tex#L85), [achievability section](https://github.com/JWang226/Quantum-Minimum-Description-Length/blob/main/manuscript/article.tex#L607).
 **Lean endpoint:** [FreeEntropy.theorem1_achievability](https://github.com/JWang226/Quantum-Minimum-Description-Length/blob/main/lean/FreeEntropy/Theorem1Complete.lean#L23).
 
 The current [[Letter]] restates this attaining memory formula in `eq:result_qmdl` for full rank and `eq:rank_def_qmdl` for lower rank. Its separate volume calculation yields $|M_n|=\tfrac12\chi_{\mathrm{phy}}(\rho;n^{-1})+C_{d,r}+o(1)$. That entropy identification is additional Letter material, not an extra conclusion of the Lean endpoint below.

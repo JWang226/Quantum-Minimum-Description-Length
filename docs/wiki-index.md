@@ -26,11 +26,11 @@ for Lean, Comparator and Nanoda.
 
 | File | Title | Role |
 |------|-------|------|
-| [[Letter]] (repository-root `letter.tex`) | Free entropy and quantum minimum description length | Current Letter: physical entropy, orbit geometry and operational relation |
-| [[Article]] (repository-root `article.tex`) | Quantum minimum description of density matrices | Full journal paper (proofs) |
+| [[Letter]] (`manuscript/letter.tex`) | Free entropy and quantum minimum description length | Current Letter: physical entropy, orbit geometry and operational relation |
+| [[Article]] (`manuscript/article.tex`) | Quantum minimum description of density matrices | Full journal paper (proofs) |
 | [[Notes]] (`sources/Free.tex`, historical local snapshot) | Free entropy and quantum minimum description length | Earlier extended notes (+ unitary & observable programming) |
 
-The repository-root Article and Letter match the author-supplied sources.
+The Article and Letter in `manuscript/` match the author-supplied sources.
 They share `free.bib`; the Letter also includes `compression.pdf`.
 The [companion source map](https://github.com/JWang226/Quantum-Minimum-Description-Length/blob/main/metadata/letter-source-map.json)
 records file hashes, Letter equation labels and the boundary of Lean coverage.

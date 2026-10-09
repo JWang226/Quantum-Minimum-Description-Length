@@ -3,7 +3,7 @@
   "version": 1,
   "path_base": "repository root",
   "manuscript": {
-    "file": "article.tex",
+    "file": "manuscript/article.tex",
     "title": "Quantum minimum description of density matrices",
     "sha256": "b16105860b6db50b877e1bc4ea74dc04e8d55d74e9511e77e68b0b6921933da7"
   },
@@ -19,7 +19,7 @@
       "id": "theorem1-achievability",
       "title": "Theorem 1: achievability",
       "manuscript": {
-        "file": "article.tex",
+        "file": "manuscript/article.tex",
         "anchors": [
           {
             "label": "thm:qmdl",
@@ -48,7 +48,7 @@
       "id": "theorem1-converse-average",
       "title": "Theorem 1: Haar-average converse",
       "manuscript": {
-        "file": "article.tex",
+        "file": "manuscript/article.tex",
         "anchors": [
           {
             "label": "thm:qmdl",
@@ -77,7 +77,7 @@
       "id": "theorem1-converse-uniform",
       "title": "Theorem 1: worst-case converse",
       "manuscript": {
-        "file": "article.tex",
+        "file": "manuscript/article.tex",
         "anchors": [
           {
             "label": "thm:qmdl",
@@ -105,7 +105,7 @@
       "id": "theorem2-choi",
       "title": "Theorem 2: original Choi-projector channels",
       "manuscript": {
-        "file": "article.tex",
+        "file": "manuscript/article.tex",
         "anchors": [
           {
             "label": "thm:main",
@@ -134,7 +134,7 @@
       "id": "theorem2-cartan",
       "title": "Theorem 2: equivalent Cartan form",
       "manuscript": {
-        "file": "article.tex",
+        "file": "manuscript/article.tex",
         "anchors": [
           {
             "label": "thm:main",
@@ -167,7 +167,7 @@
       "id": "theorem2-petz",
       "title": "Theorem 2: equivalent Petz form",
       "manuscript": {
-        "file": "article.tex",
+        "file": "manuscript/article.tex",
         "anchors": [
           {
             "label": "thm:main",
@@ -194,7 +194,7 @@
       "id": "fixed-spectrum",
       "title": "Spectrum assumptions",
       "manuscript": {
-        "file": "article.tex",
+        "file": "manuscript/article.tex",
         "anchors": [
           {
             "label": "thm:qmdl",
@@ -222,7 +222,7 @@
       "id": "quantum-channel",
       "title": "Completely positive trace-preserving maps",
       "manuscript": {
-        "file": "article.tex",
+        "file": "manuscript/article.tex",
         "anchors": [
           {
             "label": "eq:error",
@@ -245,7 +245,7 @@
       "id": "physical-source",
       "title": "Physical tensor source",
       "manuscript": {
-        "file": "article.tex",
+        "file": "manuscript/article.tex",
         "anchors": [
           {
             "label": "eq:error",
@@ -268,7 +268,7 @@
       "id": "trace-distance",
       "title": "Half trace norm",
       "manuscript": {
-        "file": "article.tex",
+        "file": "manuscript/article.tex",
         "anchors": [
           {
             "label": "eq:error",
@@ -295,7 +295,7 @@
       "id": "reconstruction-errors",
       "title": "Worst-case and average reconstruction errors",
       "manuscript": {
-        "file": "article.tex",
+        "file": "manuscript/article.tex",
         "anchors": [
           {
             "label": "eq:error",
@@ -329,7 +329,7 @@
       "id": "qmdl",
       "title": "Exact QMDL expression",
       "manuscript": {
-        "file": "article.tex",
+        "file": "manuscript/article.tex",
         "anchors": [
           {
             "label": "eq:result",
@@ -352,7 +352,7 @@
       "id": "representation-state",
       "title": "Normalized representation state",
       "manuscript": {
-        "file": "article.tex",
+        "file": "manuscript/article.tex",
         "anchors": [
           {
             "label": "thm:main",
@@ -386,7 +386,7 @@
       "id": "finite-bound-parameters",
       "title": "Exact D and minimum supported row gap",
       "manuscript": {
-        "file": "article.tex",
+        "file": "manuscript/article.tex",
         "anchors": [
           {
             "label": "thm:main",
@@ -421,7 +421,7 @@
       "id": "explicit-cloning-constant",
       "title": "Explicit admissible cloning constant",
       "manuscript": {
-        "file": "article.tex",
+        "file": "manuscript/article.tex",
         "anchors": [
           {
             "label": "thm:main",
@@ -461,7 +461,7 @@
       "id": "original-channel-definitions",
       "title": "Literal normalized Choi contractions",
       "manuscript": {
-        "file": "article.tex",
+        "file": "manuscript/article.tex",
         "anchors": [
           {
             "label": "eq:gen_cloner",
@@ -497,7 +497,7 @@
       "id": "prv-projectors",
       "title": "Forward and reverse PRV components",
       "manuscript": {
-        "file": "article.tex",
+        "file": "manuscript/article.tex",
         "anchors": [
           {
             "label": "eq:gen_cloner",
@@ -537,7 +537,7 @@
       "id": "cartan-choi-identification",
       "title": "Cartan and original Choi formulas agree",
       "manuscript": {
-        "file": "article.tex",
+        "file": "manuscript/article.tex",
         "anchors": [
           {
             "label": "prop:choi",
@@ -579,7 +579,7 @@
       "id": "petz-identification",
       "title": "Reverse cloner and Petz recovery",
       "manuscript": {
-        "file": "article.tex",
+        "file": "manuscript/article.tex",
         "anchors": [
           {
             "label": "prop:reverse",
@@ -621,7 +621,7 @@
       "id": "zero-increment",
       "title": "Coincident rows",
       "manuscript": {
-        "file": "article.tex",
+        "file": "manuscript/article.tex",
         "anchors": [
           {
             "label": "thm:main",
@@ -644,7 +644,7 @@
       "id": "weyl-dimension",
       "title": "Actual representation dimension",
       "manuscript": {
-        "file": "article.tex",
+        "file": "manuscript/article.tex",
         "anchors": [
           {
             "label": "eq:weyl_dim",
@@ -667,7 +667,7 @@
       "id": "padded-memory-dimension",
       "title": "Padded target and exact memory expansion",
       "manuscript": {
-        "file": "article.tex",
+        "file": "manuscript/article.tex",
         "anchors": [
           {
             "label": "eq:target_rep",
@@ -701,7 +701,7 @@
       "id": "physical-code",
       "title": "Actual encoder and decoder",
       "manuscript": {
-        "file": "article.tex",
+        "file": "manuscript/article.tex",
         "anchors": [
           {
             "label": "eq:optimal_encoder",
@@ -735,7 +735,7 @@
       "id": "actual-concentration",
       "title": "Physical atypical mass",
       "manuscript": {
-        "file": "article.tex",
+        "file": "manuscript/article.tex",
         "anchors": [
           {
             "label": "lem:tail_prob",
@@ -769,7 +769,7 @@
       "id": "finite-orbit-memory",
       "title": "Irreducible-orbit memory lower bound",
       "manuscript": {
-        "file": "article.tex",
+        "file": "manuscript/article.tex",
         "anchors": [
           {
             "label": "prop:compact_orbit_memory",
@@ -797,7 +797,7 @@
       "id": "uniform-gap",
       "title": "Uniform positive spectral gap sufficient for converse",
       "manuscript": {
-        "file": "article.tex",
+        "file": "manuscript/article.tex",
         "anchors": [
           {
             "label": "lem:sector_gap",
@@ -827,7 +827,7 @@
       "id": "multiplicity-monotonicity",
       "title": "Weight multiplicity monotonicity",
       "manuscript": {
-        "file": "article.tex",
+        "file": "manuscript/article.tex",
         "anchors": [
           {
             "label": "lem:kostka",
@@ -857,7 +857,7 @@
       "id": "root-coefficient-count",
       "title": "Rank-supported root coefficient envelope",
       "manuscript": {
-        "file": "article.tex",
+        "file": "manuscript/article.tex",
         "anchors": [
           {
             "label": "eq:verma_multiplicity_bound",
@@ -880,7 +880,7 @@
       "id": "shallow-multiplicities",
       "title": "Shallow multiplicity equality",
       "manuscript": {
-        "file": "article.tex",
+        "file": "manuscript/article.tex",
         "anchors": [
           {
             "label": "lem:shallow_multiplicities",
@@ -903,7 +903,7 @@
       "id": "local-casimir-deficit",
       "title": "Local highest-weight projector estimate",
       "manuscript": {
-        "file": "article.tex",
+        "file": "manuscript/article.tex",
         "anchors": [
           {
             "label": "lem:perturbation",
@@ -943,7 +943,7 @@
       "id": "mean-depth",
       "title": "Uniform mean-depth estimate",
       "manuscript": {
-        "file": "article.tex",
+        "file": "manuscript/article.tex",
         "anchors": [
           {
             "label": "lem:tail",
@@ -977,7 +977,7 @@
       "id": "eigenvalue-ratio",
       "title": "Eigenvalue normalization-ratio estimate",
       "manuscript": {
-        "file": "article.tex",
+        "file": "manuscript/article.tex",
         "anchors": [
           {
             "label": "lem:ratio",
@@ -1007,7 +1007,7 @@
       "id": "dimension-ratio",
       "title": "Actual Weyl dimension-ratio deficit",
       "manuscript": {
-        "file": "article.tex",
+        "file": "manuscript/article.tex",
         "anchors": [
           {
             "label": "lem:dim_ratio",

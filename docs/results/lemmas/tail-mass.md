@@ -1,7 +1,7 @@
 # Uniform Mean Depth and Tail Control
 
 **Label:** `lem:tail`; first-moment bound `eq:uniform_mean_depth`.
-**Source:** [current Article](https://github.com/JWang226/Quantum-Minimum-Description-Length/blob/main/article.tex#L1507).
+**Source:** [current Article](https://github.com/JWang226/Quantum-Minimum-Description-Length/blob/main/manuscript/article.tex#L1507).
 
 The historical page name is retained. The current lemma supplies a uniform first moment; the main proof does not choose a growing depth cutoff.
 

@@ -345,3 +345,9 @@ Every definition page now has: concrete examples, expanded intuition, connection
 - Updated the Article corresponding author, declarations and shared bibliography.
 - Refreshed current source checksums and TeX locators; all theorem statements and Lean source files are unchanged.
 - Preserved historical release and proof-audit records under their original source identities.
+
+## 2026-10-09 — Manuscript folder
+
+- Moved both manuscripts, their PDFs, all bibliography files, TeX class/style files and the Letter figure into `manuscript/`, preserving every file byte.
+- Updated current source maps, website links, compilation instructions and reproduction scripts for the new paths.
+- Kept historical release and proof-run records under their original source identities.

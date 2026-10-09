@@ -1,7 +1,7 @@
 # Memory Bound for Irreducible Compact-Group Orbits
 
 **Label:** `prop:compact_orbit_memory`, `eq:compact_orbit_memory` in the current [[Article]].
-**Source:** [Article proposition and proof](https://github.com/JWang226/Quantum-Minimum-Description-Length/blob/main/article.tex#L854).
+**Source:** [Article proposition and proof](https://github.com/JWang226/Quantum-Minimum-Description-Length/blob/main/manuscript/article.tex#L854).
 **Lean theorem:** [FreeEntropy.OrbitTraceDistance.irreducible_orbit_memory_bound](https://github.com/JWang226/Quantum-Minimum-Description-Length/blob/main/lean/FreeEntropy/OrbitTraceDistance.lean#L180).
 
 ## Statement
@@ -73,7 +73,7 @@ $$
 
 where $q_x=0$ for rank one. This follows from the simple highest line and the proved weight-counting envelope, uniformly in the highest row. The theorem [FreeEntropy.ExteriorRepresentation.canonical_orbit_memory_bound](https://github.com/JWang226/Quantum-Minimum-Description-Length/blob/main/lean/FreeEntropy/CanonicalOrbit.lean#L73) supplies the resulting bound without assuming a gap or a counting estimate.
 
-The Article's [uniform-gap lemma](https://github.com/JWang226/Quantum-Minimum-Description-Length/blob/main/article.tex#L901) states the sharper constant $(1-q_x)\prod_{i<j\le r}(1-x_j/x_i)$. The final canonical endpoint above uses $\gamma_*$, which suffices for the main converse. Distinct eigenvalues of the original spectrum imply the required simple **largest** eigenvalue; they do not require every eigenvalue of the representation state to be distinct.
+The Article's [uniform-gap lemma](https://github.com/JWang226/Quantum-Minimum-Description-Length/blob/main/manuscript/article.tex#L901) states the sharper constant $(1-q_x)\prod_{i<j\le r}(1-x_j/x_i)$. The final canonical endpoint above uses $\gamma_*$, which suffices for the main converse. Distinct eigenvalues of the original spectrum imply the required simple **largest** eigenvalue; they do not require every eigenvalue of the representation state to be distinct.
 
 ## Lean Map
 

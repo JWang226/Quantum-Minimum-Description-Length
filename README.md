@@ -1,9 +1,10 @@
 # Quantum minimum description of density matrices
 
-Lean 4 proofs of Theorems 1 and 2 in the [Article](article.tex), by Patrick Hayden,
+Lean 4 proofs of Theorems 1 and 2 in the [Article](manuscript/article.tex), by Patrick Hayden,
 Alexander Maloney, Jinzhao Wang and Yuxiang Yang. Developed with assistance from
-Codex. The current [Article](article.tex), [Letter](letter.tex), shared bibliography
-and Letter figure are included unchanged.
+Codex. The current [Article](manuscript/article.tex), [Letter](manuscript/letter.tex), shared bibliography
+and Letter figure are included unchanged in `manuscript/`.
+[Article PDF](manuscript/article.pdf) · [Letter PDF](manuscript/letter.pdf)
 
 [Proof website](https://jwang226.github.io/Quantum-Minimum-Description-Length/) ·
 [Proof route](https://jwang226.github.io/Quantum-Minimum-Description-Length/proof-structure/) ·

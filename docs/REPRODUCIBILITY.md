@@ -1,7 +1,7 @@
 # Reproducing the Lean verification
 
-The proof project stays in `lean/`; `article.tex` and `free.bib` stay at the
-repository root. Verification does not compile or modify the manuscript.
+The proof project stays in `lean/`; the manuscript sources, PDFs, bibliography
+and TeX support files are in `manuscript/`. Verification does not compile or modify the manuscript.
 
 For the simplest fresh-checkout workflow, start with
 [the verification guide](verify.md): `bash scripts/verify.sh all` runs the
@@ -154,8 +154,8 @@ proof source bytes. A stale summary makes the default export fail. It also
 checks the Lean/mathlib pins and the exact SHA-256 of both supplied manuscripts:
 
 ```text
-article.tex  b16105860b6db50b877e1bc4ea74dc04e8d55d74e9511e77e68b0b6921933da7
-letter.tex   0b6a2c45b1565c3e9aadcdaa1c6631a2d7e2e2ec259b7382d04bcbce83622260
+manuscript/article.tex  b16105860b6db50b877e1bc4ea74dc04e8d55d74e9511e77e68b0b6921933da7
+manuscript/letter.tex   0b6a2c45b1565c3e9aadcdaa1c6631a2d7e2e2ec259b7382d04bcbce83622260
 ```
 
 `--include-manuscript-pdf` adds the existing `article.pdf` without
@@ -252,7 +252,7 @@ configuration is not evidence that a hosted CI run has already occurred.
 The two supplied TeX sources are preserved byte-for-byte. A standard TeX
 distribution needs `quantumarticle.cls` and `utphys.bst` (bundled) for the
 Article and `revtex4-2` for the Letter. Both use the bundled `free.bib`; the
-Letter also needs `compression.pdf`. From the repository root, compile each
+Letter also needs `compression.pdf`. From `manuscript/`, compile each
 source with LaTeX, BibTeX, then two further LaTeX passes. Manuscript compilation
 is separate from checking the Lean proofs. The
 [companion source map](../metadata/letter-source-map.json) binds these inputs

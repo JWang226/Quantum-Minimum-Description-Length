@@ -64,7 +64,9 @@ def proof_sha(root: Path) -> str:
 
 
 def local(root: Path, name: str) -> Path:
-    path = (root / name).resolve()
+    # Earlier audit records retain their original logical source names.
+    relative = "manuscript/" + name if name in {"article.tex", "letter.tex", "free.bib"} else name
+    path = (root / relative).resolve()
     require(path.is_relative_to(root.resolve()), f"path escapes repository: {name}")
     require(path.is_file(), f"missing file: {name}")
     return path

@@ -1,7 +1,7 @@
 # Exact Weyl Dimension and the Memory Expansion
 
 **Labels:** `eq:weyl_dim`, `lem:weyl_asymptotic` in the current [[Article]].
-**Source:** [Article dimension lemma](https://github.com/JWang226/Quantum-Minimum-Description-Length/blob/main/article.tex#L671).
+**Source:** [Article dimension lemma](https://github.com/JWang226/Quantum-Minimum-Description-Length/blob/main/manuscript/article.tex#L671).
 **Lean endpoint for memory:** [FreeEntropy.ExteriorRepresentation.targetCanonicalDimension_log_asymptotic](https://github.com/JWang226/Quantum-Minimum-Description-Length/blob/main/lean/FreeEntropy/CanonicalDimension.lean#L86).
 
 ## Statement

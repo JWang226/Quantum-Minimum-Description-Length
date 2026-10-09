@@ -1,7 +1,7 @@
 # Cloning Accuracy (Article Theorem 2)
 
 **Label:** `thm:main`; bound `eq:cloning_trace_bound`.
-**Source:** [current Article, statement](https://github.com/JWang226/Quantum-Minimum-Description-Length/blob/main/article.tex#L562) and [direct trace-distance proof](https://github.com/JWang226/Quantum-Minimum-Description-Length/blob/main/article.tex#L1628).
+**Source:** [current Article, statement](https://github.com/JWang226/Quantum-Minimum-Description-Length/blob/main/manuscript/article.tex#L562) and [direct trace-distance proof](https://github.com/JWang226/Quantum-Minimum-Description-Length/blob/main/manuscript/article.tex#L1628).
 
 This page retains its historical `cloning-fidelity` address. The current Article proves a finite **trace-distance** estimate. The historical Notes/fidelity argument and its numbering should not be substituted for this statement. The current Letter summarizes the compression construction but does not state a separately numbered cloning theorem. Article Theorem 1 is the optimal-memory result.
 
