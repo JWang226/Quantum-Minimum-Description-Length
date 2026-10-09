@@ -154,7 +154,7 @@ proof source bytes. A stale summary makes the default export fail. It also
 checks the Lean/mathlib pins and the exact SHA-256 of both supplied manuscripts:
 
 ```text
-article.tex  09fc0a6bb205180cd820be94d843a1dc0d4342a543492e30dde54e367ae843a9
+article.tex  b16105860b6db50b877e1bc4ea74dc04e8d55d74e9511e77e68b0b6921933da7
 letter.tex   0b6a2c45b1565c3e9aadcdaa1c6631a2d7e2e2ec259b7382d04bcbce83622260
 ```
 

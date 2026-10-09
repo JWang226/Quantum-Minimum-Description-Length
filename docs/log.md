@@ -338,3 +338,10 @@ Every definition page now has: concrete examples, expanded intuition, connection
 - Updated reproduction commands, source-export contents and the configured
   CI guard. Independent human correspondence review and Linux/Landrun checks
   remain pending; the historical release-tag CI does not certify this extension.
+
+## 2026-10-09 — Manuscripts for journal submission
+
+- Added the author-supplied Article and Letter PDFs and Notes bibliography files.
+- Updated the Article corresponding author, declarations and shared bibliography.
+- Refreshed current source checksums and TeX locators; all theorem statements and Lean source files are unchanged.
+- Preserved historical release and proof-audit records under their original source identities.

@@ -28,7 +28,7 @@ Use the labels above. The current [[Letter]] presents its central results as lab
 
 ## Correspondence with the Current Letter
 
-The attached Article is byte-identical to the repository's checked `article.tex` (SHA-256 `09fc0a6bb205180cd820be94d843a1dc0d4342a543492e30dde54e367ae843a9`). Refreshing the Letter and wiki does not change the Lean theorem source or the manuscript used for its statement mapping.
+The current author-supplied Article was refreshed on 2026-10-09 for the CMP submission (SHA-256 `b16105860b6db50b877e1bc4ea74dc04e8d55d74e9511e77e68b0b6921933da7`), including corresponding-author information, declarations and bibliography updates. All theorem statements are unchanged from the previous snapshot. The Lean source and recorded proof runs are unchanged; the existing audit records retain the manuscript hash used when those checks ran. A fresh manuscript-bound audit can be produced with `lean/check.sh`.
 
 | Article result | Current Letter reference | Distinction |
 | --- | --- | --- |

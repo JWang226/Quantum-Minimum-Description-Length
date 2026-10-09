@@ -55,18 +55,18 @@
 \affiliation{Institute for Quantum and Information Sciences, Syracuse University, Syracuse, NY 13244, USA}
 
 \author{Jinzhao Wang}
-\email{wang.jinzhao226@gmail.com}
 \affiliation{Leinweber Institute for Theoretical Physics, Stanford University, Stanford, CA 94305, USA}
 \affiliation{Zyphra, San Francisco, CA 94105, USA}
 
 \author{Yuxiang Yang}
+\email[Corresponding author: ]{yuxiang@cs.hku.hk}
 \affiliation{QICI Quantum Information and Computation Initiative, School of Computing and Data Science, The University of Hong Kong, Pokfulam Road, Hong Kong, China}
  
 \date{}
 \maketitle
 
 \begin{abstract}
-We determine the optimal memory cost for compressing many copies of a density matrix with known spectrum and unknown eigenbasis, without preserving its purification. For fixed dimension and distinct positive eigenvalues, we obtain the cost through its additive constant. Achievability uses a generalization of Werner's cloning map to $\mathrm{GL}(d,\mathbb C)$ irreducible representations, with finite trace-distance bounds controlled by highest-weight differences and row gaps. The matching converse follows from a quantitative form of Koashi--Imoto incompressibility for irreducible group orbits under a spectral-gap assumption. We also identify the relation between this quantum minimum description length and universal lossless coding overhead; a companion letter develops its connection to free entropy.
+We study a variant of Schumacher compression. The task asks for the minimal memory cost for compressing many copies of a density matrix with known spectrum and unknown eigenbasis, without preserving its purification. For fixed dimension and distinct positive eigenvalues, we obtain the cost through its additive constant. Achievability uses a generalization of Werner's cloning map to $\mathrm{GL}(d,\mathbb C)$ irreducible representations, with finite trace-distance bounds controlled by highest-weight differences and row gaps. The matching converse follows from a quantitative form of Koashi--Imoto incompressibility for irreducible group orbits under a spectral-gap assumption. We also identify the relation between this quantum minimum description length and universal lossless coding overhead, and its connection to free entropy is explained in a companion letter~\cite{paper1}. We provide a \href{https://github.com/JWang226/Quantum-Minimum-Description-Length}{Lean certificate} for our proofs. 
 \end{abstract}
 
 
@@ -96,7 +96,7 @@ There exists a sequence of codes with $|M_n|=L_{d,r}(n,x)+o(1)$ and $\delta_n=O(
 The lower bound also holds when only the Haar-average reconstruction
 error tends to zero.
 \end{thm}
-Theorem~\ref{thm:qmdl} combines the achievability and converse results proved in Sections~\ref{sec:direct} and~\ref{sec:converse}. The dimension and spectrum are fixed throughout these limits; no uniform claim is made as positive eigenvalues collide or approach zero. The theorem asserts an achieving vanishing-error sequence, rather than the same expansion for every prescribed error schedule.
+Theorem~\ref{thm:qmdl} combines the achievability and converse results proved in Sections~\ref{sec:direct} and~\ref{sec:converse}. The dimension and spectrum are fixed throughout these limits; no uniform claim is made as positive eigenvalues collide or approach zero. The theorem asserts a sequence of codes that achieves this expansion with vanishing error, rather than the same expansion for every prescribed error schedule.
 
 Earlier work established the leading memory cost~\cite{yang2016optimal,yang2018compression}. For qubits, the protocol of Yang, Chiribella, and Hayashi (YCH) already has an achievable spectrum-dependent constant. We prove the matching converse through that constant and extend the construction to qudits. The coefficient of $\log n$ counts half the real dimension of the orbit, while the additive term resolves the eigenvalue dependence.
 
@@ -153,7 +153,7 @@ $r(2d-r-1)$. Its volume in the induced Hilbert--Schmidt metric is
 \]
 where $c_{d,r}$ depends only on $d,r$. One half of its logarithm
 therefore reproduces the spectral terms in $L_{d,r}(n,x)$.
-Our companion paper~\cite{paper1} makes the comparison precise
+Our companion letter~\cite{paper1} makes the comparison precise
 using a Hilbert--Schmidt tube-volume definition of physical free
 entropy and relates it to Voiculescu's microstate free
 entropy~\cite{voiculescu1993analogues,voiculescu1994analogues,voiculescu2002free}.
@@ -171,6 +171,8 @@ optimal memory theorem. Section~\ref{sec:redundancy} relates QMDL to
 the extra code length required by universal lossless compression.
 The technical trace-distance estimate is proved in
 Section~\ref{sec:fidelity}.
+
+The proofs of our main theorems are formalized in Lean and Comparator checked. See the \href{https://github.com/JWang226/Quantum-Minimum-Description-Length}{Lean Certificate} and an accompanying \href{https://jwang226.github.io/Quantum-Minimum-Description-Length/}{Proof Wiki guide}.
 
 
 \section{Background}\label{sec:background} 
@@ -499,6 +501,12 @@ and $\rho_{(n)}=\ketbra{\psi}{\psi}^{\otimes n}$, giving literal cloning
 of copies. 
 Theorem~\ref{thm:main} bounds the resulting error in trace distance.
 
+Beyond the resemblance to Werner's cloning map, one of us has recently used the generalized cloning map (for $\nu=\mu+\omega$) as a key construct in a protocol for mixed-states cloning~\cite{fei2026}, which is shown to be asymptotically optimal.  
+
+Furthermore, Werner's cloner has also been applied in the quantum purity amplification for qubits~\cite{keyl2001rate}. It turns out a special case of generalized cloning map also arises in qudit quantum purity amplification~\cite{li2025purity,li2026_1,li2026_2}, the (asymptotically) optimal protocol is the generalized cloning map from $\mu$ to the fundamental irrep $\Box$, and its Choi matrix projects onto the PRV component of $\mu^*\otimes\Box$.
+
+Hence, this generalization we propose is both formal and operational. 
+
 
 \subsubsection{Identity and qubit cases}
 When $\mu=\nu$, the PRV component is trivial and the channel is the identity.
@@ -531,7 +539,6 @@ The PRV component in \(\mu^*\otimes \nu\) is not, in general, the irreducible su
 \end{rem}
 
 
-The PRV choice also arises independently: in quantum purity amplification~\cite{keyl2001rate,li2025purity}, the optimal protocol is the generalized cloning map from $\mu$ to the fundamental irrep $\Box$, and its Choi matrix projects onto the PRV component of $\mu^*\otimes\Box$, which need not be the summand of smallest dimension.
 
 
 \subsubsection{Reverse cloner}
@@ -1829,8 +1836,26 @@ Lemma~\ref{lem:tail} (and $K(x)=0$ for $r=1$).
 
 \section*{Acknowledgments}
     We would like to thank Daniel Bump, Jiani Fei and Cynthia Yan for discussions and insights about covariant maps.
-    YY acknowledges the support of the National Natural Science Foundation of China via the Excellent Young Scientists Fund (Hong Kong and Macau) Project 12322516 and the support of Research Grants Council (RGC) of Hong Kong SAR via the NSFC/RGC Joint Research Scheme N\_HKU7107/24.
-    
+
+\section*{Statements and Declarations}
+
+\subsection*{Funding}
+Yuxiang Yang acknowledges the support of the National Natural Science Foundation of China via the Excellent Young Scientists Fund (Hong Kong and Macau) Project 12322516 and the support of Research Grants Council (RGC) of Hong Kong SAR via the NSFC/RGC Joint Research Scheme N\_HKU7107/24. This material is based upon work supported by the U.S. Department of Energy, Office of Science, Office of High Energy and Nuclear Physics, under award number DE-SC0026551. The work of Alexander Maloney is supported by the Simons Foundation Grant No. 12574.
+
+\subsection*{Competing interests}
+The authors have no relevant financial or non-financial interests to disclose.
+
+\subsection*{Data availability}
+This theoretical study does not use empirical datasets. The mathematical
+derivations supporting the results are included in the article and its
+appendices.
+
+\subsection*{Code availability}
+The Lean formalization of
+Theorems~\ref{thm:qmdl} and~\ref{thm:main}, verification scripts, and
+supporting documentation are publicly available in the
+\href{https://github.com/JWang226/Quantum-Minimum-Description-Length}{project repository}.
+
 \subsection*{Generative AI usage}
 
 The authors developed the connection between QMDL and free entropy
@@ -1843,6 +1868,8 @@ argument using the Davis--Kahan theorem. The final proof of
 Lemma~\ref{lem:perturbation} uses a direct Casimir argument suggested
 by ChatGPT 6, yielding the finite bound in Theorem~\ref{thm:main}.
 ChatGPT 6 and Fable 5.1 also assisted with manuscript review.
+Codex assisted with the development of the Lean formalization and
+associated verification scripts.
 The authors reviewed and revised all AI-assisted material and take
 responsibility for the mathematical arguments and the manuscript's content.
 

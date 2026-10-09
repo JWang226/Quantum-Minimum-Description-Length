@@ -10,7 +10,7 @@
   "source_files": [
     {
       "file": "article.tex",
-      "sha256": "09fc0a6bb205180cd820be94d843a1dc0d4342a543492e30dde54e367ae843a9",
+      "sha256": "b16105860b6db50b877e1bc4ea74dc04e8d55d74e9511e77e68b0b6921933da7",
       "role": "Current companion proof manuscript; Article Theorems 1 and 2 are formalized"
     },
     {
@@ -20,7 +20,7 @@
     },
     {
       "file": "free.bib",
-      "sha256": "c126c8db7dbb775c603d0bfbb9a17d231ca47cd6343afa9bf3e343123b56cab7",
+      "sha256": "a58aa8cf71c1534c4fc48345dea5457a8c4bf692eb86326f28defbdb926c2b11",
       "role": "Shared bibliography"
     },
     {

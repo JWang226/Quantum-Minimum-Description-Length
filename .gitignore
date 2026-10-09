@@ -49,3 +49,9 @@ sources/
 
 # The supplied PDF is an optional release asset, not part of the proof build
 /article.pdf
+
+# Author-requested manuscript PDFs and bibliography support files
+!/article.pdf
+!/letter.pdf
+!/articleNotes.bib
+!/letterNotes.bib
