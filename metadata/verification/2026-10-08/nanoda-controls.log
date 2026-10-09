@@ -1,0 +1,12 @@
+{
+  "status": "passed",
+  "checks": [
+    "valid theorem accepted",
+    "missing target rejected by wrapper and kernel",
+    "non-theorem root rejected",
+    "badAxiom rejected by real kernel axiom policy",
+    "proofHole rejected by real kernel axiom policy",
+    "ill-typed proof rejected by real kernel",
+    "empty, duplicate, and malformed target selections rejected"
+  ]
+}

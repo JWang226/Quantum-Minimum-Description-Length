@@ -26,6 +26,7 @@ def main():
         "ComparatorChallenges/Theorem1Achievability.json",
         "ComparatorChallenges/Theorem1Converse.json",
         "ComparatorChallenges/Theorem2Choi.json",
+        "ComparatorChallenges/Theorem2Physical.json",
     ]
     print("UNSANDBOXED local diagnostic; Landrun is not run; Nanoda is disabled.", flush=True)
     run(["lake", "build", "comparator", "lean4export"])

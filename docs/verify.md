@@ -14,7 +14,9 @@ their axiom reports.
 
 [Comparator's specification boundary](audit/comparator-scope.md) explains which
 definitions are shared with the expected statements and how the existing
-physical-state identification is checked.
+physical-state identification is checked. Current `main` also checks the
+physical Theorem 2 interface described below; the frozen candidate retains its
+original interface.
 
 ## Prerequisites
 
@@ -60,6 +62,11 @@ The archive contains the proof-check inputs; these commands do not require a
 root `.git` directory. Internet access and the prerequisites above are still
 needed for fetching dependencies and building the pinned checkers.
 
+The frozen candidate checks three Comparator configurations and four theorem
+roots. Current `main` adds the physical Theorem 2 configuration, for four
+configurations and six roots, plus a specification dependency guard and its
+negative controls. Checking the frozen tag does not check this later addition.
+
 The default is `all`. Each invocation creates a new `.verify-work/run-*`
 directory and prints its location. Logs are streamed to the terminal and saved
 there. If any requested stage fails, the command exits nonzero and prints
@@ -72,15 +79,18 @@ The stages are:
 | Stage | What it checks | Saved output |
 | --- | --- | --- |
 | `lean` | Fetch the public mathlib cache, build `All`, and audit the actual transitive axioms of the proof library. | `lean.log`, `lean-summary.json` |
-| `comparator` | Compare the three expected-statement configurations with the solutions, check the solution axioms, and replay their exports in Lean's kernel. | `comparator.log` |
+| `physical-spec` | Check the compiled dependency closure of the two expected physical-interface theorem types. | `physical-spec.log`, `physical-spec.json` |
+| `physical-spec-controls` | Check that the specification guard accepts an allowed fixture and rejects forbidden dependencies. | `physical-spec-controls.log`, `physical-spec-controls.json` |
+| `comparator` | Compare the four current expected-statement configurations with the solutions, check the solution axioms, and replay their exports in Lean's kernel. | `comparator.log` |
 | `nanoda-build` | Build the unmodified pinned Nanoda source with Rust 1.90.0 and `cargo --locked`; verify the source, package, compiler and lockfile pins. | `nanoda-build.log`, `nanoda-source/` |
 | `nanoda-controls` | Accept a valid proof and reject missing targets, non-theorem roots, forbidden axioms, proof holes, and an ill-typed proof. | `nanoda-controls.log` |
-| `nanoda` | Check all three actual solution exports with Nanoda, requiring the named theorem roots and allowing only the three standard axioms. | `nanoda.log`, `nanoda-result.json` |
+| `nanoda` | Check all four current solution exports with Nanoda, requiring the named theorem roots and allowing only the three standard axioms. | `nanoda.log`, `nanoda-result.json` |
 
 Both kernel checks allow only `propext`, `Classical.choice`, and `Quot.sound`.
-The three configurations cover four final declarations: Theorem 1 achievability,
-its Haar-average and uniform converses, and Theorem 2's original Choi-channel
-bound. Deliberate holes in the expected-statement templates are not proofs and
+On current `main`, the four configurations cover six declarations: Theorem 1
+achievability, its Haar-average and uniform converses, Theorem 2's original
+Choi-channel bound, the physical bound for arbitrary qualifying embeddings,
+and existence of those embeddings. Deliberate holes in the expected-statement templates are not proofs and
 are excluded from the audited production library.
 
 The initial build uses mathlib's public compiled cache and rebuilds the project
@@ -88,6 +98,48 @@ proofs. Comparator/Lean and Nanoda subsequently replay the exported final proofs
 and their dependencies. A successful run verifies those formal statements; it
 does not replace review of their correspondence with the manuscripts. See
 [[proof-structure]] and [[formalization]].
+
+### Physical specification check
+
+The additional
+[`Theorem2Physical` solution](https://github.com/JWang226/Quantum-Minimum-Description-Length/blob/main/lean/FreeEntropy/Theorem2Physical.lean)
+uses independently stated tensor-source normalization and normalized Choi
+contractions. Its universal bound applies to arbitrary isometric embeddings
+satisfying representation equations; a second checked theorem proves that such
+embeddings exist. Canonical representation coordinates and numerical bounds
+remain shared. See the
+[interface map](https://github.com/JWang226/Quantum-Minimum-Description-Length/blob/main/metadata/physical-interface-map.json)
+and [audit extension bridge](https://github.com/JWang226/Quantum-Minimum-Description-Length/blob/main/metadata/statement-audit/physical-interface-bridge.json).
+
+The `all` and `comparator` modes also run
+[`check_physical_spec.lean`](https://github.com/JWang226/Quantum-Minimum-Description-Length/blob/main/scripts/check_physical_spec.lean)
+and its
+[negative controls](https://github.com/JWang226/Quantum-Minimum-Description-Length/blob/main/scripts/test_physical_spec.py).
+The guard starts at the two expected theorem types and follows their compiled
+dependencies, including declaration bodies. It rejects dependence on the
+canonical state/projector constructions and final proof modules. The deliberate
+challenge proof holes are excluded from this traversal. The
+[closure report](https://github.com/JWang226/Quantum-Minimum-Description-Length/blob/main/metadata/verification/2026-10-08/physical-spec.json)
+lists the remaining shared declarations. This boundary check complements
+Comparator and kernel replay; it is not an independent human correspondence
+review.
+
+To run only the guard and its controls after Lean setup, from the repository
+root:
+
+```bash
+mkdir -p .verify-work/physical-spec
+cd lean
+lake build ComparatorChallenges.Theorem2Physical
+lake env lean --run ../scripts/check_physical_spec.lean ../.verify-work/physical-spec/boundary.json
+cd ..
+python3 scripts/test_physical_spec.py --lake-project lean --report .verify-work/physical-spec/controls.json
+```
+
+The guard reports `PHYSICAL SPECIFICATION BOUNDARY PASSED` only when the
+expected dependency boundary is satisfied. Its report describes theorem types
+and referenced definitions; proof validity is checked by the Lean, Comparator
+and Nanoda stages above.
 
 ## Run one layer
 
@@ -119,10 +171,10 @@ the compiler and lockfile recorded in
 
 ## Read the verdict
 
-For the recorded source snapshot, the Lean log ends with
-`PASS: 2499 declarations; no placeholders or custom axioms.` The Comparator log
-has three `LOCAL DIAGNOSTIC PASSED:` lines. The Nanoda log has three
-`NANODA PASSED (UNSANDBOXED):` lines. The wrapper's final success line means that
+The Lean log ends with `PASS: <count> declarations; no placeholders or custom
+axioms.` Current `main` produces four `LOCAL DIAGNOSTIC PASSED:` lines and four
+`NANODA PASSED (UNSANDBOXED):` lines; the frozen candidate produces three of each
+and has a recorded count of 2499 audited declarations. The wrapper's final success line means that
 all stages selected for that invocation returned success.
 
 Use the newly printed run directory and the command's exit status. Reports

@@ -46,7 +46,8 @@ lake build comparator lean4export
 export PATH="$PWD/.lake/packages/lean4export/.lake/build/bin:$PATH"
 if [[ $# == 0 ]]; then
   set -- ComparatorChallenges/Theorem1Achievability.json \
-    ComparatorChallenges/Theorem1Converse.json ComparatorChallenges/Theorem2Choi.json
+    ComparatorChallenges/Theorem1Converse.json ComparatorChallenges/Theorem2Choi.json \
+    ComparatorChallenges/Theorem2Physical.json
 fi
 comparator_temp=$(mktemp -d)
 trap 'rm -rf "$comparator_temp"' EXIT

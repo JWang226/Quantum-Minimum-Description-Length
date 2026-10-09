@@ -1,0 +1,10 @@
+{
+  "challenge_module": "ComparatorChallenges.Theorem2Physical",
+  "solution_module": "FreeEntropy.Theorem2Physical",
+  "theorem_names": [
+    "FreeEntropy.ExteriorRepresentation.theorem2_cloning_accuracy_physical",
+    "FreeEntropy.ExteriorRepresentation.theorem2_physical_realizations_exist"
+  ],
+  "permitted_axioms": ["propext", "Quot.sound", "Classical.choice"],
+  "enable_nanoda": false
+}

@@ -4,13 +4,13 @@
   "human_review": "not_established",
   "source_revision": "490356f620c1ab963ff99585d6835c93e4324b37",
   "method_revision": "601fe274276d93052ef645f0ff2c1a355e8e5b16",
-  "proof_sources_sha256": "e7068771d301aaac3156ecc7cd0a1a4b3868a894a1d0988ce897420786ba2c3f",
+  "proof_sources_sha256": "33379ffb4c7547fdc221fb3696f360465d87aaad2247e12707a7b95e557b5cac",
   "endpoints": [
     {
       "name": "FreeEntropy.theorem1_achievability",
       "file": "lean/FreeEntropy/Theorem1Complete.lean",
       "line": 23,
-      "compiled_statement": "\u2200 {d r : \u2115} (s : FreeEntropy.FixedSpectrum d r),\n  \u2203 (memory : \u2115 \u2192 \u2115) (E : (n : \u2115) \u2192 FreeEntropy.Channels.MatrixChannel (Fin n \u2192 Fin d) (Fin (memory n))) (D :\n    (n : \u2115) \u2192 FreeEntropy.Channels.MatrixChannel (Fin (memory n)) (Fin n \u2192 Fin d)),\n    Filter.Tendsto (fun (n : \u2115) => Real.logb 2 \u2191(memory n) - FreeEntropy.Weyl.qmdl d r s.eigenvalue n) Filter.atTop\n        (nhds 0) \u2227\n      (fun (n : \u2115) => FreeEntropy.SchurWeyl.mixedWorstError s n (E n) (D n)) =O[Filter.atTop]\n          FreeEntropy.Weyl.errorScale \u2227\n        Filter.Tendsto (fun (n : \u2115) => FreeEntropy.SchurWeyl.mixedWorstError s n (E n) (D n)) Filter.atTop (nhds 0)",
+      "compiled_statement": "∀ {d r : ℕ} (s : FreeEntropy.FixedSpectrum d r),\n  ∃ (memory : ℕ → ℕ) (E : (n : ℕ) → FreeEntropy.Channels.MatrixChannel (Fin n → Fin d) (Fin (memory n))) (D :\n    (n : ℕ) → FreeEntropy.Channels.MatrixChannel (Fin (memory n)) (Fin n → Fin d)),\n    Filter.Tendsto (fun (n : ℕ) => Real.logb 2 ↑(memory n) - FreeEntropy.Weyl.qmdl d r s.eigenvalue n) Filter.atTop\n        (nhds 0) ∧\n      (fun (n : ℕ) => FreeEntropy.SchurWeyl.mixedWorstError s n (E n) (D n)) =O[Filter.atTop]\n          FreeEntropy.Weyl.errorScale ∧\n        Filter.Tendsto (fun (n : ℕ) => FreeEntropy.SchurWeyl.mixedWorstError s n (E n) (D n)) Filter.atTop (nhds 0)",
       "compiled_statement_sha256": "bc798eb5054b03f6c5230a66803c13ae7972bf04cbdd5285357c375e7bdb947c",
       "top_level_binders": [
         {
@@ -31,7 +31,7 @@
       "name": "FreeEntropy.theorem1_converse",
       "file": "lean/FreeEntropy/Theorem1Complete.lean",
       "line": 43,
-      "compiled_statement": "\u2200 {d r : \u2115} (s : FreeEntropy.FixedSpectrum d r) (memory : \u2115 \u2192 \u2115)\n  (E : (n : \u2115) \u2192 FreeEntropy.Channels.MatrixChannel (Fin n \u2192 Fin d) (Fin (memory n)))\n  (D : (n : \u2115) \u2192 FreeEntropy.Channels.MatrixChannel (Fin (memory n)) (Fin n \u2192 Fin d)),\n  Filter.Tendsto (fun (n : \u2115) => FreeEntropy.SchurWeyl.mixedAverageError s n (E n) (D n)) Filter.atTop (nhds 0) \u2192\n    0 \u2264\n      Filter.liminf (fun (n : \u2115) => \u2191(Real.logb 2 \u2191(memory n) - FreeEntropy.Weyl.qmdl d r s.eigenvalue n)) Filter.atTop",
+      "compiled_statement": "∀ {d r : ℕ} (s : FreeEntropy.FixedSpectrum d r) (memory : ℕ → ℕ)\n  (E : (n : ℕ) → FreeEntropy.Channels.MatrixChannel (Fin n → Fin d) (Fin (memory n)))\n  (D : (n : ℕ) → FreeEntropy.Channels.MatrixChannel (Fin (memory n)) (Fin n → Fin d)),\n  Filter.Tendsto (fun (n : ℕ) => FreeEntropy.SchurWeyl.mixedAverageError s n (E n) (D n)) Filter.atTop (nhds 0) →\n    0 ≤\n      Filter.liminf (fun (n : ℕ) => ↑(Real.logb 2 ↑(memory n) - FreeEntropy.Weyl.qmdl d r s.eigenvalue n)) Filter.atTop",
       "compiled_statement_sha256": "29e0af015e6e2e4662354eb96f80fb5eed384bf0d2f2550421b408331ad086f4",
       "top_level_binders": [
         {
@@ -68,7 +68,7 @@
       "name": "FreeEntropy.theorem1_converse_of_uniform",
       "file": "lean/FreeEntropy/Theorem1Complete.lean",
       "line": 60,
-      "compiled_statement": "\u2200 {d r : \u2115} (s : FreeEntropy.FixedSpectrum d r) (memory : \u2115 \u2192 \u2115)\n  (E : (n : \u2115) \u2192 FreeEntropy.Channels.MatrixChannel (Fin n \u2192 Fin d) (Fin (memory n)))\n  (D : (n : \u2115) \u2192 FreeEntropy.Channels.MatrixChannel (Fin (memory n)) (Fin n \u2192 Fin d)),\n  Filter.Tendsto (fun (n : \u2115) => FreeEntropy.SchurWeyl.mixedWorstError s n (E n) (D n)) Filter.atTop (nhds 0) \u2192\n    0 \u2264\n      Filter.liminf (fun (n : \u2115) => \u2191(Real.logb 2 \u2191(memory n) - FreeEntropy.Weyl.qmdl d r s.eigenvalue n)) Filter.atTop",
+      "compiled_statement": "∀ {d r : ℕ} (s : FreeEntropy.FixedSpectrum d r) (memory : ℕ → ℕ)\n  (E : (n : ℕ) → FreeEntropy.Channels.MatrixChannel (Fin n → Fin d) (Fin (memory n)))\n  (D : (n : ℕ) → FreeEntropy.Channels.MatrixChannel (Fin (memory n)) (Fin n → Fin d)),\n  Filter.Tendsto (fun (n : ℕ) => FreeEntropy.SchurWeyl.mixedWorstError s n (E n) (D n)) Filter.atTop (nhds 0) →\n    0 ≤\n      Filter.liminf (fun (n : ℕ) => ↑(Real.logb 2 ↑(memory n) - FreeEntropy.Weyl.qmdl d r s.eigenvalue n)) Filter.atTop",
       "compiled_statement_sha256": "638322dfbe72637518e73fc3031b429e11930c144e10dc8074729f5e63efdfe2",
       "top_level_binders": [
         {
@@ -105,7 +105,7 @@
       "name": "FreeEntropy.ExteriorRepresentation.theorem2_cloning_accuracy_choi",
       "file": "lean/FreeEntropy/Theorem2Choi.lean",
       "line": 79,
-      "compiled_statement": "\u2200 {d r : \u2115} (s : FreeEntropy.FixedSpectrum d r) (hd : 2 \u2264 d) (mu nu : Fin d \u2192 \u2115) (hmu : Antitone mu)\n  (hnu : Antitone nu),\n  (\u2200 (i : Fin d), r \u2264 \u2191i \u2192 mu i = 0) \u2192\n    (\u2200 (i : Fin d), r \u2264 \u2191i \u2192 nu i = 0) \u2192\n      \u2200 (hinc : Antitone fun (i : Fin d) => \u2191(nu i) - \u2191(mu i)) (U : \u21a5(Matrix.unitaryGroup (Fin d) \u2102)),\n        FreeEntropy.TraceDistance.traceDistance\n              (FreeEntropy.ExteriorRepresentation.prvForward mu nu hmu hnu hinc\n                (FreeEntropy.ExteriorRepresentation.canonicalOrbitState s mu U))\n              (FreeEntropy.ExteriorRepresentation.canonicalOrbitState s nu U) \u2264\n            FreeEntropy.Theorem2.cloningConstant d r s.qx * \u2191(FreeEntropy.ExteriorRepresentation.differenceNorm mu nu) /\n              (\u2191(FreeEntropy.ExteriorRepresentation.minimumRowGap mu r hd \u22ef) + 1) \u2227\n          FreeEntropy.TraceDistance.traceDistance\n              (FreeEntropy.ExteriorRepresentation.prvReverse mu nu hmu hnu hinc\n                (FreeEntropy.ExteriorRepresentation.canonicalOrbitState s nu U))\n              (FreeEntropy.ExteriorRepresentation.canonicalOrbitState s mu U) \u2264\n            FreeEntropy.Theorem2.cloningConstant d r s.qx * \u2191(FreeEntropy.ExteriorRepresentation.differenceNorm mu nu) /\n              (\u2191(FreeEntropy.ExteriorRepresentation.minimumRowGap mu r hd \u22ef) + 1)",
+      "compiled_statement": "∀ {d r : ℕ} (s : FreeEntropy.FixedSpectrum d r) (hd : 2 ≤ d) (mu nu : Fin d → ℕ) (hmu : Antitone mu)\n  (hnu : Antitone nu),\n  (∀ (i : Fin d), r ≤ ↑i → mu i = 0) →\n    (∀ (i : Fin d), r ≤ ↑i → nu i = 0) →\n      ∀ (hinc : Antitone fun (i : Fin d) => ↑(nu i) - ↑(mu i)) (U : ↥(Matrix.unitaryGroup (Fin d) ℂ)),\n        FreeEntropy.TraceDistance.traceDistance\n              (FreeEntropy.ExteriorRepresentation.prvForward mu nu hmu hnu hinc\n                (FreeEntropy.ExteriorRepresentation.canonicalOrbitState s mu U))\n              (FreeEntropy.ExteriorRepresentation.canonicalOrbitState s nu U) ≤\n            FreeEntropy.Theorem2.cloningConstant d r s.qx * ↑(FreeEntropy.ExteriorRepresentation.differenceNorm mu nu) /\n              (↑(FreeEntropy.ExteriorRepresentation.minimumRowGap mu r hd ⋯) + 1) ∧\n          FreeEntropy.TraceDistance.traceDistance\n              (FreeEntropy.ExteriorRepresentation.prvReverse mu nu hmu hnu hinc\n                (FreeEntropy.ExteriorRepresentation.canonicalOrbitState s nu U))\n              (FreeEntropy.ExteriorRepresentation.canonicalOrbitState s mu U) ≤\n            FreeEntropy.Theorem2.cloningConstant d r s.qx * ↑(FreeEntropy.ExteriorRepresentation.differenceNorm mu nu) /\n              (↑(FreeEntropy.ExteriorRepresentation.minimumRowGap mu r hd ⋯) + 1)",
       "compiled_statement_sha256": "933ef0789f3ab7d358acfb28268ff9031bcd1d8895c877abc54a8529314adfad",
       "top_level_binders": [
         {
@@ -161,7 +161,7 @@
   ],
   "file_sha256": {
     "article.tex": "09fc0a6bb205180cd820be94d843a1dc0d4342a543492e30dde54e367ae843a9",
-    "docs/assets/lean-catalog.json": "a4ca2b77eba4948192087e11fe0a36fdb9d6c0f20a89571c35705a232ddebfd7",
+    "docs/assets/lean-catalog.json": "543b641826ca2cf18bafdc36851860da2e2f341009e98fb6d4c30a6ad9f83bef",
     "docs/audit.md": "702185c89978fe9e1daefae44d8d35e3b65b49333974964594b2ea48c8451362",
     "docs/audit/independent-review.md": "912e8d719e32124e1449c6ce4f8bba81f42322d90e0dce6d76ace35f696f382d",
     "docs/audit/source-coverage.md": "fdde724b9d67da773e89d4b44815077e7dc7811aecc65058c3306ab90e90da6d",
@@ -175,15 +175,15 @@
     "lean/ComparatorChallenges/Theorem1Achievability.lean": "beb8fb6f1292edf1f89ef8131af90cc28eeba4bd243b39d4fe6a5648d6c25c64",
     "lean/ComparatorChallenges/Theorem1Converse.lean": "209f79485a1ffedfa21affdd4b03534247ea6ce24b10b7368e7680c58e3cff18",
     "lean/ComparatorChallenges/Theorem2Choi.lean": "a52bb8218ace6d41b63ac6a2842e95f6ba8ae1b26eaf77ee15fbeb82781ac73d",
-    "lean/FreeEntropy.lean": "0211bce20ad8f25b5bc244b606e86108a83c25369a20b88c3b929d2373b3f9ba",
+    "lean/FreeEntropy.lean": "55d2f1653beccd2709a8e2b4e13f3eff0a5e3a1ce97ea7e8dabc8c349013059b",
     "lean/lake-manifest.json": "4707e55825935027ab3c626f6042d11d9279aa19bc7e423a06113266025074eb",
-    "lean/lakefile.toml": "47a977e779ea66902563addddda68c232ed1cf38d9e08edf3fb5ea8c9731902e",
+    "lean/lakefile.toml": "e9c335def155dceae57a6808a78cbd84a71f93fc06c94b1b24e88a2a5af4957f",
     "lean/lean-toolchain": "dc6d65016fad3123d44bf17b5bf0598286284ab16ba75d5c17eb22ed11f47361",
     "letter.tex": "0b6a2c45b1565c3e9aadcdaa1c6631a2d7e2e2ec259b7382d04bcbce83622260",
     "metadata/letter-source-map.json": "a2e09ce75eb2df452fcb170a8fa5fb9ff6f10543919ca235f05c184916e13739",
     "metadata/natural-language-map.json": "bbc430d1c5197f4d40db702471a1dec8e0a9456ea0ec55ae3ddd83392a85a37b",
     "metadata/statement-audit/adversarial-review.json": "fd9aa6535c02c42256efc771161ef77fd40d671d8b81e8d68d4ce71d58f0bf8b",
-    "metadata/statement-audit/checks.json": "c46d1200d6cc3763ba1d4dba57bece37401f0641ee27c8650f3b12a2d7eb1e87",
+    "metadata/statement-audit/checks.json": "78702fd8eec25107439f92a85bfb30e73e146943dfe661cc1d4f4bd57369fce3",
     "metadata/statement-audit/compiled-binders.json": "02d31b308cbd2a06983fd2db0e6c92b0a53c5d7fb2f8611baf821991a8fa0139",
     "metadata/statement-audit/probes.json": "9a8d10e24ee04e8ca34a6ffe12f34918cf5dc790cc57f2b7a321a482a0ba1730",
     "metadata/statement-audit/source-coverage.json": "017288cee637e6d3fc98dcb50200e8c6abd9f92ecc6ae92164ea860901eb786c",
@@ -192,7 +192,7 @@
     "metadata/statement-audit/theorem2-literal-comparison.json": "da10a7097090ed92348c009f25bd2bd0c22ce6ee636089c2ef586cc14ce7b07d",
     "metadata/statement-audit/theorem2-output.txt": "7edc4d565ccc7ab98d962b184b88766d7986c4ac20d7a59760939d32e5790a74",
     "metadata/statement-audit/theorem2.json": "60d5c30d19bd531fc18fa8cec5742f5f7113ee59ef70373a7fbeb2d7ba6af532",
-    "scripts/check_statement_audit.py": "cbff31873d9d7a5763a06ef81c758d832a74b70dd704a2e8a207cd6f8aa6c047",
+    "scripts/check_statement_audit.py": "f4c1c0d497720c9354d6b8d7a3410288d6ee20c83972661f28ce3a4e8be8c3d6",
     "scripts/export_statement_audit.lean": "5916c46af85d9728543e8c01b98b8d2af0c9e354ec10e4d059e1575ff75d347e",
     "scripts/test_statement_audit.py": "d63ef81d774c4fc938795fdf0ad0c24168490bb1ddd86f83e473527c3fb32482",
     "metadata/elaboration/2026-10-06/cleanup-review-bridge.json": "f77c1f18d83682adc29f0dcfc55ec02c1330d417c63cfe04bb7c66dca5a21204",
@@ -203,7 +203,49 @@
     "metadata/elaboration/2026-10-06/instance-witnesses.json": "6d538b5b233543ca33d37efff8cf05560e45b62570c3fdfa2689de5984a11a5d",
     "metadata/elaboration/2026-10-06/historical/statement-manifest.json": "7de60a4373d1fd0a8bf87dfb02ea4f676c013d7546e57c35bf87bdd8d7f90912",
     "scripts/check_cleanup_instance_pairs.lean": "f910509d40ad393f54f932f676e7df10cc2495c43ba46b881f52f4e71d7c03c8",
-    "scripts/compare_cleanup_fingerprints.py": "ca6cb4bd7d319293d10b2a0a4ea84c5fa6814f7f5a195d3cc0fda2e8140f2720"
+    "scripts/compare_cleanup_fingerprints.py": "ca6cb4bd7d319293d10b2a0a4ea84c5fa6814f7f5a195d3cc0fda2e8140f2720",
+    "lean/Audit.lean": "be1b244fac2de342b689f8f3f27286f28c0eec9e1659593555ba7ab63a35bfdc",
+    "lean/ComparatorChallenges/Theorem2Physical.json": "404f5e69c35d3b402ffb946e311d8bf353fc5004ca61cde3cfed7a8823b873dc",
+    "lean/ComparatorChallenges/Theorem2Physical.lean": "7f9d35bfc63eafce52ae27e0d1cf531c80799a5869e8baabb5de5527843f9b3f",
+    "lean/FreeEntropy/ForwardChoiUniqueness.lean": "b2b98f29be00c5bf31baa3963c1f3264450ea7f3b11e115b1988ed9b13984088",
+    "lean/FreeEntropy/PhysicalStateUniqueness.lean": "25e1eef2fc1a89d1692a248fa5e4f7ec7908279be82524f9f366942953231e54",
+    "lean/FreeEntropy/Theorem2Physical.lean": "fc5e5c2c69712793b2b77a8d3a1e65f2c90094970b1bc76a84a4c1eb9b2bd0c6",
+    "metadata/physical-interface-map.json": "67fe965f3920f612311e4cd47533d7b429c9d1a23a69ba009a249217fe10e8f5",
+    "metadata/statement-audit/physical-interface-bridge.json": "bb919a501f715909cf1114bff2b120a67b293aa9d43654a549955ab76b90a8d2",
+    "metadata/verification/2026-10-08/historical/index.json": "65026905ab3f78bd324e2540cc7215818d3f109a3ed4a560a30d8c3c4bf23048",
+    "metadata/verification/2026-10-08/historical/statement-manifest.json": "946a2e1076c75e7faee7ae6f07a1a1bca47f3ae750fb9af75746e93189ef8106",
+    "metadata/verification/2026-10-08/statement-binder-export.txt": "aa52b069c34cfadb740f2b08ca0e1d8ae6317950d0e1fa230900d3ca6a9e9546",
+    "metadata/verification/2026-10-08/statement-build.txt": "2136981fa26a78966385db8901028d347748ca87a3bc0983437a8f41fc7c54fa",
+    "metadata/verification/2026-10-08/statement-compiled-binders.json": "02d31b308cbd2a06983fd2db0e6c92b0a53c5d7fb2f8611baf821991a8fa0139",
+    "metadata/verification/2026-10-08/statement-result.json": "78702fd8eec25107439f92a85bfb30e73e146943dfe661cc1d4f4bd57369fce3",
+    "metadata/verification/2026-10-08/statement-theorem1.txt": "7818b1c0d4fee5ae15ebac351ee8dfcb0142252832691976158f21e4e5fda250",
+    "metadata/verification/2026-10-08/statement-theorem2.txt": "7edc4d565ccc7ab98d962b184b88766d7986c4ac20d7a59760939d32e5790a74",
+    "scripts/check_physical_extension.py": "861f9f8d7b3d2c6a9349656538ba1383674303265943b03f4f95d4b03595ff11",
+    "scripts/check_physical_spec.lean": "d9292fc3c5635e7cbde7294fc8ab5fce1ffba3cae75a0769a80e5538ab1319e7",
+    "scripts/test_physical_extension.py": "7dd13f865bcfec8472de700489638349beef7d9aa51fdb15c6cc82b511467227",
+    "scripts/test_physical_spec.py": "a6e0cc08b1b91ed2a7be82e1f81d34b3f5740d7fdfefd95e0c7069c1226dda3b",
+    "metadata/verification/2026-10-08/result.txt": "d3ca7cdd63d5f3bbc86a629cd3de778fd7d22f04c3c3b79af3c6a8861deabc00",
+    "metadata/verification/2026-10-08/nanoda-result.json": "899152e5d6168d4f8889dec86da1e8c3a1808c205040e818a51a70f988fc8271",
+    "metadata/verification/2026-10-08/nanoda-binary-source.txt": "f878d93b03580c1c7ab619c6aecabc82ed1d80d3079a16eec58b746eb1aadd51",
+    "metadata/verification/2026-10-08/run-info.json": "00ef4a971ca6e395bd5cbc412e8ddf694eefe9c94875dc9e8c756360e03a2692",
+    "metadata/verification/2026-10-08/comparator.log": "41732c9f52d4ab4876326a9d231f9a2006380d084624ab07995d03d05e5b4190",
+    "metadata/verification/2026-10-08/lean-summary.json": "7eae7fa67acdc48fc2266a5af7bacb47cc6f02fa4635dddd690d88a2b03ac11a",
+    "metadata/verification/2026-10-08/nanoda-controls.log": "5a4a9626d75fe15211d9d9be9e07d55e947c7e1d0d6de7374a085e8b56eedb1b",
+    "metadata/verification/2026-10-08/physical-spec.json": "eabb8ead8afff275b4dde5a8ed84444756c02439ad584716837767067a7e6418",
+    "metadata/verification/2026-10-08/physical-spec.log": "95921dd7f6671cffced0258cad91e56496f86be6aba32b42a21fec3c7a607c2b",
+    "metadata/verification/2026-10-08/verification-result.json": "fe9cb0efc948dc0f950d8105226f25cc71356563b004eafa4354118be59ee73e",
+    "metadata/verification/2026-10-08/physical-spec-controls.json": "b194a839263a94d5631b2b599917af07cf8479a5dc1c0d3e8d1bc8347b2e3a3d",
+    "metadata/verification/2026-10-08/physical-spec-controls.log": "d03057b847512ebd4eb2e89e01eb10ddf3965c83851f3b5a6abc0497fd7d50c8",
+    "metadata/verification/2026-10-08/lean.log": "37842c3b80a738dbdb020ea0aa23e32a37e2501cb119a1e9b67b10203febea9a",
+    "metadata/verification/2026-10-08/nanoda.log": "d18fa5e1d872d138b0b0ed6140a8e65d96d6edfb696ce22ac13a2e61dec62f64",
+    "lean/ComparatorChallenges/verification-status.json": "cace38f7d2b57174f7576ea5b4947d18354602cceaf00dd51da4988aa82412ec",
+    "lean/ComparatorConfig/nanoda-status.json": "ab2bccfa6a543d6ccd7d143ca7707fe67972a641ebb26ce182f73b2c39a2c893",
+    "lean/ComparatorChallenges/trusted-boundary.json": "0891b7c374053fd16ce63cf0c66daf83f8c90c8c6b7a50f7947f5436110b1b7d",
+    "lean/ComparatorConfig/check_local.py": "38696965c051acaa05b9ba2df24210d051285601aee0e4669dfc9f5c32f930f7",
+    "lean/ComparatorConfig/check_nanoda.py": "d412e5adbb5541332388890797edab78a8bcd9c690212c1a62297d638fcfa429",
+    "scripts/verify.sh": "24bc7b90d4e4cc77e3f4df54c649f1f2322da605a1c98d7b8febc1ea7481a89c",
+    "scripts/validate_artifacts.py": "d7508b01c9191ae4fb87eb3ec7c631ed993e9dbc8b84eef7c6116fe60221f99b",
+    "scripts/prepare_release.py": "3ff7206063ee2c784abf1ba0991eda39fb7b6ad281b64990ea551636946f3a04"
   },
   "reviewers": [
     {
@@ -228,6 +270,13 @@
     }
   ],
   "policy": "Source/report identity and evidence snapshots, not a human-approved frozen-statement seal. Changes require review before rebinding. Structural validation does not decide mathematical meaning.",
-  "current_source_revision": "4c2054c47d6c81615f5687fe5ac3f1c4dd1ea1d9",
-  "cleanup_review_bridge": "metadata/elaboration/2026-10-06/cleanup-review-bridge.json"
+  "cleanup_review_bridge": "metadata/elaboration/2026-10-06/cleanup-review-bridge.json",
+  "physical_interface_bridge": "metadata/statement-audit/physical-interface-bridge.json",
+  "previous_current_source_revision": "4c2054c47d6c81615f5687fe5ac3f1c4dd1ea1d9",
+  "current_source_identity": {
+    "kind": "additive_working_tree_snapshot",
+    "baseline_revision": "955bffc9278533adc219dd86012e9a2bc07c992b",
+    "proof_sources_sha256": "33379ffb4c7547fdc221fb3696f360465d87aaad2247e12707a7b95e557b5cac",
+    "preservation_review": "metadata/statement-audit/physical-interface-bridge.json"
+  }
 }

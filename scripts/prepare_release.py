@@ -150,6 +150,41 @@ PUBLICATION_FILES = (
     "scripts/test_cleanup_instance_runner.py",
     ".github/workflows/lean.yml", "scripts/prepare_release.py",
     "scripts/validate_artifacts.py", "scripts/requirements-release.txt",
+    "docs/audit/comparator-scope.md", "metadata/physical-interface-map.json",
+    "metadata/statement-audit/physical-interface-bridge.json",
+    "scripts/check_physical_extension.py", "scripts/test_physical_extension.py",
+    "scripts/check_physical_spec.lean", "scripts/test_physical_spec.py",
+    "metadata/verification/2026-10-08/verification-result.json",
+    "metadata/verification/2026-10-08/run-info.json",
+    "metadata/verification/2026-10-08/result.txt",
+    "metadata/verification/2026-10-08/lean.log",
+    "metadata/verification/2026-10-08/lean-summary.json",
+    "metadata/verification/2026-10-08/physical-spec.log",
+    "metadata/verification/2026-10-08/physical-spec.json",
+    "metadata/verification/2026-10-08/physical-spec-controls.log",
+    "metadata/verification/2026-10-08/physical-spec-controls.json",
+    "metadata/verification/2026-10-08/comparator.log",
+    "metadata/verification/2026-10-08/nanoda-binary-source.txt",
+    "metadata/verification/2026-10-08/nanoda-controls.log",
+    "metadata/verification/2026-10-08/nanoda.log",
+    "metadata/verification/2026-10-08/nanoda-result.json",
+    "metadata/verification/2026-10-08/statement-build.txt",
+    "metadata/verification/2026-10-08/statement-binder-export.txt",
+    "metadata/verification/2026-10-08/statement-result.json",
+    "metadata/verification/2026-10-08/statement-compiled-binders.json",
+    "metadata/verification/2026-10-08/statement-theorem1.txt",
+    "metadata/verification/2026-10-08/statement-theorem2.txt",
+    "metadata/verification/2026-10-08/historical/index.json",
+    "metadata/verification/2026-10-08/historical/statement-manifest.json",
+    "metadata/verification/2026-10-08/historical/statement-checks.json",
+    "metadata/verification/2026-10-08/historical/compiled-binders.json",
+    "metadata/verification/2026-10-08/historical/theorem1-output.txt",
+    "metadata/verification/2026-10-08/historical/theorem2-output.txt",
+    "metadata/verification/2026-10-08/historical/comparator-status.json",
+    "metadata/verification/2026-10-08/historical/nanoda-status.json",
+    "metadata/verification/2026-10-08/historical/lean-summary.json",
+    "metadata/verification/2026-10-08/historical/lean-reproducibility.json",
+    "metadata/verification/2026-10-08/historical/check_statement_audit.py",
 )
 OPTIONAL_FILES = (
     "lean/ComparatorChallenges.lean", "lean/ComparatorChallenges/README.md",
@@ -269,6 +304,13 @@ def collect(root: Path, args: argparse.Namespace) -> tuple[dict[str, bytes], dic
             and reproducibility_name.encode() in files.get("formalization.yaml", b"")
             and reproducibility_name not in files):
         raise ValueError("formalization.yaml references a missing clean reproduction record")
+    historical_reproducibility["archived_files"] = [name for name in (
+        "metadata/elaboration/2026-10-06/historical/lean-reproducibility.json",
+        "metadata/verification/2026-10-08/historical/lean-reproducibility.json",
+    ) if name in files]
+    historical_reproducibility["archive_role"] = (
+        "Preserved earlier source snapshots; these archives do not establish "
+        "a clean proof run for the current additions or for this export")
     manifest = {
         "format_version": 1,
         "manuscript_sha256": MANUSCRIPT_SHA256,
@@ -348,7 +390,9 @@ def main() -> None:
             raise ValueError("Companion Letter changed during export")
         print(f"Selected {len(files)} files; manuscript SHA-256 {MANUSCRIPT_SHA256}.")
         print("Verification: " + manifest["verification"] + ".")
-        print("Historical reproduction evidence: " + manifest["historical_reproducibility"]["status"] + ".")
+        print("Matching legacy reproduction record: " + manifest["historical_reproducibility"]["status"] + ".")
+        print("Archived reproduction records bundled: " +
+              str(len(manifest["historical_reproducibility"]["archived_files"])) + ".")
         if manifest["missing_publication_metadata"]:
             print("PREPARATION ONLY: missing " + ", ".join(manifest["missing_publication_metadata"]))
     except (ValueError, OSError, KeyError, json.JSONDecodeError) as error:

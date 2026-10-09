@@ -22,12 +22,15 @@ Follow the
 The [[audit|retrospective statement audit]] gives expanded hypothesis tables,
 definition reviews, manuscript argument coverage and fresh Lean applications
 for the four primary endpoints, with an independent adversarial review.
+The [physical Theorem 2 extension](#physical-theorem-2-interface) below records
+the additional specification and its proved existence conditions separately.
 
 [Main results](#main-results) · [Definitions](#definitions) ·
 [Channel identities](#state-and-channel-identifications) ·
 [Compression and converse](#compression-and-converse) ·
 [Finite estimates](#finite-estimate-lemmas) ·
 [Letter](#letter-correspondence) ·
+[Physical interface](#physical-theorem-2-interface) ·
 [Statement-matching checklist](#how-to-check-that-the-statements-match)
 
 <!-- BEGIN GENERATED CORRESPONDENCE -->
@@ -404,6 +407,45 @@ The Article source map also records the following exclusions. Some labels occur 
 - <a href="https://github.com/JWang226/Quantum-Minimum-Description-Length/blob/main/article.tex#L414"><code>eq:gen_cloner</code></a>: General PRV channel existence for every arbitrary pair is not claimed; the actual pairs needed by Theorem 2 are constructed.
 
 <!-- END GENERATED CORRESPONDENCE -->
+
+## Physical Theorem 2 interface
+
+The October 8 extension on `main` adds a second specification of the Article's
+Theorem 2. The frozen `v0.1.0-rc1` release and the original four-endpoint
+statement audit retain their earlier scope. The new
+[`Theorem2Physical` source](https://github.com/JWang226/Quantum-Minimum-Description-Length/blob/main/lean/FreeEntropy/Theorem2Physical.lean)
+proves two declarations:
+
+| Declaration | Meaning |
+| --- | --- |
+| `theorem2_cloning_accuracy_physical` | The same two error bounds hold for any isometric physical tensor embeddings and PRV copies satisfying the specified representation equations. |
+| `theorem2_physical_realizations_exist` | Those embeddings and PRV copies exist for every admissible pair of rows, so the additional interface conditions are not vacuous. |
+
+The expected fixture independently restates the density
+`U * diag(x) * Uᴴ`, tensor entries at degree `∑ j, mu j`, normalized compression
+`Jᴴ * ρ^⊗n * J`, and normalized Choi contractions using the literal projectors
+`W * Wᴴ`. State and projector identification are proved in the solution;
+equality to the canonical state or projector is not an expected hypothesis.
+The domain, support restrictions and error constant are those already recorded
+for Theorem 2 above.
+
+The
+[physical interface map](https://github.com/JWang226/Quantum-Minimum-Description-Length/blob/main/metadata/physical-interface-map.json)
+maps these objects to manuscript labels and Lean declarations. The
+[audit extension bridge](https://github.com/JWang226/Quantum-Minimum-Description-Length/blob/main/metadata/statement-audit/physical-interface-bridge.json)
+records how the new proof extends the historical audit without relabeling it.
+The additional expected statements share canonical representation coordinates,
+unitary actions, Lie generators and the auxiliary model, as well as numerical
+bounds and matrix primitives. They do not independently reconstruct those
+foundations or supply a new human correspondence review.
+
+The [specification-boundary explanation](audit/comparator-scope.md) and
+[compiled closure report](https://github.com/JWang226/Quantum-Minimum-Description-Length/blob/main/metadata/verification/2026-10-08/physical-spec.json)
+make that remaining sharing explicit. The current
+[[verify|verification wrapper]] checks four configurations and six roots,
+including both new declarations, and runs the dependency guard and its
+negative controls. The frozen candidate continues to check three
+configurations and four roots.
 
 ## How to check that the statements match
 

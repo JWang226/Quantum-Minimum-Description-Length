@@ -28,6 +28,7 @@ DEFAULT_CONFIGS = [
     "ComparatorChallenges/Theorem1Achievability.json",
     "ComparatorChallenges/Theorem1Converse.json",
     "ComparatorChallenges/Theorem2Choi.json",
+    "ComparatorChallenges/Theorem2Physical.json",
 ]
 
 

@@ -313,3 +313,28 @@ Every definition page now has: concrete examples, expanded intuition, connection
 - Added a separate verification page and challenge documentation. Original
   audit records, proof sources, manuscript bytes and the frozen release are
   unchanged; this clarification is not a new human review or kernel run.
+
+## 2026-10-08 — Independently specified physical Theorem 2
+
+- Added literal physical tensor-source and PRV Choi formulas, a theorem for
+  every isometric intertwining realization, and a theorem proving all four
+  realizations exist. State identification and forward projector uniqueness
+  are derived; no identification or multiplicity premise is supplied.
+- Added a fourth Comparator configuration with two roots. The compiled type
+  closure excludes canonical state/projector constructions and final proof
+  modules; all seven fresh acceptance/rejection controls passed. Lower
+  representation coordinates, generators and numerical expressions remain
+  shared and are listed in the supplemental correspondence map.
+- Fresh local verification passed: 273 production modules, 1,883 proved
+  declarations, 2,512 public declarations and only the three standard axioms;
+  all four Comparator comparisons/axiom checks/Lean kernel replays and all
+  four Nanoda solution checks passed. Nanoda controls passed, using a binary
+  matching the archived pinned source build and fresh current-source exports.
+  This run retained warm Lean dependency artifacts and was unsandboxed.
+- Preserved all 270 baseline proof files and four original compiled endpoint
+  statements exactly. Archived earlier report bytes and bound the additive
+  review and new execution evidence separately. The original manuscript
+  bytes, historical cleanup evidence and v0.1.0-rc1 tag remain unchanged.
+- Updated reproduction commands, source-export contents and the configured
+  CI guard. Independent human correspondence review and Linux/Landrun checks
+  remain pending; the historical release-tag CI does not certify this extension.

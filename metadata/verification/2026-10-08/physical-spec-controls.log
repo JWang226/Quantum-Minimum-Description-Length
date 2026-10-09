@@ -1,0 +1,8 @@
+PHYSICAL SPEC CONTROL PASSED: valid_root_hole_excluded (accepted)
+PHYSICAL SPEC CONTROL PASSED: direct_state_dependency (rejected)
+PHYSICAL SPEC CONTROL PASSED: definition_body_dependency (rejected)
+PHYSICAL SPEC CONTROL PASSED: opaque_body_dependency (rejected)
+PHYSICAL SPEC CONTROL PASSED: missing_root (rejected)
+PHYSICAL SPEC CONTROL PASSED: non_theorem_root (rejected)
+PHYSICAL SPEC CONTROL PASSED: root_used_in_another_type (rejected)
+PHYSICAL SPECIFICATION CONTROLS PASSED: 7 fresh compiled controls.

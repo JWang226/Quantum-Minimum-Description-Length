@@ -1,0 +1,3 @@
+'FreeEntropy.theorem1_achievability' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FreeEntropy.theorem1_converse' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FreeEntropy.theorem1_converse_of_uniform' depends on axioms: [propext, Classical.choice, Quot.sound]

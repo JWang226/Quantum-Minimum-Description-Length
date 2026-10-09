@@ -3,7 +3,7 @@
   "status": "passed",
   "mode": "unsandboxed_independent_kernel",
   "sandboxed_comparator": "not_run",
-  "completed_at_utc": "2026-10-07T00:39:21.382032+00:00",
+  "completed_at_utc": "2026-10-09T03:41:02.666052+00:00",
   "lean_toolchain": "leanprover/lean4:v4.29.0-rc6",
   "nanoda": {
     "repository": "https://github.com/ammkrn/nanoda_lib.git",
@@ -23,9 +23,9 @@
   ],
   "unpermitted_axiom_hard_error": true,
   "unknown_pp_declar_hard_error": true,
-  "proof_sources_sha256": "e7068771d301aaac3156ecc7cd0a1a4b3868a894a1d0988ce897420786ba2c3f",
+  "proof_sources_sha256": "33379ffb4c7547fdc221fb3696f360465d87aaad2247e12707a7b95e557b5cac",
   "artifact_sha256": {
-    "ComparatorConfig/check_nanoda.py": "d24aca97dbd903e47718fbdf97dc8ea7269fbcabe822c0e5debe5e3e6ec33d44",
+    "ComparatorConfig/check_nanoda.py": "d412e5adbb5541332388890797edab78a8bcd9c690212c1a62297d638fcfa429",
     "ComparatorConfig/nanoda-toolchain.json": "21e1be645fa2742ae0ad12aec8052f063a30727d6352b8598360f60eebd427e3",
     "lake-manifest.json": "4707e55825935027ab3c626f6042d11d9279aa19bc7e423a06113266025074eb",
     "lean-toolchain": "dc6d65016fad3123d44bf17b5bf0598286284ab16ba75d5c17eb22ed11f47361"
@@ -61,6 +61,48 @@
       "config_sha256": "a32afec6d35b4dff942b11987b9f680635589bfc3b8cfdee37ecb6bfcfb4b04e",
       "solution_export_sha256": "81b269a69d2f3aa7c2aee679b2c433fcd050e48b97d7896b8752cea3242ace23",
       "export_bytes": 431335302
+    },
+    "ComparatorChallenges/Theorem2Physical.json": {
+      "status": "passed",
+      "theorem_names": [
+        "FreeEntropy.ExteriorRepresentation.theorem2_cloning_accuracy_physical",
+        "FreeEntropy.ExteriorRepresentation.theorem2_physical_realizations_exist"
+      ],
+      "exported_theorems_present": true,
+      "config_sha256": "404f5e69c35d3b402ffb946e311d8bf353fc5004ca61cde3cfed7a8823b873dc",
+      "solution_export_sha256": "ab92936849a71da6c9af7c07776d71c840d207676b74f5938b47e1b61291279d",
+      "export_bytes": 433819661
     }
+  },
+  "execution_context": "Fresh controls and fresh current-source solution exports, checked with the caller-supplied Nanoda binary whose SHA-256 matches the preserved pinned source build. Warm Lean dependency artifacts were retained. This invocation did not rebuild Rust/Nanoda and did not run Landrun.",
+  "binary_provenance": {
+    "kind": "reused_hash_matching_pinned_build",
+    "historical_record": {
+      "path": "metadata/verification/2026-10-08/historical/nanoda-status.json",
+      "sha256": "d1a8fd59ab4d788bc225841d89930c9016cb8cbaa86a4dd6fc01e9ebe44e0e41"
+    },
+    "source_revision_verified": "3a2407216ee84a75f9e1aead6803d0578be06ae7",
+    "cargo_lock_sha256_verified": "9b921e794ce5ed515eb31db9ada0c2f34df999b6c9b5135ad308a412872e42be",
+    "binary_sha256_verified": "1405c1bc1fb0bf1233b8c0e29c5657aea450845c76925aa3554308689e278625"
+  },
+  "execution_evidence": {
+    "run_info": {
+      "path": "metadata/verification/2026-10-08/run-info.json",
+      "sha256": "00ef4a971ca6e395bd5cbc412e8ddf694eefe9c94875dc9e8c756360e03a2692"
+    },
+    "raw_log": {
+      "path": "metadata/verification/2026-10-08/nanoda.log",
+      "sha256": "d18fa5e1d872d138b0b0ed6140a8e65d96d6edfb696ce22ac13a2e61dec62f64"
+    },
+    "controls_log": {
+      "path": "metadata/verification/2026-10-08/nanoda-controls.log",
+      "sha256": "5a4a9626d75fe15211d9d9be9e07d55e947c7e1d0d6de7374a085e8b56eedb1b"
+    },
+    "wrapper_result": {
+      "path": "metadata/verification/2026-10-08/result.txt",
+      "sha256": "d3ca7cdd63d5f3bbc86a629cd3de778fd7d22f04c3c3b79af3c6a8861deabc00"
+    },
+    "exit_status": 0,
+    "wrapper_sha256": "24bc7b90d4e4cc77e3f4df54c649f1f2322da605a1c98d7b8febc1ea7481a89c"
   }
 }

@@ -1,0 +1,46 @@
+{
+  "baseline_revision": "955bffc9278533adc219dd86012e9a2bc07c992b",
+  "scope": "Original bytes preserved before additive physical-interface proofs and fresh checks; not evidence for the new sources.",
+  "files": {
+    "metadata/statement-audit/manifest.json": {
+      "path": "metadata/verification/2026-10-08/historical/statement-manifest.json",
+      "sha256": "946a2e1076c75e7faee7ae6f07a1a1bca47f3ae750fb9af75746e93189ef8106"
+    },
+    "metadata/statement-audit/checks.json": {
+      "path": "metadata/verification/2026-10-08/historical/statement-checks.json",
+      "sha256": "c46d1200d6cc3763ba1d4dba57bece37401f0641ee27c8650f3b12a2d7eb1e87"
+    },
+    "metadata/statement-audit/compiled-binders.json": {
+      "path": "metadata/verification/2026-10-08/historical/compiled-binders.json",
+      "sha256": "02d31b308cbd2a06983fd2db0e6c92b0a53c5d7fb2f8611baf821991a8fa0139"
+    },
+    "metadata/statement-audit/theorem1-output.txt": {
+      "path": "metadata/verification/2026-10-08/historical/theorem1-output.txt",
+      "sha256": "7818b1c0d4fee5ae15ebac351ee8dfcb0142252832691976158f21e4e5fda250"
+    },
+    "metadata/statement-audit/theorem2-output.txt": {
+      "path": "metadata/verification/2026-10-08/historical/theorem2-output.txt",
+      "sha256": "7edc4d565ccc7ab98d962b184b88766d7986c4ac20d7a59760939d32e5790a74"
+    },
+    "lean/ComparatorChallenges/verification-status.json": {
+      "path": "metadata/verification/2026-10-08/historical/comparator-status.json",
+      "sha256": "06ca0ad650c217f2fb7a29fd1b26d79dfcbbf394b4a211b7521dc236b58bfe15"
+    },
+    "lean/ComparatorConfig/nanoda-status.json": {
+      "path": "metadata/verification/2026-10-08/historical/nanoda-status.json",
+      "sha256": "d1a8fd59ab4d788bc225841d89930c9016cb8cbaa86a4dd6fc01e9ebe44e0e41"
+    },
+    "lean/verification/summary.json": {
+      "path": "metadata/verification/2026-10-08/historical/lean-summary.json",
+      "sha256": "8b1c8e46831450466406d339932d51207c55e1ea57d644f844d622e82071500a"
+    },
+    "lean/verification/reproducibility.json": {
+      "path": "metadata/verification/2026-10-08/historical/lean-reproducibility.json",
+      "sha256": "bb3709bcf7b3059c1361f83ab869c073cb9740ad0c6452294e4a960906387047"
+    },
+    "scripts/check_statement_audit.py": {
+      "path": "metadata/verification/2026-10-08/historical/check_statement_audit.py",
+      "sha256": "cbff31873d9d7a5763a06ef81c758d832a74b70dd704a2e8a207cd6f8aa6c047"
+    }
+  }
+}

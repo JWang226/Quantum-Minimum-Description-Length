@@ -1,0 +1,96 @@
+{
+  "schema_version": "qmdl-physical-spec-controls-v1",
+  "status": "passed",
+  "started_at_utc": "2026-10-09T03:01:33.391456+00:00",
+  "completed_at_utc": "2026-10-09T03:03:53.902755+00:00",
+  "mode": "fresh_compiled_guard_controls",
+  "sandboxed": false,
+  "lean_toolchain": "leanprover/lean4:v4.29.0-rc6",
+  "runner_sha256": "a6e0cc08b1b91ed2a7be82e1f81d34b3f5740d7fdfefd95e0c7069c1226dda3b",
+  "guard_sha256": "d9292fc3c5635e7cbde7294fc8ab5fce1ffba3cae75a0769a80e5538ab1319e7",
+  "lake_manifest_sha256": "4707e55825935027ab3c626f6042d11d9279aa19bc7e423a06113266025074eb",
+  "fixture_source_sha256": "77e932b4d2dc3ffa7643b8ccf672e95d8452f5235c77b1cc9842345faedd4525",
+  "fixture_olean_sha256": "5e86e186e40a04351228f9350d5c3887e9973fe04723f4e47baae46452e4f20d",
+  "fixture_compile_output_sha256": "61994e1d854423632ae2162b5e4fb99430a4de00dd80a70b5d3c93b639534513",
+  "checks": [
+    {
+      "id": "valid_root_hole_excluded",
+      "theorem_roots": [
+        "PhysicalSpecControls.good"
+      ],
+      "fixture_elaboration": "passed",
+      "guard_exit_status": 0,
+      "guard_output_sha256": "0ec83b4734f22203e592a2cae08e9f532738475951a94e09e426533833cd8818",
+      "status": "accepted",
+      "guard_report_sha256": "c3169d7f899087458beaadf02939aea78f0060f1f53d5c3b9b9131d8c2fc9b19"
+    },
+    {
+      "id": "direct_state_dependency",
+      "theorem_roots": [
+        "PhysicalSpecControls.direct"
+      ],
+      "fixture_elaboration": "passed",
+      "guard_exit_status": 1,
+      "guard_output_sha256": "d144e413f1e2d5f7fe91f8a49514b1b4ef8bb42dbbfec01e4ddefcb9b879fb27",
+      "status": "rejected",
+      "expected_reason": "Forbidden constructed state/projector/proof dependency: FreeEntropy.ExteriorRepresentation.canonicalOrbitState"
+    },
+    {
+      "id": "definition_body_dependency",
+      "theorem_roots": [
+        "PhysicalSpecControls.definitionBody"
+      ],
+      "fixture_elaboration": "passed",
+      "guard_exit_status": 1,
+      "guard_output_sha256": "d144e413f1e2d5f7fe91f8a49514b1b4ef8bb42dbbfec01e4ddefcb9b879fb27",
+      "status": "rejected",
+      "expected_reason": "Forbidden constructed state/projector/proof dependency: FreeEntropy.ExteriorRepresentation.canonicalOrbitState"
+    },
+    {
+      "id": "opaque_body_dependency",
+      "theorem_roots": [
+        "PhysicalSpecControls.opaqueBody"
+      ],
+      "fixture_elaboration": "passed",
+      "guard_exit_status": 1,
+      "guard_output_sha256": "d144e413f1e2d5f7fe91f8a49514b1b4ef8bb42dbbfec01e4ddefcb9b879fb27",
+      "status": "rejected",
+      "expected_reason": "Forbidden constructed state/projector/proof dependency: FreeEntropy.ExteriorRepresentation.canonicalOrbitState"
+    },
+    {
+      "id": "missing_root",
+      "theorem_roots": [
+        "PhysicalSpecControls.missing"
+      ],
+      "fixture_elaboration": "passed",
+      "guard_exit_status": 1,
+      "guard_output_sha256": "49b27bdc2a432c6b86f69ad47463fb9d6767feea34c17bc47a29d3937bad9630",
+      "status": "rejected",
+      "expected_reason": "Missing expected theorem: PhysicalSpecControls.missing"
+    },
+    {
+      "id": "non_theorem_root",
+      "theorem_roots": [
+        "PhysicalSpecControls.definitionRoot"
+      ],
+      "fixture_elaboration": "passed",
+      "guard_exit_status": 1,
+      "guard_output_sha256": "158c7f958d2cc4ad34a8d2122809d52bf7ccc6c30bdf3168f732b16a0c1541d5",
+      "status": "rejected",
+      "expected_reason": "Expected root is not a theorem: PhysicalSpecControls.definitionRoot"
+    },
+    {
+      "id": "root_used_in_another_type",
+      "theorem_roots": [
+        "PhysicalSpecControls.good",
+        "PhysicalSpecControls.otherRoot"
+      ],
+      "fixture_elaboration": "passed",
+      "guard_exit_status": 1,
+      "guard_output_sha256": "0a7378ca599291bcd76d31f1f3fad55501b25aaaf36648207513e448303fee1a",
+      "status": "rejected",
+      "expected_reason": "Challenge proof root referenced in expected type closure: PhysicalSpecControls.good"
+    }
+  ],
+  "policy": "All fixture declarations elaborated before guard controls ran. Accepted challenge proof body is deliberately excluded. Only rejection for each specified guard diagnostic counts; compilation failure is not a successful rejection. These controls do not certify the manuscript or production proofs."
+}

@@ -3,16 +3,31 @@
   "purpose": "Explicit expected-statement trust inventory; not an upstream Comparator configuration or permission bypass",
   "upstream_config_schema": {
     "commit": "a4f696825c583ed8a5b4060d9a0faa5b882d365b",
-    "keys": ["challenge_module", "solution_module", "theorem_names", "permitted_axioms", "enable_nanoda"],
+    "keys": [
+      "challenge_module",
+      "solution_module",
+      "theorem_names",
+      "permitted_axioms",
+      "enable_nanoda"
+    ],
     "permittedConstants_supported": false,
     "declaration_mapping": "Identical fully qualified names in separately exported environments",
     "constant_rule": "Every referenced constant is recursively compared by the pinned upstream Comparator"
   },
-  "solution_permitted_axioms": ["propext", "Quot.sound", "Classical.choice"],
+  "solution_permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
   "nanoda_enabled": false,
   "theorem1": {
-    "configs": ["Theorem1Achievability.json", "Theorem1Converse.json"],
-    "project_imports": ["FreeEntropy.UnitaryHaar"],
+    "configs": [
+      "Theorem1Achievability.json",
+      "Theorem1Converse.json"
+    ],
+    "project_imports": [
+      "FreeEntropy.UnitaryHaar"
+    ],
     "independently_redeclared": [
       "FreeEntropy.FixedSpectrum",
       "FreeEntropy.Channels.amplify",
@@ -29,14 +44,20 @@
       "FreeEntropy.SchurWeyl.mixedAverageError",
       "FreeEntropy.SchurWeyl.mixedWorstError"
     ],
-    "imported_project_interface": ["FreeEntropy.UnitaryHaar.probabilityHaar"],
+    "imported_project_interface": [
+      "FreeEntropy.UnitaryHaar.probabilityHaar"
+    ],
     "imported_foundations": "Mathlib and the explicit Haar construction, including their transitive declarations and instances"
   },
   "theorem2": {
-    "configs": ["Theorem2Choi.json"],
+    "configs": [
+      "Theorem2Choi.json"
+    ],
     "project_imports": [
-      "FreeEntropy.CanonicalChoi", "FreeEntropy.CanonicalReverseChoi",
-      "FreeEntropy.CanonicalCloningBounds", "FreeEntropy.ChoiContraction"
+      "FreeEntropy.CanonicalChoi",
+      "FreeEntropy.CanonicalReverseChoi",
+      "FreeEntropy.CanonicalCloningBounds",
+      "FreeEntropy.ChoiContraction"
     ],
     "independently_redeclared": [
       "FreeEntropy.ExteriorRepresentation.prvForward",
@@ -57,6 +78,52 @@
       "FreeEntropy.Theorem2.cloningConstant"
     ],
     "imported_foundations": "These exact constructed representation, projector, state and numerical definitions, including all transitive declarations and typeclass instances; not an independent reconstruction of representation theory",
-    "excluded_final_modules": ["FreeEntropy.Theorem2Canonical", "FreeEntropy.Theorem2Choi"]
+    "excluded_final_modules": [
+      "FreeEntropy.Theorem2Canonical",
+      "FreeEntropy.Theorem2Choi"
+    ]
+  },
+  "theorem2_physical": {
+    "configs": [
+      "Theorem2Physical.json"
+    ],
+    "project_imports": [
+      "FreeEntropy.CanonicalOrbit",
+      "FreeEntropy.SignedAuxiliaryModel",
+      "FreeEntropy.CanonicalRowBounds",
+      "FreeEntropy.Theorem2",
+      "FreeEntropy.ChoiContraction"
+    ],
+    "independently_redeclared": [
+      "FreeEntropy.SchurWeyl.physicalIsometricState",
+      "FreeEntropy.SchurWeyl.physicalSpectrumDensity",
+      "FreeEntropy.ExteriorRepresentation.physicalPrvMap"
+    ],
+    "universally_quantified_realizations": "Two physical tensor isometries and forward/reverse auxiliary isometries; literal isometry and intertwining equations; simultaneous existence separately proved and compared.",
+    "imported_project_interface": [
+      "FreeEntropy.FixedSpectrum",
+      "FreeEntropy.ExteriorRepresentation.IrrepIndex",
+      "FreeEntropy.ExteriorRepresentation.canonicalWeightRepresentation",
+      "FreeEntropy.ExteriorRepresentation.canonicalWeightModel",
+      "FreeEntropy.ExteriorRepresentation.canonicalAuxiliaryModel",
+      "FreeEntropy.ExteriorRepresentation.auxiliaryRow",
+      "FreeEntropy.ExteriorRepresentation.differenceNorm",
+      "FreeEntropy.ExteriorRepresentation.minimumRowGap",
+      "FreeEntropy.CartanChoi.partialTraceInput",
+      "FreeEntropy.TraceDistance.traceDistance",
+      "FreeEntropy.FixedSpectrum.qx",
+      "FreeEntropy.Theorem2.cloningConstant"
+    ],
+    "imported_foundations": "Constructed representation coordinate indices, group/weight/auxiliary representations, trace distance and numerical bounds with their transitive definitions and proof fields. This is not an independent reconstruction of representation theory.",
+    "excluded_type_dependencies": [
+      "FreeEntropy.ExteriorRepresentation.canonicalOrbitState",
+      "FreeEntropy.SchurWeyl.canonicalWeightTensorState",
+      "FreeEntropy.ExteriorRepresentation.canonicalChoiProjector",
+      "FreeEntropy.ExteriorRepresentation.canonicalReverseChoiProjector"
+    ],
+    "boundary_guard": "scripts/check_physical_spec.lean",
+    "guard_evidence": "metadata/verification/2026-10-08/physical-spec.json",
+    "guard_controls": "scripts/test_physical_spec.py",
+    "scope": "Original three fixtures remain byte-for-byte unchanged. A fourth comparison checks both the stronger universal physical statement and nonvacuous realization existence. Recursive type dependency closure is checked separately; target challenge proof holes are intentionally excluded."
   }
 }

@@ -26,6 +26,7 @@ roots = [
   "ComparatorChallenges.Theorem1Achievability",
   "ComparatorChallenges.Theorem1Converse",
   "ComparatorChallenges.Theorem2Choi",
+  "ComparatorChallenges.Theorem2Physical",
 ]
 
 [[lean_lib]]

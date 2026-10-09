@@ -1,0 +1,60 @@
+{
+  "checked_at_utc": "2026-10-07T00:07:48.316586+00:00",
+  "proof_sources_sha256": "e7068771d301aaac3156ecc7cd0a1a4b3868a894a1d0988ce897420786ba2c3f",
+  "probe_bundle_sha256": "9a8d10e24ee04e8ca34a6ffe12f34918cf5dc790cc57f2b7a321a482a0ba1730",
+  "checker_sha256": "cbff31873d9d7a5763a06ef81c758d832a74b70dd704a2e8a207cd6f8aa6c047",
+  "exporter_sha256": "5916c46af85d9728543e8c01b98b8d2af0c9e354ec10e4d059e1575ff75d347e",
+  "mode": "incremental_exact_type_probes",
+  "sandboxed": false,
+  "fresh_checkout": false,
+  "status": "passed",
+  "checks": [
+    {
+      "id": "theorem1",
+      "status": "passed",
+      "probe_sha256": "f8290ecce23668d59c6030dd5b70bbf35f2f6991b2f25cc30c3626d6f35ee190",
+      "axioms": {
+        "FreeEntropy.theorem1_achievability": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "FreeEntropy.theorem1_converse": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "FreeEntropy.theorem1_converse_of_uniform": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      },
+      "output_sha256": "7818b1c0d4fee5ae15ebac351ee8dfcb0142252832691976158f21e4e5fda250"
+    },
+    {
+      "id": "theorem2",
+      "status": "passed",
+      "probe_sha256": "913c64228f68f43d64cd24bf829fdd11e171cd0b0d5cb4ee4d9e9b1649f32066",
+      "axioms": {
+        "FreeEntropy.ExteriorRepresentation.theorem2_cloning_accuracy_choi": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "FreeEntropy.ExteriorRepresentation.prv_maps_are_channels": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "FreeEntropy.SchurWeyl.canonicalWeightTensorState_eq_orbit": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      },
+      "output_sha256": "7edc4d565ccc7ab98d962b184b88766d7986c4ac20d7a59760939d32e5790a74"
+    }
+  ],
+  "compiled_binders_sha256": "02d31b308cbd2a06983fd2db0e6c92b0a53c5d7fb2f8611baf821991a8fa0139"
+}

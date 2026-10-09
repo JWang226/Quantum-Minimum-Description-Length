@@ -12,14 +12,22 @@ proof, including its transitive axiom closure.
 | `Theorem1Achievability.json` | `FreeEntropy.theorem1_achievability` | `FreeEntropy.Theorem1Complete` |
 | `Theorem1Converse.json` | `FreeEntropy.theorem1_converse`, `FreeEntropy.theorem1_converse_of_uniform` | `FreeEntropy.Theorem1Complete` |
 | `Theorem2Choi.json` | `FreeEntropy.ExteriorRepresentation.theorem2_cloning_accuracy_choi` | `FreeEntropy.Theorem2Choi` |
+| `Theorem2Physical.json` | `FreeEntropy.ExteriorRepresentation.theorem2_cloning_accuracy_physical`, `FreeEntropy.ExteriorRepresentation.theorem2_physical_realizations_exist` | `FreeEntropy.Theorem2Physical` |
+
+Current `main` has four configurations and six theorem roots. The frozen
+`v0.1.0-rc1` release has the original three configurations and four roots;
+its tag and source archive do not include the physical interface extension.
 
 Theorem 1's expected interface independently restates the spectrum, genuine CPTP
 channels, tensor-power density matrices, trace distance, Haar-average and worst-case
 error, and the complete QMDL formula. Its sole project import is the construction of
 normalized Haar measure. Theorem 2 independently restates the literal partial-trace
-Choi contractions; its constructed representation, state, and projector definitions
-are imported. This larger trust boundary is explicit in `trusted-boundary.json`.
-Neither challenge is an alias of a target proposition.
+Choi contractions in `Theorem2Choi`; its constructed representation, state, and
+projector definitions are imported. This original trust boundary is explicit in
+`trusted-boundary.json`. The additional `Theorem2Physical` challenge restates
+the tensor-source normalization and Choi contractions, and quantifies over
+arbitrary isometric embeddings satisfying explicit representation equations.
+No challenge is an alias of a target proposition.
 
 ### Shared definitions and specification independence
 
@@ -42,12 +50,40 @@ states using this bridge and then applies the endpoint. Its
 bridge's axiom audit. This is a checked composition of mathematical
 identifications, not an independently restated state/projector specification.
 
-A future independently specified expected-statement interface should use a
-linear isometric inclusion from the irrep into tensor space, with `Jᴴ * J = 1`
-and normalized compression `Jᴴ * ρ^⊗n * J`. It must characterize the representation
-and PRV projector and transport state and channel coordinates consistently. A
-function between index types, or a highest-vector condition alone, does not supply that
-specification. This strengthening is not claimed by the current challenge.
+### Physical Theorem 2 extension
+
+The new [physical challenge](Theorem2Physical.lean) uses a linear inclusion from
+the irrep into tensor space, `Jᴴ * J = 1`, and literal matrix-entry products at
+degree `∑ j, mu j`. `physicalIsometricState` normalizes the compression
+`Jᴴ * ρ^⊗n * J` by its trace and explicitly supplies the maximally mixed
+zero-trace fallback. The density matrix and normalized Choi contractions are
+also independently redeclared. The forward and reverse projectors are `W * Wᴴ`
+for arbitrary isometries satisfying the specified Lie intertwining equations.
+
+The [solution](../FreeEntropy/Theorem2Physical.lean) proves two roots: both
+error bounds for every such choice, and existence of all four embeddings for
+every admissible pair of rows. The latter prevents a vacuous specification.
+The proofs derive state and projector identification rather than assuming them.
+
+This reduces the shared boundary; it does not independently reconstruct the
+representation theory. The canonical coordinate indices, unitary
+representations, Lie generators and auxiliary representation remain shared,
+as do the numerical bounds and matrix primitives. The
+[physical interface map](../../metadata/physical-interface-map.json) records
+these objects and the [audit extension bridge](../../metadata/statement-audit/physical-interface-bridge.json)
+separates this addition from the historical statement audit. It is not a new
+human correspondence review.
+
+[`check_physical_spec.lean`](../../scripts/check_physical_spec.lean) follows the
+compiled expected theorem types and their transitive declaration dependencies,
+rejecting references to the canonical orbit-state, source-state or Choi-projector
+constructions and final proof modules. It excludes the deliberate root proof
+holes, and checks their two types. Its negative controls are in
+[`test_physical_spec.py`](../../scripts/test_physical_spec.py). The `all` and
+`comparator` reproducer modes run this guard and its controls; the
+[closure report](../../metadata/verification/2026-10-08/physical-spec.json) lists
+the remaining shared dependencies. This check establishes a dependency boundary,
+not semantic agreement with the manuscript.
 
 See [the website explanation](https://jwang226.github.io/Quantum-Minimum-Description-Length/audit/comparator-scope/)
 for the source snapshot and recorded probe scope.
@@ -146,7 +182,7 @@ python3 lean/ComparatorConfig/check_nanoda.py \
   --nanoda-bin "$nanoda_tools/nanoda/target/release/nanoda_bin"
 ```
 
-This checks all three configurations using actual solution exports, including the
+On current `main`, this checks all four configurations using actual solution exports, including the
 Nat, String and quotient roots requested by the pinned Comparator's Nanoda mode.
 Only the three standard axioms are allowed; an unpermitted axiom causes a hard
 error. The wrapper verifies that every requested target occurs as a theorem in
@@ -161,14 +197,30 @@ performed by Nanoda's parser independently of printing.
 
 ## Recorded status
 
-All challenge templates compile, and all three local diagnostics **passed** on a
-clean isolated build: exact exported statements and referenced constants matched,
+All four current configurations and six roots **passed** the October 8 local
+diagnostic, including the universal physical bound and realization existence:
+exact exported statements and referenced constants matched,
 the solution axiom closures were accepted, and Lean kernel replay succeeded.
-`verification-status.json` binds these results to source and artifact hashes.
+`verification-status.json` binds each recorded result to source and artifact
+hashes. These are fresh exports from a source-matching local build with warm
+dependency artifacts, not a new clean-checkout run. The October 8 extension is distinguished by the physical configuration
+and its two roots; earlier three-configuration reports do not verify that addition.
 
-The real sandboxed Comparator run is **not run** on the development Mac: Landrun
-requires a capable Linux host. The baseline Comparator run had Nanoda disabled;
-the separate Nanoda run **passed all three configurations** with strict axiom
-checking. Its source, compiler, binary, exports and input hashes are recorded in
-`ComparatorConfig/nanoda-status.json`. Neither local check constitutes a sandboxed
-Comparator pass.
+The physical specification dependency guard and all seven acceptance/rejection
+controls passed in the October 8 local run. This establishes the documented
+dependency boundary and exercises its rejection paths; it does not establish
+human correspondence review or replace the four-configuration proof checks.
+
+All four current Nanoda cases and six roots **passed**, using fresh exports and
+rerun acceptance/rejection controls. The physical-interface export checked
+58,990 declarations with no errors. The reused checker binary's SHA-256 matches
+the archived pinned source build; this invocation did not rebuild Rust. The
+complete local wrapper exited zero with `VERIFICATION PASSED: all`. Current
+source/export bindings are recorded in `ComparatorConfig/nanoda-status.json`
+and the [execution record](../../metadata/verification/2026-10-08/verification-result.json).
+
+The [historical three-configuration execution record](../../metadata/verification/2026-10-08/historical/nanoda-status.json)
+retains its original hashes and scope; frozen rc1 is unchanged. The real
+sandboxed Comparator run is **not run** on the development Mac: Landrun requires
+a capable Linux host. These local checks are unsandboxed and do not establish
+a new hosted CI result.

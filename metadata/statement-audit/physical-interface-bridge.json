@@ -1,0 +1,550 @@
+{
+  "schema_version": 1,
+  "review_kind": "additive_agent_review",
+  "human_review": "not_established",
+  "baseline_revision": "955bffc9278533adc219dd86012e9a2bc07c992b",
+  "baseline_proof_sources_sha256": "e7068771d301aaac3156ecc7cd0a1a4b3868a894a1d0988ce897420786ba2c3f",
+  "current_proof_sources_sha256": "33379ffb4c7547fdc221fb3696f360465d87aaad2247e12707a7b95e557b5cac",
+  "retained_modules": {
+    "lean/FreeEntropy/AtypicalChannels.lean": "148387af3d25ad5f570e90522d781e2fe8f5aa415c32e0ec76ef3a0875bce867",
+    "lean/FreeEntropy/CanonicalAmbientCloning.lean": "609189d547652b10c8db5b598d8f042ee0adff68839296f254c2f31215b3e24c",
+    "lean/FreeEntropy/CanonicalCartanCovariance.lean": "8d0df4eafce48a34a3ee28f000ddfda4fef18e33c2f51732a780940e955986ee",
+    "lean/FreeEntropy/CanonicalCharacter.lean": "656511edf4cce2a915ddc4558f255cf3966a2dc5c9cf2e3acc634a84deb1495e",
+    "lean/FreeEntropy/CanonicalCharacterEigen.lean": "01d8b860d78477b6ecdebd090c6ef88deda98c938b33f522164b7cfaca747a21",
+    "lean/FreeEntropy/CanonicalCharacterIdentity.lean": "e8dd1680a3d328e75f9b749a74dc50ecfa08cb5ac8a8a2f1a468070e6fbcafd5",
+    "lean/FreeEntropy/CanonicalChoi.lean": "93de69b5f92e6efef8913be6ca3d250664adce30b56e662f45e34ddf0ba2cd10",
+    "lean/FreeEntropy/CanonicalClassification.lean": "7ce6369a1a5fca52520391e2f1ec4959eff0a54073a4863e18e015a1505562d0",
+    "lean/FreeEntropy/CanonicalCloning.lean": "071d243ec366bbd4506294c78218cba8ee049f87175043b40f631c66d121098e",
+    "lean/FreeEntropy/CanonicalCloningBounds.lean": "a5464e61b23091744d6fd596dc5d68f810c1e5c227fa4f30c4465b507a164a3e",
+    "lean/FreeEntropy/CanonicalCloningCore.lean": "59636287fe11fdd7283216edba70f63e403fafaa6554aa6a8fff627e264adaa7",
+    "lean/FreeEntropy/CanonicalCloningOrbit.lean": "ef38f800e7dfce98ca8a800aa6c770f9fbc830ff9fc99c374e8b5d8a65392c71",
+    "lean/FreeEntropy/CanonicalCloningSelf.lean": "02948f54e570fb5d8d045d9e723f779c7de1554fe331422c88d75d08b8560845",
+    "lean/FreeEntropy/CanonicalConverse.lean": "161c5e73e2baffd4bc3cb0030c64cc0a257b8d3e22d8b5d4e461b2f4f59c0045",
+    "lean/FreeEntropy/CanonicalDimension.lean": "34118ad838d77bcb74fca943003a14ecaa411a190e0202e14a4ada93562e0402",
+    "lean/FreeEntropy/CanonicalDimensionRatio.lean": "977ea9e4dbe1f3b65eea8650e8d328818fb76dbbad69d71abd6212dce8ef58b2",
+    "lean/FreeEntropy/CanonicalDualCyclicHighest.lean": "4324c9858c51ca87e2c55bd7689303273625facb08a82879518e59043b4ed503",
+    "lean/FreeEntropy/CanonicalDualHighest.lean": "33b714b2b116ddfcd79a0d2be1c2ad473d7be9808d37b0356c68111f21ab01d6",
+    "lean/FreeEntropy/CanonicalFullCloning.lean": "aa9eeb553f09977578b97423816a5022f7b65ba3e3e9261105252f43518132c7",
+    "lean/FreeEntropy/CanonicalMonomialState.lean": "26a018a1c4f702e6b292b0c368c95881ea8b74242a1c6de457c7e41a3f672407",
+    "lean/FreeEntropy/CanonicalOrbit.lean": "42900e19bd005a29055cfce5c4851ff89d7b62fd7dd8e26f67b8e6fae2de69aa",
+    "lean/FreeEntropy/CanonicalPetz.lean": "b230cf18691b5718ebe0eebf3d61801712b0f7b5a6c08d26683583cf1088a60d",
+    "lean/FreeEntropy/CanonicalPhysicalOrbit.lean": "3034c93efca86889b5956e1d5edd49288c38500438ab925afdfbb20a04d8310e",
+    "lean/FreeEntropy/CanonicalReverseChoi.lean": "19df8f456d6710b89b27097c766ae6ee88046374c03e7b855ba55f83ad1dbbf0",
+    "lean/FreeEntropy/CanonicalRowBounds.lean": "0ee47cdcd1fc5351cf744e6f1106969757900510987f669a0543aef59ef6f8dc",
+    "lean/FreeEntropy/CartanBalance.lean": "9bb8e0baba7c5232d5602f2c4b25f15f6dd54d0a2ccd82807cade0690c894eb2",
+    "lean/FreeEntropy/CartanChannel.lean": "c5392af20170b13b4e5995d2c7b5e1a6685e841c10bf877f2319d2f0ce6fa33a",
+    "lean/FreeEntropy/CartanChoi.lean": "8daeb5378f58413d3b54d398cc36ef2201b947fa45d0ce1cdbc9dcaf48ae9276",
+    "lean/FreeEntropy/CartanChoiMultiplicity.lean": "79eaf429142fe9bda48842cd027e7a6fbc7d86a7d71bd8b53bf0d858da7d7cf8",
+    "lean/FreeEntropy/CartanCloning.lean": "a3c95ce61b6124adaff7c0826af64d44f526b4eb30c885ce33773c55facfb0f1",
+    "lean/FreeEntropy/CartanGroupCovariance.lean": "601ed0192dd4ef076ef4d48f31559608d32a8c2c13c2533e90ecea650ddc4c4d",
+    "lean/FreeEntropy/CartanHomMultiplicity.lean": "02207ef1459d6aa493321eefb7a1c8a862fd7dd7164a39a198ea6ed8d714616f",
+    "lean/FreeEntropy/CartanLieCloning.lean": "cb59714b4aab386357c113dd257f6e79f14e440624a885ab354087288e62d64b",
+    "lean/FreeEntropy/CartanMultiplicity.lean": "7879a659e5b131b697f9cecd962b24129802dcb31fea1686ee78170ab9910c17",
+    "lean/FreeEntropy/CartanReshuffle.lean": "90600b4316c7aab02c68bc8ce42a6f428db961eba611de531d50f732bd0ae908",
+    "lean/FreeEntropy/CartanTraceCloning.lean": "e80e55505bb25916eee732a63643f1023bdae7c47f1b55e152e290d98753401e",
+    "lean/FreeEntropy/CartanTraceCloningBalance.lean": "f9b9b5e0aaf3fd6def51f507a5879136e9eac0484fbcfaab203627168d894d7b",
+    "lean/FreeEntropy/CasimirCentral.lean": "faafd7f5c26b4cc86f2300823c7bb57d4b8fded6a356af247edd85b30e08482d",
+    "lean/FreeEntropy/CasimirDecomposition.lean": "ea5c37b60410b7fb36ccfb8801077267d10ebe8d5278292e2896736e5e31146f",
+    "lean/FreeEntropy/CasimirTrace.lean": "19f1bdeabebd90536af73590c29aea2ee9eac7bfc95b04c83798b1343834e640",
+    "lean/FreeEntropy/CasimirWeights.lean": "02ffd10ad247a1e6c622a7f968a92640f8d55bf2fcc34515a4eb451b5741e1a9",
+    "lean/FreeEntropy/Channels.lean": "c974858f41263dd2dbb79079de675ab2a0fa4b510b32a6b61d96101b5f6a6c12",
+    "lean/FreeEntropy/ChoiContraction.lean": "910f027286549e546ef6d1831f947ef4998da59ec9f32b315ce09ce6f2bc1b55",
+    "lean/FreeEntropy/Cloning.lean": "4465334f0a3096fba7fff47ea2a6c954f1ecc172653e05227e1da3fbd5b290d0",
+    "lean/FreeEntropy/CloningFromRows.lean": "c12f4f049a592021a0c050937a9f571529055d435d581e88473a5a9ec4db2995",
+    "lean/FreeEntropy/CloningMatrices.lean": "c5a82fed0998b6ffaff7c571d4a41ef1d3158eeb5876ad1b4b013c199ef29fb1",
+    "lean/FreeEntropy/Concentration.lean": "9aed7714b683d90ef20f028b3e8f9bebd6f9c697e7cdbaca5967c5ea077aed62",
+    "lean/FreeEntropy/ConstantWeightPhase.lean": "78889c0357ba14da6eace44b9fcb910a37fe92a394166874718cae9c8f381c62",
+    "lean/FreeEntropy/ConstructedLieCloning.lean": "53c22161372cea1556f3427bedce618f082f7062ea60f126d177d0d4af8d3184",
+    "lean/FreeEntropy/ConstructedTensorDecomposition.lean": "9e5cd671c2a2897acb5bd5e4c7aff96afff3edce9f9d6e7ce0ca2857e2373325",
+    "lean/FreeEntropy/CoordinateWeightSpace.lean": "f2ee814dfd8de9463814f08045a44318b4ac26532e4eb28e35b3e04612bb78e5",
+    "lean/FreeEntropy/CyclicHighestRepresentation.lean": "313c7525e369508fec95b5664ed71dcc940fa2bcd269b22830a9d902b30e3d21",
+    "lean/FreeEntropy/CyclicWeightHighest.lean": "15adfe837374785b08fad3cbb4a80b1efdfae148bee2df64ff021d258b8c3326",
+    "lean/FreeEntropy/CyclicWeightOrbit.lean": "542f0e0f3c01210ff8d89bc58c922b2f1da0df1948f083c9d2026f609bf7ec76",
+    "lean/FreeEntropy/CyclicWeightShift.lean": "2a74c297daf52d4214d9571c983e1f0828c469d5493e7d00faa49b7bee19faa4",
+    "lean/FreeEntropy/CyclicWeightStateBlocks.lean": "36dee186da65fecac96916990692557ddd9680920bc90959aa4b9f8e8527df9e",
+    "lean/FreeEntropy/CyclicWeightStates.lean": "ab5626d12a23446180d60f8e4f8e7229110fff21c2a4d0bdf29225e7240eeb91",
+    "lean/FreeEntropy/ExteriorCanonicalCyclicity.lean": "487b5e4d656de25c56a83ddaedee06b36f9e7804c1c357d5287e66d58d3b29a2",
+    "lean/FreeEntropy/ExteriorCanonicalHighest.lean": "f487722293a9d4bcb501e485ae7b276b80e85f17f4ce99993933c42cc527300e",
+    "lean/FreeEntropy/ExteriorCartan.lean": "dcdc4293738080eb20207e117cf3be26e7194f18391fe2c942e9468e366ca979",
+    "lean/FreeEntropy/ExteriorCartanChannels.lean": "0c4c0e0d1c92677fb71e01b65f84f56ccc5a618592c43c5e80cecb27ac710004",
+    "lean/FreeEntropy/ExteriorCartanEmbedding.lean": "7b31621b4d6966f80f5e49dabbd1fb43247c4af61313ceea0c9f2b7f27d00074",
+    "lean/FreeEntropy/ExteriorColumnEquiv.lean": "738cb8d15a1110e6fc1447d3f5bcd22e758ed9ee822c4862f151ab9f478deaa9",
+    "lean/FreeEntropy/ExteriorCommutant.lean": "22b57730ceb622491ba65867564c5039965a0488cddb91470703cb26703da533",
+    "lean/FreeEntropy/ExteriorDominant.lean": "8f5e36cbf3565dee034d9c9e2f1d6033dc76a4ca2a38934fe744b478975a3430",
+    "lean/FreeEntropy/ExteriorHighestRepresentation.lean": "d1c2f0c9536defaac68c1f463626494fac83d0be8098bd5e01c3bdc884910dc9",
+    "lean/FreeEntropy/ExteriorLowerMinors.lean": "ddfe78a76fca7846352b87223c37b41b032f2d20db7751abde5db42f6d0a20f8",
+    "lean/FreeEntropy/ExteriorMatrixIrreducible.lean": "d4f1f141323efbce4cd98b6f8a168b1f445cd662b96cafb8388f3b62917918b9",
+    "lean/FreeEntropy/ExteriorMonomialColumns.lean": "31fb0173d52a07f6c187f72f808ff9a596245087283a0b8d04aba501532ed700",
+    "lean/FreeEntropy/ExteriorMonomialWeights.lean": "9640e52dbca9595cb9d28f52c1c74e6673bcaf196d241572fd9134078f21499e",
+    "lean/FreeEntropy/ExteriorMultiplicity.lean": "4ceec12b4ef2164467d18a772ac9fffe75590296276ef262b303d81703043a7f",
+    "lean/FreeEntropy/ExteriorPhysicalIrrep.lean": "90425dc5e344943a1b653d2b059962a6503804f571d803509c0844b32280bf53",
+    "lean/FreeEntropy/ExteriorRepresentation.lean": "d450b2e5c6f77571e302c19d82f4002ed3a0a70909bff4c7ed454d7963e137ca",
+    "lean/FreeEntropy/ExteriorRootCounting.lean": "2f576ab9762e36c61cf9b8ff55813f8467baa3983db11e98347ca2565dfb1e98",
+    "lean/FreeEntropy/ExteriorRootSupport.lean": "b6d8d2dc4150323b4820a1353fd5839baf27a10eb167391510abda3361b7c11c",
+    "lean/FreeEntropy/ExteriorSimpleOffsets.lean": "90f25f6998dacdb4dae708cf33f86e763c77ab0d3015a3aa59a5f99cf1b8b4a3",
+    "lean/FreeEntropy/ExteriorSupportedMonomials.lean": "14c5edd5b6ad9e872143b55307e2a698d7c81ee18f94028f90a0d5fd1f1c27b4",
+    "lean/FreeEntropy/ExteriorSupportedOffsets.lean": "44a61ac3b95ffaf141c1bf26971626e1837113654b9d6f6165275291bcc3651c",
+    "lean/FreeEntropy/ExteriorTensor.lean": "5739a19d2ae6c888de3f355bb89a27367856b312e138536f1da6460abd9af639",
+    "lean/FreeEntropy/ExteriorTensorEmbedding.lean": "6de5b6d4a8e89e148ce0e4b1c07e383121919592c498156bb025b97263ffd5b0",
+    "lean/FreeEntropy/ExteriorTensorEmbeddingProduct.lean": "3a80764f61b5b71669f98858a59a9fc7a7119cb51dd0f0427a6172bdab7b3b56",
+    "lean/FreeEntropy/ExteriorTensorPermutation.lean": "55180d277398f6a6e9c2d38ea36b2be3d194f8645ac37cce8d4fda7cbd8640fd",
+    "lean/FreeEntropy/ExteriorTensorSum.lean": "ed12f559191f312b92393552fb99cd970cce2a778b68b13e5b057cd41a92ffa7",
+    "lean/FreeEntropy/ExteriorWeightCoordinates.lean": "5148d3c1a5d105a234fe4ac65d16f85fc6a1dfa4655d37c0f2dead11ac610cfa",
+    "lean/FreeEntropy/ExteriorWeightDimension.lean": "557ef68eea24a076a25bda651bfad918ed769bc3e4eef19603f0c6ca47a42c93",
+    "lean/FreeEntropy/ExteriorWeightMultiplicity.lean": "a6963002e2614376baa6297ce905946ae8e61ddd50e4aabe44a69fbb9449327e",
+    "lean/FreeEntropy/ExteriorWeights.lean": "b6af62eb0830bcdf44ba6fed558afcd18e1bbd44d03a1bb8086a8b905f572143",
+    "lean/FreeEntropy/FiniteConcentration.lean": "3c1c5f3d77001dc80664ec995e51ed8506d27cf49dd25842b048c25c5a4e731a",
+    "lean/FreeEntropy/GTCardinality.lean": "ef3811fb3b58f2133cc868ae14dd3d76312a798d83412c3a0982e1cdf495c62f",
+    "lean/FreeEntropy/GTCharacterEndpoints.lean": "0c22cc88eedcde60ce42768d0d86138b1cfeabcf4a15d40a889c63641b5cc8e3",
+    "lean/FreeEntropy/GTDeterminant.lean": "c9735432180f29c8ac1df5a15448c088769c586d0f9ac404c18ce562ceb0257b",
+    "lean/FreeEntropy/GTDimension.lean": "bf109ee0fb8898b1d066960c2767a723736e590fafdd8f6be2e366423e8e9b61",
+    "lean/FreeEntropy/GTDimensionEndpoints.lean": "668e9a5e95b7e0941ebdfa3f7bea54b5eb3357950d38ea04a0db723bcefd4c4e",
+    "lean/FreeEntropy/GTDimensionFormula.lean": "b8fb4de44e1a539c95b34af0f94fd61af482cd8c76b2d72d4c62d91c3d49544e",
+    "lean/FreeEntropy/GTFiniteSupport.lean": "5f8aa272140103b0b5722c16a47bf006cb4e3b0d86b6ca6d15cb3686d8cfb70d",
+    "lean/FreeEntropy/GTOrbit.lean": "9d26b555e2c1d525e2536e81453e11c1ee0815652ebdff33219f229d3e2b40bb",
+    "lean/FreeEntropy/GTPartitions.lean": "2af68f480405e984f5e7704b8efbfce0fcde96c59c6eebefe1fe57d542682dc0",
+    "lean/FreeEntropy/GTRankSupport.lean": "53be758f864709ed0e5a864bbc6e24ed84e6eab67ad4b669aacbb2b4fe2c5b5a",
+    "lean/FreeEntropy/GTWeylProduct.lean": "ed2af9a95a4d3525dd80f7346ff5c91bc66065c55d610b32ef2745aeedae0e00",
+    "lean/FreeEntropy/GelfandTsetlin.lean": "2018e6333019084ab4f05927125f5b391edd781277e6727f34d407f12bc4377b",
+    "lean/FreeEntropy/GeometricOrbit.lean": "7f986397cd0425cdcfa92f157954b6b823047a0b80b22c78bdfa8413b42cd7d4",
+    "lean/FreeEntropy/HighestWeightDominance.lean": "e28091987d8908a0a25ec05d0442cef6f7386532046f4b9553371d16b0fb871e",
+    "lean/FreeEntropy/IdentityCloning.lean": "a42a1c5c3189c17d26b44556190adf7c3fb94450d34b8622cd66efb8142fcf7a",
+    "lean/FreeEntropy/IsometricCompression.lean": "f11387a8b4d75a2f60be22af93a9ba779524a6db73648104ba69c3b2e5477ac2",
+    "lean/FreeEntropy/KostantCounting.lean": "5d184e63317dc6714092ee91dec205f138bbcb2ec21673dc95014e4b0300ea56",
+    "lean/FreeEntropy/KostantWeightData.lean": "e520209d2ae9aa88b0ab4f6ee27c3a63199478ffc8ce902a4186dee5bb0423dc",
+    "lean/FreeEntropy/LieCartanBalance.lean": "379ce524979b173ecea2379e103a611b3ab38d33d4d3b302d7a2ad4beb4c4d09",
+    "lean/FreeEntropy/LieCharacterCanonical.lean": "d2733f869e47fa70103e1137689e6388e7771ff7d2ef14d51f67442a74197028",
+    "lean/FreeEntropy/LieCharacterFinite.lean": "d5f12668b7701b194aeb2f64401d0a2e53763858e7cab0f970b54d83e35d95c6",
+    "lean/FreeEntropy/LieCharacterRadial.lean": "5fd7baaec00b8ab616369e946128606a7e3d08d0346c345c70074e5aeac6bd87",
+    "lean/FreeEntropy/LieCharacterSymmetry.lean": "ac85bc3b3b79e453b2a5309e0399fe392f6bc2f0e582ece1e9dfcb7f6ad2397f",
+    "lean/FreeEntropy/LieCyclicIrreducible.lean": "fbfe9a7495bf7d713111460ff1651eef5ad0af0aa5a1a8828f148e223235b2ea",
+    "lean/FreeEntropy/LieCyclicMaps.lean": "b3772889f470fa0a0f5518ce51d48c83e95a9e4836947a0343afaff7de52ad9a",
+    "lean/FreeEntropy/LieDecomposition.lean": "41d38cd8b479957c294a120976c6d5be1170c97653dadd1bb33dc6184a587e9a",
+    "lean/FreeEntropy/LieDepthMultiplicity.lean": "561e089a1019412e4c020a114e39255046645af6ab56f74972bf82cbf1f877d2",
+    "lean/FreeEntropy/LieDeterminantTwist.lean": "bcf545648198d762e28cb3b965fa05f26e6be6585f7354c2f7ac9189e1d2f40e",
+    "lean/FreeEntropy/LieDirectSum.lean": "63cda1c911bd7d68416dc14d6bf6239fd9c80f2c61c15443ef0d999e87adb2b3",
+    "lean/FreeEntropy/LieDual.lean": "fc4f78632c803b22e58a37c62cb4a0c5efcf5b19fe688b0bf3a4073412807f2f",
+    "lean/FreeEntropy/LieDualCyclicity.lean": "d014750ca76bcf1048d8d37a4d417dec2d4855ed4d396d309e24c00bf01f1c8f",
+    "lean/FreeEntropy/LieDualTensor.lean": "fd5feeee9dcd82f01135c53ea98c8361ff19d9dc084c6f1d593bb0f355070aa4",
+    "lean/FreeEntropy/LieHighestEquivalence.lean": "776f9857e22cb46b8b71c81bd3924315115ac4ce6cabd850804fe687898e3889",
+    "lean/FreeEntropy/LieHighestExistence.lean": "f3d3133ad4659dc0e54d21e8381f3a9c00c71dde36ca7c948e30d200d9d25ab5",
+    "lean/FreeEntropy/LieHighestUnitary.lean": "f42b6e9a42072c57d5610b0806ee66468ab24a2e8083596790d1b117e87f0c15",
+    "lean/FreeEntropy/LieMatrixCasimir.lean": "4ca4286dd4d9b0226dde1db4d571052edc6206504e04663b84cdd37ae5aa4859",
+    "lean/FreeEntropy/LiePBW.lean": "2b307997c094295c00ecfdd40b0cf04b4a5acb4d93bffcd928505f2a8bae6d7f",
+    "lean/FreeEntropy/LiePBWDimension.lean": "583eb0b3df541b5557697fed332ba453c6b957f5edfae22bd458c7f5ec8f8e1a",
+    "lean/FreeEntropy/LiePBWHighest.lean": "e48c1e95aac81e55d9473434b89101bf0eb519bf46ccdd7e0a3f16776a068274",
+    "lean/FreeEntropy/LiePBWMultiplicity.lean": "54ffed476be9300c691f777ec4b7a7c0d2f47a7b320d90c7b6900400e121d413",
+    "lean/FreeEntropy/LiePBWOrderedLowering.lean": "e20a26387ffc7ab441f078fa165cb9a90e0a6d06ea94516181736ef575c9354f",
+    "lean/FreeEntropy/LiePBWUnique.lean": "26ee2fb59a94626f159fa2bb4eeeefa0a983e1e368ed4aefac0a17abd98d3ccc",
+    "lean/FreeEntropy/LiePBWWeights.lean": "ca8490272aa498fd24da4712f8a0e7ee55b1bea93a87d6369ceed496d855b514",
+    "lean/FreeEntropy/LieWeightModel.lean": "d15b3262e70b61342686056efaac7e2372285aaf860f799d2c0e76408a978eee",
+    "lean/FreeEntropy/MeanDepth.lean": "7eccedab1ab9a75ccc1c28f7dbec6bded472cb5f32f42b30b9869a7e708b74e1",
+    "lean/FreeEntropy/MultiplicityChannels.lean": "47266693831cf860a145704ae2ce4df6e020d54413731c8e67cfbe08f4f983ee",
+    "lean/FreeEntropy/Occupation.lean": "e35c23315f6ce6d602403637c5e51e7bb278aad2f85e470955026b993e9bbd96",
+    "lean/FreeEntropy/OccupationCloning.lean": "7bf9c3bf9e4a71df18b65faa3b092259b7f48ac08382cd24405a7c137953119c",
+    "lean/FreeEntropy/OccupationCloningExact.lean": "1a29d658b05a0f7bae19e1b18e3ca2d2ef3ccb95f922aa9bcba39fd74c1adffe",
+    "lean/FreeEntropy/OccupationCommutant.lean": "98e43df0cf7f6ffaa852d589698615bf892f9c7dfd83c865d46f5a089048c900",
+    "lean/FreeEntropy/OccupationCounting.lean": "e8a9e8a50aac5afdf95bf6aaebdfc3d63f8ca48432733c8270a537f1bdbe9ace",
+    "lean/FreeEntropy/OccupationDimension.lean": "2874140f882074d35a2ca02273c5c361ce3918746396f7b945f8a26ea413b3a9",
+    "lean/FreeEntropy/OccupationForward.lean": "fbd7f06642170a487620eb545a52e1a147c5a5f1e2e0f335630350c53a2e4d40",
+    "lean/FreeEntropy/OccupationIrreducible.lean": "1f1bd78bdc8a23c83e91d24b2de82d000836890cbb15a77db7eef6fce42b9d02",
+    "lean/FreeEntropy/OccupationRatio.lean": "83bed2ddf7731366eec203432811db7bf8b3538219ecd2fbfd7bb9ad1977eeb2",
+    "lean/FreeEntropy/OccupationRepresentation.lean": "6cacab26ee8f15a8e16a136e64991d95c079259eae5366e0ecf7d5c133ab291c",
+    "lean/FreeEntropy/OccupationSplit.lean": "66d9b9bfa1102df6d0547c9fe64799751d6e5f271f8720d33c587b0fbb4bf305",
+    "lean/FreeEntropy/OccupationSplitRepresentation.lean": "b9001c55a2ea10a69266d10083201fb5700f27e8731b11b7368aa551ca130395",
+    "lean/FreeEntropy/OccupationTheorem2.lean": "0661681b55286fa4f898682022a68bda862dff4f3a8239be9d7749e7ca342bb9",
+    "lean/FreeEntropy/OccupationTorus.lean": "0818d94381ce2d796d74ac404f0d4ff3036786811dd517fe6f692d85ef672ae5",
+    "lean/FreeEntropy/OccupationWerner.lean": "f099a3353c20f111d9aec8b4effdee1cd67737ff6cd82e389263939e946f49cf",
+    "lean/FreeEntropy/OneDimensionalSource.lean": "cb065a42fb5ac045f66203d85c068af229a214ca11993a42b693fa79e53a7be1",
+    "lean/FreeEntropy/OptimalMemory.lean": "ab3e1e665084d67e885f4bedc3f1d32544319bc9a7477c2aa796139851579685",
+    "lean/FreeEntropy/OrbitEigenvalues.lean": "62335d3b4e90b302a8b46822beb3d4b2b7ca4f1cf3a324216b8cc394d9d683d2",
+    "lean/FreeEntropy/OrbitMemory.lean": "7b75ac0a82f4fbd273f52c3b0a0ae8bd36f3b8d808931b523d13b45b0cbb47be",
+    "lean/FreeEntropy/OrbitTraceDistance.lean": "2181c488da90a880edb05dd26fa24963467e627a279053c853bfcc371a907c18",
+    "lean/FreeEntropy/PhysicalCanonicalChannels.lean": "775d2d0b7e8151cb11cd4f7bc67e3735fde8b5b29759309d9861a02752576af8",
+    "lean/FreeEntropy/PhysicalCanonicalConverse.lean": "8dca63a3ac70e865d8ffb2c12c85e086e9402340be0d974ae34232595093c034",
+    "lean/FreeEntropy/PhysicalCanonicalSector.lean": "f7f9ae0e2fb1927cac880c617a9a7c86cf1e2fc256c6f0979e2a574f82aa1b7c",
+    "lean/FreeEntropy/PhysicalCloningAccuracy.lean": "06009e3387d1b6832989bdbe30ad1288062beab248d026a3c473a14b59d49a9c",
+    "lean/FreeEntropy/PhysicalCloningChannels.lean": "72ebd4b805bdd7ea09e8ef5c6f2d860f6adaad345fe6f8c8c1aaf0f916c78332",
+    "lean/FreeEntropy/PhysicalOrbitChannels.lean": "e1c735062919c6e197a1e990294bf57b49e9045c0b39bd898781b6a643e50ed1",
+    "lean/FreeEntropy/PhysicalSchurApproximation.lean": "8af7bf7bdf1f3322275522ea31cbf4adf1a02379439c82f4eb903089519fd952",
+    "lean/FreeEntropy/PhysicalSchurProtocol.lean": "f6bd6566b6c48d70aa51484b2b1e0dbab01f3a932f70648146ebcd68869e132f",
+    "lean/FreeEntropy/PhysicalUniformError.lean": "a1cae1a84d27882cc9e621a856e7d8d1cc731410f96e92d74d764c4fd1a85370",
+    "lean/FreeEntropy/PolynomialOrbitDimension.lean": "787ecddd38c037f9317dedd45e1b1f4aa15992f9258363d450b6381ef98cff0f",
+    "lean/FreeEntropy/ProjectorGeometry.lean": "5e6369dbc1ae0ab0cd9ac0f1afe7a11e8dce67112588583a1ca36fd4e157f26e",
+    "lean/FreeEntropy/Proofs.lean": "a9d46bb3451d99f65d30ee0ac0fff0db4c26339e7748ea61cbb6e3fad4bd6179",
+    "lean/FreeEntropy/Protocol.lean": "b2d74b1eb16f5a9257bcf3728552e01370e00fcf4157c533e70bf290ee75eb5e",
+    "lean/FreeEntropy/PureAchievability.lean": "04230012ac89336e8e2bc9d5f6adb151ae346ed6dcdd52142337ebd5bdf20318",
+    "lean/FreeEntropy/PureConverse.lean": "d6093183233e8500de53e883835d54c976ae1bc97bfc0df9566b8ab1fee518ff",
+    "lean/FreeEntropy/PureTensorCompression.lean": "658805e56912c9fda66dbff7bae491ad966452dddfba089969543af51a121e60",
+    "lean/FreeEntropy/QuantumProtocol.lean": "30294d43ff78a2300d82988be3df86f2c23547b34276269a8e4dc6349a293396",
+    "lean/FreeEntropy/QuantumTransfer.lean": "a062ba725fa382603d7a4ec19d3419f0c31a534f60b7c397df5f8154b71cc2eb",
+    "lean/FreeEntropy/RaisingKernel.lean": "2f38cb3126de005019fe8ffa2626fbc79e9ee65600b0a4dd2dec65f729742a35",
+    "lean/FreeEntropy/RankOneEndpoints.lean": "bce3695c7c502913d5ae4aaeeb5c55bdd6421e149b1b9da4b71b523cf19a4e71",
+    "lean/FreeEntropy/RankOneStates.lean": "b844d18ecbd1847977f47eba514554aa4a1d9d92db0b3d8f12f53409eec25a15",
+    "lean/FreeEntropy/RankRootCounting.lean": "ff734b581fff5d017a3e9f6f2a9b5fe48bae7c681a019e3177520a38a1c7a142",
+    "lean/FreeEntropy/ReverseChoi.lean": "cc5183bcb0823f7808659fe72be139d76414f3064f27313b854529f7b19b74b0",
+    "lean/FreeEntropy/ReverseChoiMultiplicity.lean": "30a247eee5544eb6a80eb9398e4cda4989d7ec0a18eacf7092c6bcdad4feb1ac",
+    "lean/FreeEntropy/ReverseChoiRepresentation.lean": "92d55762c34b29156fdf9845ee89e306d7a923a16e514ce4ebf1949135551940",
+    "lean/FreeEntropy/RootPartitionFunction.lean": "110e798a5eb7376480f72272882c515c855784671fa09278233ae09b7348645f",
+    "lean/FreeEntropy/ScalarCommutantIrreducible.lean": "5de95ac2417e7b83d5fa2fdcee48fa6b934acf5519295662513c0c74018fe7fe",
+    "lean/FreeEntropy/SchurAchievability.lean": "cba4c2a3cd2a9f35d7f310f1e2fa06923496aa549d29010ba1495f0c74c2cb86",
+    "lean/FreeEntropy/SchurProbability.lean": "0713e08c5f61db885e8e4d01902b27b4deda3533b1c81ee2fcfb94514318be86",
+    "lean/FreeEntropy/SchurProbabilityCharacter.lean": "91ef31a9fb0f18a9244e722afe632d7d075184b9a9dee8c03fa981d19af84aa4",
+    "lean/FreeEntropy/SchurProbabilityConcentration.lean": "d52b555722a78667b95b36fcf2b6473545eb8586c2401ab8ccdf954c5b06b6f4",
+    "lean/FreeEntropy/SchurProbabilityTableaux.lean": "4d0eb872b23898bda7453075b3931c4f54f16c557077cba21e708cb73d92bbb9",
+    "lean/FreeEntropy/SchurProtocol.lean": "45e86bb6d425df036d1d347365eb34d4ca3547f7aa4e4df7e9162e1b80077d16",
+    "lean/FreeEntropy/SchurWeylBlocks.lean": "4c1242a7f306d756d88aa3740fca3dd17a117d0b7f318548998677e5e08d93ad",
+    "lean/FreeEntropy/SchurWeylConcentration.lean": "93d10d09c1517fed0ea9e9f560aa87f85623f47611f6db6259da426e97588cbb",
+    "lean/FreeEntropy/SchurWeylConcentrationGrouping.lean": "8c48dc5dc8fb74756ff42098a45d12f8ded2fff37fda632771b4b1bcd243656b",
+    "lean/FreeEntropy/SchurWeylConcentrationMonomial.lean": "6f6a19e43b1b793d27af3ac420793113b682c338cf8ea3e22dbf2b70c19c284e",
+    "lean/FreeEntropy/SchurWeylConcentrationProbability.lean": "7196602ab8d52757f15ccb94eba23d210a47b5183e0d9899433bdc27cf3a96f5",
+    "lean/FreeEntropy/SchurWeylConcentrationSupport.lean": "3cb364e7a025fccb9478a1f4c60c11ed75d3b3b978f792f234ce6cdedbfac2be",
+    "lean/FreeEntropy/SchurWeylConcentrationTail.lean": "87d8703f4220d9ca5686641de6af1b09f5518010546e289f54bf38eea34a29a5",
+    "lean/FreeEntropy/SchurWeylMultiplicity.lean": "691e9843600f85e5a8f6e6b7df4eb91d5543fd2b1a69262769c8444bf068b0e2",
+    "lean/FreeEntropy/SchurWeylNormalization.lean": "88a3b4ba2d490ce90783243a33c8300767fcbb8b78a534e4a3d61b456190839e",
+    "lean/FreeEntropy/SchurWeylPhysical.lean": "4f46fde9c8ba64de09fc1d8c58aae17d94ee395e49bff0a4aa6753abe304ff73",
+    "lean/FreeEntropy/SchurWeylSource.lean": "8520114a04ec767de8f6164357aad3af46df5c498901a41c5addb9174973576e",
+    "lean/FreeEntropy/SchurWeylWeightExistence.lean": "d70a0f09dd6ac452d1e4687370e6c73323ef9e90bb66a645164182a8a63237f4",
+    "lean/FreeEntropy/SchurWeylWeightMultiplicity.lean": "7313132a4c0435df6b5ea7374100afc800de0c20fe85ee1e72e7c04fc4282498",
+    "lean/FreeEntropy/SectorChannels.lean": "6895806633e0742d352fff23821fb26c2fb830a325387ed00167aa120067332d",
+    "lean/FreeEntropy/SectorProtocol.lean": "623d42bbee2ae192b7ef9d15ae2feabe956dd0bb046a461e45d425e4caac07ed",
+    "lean/FreeEntropy/SignedAuxiliaryModel.lean": "b38e18e74455cae29c1db10f7c2e7f4f6cb5ee5d48644df658afa6d5d13c6015",
+    "lean/FreeEntropy/SignedCartan.lean": "c6a24a8f5d4aa36e9a992e3bcbaf1ee2289650b488bb246362bb7bf6a4cecb79",
+    "lean/FreeEntropy/SpecifiedCloningChannels.lean": "29d64a8af3f2a45734664bc01f0d59f138bed80d2d3d4c3388bbda410e3c3cf4",
+    "lean/FreeEntropy/SpecifiedLieCloning.lean": "e987e1b56294587714f8283965e1b455b301c042e914c677cca65ad1afb5579f",
+    "lean/FreeEntropy/SpectralProjector.lean": "ec62f6ad5af70714bc7007c6022aee5c01e3e0d2e89c964297649305933c0af8",
+    "lean/FreeEntropy/SpectrumBounds.lean": "188f25c440accaf2f791a168a8d917c23498d49d89058470e180cf40ab0a72c8",
+    "lean/FreeEntropy/Statements.lean": "6860bf1a70fce03cdc557de953bb240794e89cbb8c9d09c6d9cdcfbd247dea63",
+    "lean/FreeEntropy/SupportedWeightStates.lean": "9f29b24745e438870962aefc4a058cf15edfa8b02fff6b3207e7403f1dc275d8",
+    "lean/FreeEntropy/TensorConstituentDecomposition.lean": "9565f48d7a010b13060b905e572b853f32db1696caf9803b49c620a90518cfef",
+    "lean/FreeEntropy/TensorConstituentWeights.lean": "b1c29c291cd082553d90541a119f8421005a0a330ebcd91fd56675a61d484e85",
+    "lean/FreeEntropy/TensorHighestWeight.lean": "3e9fc05208f4ee480ef91c9c716fafb38c008e44fe6965836ebeb917bb7d0728",
+    "lean/FreeEntropy/TensorInfinitesimal.lean": "b93e57129465698ed4a0bdd777a131e368072b9e3b7ddb6baef0d87b590c1160",
+    "lean/FreeEntropy/TensorLieCyclicity.lean": "0a6942c585d34f40c83d50fb87a95f295412029560d0aefb39e982443eee896f",
+    "lean/FreeEntropy/TensorLieCyclicityPhysical.lean": "ed8d75da8b0a296edc13e3a18b4a45d4e3f2c96008aa77303996c7fce0188f11",
+    "lean/FreeEntropy/TensorLieCyclicitySubspace.lean": "f08904238fda49c770e79ecb3901ff70c49fbdad678cd2cbe178faa383b84b8e",
+    "lean/FreeEntropy/TensorLieIntertwiners.lean": "bc3f27b0b94075bbfd5c585ea562843b5dec9b81d4e91992d4c1ffcb412b30f6",
+    "lean/FreeEntropy/TensorLieRestriction.lean": "ebe3459b13894fafeba272843afaea7726bb06be371922bc0ca0114f4d4de993",
+    "lean/FreeEntropy/TensorPowers.lean": "17e730dbf674706356c4bd4c07358b624f7dc4beb5b8010e37ffcb58e5e070c6",
+    "lean/FreeEntropy/TensorPowersPair.lean": "ae44be6dc56b228958ce567177f713ad8b83ccb65f092009575e7c066d45402c",
+    "lean/FreeEntropy/TensorSectorCasimir.lean": "0d7afa4e5591ec8c23e8ebff013aa2e0087543bbace3e80e321fed794805c003",
+    "lean/FreeEntropy/TensorSectorDimension.lean": "f6c5a9e622214d0ba0a1d04d09454c0aed505158914931417dd257c2d42cfe17",
+    "lean/FreeEntropy/TensorSites.lean": "4b3d4e21e7180c918856ad0fdcf4370cd41a28ce9743e0299569921fe76058e9",
+    "lean/FreeEntropy/TensorTopExistence.lean": "4369b05899de9d019d28740376890df49d5e761cd0397cbf20cf7009edc40dee",
+    "lean/FreeEntropy/TensorTorusIntertwiner.lean": "efcc253607acf552562b9ca76e631871efbde0015a3efa5358d685418f47955d",
+    "lean/FreeEntropy/TensorWeightBasis.lean": "24444623220befe2af5679a985ff6cb4b2dc714fd88de1c04d60be0b2402a33b",
+    "lean/FreeEntropy/TensorWeightCoordinates.lean": "4d57ef53b15bdf9458bc67d0bf41125469fa088122fc9997c4f66ebbe334c500",
+    "lean/FreeEntropy/TensorWeightModel.lean": "5e935e9345d9825dc4dc60570af71e0412e8df498436b1a9d82a31b1c403d302",
+    "lean/FreeEntropy/TensorWeightSource.lean": "5e2d254c8917102719477604a00f7d05146ed6641491361efb8f5d196ce16cd9",
+    "lean/FreeEntropy/Theorem1Complete.lean": "86c004e3c43ce9dd6e9e6442edc86a05a73218068814ee69e5d08006b502f01a",
+    "lean/FreeEntropy/Theorem2.lean": "b99beec42b8dd9a808282cc06cf705d7f5cd9afad4bce0d1c79d7981b410bc3a",
+    "lean/FreeEntropy/Theorem2Canonical.lean": "7436d118e83b95430cfc95d6779d9a160c1c8c98ae343681919e2c4f915e04b4",
+    "lean/FreeEntropy/Theorem2Choi.lean": "894396b1e8d1dda636cb94e847fc5ca64bc9b044955d9650f38fcbdb5ae4718a",
+    "lean/FreeEntropy/Theorem2GT.lean": "90a90381e267f1c009da77bca0cb38ec4d0c3b215d0b4dada16bd350be14fe09",
+    "lean/FreeEntropy/Theorem2Petz.lean": "0d86a0941e0c67f52d6351f82d7469e96e9280bfa0ed85c30c4b9736506409e4",
+    "lean/FreeEntropy/Theorem2RankOneGT.lean": "54a9a7e206295eb48ecac689b7823e0a04078eb2a9cae2aefdd0736e68896509",
+    "lean/FreeEntropy/TorusWeightEigenline.lean": "d61c41b53fad216e71dc7c1758031f6c4889be27e2d986b6862ff7b2c74d3da0",
+    "lean/FreeEntropy/TorusWeightProjection.lean": "7a87f4ec05440ff0473291e98b4df78c2a21d0d3976d6768d522ef1a075b61bc",
+    "lean/FreeEntropy/TraceCloning.lean": "6155866fe128ebb5b75dad329dbcf61cb460ac6f6b2b9fd80c0acb0f4af6977d",
+    "lean/FreeEntropy/TraceDistance.lean": "89c2ce22cc4647cee32b7cfd3ec0d54c80e8fb4a9af72c258c43be0a2fbdbe74",
+    "lean/FreeEntropy/TraceMetric.lean": "09de97a67aa30cc6214383dbc3c8b5808ebe8e6e05129ef38ae068d649f45c14",
+    "lean/FreeEntropy/Twirling.lean": "c0168225c6648e646b6298180e861b9b6fec38355180a105b5e0b6cb1e0ab361",
+    "lean/FreeEntropy/TypicalCanonicalRows.lean": "af527d15cbee161a7ae4c057b76419ea388c59476917f8b793b760fa1f7e4208",
+    "lean/FreeEntropy/TypicalRows.lean": "a703313615143e7f3e8358ca68e88be69a6fb914ddfc4dfa9a2addef03a1b707",
+    "lean/FreeEntropy/UnitaryColumn.lean": "e63f9bdea3bb51de025b7c557f502161d1dfb1285725b07f0909bdcb3d7dba49",
+    "lean/FreeEntropy/UnitaryCoordinates.lean": "c1a910b342cfb3a03706ee999d8ca6d55c56aae3a48cc7ea74d3150afd5bf085",
+    "lean/FreeEntropy/UnitaryDecomposition.lean": "831f058897532c4853856082039ba05e3a4c85dd934fcc20f7561b3737b3290c",
+    "lean/FreeEntropy/UnitaryDecompositionBasic.lean": "d316dfb089bf03a96528ac2219bf6967d34a4438365d46c56d8c092b75766744",
+    "lean/FreeEntropy/UnitaryDecompositionMatrices.lean": "43709dc26ee178d9da8862c391e0bbf93e25f24909d279cd2c0fb9b52176a064",
+    "lean/FreeEntropy/UnitaryDecompositionOrthogonal.lean": "ed7f43c0351f0901a53a303e7f6ee4137274eb698e3c0f72df73f5896ad94772",
+    "lean/FreeEntropy/UnitaryHaar.lean": "315fac479db7991a4118845102e39145ae3dd4fa752cecf82859635c802f3327",
+    "lean/FreeEntropy/WeightNormalization.lean": "61d32628cd2af43bfb32966587a87ca6bf1d91c76a94e117e2ead78e40d61b42",
+    "lean/FreeEntropy/WeightSectors.lean": "dc09be71b04b660ed4423c1b5b5e02c0119cdc7451677615db32f6ebef5bea7e",
+    "lean/FreeEntropy/Weyl.lean": "3715149620474b273a671b1b082696bb0ba5178ec36178b05143def219c02474",
+    "lean/FreeEntropy/WeylAlternantCoefficients.lean": "df1b56924b6244afedea5988632d8b8423615ce6fc4ab4af9d6d8065d84c18a3",
+    "lean/FreeEntropy/WeylAlternating.lean": "5a2029832798a4fa71e5680044563813c4095fc91f19d34ae64cb650b2e2f60d",
+    "lean/FreeEntropy/WeylCharacterAlgebra.lean": "70c017e060bd9920d6eabc453447dbf6e0646aba309fe649f2a1ab8e577498a3",
+    "lean/FreeEntropy/WeylCharacterCone.lean": "b9c973f5801db7fb507c6963c4b33cdef5bcdd8d5e18dbf63d0812bc8ec49c25",
+    "lean/FreeEntropy/WeylCharacterSupport.lean": "6bf64bc85c2e61a0f45f3354736db18d52d3d01b257cdb65173a543e3f5368a3",
+    "lean/FreeEntropy/WeylCoefficient.lean": "d0f0c64b616b7a5a702b957ae5f1421c1e8b970e45992ca3285d5a6b73fe6947",
+    "lean/FreeEntropy/WeylCombinatorics.lean": "05536ccea34028c279c84a7619972fd8f2dc68de1262d8aef458c0f98027baf5",
+    "lean/FreeEntropy/WeylDenominator.lean": "14d412b931931dcfd3fae3884bbf8fc2a3f3e27448fa6b004181ed27588d303b",
+    "lean/FreeEntropy/WeylDifferentialProduct.lean": "0e1024e94be26cc04b2c50b5214e37bb9ff81043c7d64154e0924d82205d130e",
+    "lean/FreeEntropy/WeylDimensionExtraction.lean": "05a792591e4bece2d929033cf6b85931983200ac727f3e09390d4522bd927567",
+    "lean/FreeEntropy/WeylFinite.lean": "39c7e768cf94660c6222437844414249111da4799b3bbaed38b9738dc93751f4",
+    "lean/FreeEntropy/WeylFiniteSupplement.lean": "9e6312a8512ac70737f0a96141aaaa970b93bc5e88c291cd85b542a9a118b682",
+    "lean/FreeEntropy/WeylTranslation.lean": "5751a3311ae8977eca1e4ea2d32fc20c09ab13e7b173f90ba35a89d714da06e3",
+    "lean/FreeEntropy/WordPermutations.lean": "7029205b96c638b364b0bd4bb7390055027fdfba801628e449ba614213db4381",
+    "lean/FreeEntropy/WordTypes.lean": "38c3371f2c872ef7e51aef6817f16b4653322f400fa41a4906cfa91bc2c29d0c"
+  },
+  "added_modules": {
+    "lean/FreeEntropy/ForwardChoiUniqueness.lean": "b2b98f29be00c5bf31baa3963c1f3264450ea7f3b11e115b1988ed9b13984088",
+    "lean/FreeEntropy/PhysicalStateUniqueness.lean": "25e1eef2fc1a89d1692a248fa5e4f7ec7908279be82524f9f366942953231e54",
+    "lean/FreeEntropy/Theorem2Physical.lean": "fc5e5c2c69712793b2b77a8d3a1e65f2c90094970b1bc76a84a4c1eb9b2bd0c6"
+  },
+  "historical_manifest": {
+    "path": "metadata/verification/2026-10-08/historical/statement-manifest.json",
+    "sha256": "946a2e1076c75e7faee7ae6f07a1a1bca47f3ae750fb9af75746e93189ef8106"
+  },
+  "retained_endpoint_statements": {
+    "FreeEntropy.theorem1_achievability": "bc798eb5054b03f6c5230a66803c13ae7972bf04cbdd5285357c375e7bdb947c",
+    "FreeEntropy.theorem1_converse": "29e0af015e6e2e4662354eb96f80fb5eed384bf0d2f2550421b408331ad086f4",
+    "FreeEntropy.theorem1_converse_of_uniform": "638322dfbe72637518e73fc3031b429e11930c144e10dc8074729f5e63efdfe2",
+    "FreeEntropy.ExteriorRepresentation.theorem2_cloning_accuracy_choi": "933ef0789f3ab7d358acfb28268ff9031bcd1d8895c877abc54a8529314adfad"
+  },
+  "reader_changes": {
+    "lean/FreeEntropy.lean": {
+      "before_sha256": "0211bce20ad8f25b5bc244b606e86108a83c25369a20b88c3b929d2373b3f9ba",
+      "after_sha256": "55d2f1653beccd2709a8e2b4e13f3eff0a5e3a1ce97ea7e8dabc8c349013059b",
+      "scope": "Adds the import of Theorem2Physical; all 270 baseline production module bytes remain unchanged."
+    },
+    "lean/lakefile.toml": {
+      "before_sha256": "47a977e779ea66902563addddda68c232ed1cf38d9e08edf3fb5ea8c9731902e",
+      "after_sha256": "e9c335def155dceae57a6808a78cbd84a71f93fc06c94b1b24e88a2a5af4957f",
+      "scope": "Adds the independently redeclared Theorem2Physical Comparator challenge to the challenge library roots; dependency versions remain fixed."
+    }
+  },
+  "evidence": {
+    "physical_interface_map": {
+      "path": "metadata/physical-interface-map.json",
+      "sha256": "67fe965f3920f612311e4cd47533d7b429c9d1a23a69ba009a249217fe10e8f5"
+    },
+    "physical_challenge": {
+      "path": "lean/ComparatorChallenges/Theorem2Physical.lean",
+      "sha256": "7f9d35bfc63eafce52ae27e0d1cf531c80799a5869e8baabb5de5527843f9b3f"
+    },
+    "physical_comparator_config": {
+      "path": "lean/ComparatorChallenges/Theorem2Physical.json",
+      "sha256": "404f5e69c35d3b402ffb946e311d8bf353fc5004ca61cde3cfed7a8823b873dc"
+    },
+    "physical_boundary_guard": {
+      "path": "scripts/check_physical_spec.lean",
+      "sha256": "d9292fc3c5635e7cbde7294fc8ab5fce1ffba3cae75a0769a80e5538ab1319e7"
+    },
+    "physical_boundary_controls": {
+      "path": "scripts/test_physical_spec.py",
+      "sha256": "a6e0cc08b1b91ed2a7be82e1f81d34b3f5740d7fdfefd95e0c7069c1226dda3b"
+    },
+    "extension_freshness_checker": {
+      "path": "scripts/check_physical_extension.py",
+      "sha256": "861f9f8d7b3d2c6a9349656538ba1383674303265943b03f4f95d4b03595ff11"
+    },
+    "extension_negative_controls": {
+      "path": "scripts/test_physical_extension.py",
+      "sha256": "7dd13f865bcfec8472de700489638349beef7d9aa51fdb15c6cc82b511467227"
+    },
+    "current_compiled_catalog": {
+      "path": "docs/assets/lean-catalog.json",
+      "sha256": "543b641826ca2cf18bafdc36851860da2e2f341009e98fb6d4c30a6ad9f83bef"
+    },
+    "statement_freshness_checker": {
+      "path": "scripts/check_statement_audit.py",
+      "sha256": "f4c1c0d497720c9354d6b8d7a3410288d6ee20c83972661f28ce3a4e8be8c3d6"
+    },
+    "statement_negative_controls": {
+      "path": "scripts/test_statement_audit.py",
+      "sha256": "d63ef81d774c4fc938795fdf0ad0c24168490bb1ddd86f83e473527c3fb32482"
+    },
+    "current_exact_type_checks": {
+      "path": "metadata/statement-audit/checks.json",
+      "sha256": "78702fd8eec25107439f92a85bfb30e73e146943dfe661cc1d4f4bd57369fce3"
+    },
+    "compiled_binders": {
+      "path": "metadata/statement-audit/compiled-binders.json",
+      "sha256": "02d31b308cbd2a06983fd2db0e6c92b0a53c5d7fb2f8611baf821991a8fa0139"
+    },
+    "probe_specification": {
+      "path": "metadata/statement-audit/probes.json",
+      "sha256": "9a8d10e24ee04e8ca34a6ffe12f34918cf5dc790cc57f2b7a321a482a0ba1730"
+    },
+    "theorem1_probe_output": {
+      "path": "metadata/statement-audit/theorem1-output.txt",
+      "sha256": "7818b1c0d4fee5ae15ebac351ee8dfcb0142252832691976158f21e4e5fda250"
+    },
+    "theorem2_probe_output": {
+      "path": "metadata/statement-audit/theorem2-output.txt",
+      "sha256": "7edc4d565ccc7ab98d962b184b88766d7986c4ac20d7a59760939d32e5790a74"
+    },
+    "historical_index": {
+      "path": "metadata/verification/2026-10-08/historical/index.json",
+      "sha256": "65026905ab3f78bd324e2540cc7215818d3f109a3ed4a560a30d8c3c4bf23048"
+    },
+    "historical_statement_manifest": {
+      "path": "metadata/verification/2026-10-08/historical/statement-manifest.json",
+      "sha256": "946a2e1076c75e7faee7ae6f07a1a1bca47f3ae750fb9af75746e93189ef8106"
+    },
+    "statement_build_log": {
+      "path": "metadata/verification/2026-10-08/statement-build.txt",
+      "sha256": "2136981fa26a78966385db8901028d347748ca87a3bc0983437a8f41fc7c54fa"
+    },
+    "statement_binder_export_log": {
+      "path": "metadata/verification/2026-10-08/statement-binder-export.txt",
+      "sha256": "aa52b069c34cfadb740f2b08ca0e1d8ae6317950d0e1fa230900d3ca6a9e9546"
+    },
+    "statement_binder_export": {
+      "path": "metadata/verification/2026-10-08/statement-compiled-binders.json",
+      "sha256": "02d31b308cbd2a06983fd2db0e6c92b0a53c5d7fb2f8611baf821991a8fa0139"
+    },
+    "statement_result": {
+      "path": "metadata/verification/2026-10-08/statement-result.json",
+      "sha256": "78702fd8eec25107439f92a85bfb30e73e146943dfe661cc1d4f4bd57369fce3"
+    },
+    "theorem1_fresh_probe_log": {
+      "path": "metadata/verification/2026-10-08/statement-theorem1.txt",
+      "sha256": "7818b1c0d4fee5ae15ebac351ee8dfcb0142252832691976158f21e4e5fda250"
+    },
+    "theorem2_fresh_probe_log": {
+      "path": "metadata/verification/2026-10-08/statement-theorem2.txt",
+      "sha256": "7edc4d565ccc7ab98d962b184b88766d7986c4ac20d7a59760939d32e5790a74"
+    },
+    "ForwardChoiUniqueness_source": {
+      "path": "lean/FreeEntropy/ForwardChoiUniqueness.lean",
+      "sha256": "b2b98f29be00c5bf31baa3963c1f3264450ea7f3b11e115b1988ed9b13984088"
+    },
+    "PhysicalStateUniqueness_source": {
+      "path": "lean/FreeEntropy/PhysicalStateUniqueness.lean",
+      "sha256": "25e1eef2fc1a89d1692a248fa5e4f7ec7908279be82524f9f366942953231e54"
+    },
+    "Theorem2Physical_source": {
+      "path": "lean/FreeEntropy/Theorem2Physical.lean",
+      "sha256": "fc5e5c2c69712793b2b77a8d3a1e65f2c90094970b1bc76a84a4c1eb9b2bd0c6"
+    },
+    "verified_input_or_record:metadata/verification/2026-10-08/statement-build.txt": {
+      "path": "metadata/verification/2026-10-08/statement-build.txt",
+      "sha256": "2136981fa26a78966385db8901028d347748ca87a3bc0983437a8f41fc7c54fa"
+    },
+    "verified_input_or_record:metadata/verification/2026-10-08/result.txt": {
+      "path": "metadata/verification/2026-10-08/result.txt",
+      "sha256": "d3ca7cdd63d5f3bbc86a629cd3de778fd7d22f04c3c3b79af3c6a8861deabc00"
+    },
+    "verified_input_or_record:metadata/verification/2026-10-08/statement-result.json": {
+      "path": "metadata/verification/2026-10-08/statement-result.json",
+      "sha256": "78702fd8eec25107439f92a85bfb30e73e146943dfe661cc1d4f4bd57369fce3"
+    },
+    "verified_input_or_record:metadata/verification/2026-10-08/nanoda-result.json": {
+      "path": "metadata/verification/2026-10-08/nanoda-result.json",
+      "sha256": "899152e5d6168d4f8889dec86da1e8c3a1808c205040e818a51a70f988fc8271"
+    },
+    "verified_input_or_record:metadata/verification/2026-10-08/nanoda-binary-source.txt": {
+      "path": "metadata/verification/2026-10-08/nanoda-binary-source.txt",
+      "sha256": "f878d93b03580c1c7ab619c6aecabc82ed1d80d3079a16eec58b746eb1aadd51"
+    },
+    "verified_input_or_record:metadata/verification/2026-10-08/statement-compiled-binders.json": {
+      "path": "metadata/verification/2026-10-08/statement-compiled-binders.json",
+      "sha256": "02d31b308cbd2a06983fd2db0e6c92b0a53c5d7fb2f8611baf821991a8fa0139"
+    },
+    "verified_input_or_record:metadata/verification/2026-10-08/run-info.json": {
+      "path": "metadata/verification/2026-10-08/run-info.json",
+      "sha256": "00ef4a971ca6e395bd5cbc412e8ddf694eefe9c94875dc9e8c756360e03a2692"
+    },
+    "verified_input_or_record:metadata/verification/2026-10-08/statement-binder-export.txt": {
+      "path": "metadata/verification/2026-10-08/statement-binder-export.txt",
+      "sha256": "aa52b069c34cfadb740f2b08ca0e1d8ae6317950d0e1fa230900d3ca6a9e9546"
+    },
+    "verified_input_or_record:metadata/verification/2026-10-08/comparator.log": {
+      "path": "metadata/verification/2026-10-08/comparator.log",
+      "sha256": "41732c9f52d4ab4876326a9d231f9a2006380d084624ab07995d03d05e5b4190"
+    },
+    "verified_input_or_record:metadata/verification/2026-10-08/lean-summary.json": {
+      "path": "metadata/verification/2026-10-08/lean-summary.json",
+      "sha256": "7eae7fa67acdc48fc2266a5af7bacb47cc6f02fa4635dddd690d88a2b03ac11a"
+    },
+    "verified_input_or_record:metadata/verification/2026-10-08/nanoda-controls.log": {
+      "path": "metadata/verification/2026-10-08/nanoda-controls.log",
+      "sha256": "5a4a9626d75fe15211d9d9be9e07d55e947c7e1d0d6de7374a085e8b56eedb1b"
+    },
+    "verified_input_or_record:metadata/verification/2026-10-08/physical-spec.json": {
+      "path": "metadata/verification/2026-10-08/physical-spec.json",
+      "sha256": "eabb8ead8afff275b4dde5a8ed84444756c02439ad584716837767067a7e6418"
+    },
+    "verified_input_or_record:metadata/verification/2026-10-08/physical-spec.log": {
+      "path": "metadata/verification/2026-10-08/physical-spec.log",
+      "sha256": "95921dd7f6671cffced0258cad91e56496f86be6aba32b42a21fec3c7a607c2b"
+    },
+    "verified_input_or_record:metadata/verification/2026-10-08/verification-result.json": {
+      "path": "metadata/verification/2026-10-08/verification-result.json",
+      "sha256": "fe9cb0efc948dc0f950d8105226f25cc71356563b004eafa4354118be59ee73e"
+    },
+    "verified_input_or_record:metadata/verification/2026-10-08/physical-spec-controls.json": {
+      "path": "metadata/verification/2026-10-08/physical-spec-controls.json",
+      "sha256": "b194a839263a94d5631b2b599917af07cf8479a5dc1c0d3e8d1bc8347b2e3a3d"
+    },
+    "verified_input_or_record:metadata/verification/2026-10-08/physical-spec-controls.log": {
+      "path": "metadata/verification/2026-10-08/physical-spec-controls.log",
+      "sha256": "d03057b847512ebd4eb2e89e01eb10ddf3965c83851f3b5a6abc0497fd7d50c8"
+    },
+    "verified_input_or_record:metadata/verification/2026-10-08/lean.log": {
+      "path": "metadata/verification/2026-10-08/lean.log",
+      "sha256": "37842c3b80a738dbdb020ea0aa23e32a37e2501cb119a1e9b67b10203febea9a"
+    },
+    "verified_input_or_record:metadata/verification/2026-10-08/nanoda.log": {
+      "path": "metadata/verification/2026-10-08/nanoda.log",
+      "sha256": "d18fa5e1d872d138b0b0ed6140a8e65d96d6edfb696ce22ac13a2e61dec62f64"
+    },
+    "verified_input_or_record:metadata/verification/2026-10-08/statement-theorem1.txt": {
+      "path": "metadata/verification/2026-10-08/statement-theorem1.txt",
+      "sha256": "7818b1c0d4fee5ae15ebac351ee8dfcb0142252832691976158f21e4e5fda250"
+    },
+    "verified_input_or_record:metadata/verification/2026-10-08/statement-theorem2.txt": {
+      "path": "metadata/verification/2026-10-08/statement-theorem2.txt",
+      "sha256": "7edc4d565ccc7ab98d962b184b88766d7986c4ac20d7a59760939d32e5790a74"
+    },
+    "verified_input_or_record:lean/ComparatorChallenges/verification-status.json": {
+      "path": "lean/ComparatorChallenges/verification-status.json",
+      "sha256": "cace38f7d2b57174f7576ea5b4947d18354602cceaf00dd51da4988aa82412ec"
+    },
+    "verified_input_or_record:lean/ComparatorConfig/nanoda-status.json": {
+      "path": "lean/ComparatorConfig/nanoda-status.json",
+      "sha256": "ab2bccfa6a543d6ccd7d143ca7707fe67972a641ebb26ce182f73b2c39a2c893"
+    },
+    "verified_input_or_record:lean/ComparatorChallenges/trusted-boundary.json": {
+      "path": "lean/ComparatorChallenges/trusted-boundary.json",
+      "sha256": "0891b7c374053fd16ce63cf0c66daf83f8c90c8c6b7a50f7947f5436110b1b7d"
+    },
+    "verified_input_or_record:lean/ComparatorConfig/check_local.py": {
+      "path": "lean/ComparatorConfig/check_local.py",
+      "sha256": "38696965c051acaa05b9ba2df24210d051285601aee0e4669dfc9f5c32f930f7"
+    },
+    "verified_input_or_record:lean/ComparatorConfig/check_nanoda.py": {
+      "path": "lean/ComparatorConfig/check_nanoda.py",
+      "sha256": "d412e5adbb5541332388890797edab78a8bcd9c690212c1a62297d638fcfa429"
+    },
+    "verified_input_or_record:scripts/verify.sh": {
+      "path": "scripts/verify.sh",
+      "sha256": "24bc7b90d4e4cc77e3f4df54c649f1f2322da605a1c98d7b8febc1ea7481a89c"
+    },
+    "verified_input_or_record:scripts/validate_artifacts.py": {
+      "path": "scripts/validate_artifacts.py",
+      "sha256": "d7508b01c9191ae4fb87eb3ec7c631ed993e9dbc8b84eef7c6116fe60221f99b"
+    },
+    "verified_input_or_record:scripts/prepare_release.py": {
+      "path": "scripts/prepare_release.py",
+      "sha256": "3ff7206063ee2c784abf1ba0991eda39fb7b6ad281b64990ea551636946f3a04"
+    }
+  },
+  "review_scope": "An additive physical formulation of Theorem 2 with arbitrary isometric tensor and PRV realizations, existence witnesses, and a separately redeclared state/channel challenge. The original four endpoint types and all baseline production modules are retained exactly.",
+  "remaining_shared_boundary": "The lower representation models, index spaces, generator actions, and numerical definitions remain shared; see metadata/physical-interface-map.json. This record does not establish independent human correspondence review.",
+  "policy": "Bindings preserve the source/report history and support a bounded additive agent review. Freshness validation does not itself rerun proof checkers or decide mathematical meaning. Historical source-first reviews retain their original dates, provenance and scope.",
+  "reviewed_at_utc": "2026-10-09T03:20:31.034906+00:00",
+  "reviewers": [
+    {
+      "id": "/root/independent_spec_review",
+      "role": "Separate final source review of state/projector bridges, expected types, realization existence, and compiled-closure guard; also contributed earlier expected-fixture tooling. This is agent review, not blind or human review."
+    },
+    {
+      "id": "/root/independent_projector",
+      "role": "Additive source preservation and original compiled-endpoint hash review; contributed forward projector uniqueness."
+    },
+    {
+      "id": "/root",
+      "role": "Integration and execution of fresh production, statement, Comparator and Nanoda checks."
+    }
+  ],
+  "review_findings": [
+    "No state-identification or projector-equality premise is supplied; the bridges derive these equalities from literal isometry and intertwining conditions.",
+    "The existence root constructs both physical tensor embeddings and both forward/reverse PRV realizations for every admissible pair, independently of the unitary parameter.",
+    "The three raw definitions and the two expected theorem signatures match the solution at source level; exported statement comparison and kernel runs are recorded separately.",
+    "The reverse intertwining condition uses the dual auxiliary generator representation.",
+    "The lower representation coordinates/generators and numerical expressions remain shared. No independent human correspondence review is established."
+  ]
+}

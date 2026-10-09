@@ -5,9 +5,17 @@ repository root. Verification does not compile or modify the manuscript.
 
 For the simplest fresh-checkout workflow, start with
 [the verification guide](verify.md): `bash scripts/verify.sh all` runs the
-Lean audit, local Comparator diagnostic and independent Nanoda checks, with
+Lean audit, physical specification guard and controls, local Comparator
+diagnostic and independent Nanoda checks, with
 fresh logs and a nonzero exit status on failure. The commands below document
 the individual tools and evidence packaging.
+
+Current `main` checks four configurations and six theorem roots, including the
+physical bound and realization-existence theorem. The frozen `v0.1.0-rc1`
+release retains three configurations and four roots; checking that tag does
+not check the October 8 physical-interface extension. Current execution
+evidence is recorded in
+[`verification-result.json`](../metadata/verification/2026-10-08/verification-result.json).
 
 ## Pinned environment
 
@@ -72,7 +80,7 @@ python3 lean/ComparatorConfig/check_local.py
 ```
 
 This invokes the pinned Comparator's exact statement/constant and axiom checks,
-then Lean kernel replay, for each of the three challenge configurations.
+then Lean kernel replay, for each of the four current challenge configurations.
 For the separately implemented Nanoda kernel, follow the pinned Rust/source
 build commands in the [challenge guide](../lean/ComparatorChallenges/README.md#independent-nanoda-replay-on-macos-or-linux),
 then run `lean/ComparatorConfig/check_nanoda.py` with the resulting binary.
@@ -102,6 +110,16 @@ python3 scripts/test_nanoda_check.py --lake-project lean \
 This accepts a valid theorem and requires rejection of missing targets,
 non-theorem roots, forbidden axioms, proof holes, and an ill-typed proof.
 Fixtures live only in a temporary directory, outside the proved library.
+
+The current `all` and `comparator` wrapper modes also run the compiled physical
+specification dependency guard and seven acceptance/rejection controls before
+Comparator. For their separate commands and report scope, see
+[the verification guide](verify.md#physical-specification-check). The
+[physical interface map](../metadata/physical-interface-map.json) and
+[audit extension bridge](../metadata/statement-audit/physical-interface-bridge.json)
+record the independent raw state/Choi formulas and the remaining shared
+representation coordinates. This guard checks a dependency boundary; it does
+not establish independent human correspondence review.
 
 ## Source-only export
 
@@ -170,14 +188,15 @@ python3 scripts/prepare_release.py --output /tmp/free-entropy-verified.tar.gz
 
 The destination must not already exist. `--allow-unverified` deliberately
 omits the old audit summary and marks the manifest accordingly.
-It retains a historical clean-reproduction record only when that record's
-proof fingerprint, manuscript hash, toolchain and dependency pins match the
-selected sources. The manifest labels this as earlier source evidence,
-not as a result of the new export or CI run. This preserves the linked
-record through the CI preparation/build/re-export sequence. A stale record
-is omitted in preparation mode; the default exporter rejects a stale record
-or a missing record referenced by `formalization.yaml`. If sources change,
-refresh the clean-reproduction evidence before making a verified release.
+If an optional legacy record at `lean/verification/reproducibility.json` is
+present, the exporter includes it only when its proof fingerprint, manuscript
+hash, toolchain and dependency pins match the selected sources. A stale legacy
+record is omitted in preparation mode and rejected in a verified export.
+Current `main` instead archives that record under a dated historical path and
+records the physical extension separately. Bundling an execution report is
+not a new execution or clean-build result. Perform fresh clean-source checks
+before releasing changed proof sources; the current incremental run does not
+replace that evidence.
 `--allow-incomplete-metadata` is also available for preparation only; it
 lists missing publication files and must not be mistaken for a completed
 release. Neither option publishes anything or initializes Git.
@@ -191,16 +210,19 @@ the same Python/zlib implementation and `SOURCE_DATE_EPOCH` (default zero).
 [`lean.yml`](../.github/workflows/lean.yml) checks an exported source copy on
 Ubuntu 24.04, installs a versioned, checksum-verified elan bootstrap, fetches
 the locked public dependencies, and runs the actual build and axiom audit.
-It also compiles the separate expected-statement templates; their deliberate
-proof holes are not imported into the production library. The same job then
+It also compiles the separate expected-statement templates and runs the
+physical specification guard and its controls; deliberate challenge proof
+holes are not imported into the production library. The same job then
 runs the local Comparator/Lean replay diagnostic, builds the pinned Nanoda
-with Rust 1.90.0 and `cargo --locked`, and checks all three solution exports.
+with Rust 1.90.0 and `cargo --locked`, and checks all four current solution exports.
 These two checker steps are explicitly unsandboxed. The old copied Nanoda
 report is removed before checking, so the uploaded success report must be
 produced by that job's actual run. It creates a release archive only after
 the checks succeed. GitHub actions
 are pinned by commit. The workflow uploads reports and the source archive
 as CI artifacts; it does not create a public release.
+The updated physical-interface CI configuration is not evidence of a completed
+hosted run; the completed rc1 run checks the earlier frozen sources.
 
 A separate, manually enabled dependent CI job downloads that source archive
 and invokes the unmodified pinned upstream Comparator on Linux with real Landrun. Landrun
@@ -320,7 +342,7 @@ October 1 exported-source reproduction above.
 A fresh final-source Lean audit passed all 2,499 public declarations with
 no placeholders or project-added axioms and only `propext`, `Classical.choice`,
 and `Quot.sound` permitted. It ran outside the timed build measurements.
-The [fresh statement applications](../metadata/statement-audit/checks.json)
+The [campaign statement applications](../metadata/elaboration/2026-10-06/verification/statement-checks.json)
 passed, and the actual exported endpoint binder lists agree with the recorded
 lists. This was an incremental local run, not a source-first manuscript review.
 The [portable verification records](../metadata/elaboration/2026-10-06/verification/)
@@ -351,19 +373,67 @@ with Rust 1.90.0. The achievability, converse and Choi-cloning exports checked
 overlapping dependency closures must not be added as distinct declarations.
 All seven acceptance/rejection regression groups passed. The
 [fresh Nanoda result](../metadata/elaboration/2026-10-06/verification/nanoda-result.json)
-and [execution record](../lean/ComparatorConfig/nanoda-status.json) bind the
-cleanup source, checker, binary and actual export hashes. These local checks
+binds the cleanup source, checker, binary and actual export hashes. These local checks
 were unsandboxed. Fresh Comparator passed all three statement/constant
 comparisons, axiom checks and Lean kernel replays; its wrapper exited 0.
-The [current source-bound report](../lean/ComparatorChallenges/verification-status.json)
+The [campaign source-bound report](../metadata/verification/2026-10-08/historical/comparator-status.json)
 and [complete raw log](../metadata/elaboration/2026-10-06/verification/comparator.log)
 record this new execution. This status is separate from a Linux-sandboxed
 Comparator run. Successful builds and historical records do not establish a
 new checker pass.
 
-The refreshed [compiled catalog](assets/lean-catalog.json) contains 4,526
+The campaign's compiled catalog contained 4,526
 declarations: 2,499 public and 2,027 auxiliary, with 1,873 proved declarations
 across 270 proof modules. Its generation and consistency check passed.
 The correspondence consistency check also passed, retaining all 33 Article
 and 9 Letter locators. These are compiled-export and documentation checks;
 they do not replace kernel verification or establish a new manuscript review.
+
+## Physical interface extension — October 8
+
+The additive extension preserves the original 270 production modules and adds
+three proof modules. The current `All` build and transitive axiom audit passed
+for **273 modules**, **1,883 proved declarations** and **2,512 public
+declarations**, at proof-source SHA-256
+`33379ffb4c7547fdc221fb3696f360465d87aaad2247e12707a7b95e557b5cac`.
+This local source-matching incremental run reused existing project and
+dependency artifacts. It is not a clean-checkout build or a repeat of the
+October 6 elaboration measurements.
+
+The new physical challenge quantifies over arbitrary isometric tensor
+embeddings and PRV copies with specified representation equations. The solution
+proves both error bounds and existence of all required embeddings. Its expected
+state and Choi formulas are independently restated; canonical representation
+coordinates, Lie generators and numerical definitions remain shared. The
+[compiled dependency closure](../metadata/verification/2026-10-08/physical-spec.json)
+makes that remaining sharing inspectable, while
+[the extension bridge](../metadata/statement-audit/physical-interface-bridge.json)
+records the bounded addition without relabeling the original audit.
+
+The specification guard and all seven acceptance/rejection controls passed in
+the local October 8 run. Their scope is the expected type-dependency boundary,
+separate from proof checking and source-to-manuscript interpretation.
+
+The current four-configuration pipeline exports six roots. Its
+[execution record](../metadata/verification/2026-10-08/verification-result.json)
+distinguishes new checks from preserved history. All four Comparator
+configurations passed exact statement/constant comparison, solution axiom
+checks and Lean kernel replay, including both physical-interface roots.
+The current Nanoda controls and all four fresh solution exports also passed,
+including all six required theorem roots. The physical-interface export checked
+58,990 declarations with no errors; its dependency closure overlaps the other
+exports and must not be added to their counts. The invocation used the
+previously built pinned binary, whose SHA-256 matches the archived source/pin
+build. It is not a new Rust/source rebuild. The full wrapper exited zero with
+`VERIFICATION PASSED: all`.
+Comparator and Nanoda remain unsandboxed. Independent human review and a
+Linux/Landrun verification remain unestablished.
+The updated hosted CI configuration had not run when these local results were
+recorded.
+
+The old current-path reproduction record is preserved unchanged as
+[`historical/lean-reproducibility.json`](../metadata/verification/2026-10-08/historical/lean-reproducibility.json).
+The October 1 and October 6 records above retain their original counts, dates,
+source fingerprints and build contexts. The frozen candidate and its completed
+clean-source CI check cover the earlier library; they do not verify this
+extension.

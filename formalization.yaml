@@ -7,9 +7,9 @@ project:
   authors:
   - Jinzhao Wang and contributors
   license: Apache-2.0
-  note: Software copyright credit and licensing authority, including the Cloning adaptations,
-    were confirmed by the maintainer on 2026-10-06. Manuscript authorship is listed separately;
-    manuscripts and third-party files retain their own rights and notices.
+  note: Software copyright credit and licensing authority, including the Cloning adaptations, were confirmed
+    by the maintainer on 2026-10-06. Manuscript authorship is listed separately; manuscripts and third-party
+    files retain their own rights and notices.
 sources:
 - title: Quantum minimum description of density matrices
   authors:
@@ -21,8 +21,8 @@ sources:
   type: manuscript
   license: unspecified
   note: Bundled source manuscript. Theorems thm:qmdl and thm:main are the requested scope. Publication
-    date and source-author endorsement are not asserted. Authors' rights are retained;
-    the software Apache-2.0 grant does not apply to the manuscript.
+    date and source-author endorsement are not asserted. Authors' rights are retained; the software Apache-2.0
+    grant does not apply to the manuscript.
 - title: Free entropy and quantum minimum description length
   authors:
   - Patrick Hayden
@@ -32,11 +32,10 @@ sources:
   id: letter.tex; SHA-256 0b6a2c45b1565c3e9aadcdaa1c6631a2d7e2e2ec259b7382d04bcbce83622260
   type: manuscript
   license: unspecified
-  note: Current author-supplied companion Letter, with compression.pdf and the shared free.bib.
-    Its QMDL formulas are covered by the Article's memory endpoints; its tube-volume,
-    physical-free-entropy, and large-dimension bridge claims are not separately formalized.
-    Detailed correspondence is in metadata/letter-source-map.json. Authors' rights
-    are retained; the software Apache-2.0 grant does not apply to these assets.
+  note: Current author-supplied companion Letter, with compression.pdf and the shared free.bib. Its QMDL
+    formulas are covered by the Article's memory endpoints; its tube-volume, physical-free-entropy, and
+    large-dimension bridge claims are not separately formalized. Detailed correspondence is in metadata/letter-source-map.json.
+    Authors' rights are retained; the software Apache-2.0 grant does not apply to these assets.
 status:
   scope: 'Theorems 1 and 2 for actual finite complex matrices and constructed CPTP channels: fixed-spectrum
     physical tensor-source compression with exact additive memory constant and uniform achievability;
@@ -102,26 +101,40 @@ status:
     - propext
     - Classical.choice
     - Quot.sound
+  - name: 'Theorem 2: independently specified physical formulation'
+    declaration: FreeEntropy.ExteriorRepresentation.theorem2_cloning_accuracy_physical
+    file: lean/FreeEntropy/Theorem2Physical.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+    comparator_config: lean/ComparatorChallenges/Theorem2Physical.json
+  - name: 'Theorem 2: physical and PRV realization existence'
+    declaration: FreeEntropy.ExteriorRepresentation.theorem2_physical_realizations_exist
+    file: lean/FreeEntropy/Theorem2Physical.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+    comparator_config: lean/ComparatorChallenges/Theorem2Physical.json
   audit:
     evidence: lean/verification/summary.json
-    reproducibility_evidence: lean/verification/reproducibility.json
+    reproducibility_evidence: metadata/verification/2026-10-08/verification-result.json
     comparator_evidence: lean/ComparatorChallenges/verification-status.json
     nanoda_evidence: lean/ComparatorConfig/nanoda-status.json
-    proof_modules: 270
-    proved_declarations_audited: 1873
-    public_declarations_audited: 2499
-    proof_sources_sha256: e7068771d301aaac3156ecc7cd0a1a4b3868a894a1d0988ce897420786ba2c3f
-    note: All production modules and reader entrypoints passed project-only cold rebuilds with warm,
-      source- and pin-verified dependency caches. A fresh transitive kernel-axiom audit passed for
-      the cleaned sources. This is not a fresh dependency installation. The original reproduction
-      records are preserved under metadata/elaboration/2026-10-06/historical; current checks and
-      the bounded cleanup preservation bridge are recorded separately. Comparator specification
-      placeholders are not unresolved development proofs; Comparator execution is recorded separately.
-      Hosted runs 37557196945 at commit 5203e019c19b32585e0dab2b957a2c367f1baf68 and
-      37562098825 at commit 7d5cf579cf33ab05317ab2567e8213f3ef9be600 passed clean exported-source
-      builds with fresh pinned dependencies, unsandboxed Linux Comparator and Nanoda. All 270
-      production Lean files match the release byte-for-byte. Separate records are retained under
-      metadata/releases/v0.1.0-rc1; hosted-verification.json records the later actual run.
+    proof_modules: 273
+    proved_declarations_audited: 1883
+    public_declarations_audited: 2512
+    proof_sources_sha256: 33379ffb4c7547fdc221fb3696f360465d87aaad2247e12707a7b95e557b5cac
+    note: The original 270 production modules are unchanged. Three additive physical-interface proof modules
+      bring the current library to 273 modules. Current local checks use source-matching warm Lean dependency
+      artifacts; this is not a fresh dependency installation. The original release clean exported-source
+      checks cover the frozen rc1 library, not these new additions. Historical records are preserved under
+      metadata/verification/2026-10-08/historical and metadata/elaboration/2026-10-06/historical; the
+      additive agent-review bridge binds current checks separately. Challenge proof holes are intentionally
+      outside the production library.
 automation:
   methods:
   - method: agent
@@ -151,18 +164,15 @@ review:
   status: agent-reviewed
   reviewers:
   - Codex agents
-  notes: The cleaned sources passed project-only cold builds and a fresh kernel-axiom audit with
-    verified warm dependency caches. The earlier source-first agent review retains its original date
-    and revision; metadata/elaboration/2026-10-06/cleanup-review-bridge.json carries it over the bounded
-    cleanup using fresh statement probes and two exact kernel-witnessed foundation instance equalities.
-    All three solution exports passed a newly rebuilt pinned Nanoda kernel with exactly the three
-    permitted standard axioms. All three fresh Comparator comparisons, axiom checks and Lean kernel
-    replays also passed; their exact inputs and execution context are recorded separately in its
-    source-bound report.
-    These local independent checks are unsandboxed. Independent human peer review, source-author
-    endorsement and Linux-sandboxed Comparator execution are not asserted. Consult the generated
-    Comparator and Nanoda reports for exact inputs and execution status; preserved historical records
-    do not establish new runs for the cleaned sources.
+  notes: The earlier source-first agent review retains its original dates and revision. The bounded cleanup
+    bridge covers the baseline, and metadata/statement-audit/physical-interface-bridge.json covers the
+    three added proof modules while checking that all 270 baseline source files and four original endpoint
+    statements are unchanged. The supplemental physical expected statement restates tensor density, normalized
+    compression and Choi contraction; its two roots include a proved existence statement. The lower representation
+    coordinates, generators and numerical bounds remain shared, as documented by the compiled dependency-closure
+    guard. Current execution status and context are recorded in the source-bound Comparator, Nanoda and
+    verification reports; historical records do not establish new runs. Independent human correspondence
+    review, source-author endorsement and Linux-sandboxed Comparator execution are not asserted.
 alignment:
   namespace: FreeEntropy
   mapping_file: metadata/natural-language-map.json
@@ -192,7 +202,13 @@ alignment:
     lean: FreeEntropy.ExteriorRepresentation.theorem2_cloning_accuracy_petz
     module: FreeEntropy.Theorem2Petz
     status: proved
+  - source: Theorem 2 physical tensor states and Cartan-case PRV copies (eq:schur_d, eq:gen_cloner, prop:choi,
+      prop:reverse, thm:main)
+    lean: FreeEntropy.ExteriorRepresentation.theorem2_cloning_accuracy_physical; FreeEntropy.ExteriorRepresentation.theorem2_physical_realizations_exist
+    module: FreeEntropy.Theorem2Physical
+    status: proved
+  physical_interface_mapping_file: metadata/physical-interface-map.json
 acknowledgements: Built with Lean 4 and mathlib. Channels.lean and CartanChannel.lean preserve provenance
   notes for algebra adapted from the previously available local Cloning formalization; there is no import
-  dependency on that project. See NOTICE for the exact private source snapshot and the maintainer's
-  confirmed authority to license the adaptations included here under Apache-2.0.
+  dependency on that project. See NOTICE for the exact private source snapshot and the maintainer's confirmed
+  authority to license the adaptations included here under Apache-2.0.

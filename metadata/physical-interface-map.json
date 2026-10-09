@@ -1,0 +1,122 @@
+{
+  "schema_version": "qmdl-physical-interface-map-v1",
+  "review_kind": "additive_agent_review",
+  "human_review": "not_established",
+  "manuscript": {
+    "file": "article.tex",
+    "sha256": "09fc0a6bb205180cd820be94d843a1dc0d4342a543492e30dde54e367ae843a9"
+  },
+  "source_statements": [
+    {
+      "label": "eq:schur_d",
+      "file": "article.tex",
+      "start_line": 303,
+      "end_line": 318,
+      "role": "Normalized physical irrep state as a tensor-power summand."
+    },
+    {
+      "label": "eq:gen_cloner",
+      "file": "article.tex",
+      "start_line": 412,
+      "end_line": 419,
+      "role": "Dimension-scaled orthogonal PRV projector and transposed-input Choi contraction."
+    },
+    {
+      "label": "prop:choi",
+      "file": "article.tex",
+      "start_line": 442,
+      "end_line": 459,
+      "role": "Cartan-case auxiliary type and isometric intertwiner; multiplicity one makes the projector unique."
+    },
+    {
+      "label": "prop:reverse",
+      "file": "article.tex",
+      "start_line": 540,
+      "end_line": 555,
+      "role": "Reverse cloner with dual auxiliary representation."
+    },
+    {
+      "label": "thm:main",
+      "file": "article.tex",
+      "start_line": 562,
+      "end_line": 581,
+      "role": "Both finite trace-distance bounds for supported partitions and a dominant signed increment."
+    }
+  ],
+  "formal_statements": [
+    {
+      "declaration": "FreeEntropy.ExteriorRepresentation.theorem2_cloning_accuracy_physical",
+      "file": "lean/FreeEntropy/Theorem2Physical.lean",
+      "role": "Universal physical formulation for arbitrary isometric tensor and PRV realizations satisfying literal intertwining equations.",
+      "line": 44,
+      "compiled_statement": "\u2200 {d r : \u2115} (s : FreeEntropy.FixedSpectrum d r) (hd : 2 \u2264 d) (mu nu : Fin d \u2192 \u2115),\n  Antitone mu \u2192\n    Antitone nu \u2192\n      (\u2200 (i : Fin d), r \u2264 \u2191i \u2192 mu i = 0) \u2192\n        (\u2200 (i : Fin d), r \u2264 \u2191i \u2192 nu i = 0) \u2192\n          (Antitone fun (i : Fin d) => \u2191(nu i) - \u2191(mu i)) \u2192\n            \u2200 (Jmu : Matrix (Fin (\u2211 j : Fin d, mu j) \u2192 Fin d) (FreeEntropy.ExteriorRepresentation.IrrepIndex mu) \u2102)\n              (Jnu : Matrix (Fin (\u2211 j : Fin d, nu j) \u2192 Fin d) (FreeEntropy.ExteriorRepresentation.IrrepIndex nu) \u2102),\n              Jmu.conjTranspose * Jmu = 1 \u2192\n                Jnu.conjTranspose * Jnu = 1 \u2192\n                  (\u2200 (V : \u21a5(Matrix.unitaryGroup (Fin d) \u2102)),\n                      (Matrix.of fun (x y : Fin (\u2211 j : Fin d, mu j) \u2192 Fin d) =>\n                            \u220f t : Fin (\u2211 j : Fin d, mu j), \u2191V (x t) (y t)) *\n                          Jmu =\n                        Jmu * (FreeEntropy.ExteriorRepresentation.canonicalWeightRepresentation mu) V) \u2192\n                    (\u2200 (V : \u21a5(Matrix.unitaryGroup (Fin d) \u2102)),\n                        (Matrix.of fun (x y : Fin (\u2211 j : Fin d, nu j) \u2192 Fin d) =>\n                              \u220f t : Fin (\u2211 j : Fin d, nu j), \u2191V (x t) (y t)) *\n                            Jnu =\n                          Jnu * (FreeEntropy.ExteriorRepresentation.canonicalWeightRepresentation nu) V) \u2192\n                      \u2200\n                        (Wf :\n                          Matrix\n                            (FreeEntropy.ExteriorRepresentation.IrrepIndex mu \u00d7\n                              FreeEntropy.ExteriorRepresentation.IrrepIndex nu)\n                            (FreeEntropy.ExteriorRepresentation.IrrepIndex\n                              (FreeEntropy.ExteriorRepresentation.auxiliaryRow mu nu))\n                            \u2102)\n                        (Wr :\n                          Matrix\n                            (FreeEntropy.ExteriorRepresentation.IrrepIndex nu \u00d7\n                              FreeEntropy.ExteriorRepresentation.IrrepIndex mu)\n                            (FreeEntropy.ExteriorRepresentation.IrrepIndex\n                              (FreeEntropy.ExteriorRepresentation.auxiliaryRow mu nu))\n                            \u2102),\n                        Wf.conjTranspose * Wf = 1 \u2192\n                          Wr.conjTranspose * Wr = 1 \u2192\n                            (\u2200 (i j : Fin d),\n                                ((FreeEntropy.ExteriorRepresentation.canonicalWeightModel mu).generators.dual.tensor\n                                          (FreeEntropy.ExteriorRepresentation.canonicalWeightModel nu).generators).E\n                                      i j *\n                                    Wf =\n                                  Wf *\n                                    (FreeEntropy.ExteriorRepresentation.canonicalAuxiliaryModel mu nu).generators.E i\n                                      j) \u2192\n                              (\u2200 (i j : Fin d),\n                                  ((FreeEntropy.ExteriorRepresentation.canonicalWeightModel nu).generators.dual.tensor\n                                            (FreeEntropy.ExteriorRepresentation.canonicalWeightModel mu).generators).E\n                                        i j *\n                                      Wr =\n                                    Wr *\n                                      (FreeEntropy.ExteriorRepresentation.canonicalAuxiliaryModel mu\n                                                nu).generators.dual.E\n                                        i j) \u2192\n                                \u2200 (U : \u21a5(Matrix.unitaryGroup (Fin d) \u2102)),\n                                  FreeEntropy.TraceDistance.traceDistance\n                                        (FreeEntropy.ExteriorRepresentation.physicalPrvMap Wf\n                                          (FreeEntropy.SchurWeyl.physicalIsometricState (\u2211 j : Fin d, mu j) Jmu\n                                            (FreeEntropy.SchurWeyl.physicalSpectrumDensity s U)))\n                                        (FreeEntropy.SchurWeyl.physicalIsometricState (\u2211 j : Fin d, nu j) Jnu\n                                          (FreeEntropy.SchurWeyl.physicalSpectrumDensity s U)) \u2264\n                                      FreeEntropy.Theorem2.cloningConstant d r s.qx *\n                                          \u2191(FreeEntropy.ExteriorRepresentation.differenceNorm mu nu) /\n                                        (\u2191(FreeEntropy.ExteriorRepresentation.minimumRowGap mu r hd \u22ef) + 1) \u2227\n                                    FreeEntropy.TraceDistance.traceDistance\n                                        (FreeEntropy.ExteriorRepresentation.physicalPrvMap Wr\n                                          (FreeEntropy.SchurWeyl.physicalIsometricState (\u2211 j : Fin d, nu j) Jnu\n                                            (FreeEntropy.SchurWeyl.physicalSpectrumDensity s U)))\n                                        (FreeEntropy.SchurWeyl.physicalIsometricState (\u2211 j : Fin d, mu j) Jmu\n                                          (FreeEntropy.SchurWeyl.physicalSpectrumDensity s U)) \u2264\n                                      FreeEntropy.Theorem2.cloningConstant d r s.qx *\n                                          \u2191(FreeEntropy.ExteriorRepresentation.differenceNorm mu nu) /\n                                        (\u2191(FreeEntropy.ExteriorRepresentation.minimumRowGap mu r hd \u22ef) + 1)",
+      "compiled_statement_sha256": "308827d7a85e0d46789d115944c2876b26380a509f6d7c7e485cbb7143dcc50c"
+    },
+    {
+      "declaration": "FreeEntropy.ExteriorRepresentation.theorem2_physical_realizations_exist",
+      "file": "lean/FreeEntropy/Theorem2Physical.lean",
+      "role": "All four interface realizations exist simultaneously for every admissible partition pair; the bound interface is nonvacuous.",
+      "line": 92,
+      "compiled_statement": "\u2200 {d : \u2115} (mu nu : Fin d \u2192 \u2115),\n  Antitone mu \u2192\n    Antitone nu \u2192\n      (Antitone fun (i : Fin d) => \u2191(nu i) - \u2191(mu i)) \u2192\n        \u2203 (Jmu : Matrix (Fin (\u2211 j : Fin d, mu j) \u2192 Fin d) (FreeEntropy.ExteriorRepresentation.IrrepIndex mu) \u2102) (Jnu :\n          Matrix (Fin (\u2211 j : Fin d, nu j) \u2192 Fin d) (FreeEntropy.ExteriorRepresentation.IrrepIndex nu) \u2102) (Wf :\n          Matrix (FreeEntropy.ExteriorRepresentation.IrrepIndex mu \u00d7 FreeEntropy.ExteriorRepresentation.IrrepIndex nu)\n            (FreeEntropy.ExteriorRepresentation.IrrepIndex (FreeEntropy.ExteriorRepresentation.auxiliaryRow mu nu)) \u2102)\n          (Wr :\n          Matrix (FreeEntropy.ExteriorRepresentation.IrrepIndex nu \u00d7 FreeEntropy.ExteriorRepresentation.IrrepIndex mu)\n            (FreeEntropy.ExteriorRepresentation.IrrepIndex (FreeEntropy.ExteriorRepresentation.auxiliaryRow mu nu)) \u2102),\n          Jmu.conjTranspose * Jmu = 1 \u2227\n            Jnu.conjTranspose * Jnu = 1 \u2227\n              (\u2200 (V : \u21a5(Matrix.unitaryGroup (Fin d) \u2102)),\n                  (Matrix.of fun (x y : Fin (\u2211 j : Fin d, mu j) \u2192 Fin d) =>\n                        \u220f t : Fin (\u2211 j : Fin d, mu j), \u2191V (x t) (y t)) *\n                      Jmu =\n                    Jmu * (FreeEntropy.ExteriorRepresentation.canonicalWeightRepresentation mu) V) \u2227\n                (\u2200 (V : \u21a5(Matrix.unitaryGroup (Fin d) \u2102)),\n                    (Matrix.of fun (x y : Fin (\u2211 j : Fin d, nu j) \u2192 Fin d) =>\n                          \u220f t : Fin (\u2211 j : Fin d, nu j), \u2191V (x t) (y t)) *\n                        Jnu =\n                      Jnu * (FreeEntropy.ExteriorRepresentation.canonicalWeightRepresentation nu) V) \u2227\n                  Wf.conjTranspose * Wf = 1 \u2227\n                    Wr.conjTranspose * Wr = 1 \u2227\n                      (\u2200 (i j : Fin d),\n                          ((FreeEntropy.ExteriorRepresentation.canonicalWeightModel mu).generators.dual.tensor\n                                    (FreeEntropy.ExteriorRepresentation.canonicalWeightModel nu).generators).E\n                                i j *\n                              Wf =\n                            Wf * (FreeEntropy.ExteriorRepresentation.canonicalAuxiliaryModel mu nu).generators.E i j) \u2227\n                        \u2200 (i j : Fin d),\n                          ((FreeEntropy.ExteriorRepresentation.canonicalWeightModel nu).generators.dual.tensor\n                                    (FreeEntropy.ExteriorRepresentation.canonicalWeightModel mu).generators).E\n                                i j *\n                              Wr =\n                            Wr *\n                              (FreeEntropy.ExteriorRepresentation.canonicalAuxiliaryModel mu nu).generators.dual.E i j",
+      "compiled_statement_sha256": "419b67001d9d10550386d3a5e599489e4500d3d15bca90b685d67e503f5489cf"
+    }
+  ],
+  "independently_redeclared": [
+    {
+      "declaration": "FreeEntropy.SchurWeyl.physicalSpectrumDensity",
+      "meaning": "U diag(x_1,...,x_r,0,...) U\u2020"
+    },
+    {
+      "declaration": "FreeEntropy.SchurWeyl.physicalIsometricState",
+      "meaning": "Normalize J\u2020 rho^tensor(sum mu) J by its real trace; explicitly use maximally mixed only at zero trace."
+    },
+    {
+      "declaration": "FreeEntropy.ExteriorRepresentation.physicalPrvMap",
+      "meaning": "Tr_input[((dim input / dim auxiliary) W W\u2020) (X^T tensor I)]"
+    }
+  ],
+  "interface_hypotheses": [
+    {
+      "names": [
+        "Jmu",
+        "Jnu",
+        "hJmu",
+        "hJnu",
+        "hJmuR",
+        "hJnuR"
+      ],
+      "meaning": "Isometric inclusions from canonical irrep coordinates to physical tensor space, with exactly the U(d) tensor-action equations. They are arbitrary; existence is separately proved."
+    },
+    {
+      "names": [
+        "Wf",
+        "Wr",
+        "hWf",
+        "hWr",
+        "hWfR",
+        "hWrR"
+      ],
+      "meaning": "Isometric copies of the forward auxiliary and reverse dual auxiliary modules. Generator intertwining is stated directly; no equality to a constructed projector or supplied multiplicity assumption occurs."
+    }
+  ],
+  "remaining_shared_boundary": [
+    "FixedSpectrum",
+    "IrrepIndex",
+    "canonicalWeightRepresentation",
+    "canonicalWeightModel",
+    "canonicalAuxiliaryModel",
+    "auxiliaryRow",
+    "traceDistance",
+    "partialTraceInput",
+    "differenceNorm",
+    "minimumRowGap",
+    "qx",
+    "cloningConstant"
+  ],
+  "limitations": "State and projector realization choices are independently specified, but the lower representation coordinates, generators and numerical definitions remain shared. This is not an independent reconstruction of representation theory or a human correspondence review.",
+  "comparator_config": "lean/ComparatorChallenges/Theorem2Physical.json",
+  "boundary_guard": "scripts/check_physical_spec.lean",
+  "boundary_evidence": "metadata/verification/2026-10-08/physical-spec.json",
+  "source_preservation_bridge": "metadata/statement-audit/physical-interface-bridge.json",
+  "proof_sources_sha256": "33379ffb4c7547fdc221fb3696f360465d87aaad2247e12707a7b95e557b5cac"
+}

@@ -9,8 +9,8 @@ Usage: bash scripts/verify.sh [all|lean|comparator|nanoda] [--nanoda-bin /absolu
 
   all         Build/audit Lean, compare statements/replay in Lean, then run Nanoda.
   lean        Fetch the locked mathlib cache, build All, and audit proof axioms.
-  comparator  Compare all three expected-statement configurations and replay in Lean.
-  nanoda      Run acceptance/rejection controls and all three Nanoda proof checks.
+  comparator  Compare all four expected-statement configurations and replay in Lean.
+  nanoda      Run acceptance/rejection controls and all four Nanoda export checks.
 
 The default mode is all. Comparator and Nanoda run unsandboxed on trusted sources.
 Nanoda is built from the recorded source/Rust pins unless --nanoda-bin is supplied.
@@ -97,12 +97,21 @@ run_stage() {
   printf 'STAGE PASSED: %s\n' "$current_stage"
 }
 
+check_physical_spec() (
+  cd "$repo_root/lean"
+  lake build ComparatorChallenges.Theorem2Physical
+  lake env lean --run "$repo_root/scripts/check_physical_spec.lean" "$run_dir/physical-spec.json"
+)
+
 if [[ "$mode" == all || "$mode" == lean ]]; then
   run_stage lean bash -c 'set -euo pipefail; cd lean; lake exe cache get; bash check.sh'
   cp lean/verification/summary.json "$run_dir/lean-summary.json"
 fi
 
 if [[ "$mode" == all || "$mode" == comparator ]]; then
+  run_stage physical-spec check_physical_spec
+  run_stage physical-spec-controls python3 scripts/test_physical_spec.py \
+    --lake-project lean --report "$run_dir/physical-spec-controls.json"
   run_stage comparator python3 lean/ComparatorConfig/check_local.py
 fi
 

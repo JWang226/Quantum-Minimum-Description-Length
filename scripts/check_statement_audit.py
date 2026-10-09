@@ -19,6 +19,7 @@ from pathlib import Path
 import re
 import shutil
 import subprocess
+import sys
 import tempfile
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -117,6 +118,15 @@ def check(root: Path):
         require(all(set(used) <= AXIOMS for used in result["axioms"].values()), "unpermitted recorded axiom")
         require(result["output_sha256"] == sha((root / AUDIT / (probe["id"] + "-output.txt")).read_bytes()),
                 "recorded Lean output changed")
+    if manifest.get("physical_interface_bridge"):
+        require(manifest["physical_interface_bridge"] ==
+                "metadata/statement-audit/physical-interface-bridge.json", "unknown additive bridge")
+        require({manifest["physical_interface_bridge"], "scripts/check_physical_extension.py"} <=
+                manifest["file_sha256"].keys(), "unbound additive bridge or checker")
+        result = subprocess.run([sys.executable, str(root / "scripts/check_physical_extension.py"),
+                                 "--root", str(root)], capture_output=True, text=True)
+        require(result.returncode == 0,
+                "additive physical-interface review bridge failed: " + (result.stderr or result.stdout))
     return manifest, probes, coverage
 
 

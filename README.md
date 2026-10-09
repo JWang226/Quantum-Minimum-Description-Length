@@ -19,6 +19,8 @@ adds hypothesis tables, definition reviews and reproducible Lean applications.
 [Release candidate `v0.1.0-rc1`](https://github.com/JWang226/Quantum-Minimum-Description-Length/releases/tag/v0.1.0-rc1)
 freezes the proof and manuscripts with source archives, checksums and verification reports.
 See the [release guide](docs/releases/v0.1.0-rc1.md).
+Current `main` additionally specifies Theorem 2 through physical tensor states
+and arbitrary PRV isometries; this extension is outside the frozen candidate.
 
 ## The statements
 
@@ -38,25 +40,41 @@ The explorer shows the exact elaborated Lean types and declaration references.
 [Source files](lean/FreeEntropy/Theorem1Complete.lean),
 [the cloning endpoint](lean/FreeEntropy/Theorem2Choi.lean) and the
 [statement map](metadata/natural-language-map.json) locate the certificates.
+The [physical Theorem 2 endpoint](lean/FreeEntropy/Theorem2Physical.lean) proves
+both bounds for arbitrary qualifying embeddings and proves those embeddings
+exist. Its [interface map](metadata/physical-interface-map.json) and
+[specification boundary](https://jwang226.github.io/Quantum-Minimum-Description-Length/audit/comparator-scope/)
+explain the independently restated state/projector formulas and the remaining
+shared representation coordinates.
 The Letter's tube-volume geometry, entropy offsets and double-scaling bridge,
 and broader repeated-positive-spectrum/programming claims, are outside these
 certificates.
 
 ## How it was verified
 
-- **Lean:** a clean local build and transitive axiom audit passed for 270 proof
-  modules, 1,873 proved declarations and 2,499 public declarations. Only
-  `propext`, `Classical.choice` and `Quot.sound` are permitted; the proof library
+- **Lean:** the current source-matching incremental build and transitive axiom
+  audit passed for 273 proof modules, 1,883 proved declarations and 2,512 public
+  declarations. Only `propext`, `Classical.choice` and `Quot.sound` are permitted; the proof library
   has no unresolved placeholders or project-specific axioms.
-- **Comparator:** three local diagnostics compared expected statements and
-  referenced definitions, checked axioms and replayed the proofs through Lean's
-  kernel. The independent [challenge files](lean/ComparatorChallenges/) contain
+- **Comparator:** all four configurations and six roots passed expected-statement
+  and definition comparison, axiom checks and Lean kernel replay. The
+  [challenge files](lean/ComparatorChallenges/) contain
   deliberate specification holes and are excluded from the proof library.
-- **Nanoda:** the separately implemented Rust kernel accepted all three solution
-  exports, including their dependency closures and required theorem roots.
+- **Nanoda:** the separately implemented Rust kernel accepted all four fresh
+  solution exports and six theorem roots, including their dependency closures.
+  The run reused a binary matching the preserved pinned source build.
+- **Specification guard:** the physical expected-statement dependency check and
+  all seven acceptance/rejection controls passed.
+
+Current `main` checks four configurations and six theorem roots, with a compiled
+specification dependency guard and seven acceptance/rejection controls. The
+frozen candidate retains three configurations and four roots; its clean-source
+audit covers 270 modules, 1,873 proved declarations and 2,499 public declarations.
 
 Comparator diagnostics and Nanoda checks were unsandboxed. Independent human
 review and Linux-sandboxed Comparator execution are not established.
+The complete October 8 local wrapper run ended with `VERIFICATION PASSED: all`;
+it reused existing Lean artifacts and did not rebuild Rust or run hosted CI.
 [Recorded evidence](docs/REPRODUCIBILITY.md) describes completed runs;
 the commands below perform new checks. English names and explanations are
 reading aids: the exact formal statements determine what was proved.
@@ -102,7 +120,7 @@ For individual layers, from the same repository root:
 
 ```sh
 bash scripts/verify.sh lean        # build + transitive axiom audit
-bash scripts/verify.sh comparator  # expected statements + Lean kernel replay
+bash scripts/verify.sh comparator  # specification guard + statements + Lean replay
 bash scripts/verify.sh nanoda      # pinned independent Rust kernel
 ```
 

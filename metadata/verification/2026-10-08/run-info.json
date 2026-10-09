@@ -1,0 +1,8 @@
+{
+  "started_at_utc": "2026-10-09T02:59:25.147646+00:00",
+  "mode": "all",
+  "sandboxed": false,
+  "nanoda_binary_source": "caller_supplied",
+  "supplied_nanoda_binary": "/Users/jw/Downloads/Free_Entropy/.codex-work/qmdl-cleanup/.verify-work/run-20261007T000642Z-I5RtpK/nanoda-source/target/release/nanoda_bin",
+  "note": "Invocation metadata only; success requires the requested stages to complete."
+}

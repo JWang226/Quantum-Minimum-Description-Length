@@ -1,0 +1,147 @@
+{
+  "schema_version": 1,
+  "status": "passed",
+  "completed_at_utc": "2026-10-09T03:41:02.784796+00:00",
+  "recorded_at_utc": "2026-10-09T03:42:11.269482+00:00",
+  "local_date": "2026-10-08",
+  "base_revision": "955bffc9278533adc219dd86012e9a2bc07c992b",
+  "proof_sources_sha256": "33379ffb4c7547fdc221fb3696f360465d87aaad2247e12707a7b95e557b5cac",
+  "execution_context": "Fresh current-source four-configuration Comparator invocation after the full production Lean build/axiom audit and physical specification guard/controls. Expected and solution modules used source-matching incremental builds and retained locked dependency artifacts. All six configured roots passed statement/constant comparison, axiom closure checking and Lean kernel replay. Wrapper exit status 0. This is not a fresh dependency installation or a Linux-sandboxed run.",
+  "lean_audit": {
+    "proof_modules": 273,
+    "proved_declarations": 1883,
+    "public_declarations": 2512,
+    "permitted_axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  "comparator": {
+    "configurations": 4,
+    "theorem_roots": 6,
+    "status": "passed",
+    "lean_kernel_replay": "passed"
+  },
+  "nanoda": {
+    "configurations": 4,
+    "theorem_roots": 6,
+    "status": "passed",
+    "binary_provenance": {
+      "kind": "reused_hash_matching_pinned_build",
+      "historical_record": {
+        "path": "metadata/verification/2026-10-08/historical/nanoda-status.json",
+        "sha256": "d1a8fd59ab4d788bc225841d89930c9016cb8cbaa86a4dd6fc01e9ebe44e0e41"
+      },
+      "source_revision_verified": "3a2407216ee84a75f9e1aead6803d0578be06ae7",
+      "cargo_lock_sha256_verified": "9b921e794ce5ed515eb31db9ada0c2f34df999b6c9b5135ad308a412872e42be",
+      "binary_sha256_verified": "1405c1bc1fb0bf1233b8c0e29c5657aea450845c76925aa3554308689e278625"
+    },
+    "fresh_source_build_in_this_invocation": false
+  },
+  "physical_specification": {
+    "status": "passed",
+    "root_types": 2,
+    "compiled_controls": 7,
+    "remaining_shared_boundary": "Lower representation coordinates/generators, matrix primitives and numerical bounds; see physical-spec.json and metadata/physical-interface-map.json."
+  },
+  "original_statement_probes": {
+    "status": "passed",
+    "anonymous_applications": 7,
+    "original_endpoint_statements_unchanged": 4
+  },
+  "sandboxed_comparator": "not_run",
+  "human_review": "not_established",
+  "release_tag": "v0.1.0-rc1 remains unchanged and covers the earlier three-configuration snapshot",
+  "wrapper": {
+    "command": "bash scripts/verify.sh all --nanoda-bin /absolute/path/to/pinned/nanoda_bin",
+    "sha256": "24bc7b90d4e4cc77e3f4df54c649f1f2322da605a1c98d7b8febc1ea7481a89c",
+    "exit_status": 0
+  },
+  "evidence": {
+    "comparator.log": {
+      "path": "metadata/verification/2026-10-08/comparator.log",
+      "sha256": "41732c9f52d4ab4876326a9d231f9a2006380d084624ab07995d03d05e5b4190"
+    },
+    "lean-summary.json": {
+      "path": "metadata/verification/2026-10-08/lean-summary.json",
+      "sha256": "7eae7fa67acdc48fc2266a5af7bacb47cc6f02fa4635dddd690d88a2b03ac11a"
+    },
+    "lean.log": {
+      "path": "metadata/verification/2026-10-08/lean.log",
+      "sha256": "37842c3b80a738dbdb020ea0aa23e32a37e2501cb119a1e9b67b10203febea9a"
+    },
+    "nanoda-binary-source.txt": {
+      "path": "metadata/verification/2026-10-08/nanoda-binary-source.txt",
+      "sha256": "f878d93b03580c1c7ab619c6aecabc82ed1d80d3079a16eec58b746eb1aadd51"
+    },
+    "nanoda-controls.log": {
+      "path": "metadata/verification/2026-10-08/nanoda-controls.log",
+      "sha256": "5a4a9626d75fe15211d9d9be9e07d55e947c7e1d0d6de7374a085e8b56eedb1b"
+    },
+    "nanoda-result.json": {
+      "path": "metadata/verification/2026-10-08/nanoda-result.json",
+      "sha256": "899152e5d6168d4f8889dec86da1e8c3a1808c205040e818a51a70f988fc8271"
+    },
+    "nanoda.log": {
+      "path": "metadata/verification/2026-10-08/nanoda.log",
+      "sha256": "d18fa5e1d872d138b0b0ed6140a8e65d96d6edfb696ce22ac13a2e61dec62f64"
+    },
+    "physical-spec-controls.json": {
+      "path": "metadata/verification/2026-10-08/physical-spec-controls.json",
+      "sha256": "b194a839263a94d5631b2b599917af07cf8479a5dc1c0d3e8d1bc8347b2e3a3d"
+    },
+    "physical-spec-controls.log": {
+      "path": "metadata/verification/2026-10-08/physical-spec-controls.log",
+      "sha256": "d03057b847512ebd4eb2e89e01eb10ddf3965c83851f3b5a6abc0497fd7d50c8"
+    },
+    "physical-spec.json": {
+      "path": "metadata/verification/2026-10-08/physical-spec.json",
+      "sha256": "eabb8ead8afff275b4dde5a8ed84444756c02439ad584716837767067a7e6418"
+    },
+    "physical-spec.log": {
+      "path": "metadata/verification/2026-10-08/physical-spec.log",
+      "sha256": "95921dd7f6671cffced0258cad91e56496f86be6aba32b42a21fec3c7a607c2b"
+    },
+    "result.txt": {
+      "path": "metadata/verification/2026-10-08/result.txt",
+      "sha256": "d3ca7cdd63d5f3bbc86a629cd3de778fd7d22f04c3c3b79af3c6a8861deabc00"
+    },
+    "run-info.json": {
+      "path": "metadata/verification/2026-10-08/run-info.json",
+      "sha256": "00ef4a971ca6e395bd5cbc412e8ddf694eefe9c94875dc9e8c756360e03a2692"
+    },
+    "statement-binder-export.txt": {
+      "path": "metadata/verification/2026-10-08/statement-binder-export.txt",
+      "sha256": "aa52b069c34cfadb740f2b08ca0e1d8ae6317950d0e1fa230900d3ca6a9e9546"
+    },
+    "statement-build.txt": {
+      "path": "metadata/verification/2026-10-08/statement-build.txt",
+      "sha256": "2136981fa26a78966385db8901028d347748ca87a3bc0983437a8f41fc7c54fa"
+    },
+    "statement-compiled-binders.json": {
+      "path": "metadata/verification/2026-10-08/statement-compiled-binders.json",
+      "sha256": "02d31b308cbd2a06983fd2db0e6c92b0a53c5d7fb2f8611baf821991a8fa0139"
+    },
+    "statement-result.json": {
+      "path": "metadata/verification/2026-10-08/statement-result.json",
+      "sha256": "78702fd8eec25107439f92a85bfb30e73e146943dfe661cc1d4f4bd57369fce3"
+    },
+    "statement-theorem1.txt": {
+      "path": "metadata/verification/2026-10-08/statement-theorem1.txt",
+      "sha256": "7818b1c0d4fee5ae15ebac351ee8dfcb0142252832691976158f21e4e5fda250"
+    },
+    "statement-theorem2.txt": {
+      "path": "metadata/verification/2026-10-08/statement-theorem2.txt",
+      "sha256": "7edc4d565ccc7ab98d962b184b88766d7986c4ac20d7a59760939d32e5790a74"
+    },
+    "comparator_status": {
+      "path": "lean/ComparatorChallenges/verification-status.json",
+      "sha256": "cace38f7d2b57174f7576ea5b4947d18354602cceaf00dd51da4988aa82412ec"
+    },
+    "nanoda_status": {
+      "path": "lean/ComparatorConfig/nanoda-status.json",
+      "sha256": "ab2bccfa6a543d6ccd7d143ca7707fe67972a641ebb26ce182f73b2c39a2c893"
+    }
+  }
+}

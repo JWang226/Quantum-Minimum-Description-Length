@@ -237,6 +237,7 @@ import FreeEntropy.Theorem1Complete
 import FreeEntropy.Theorem2
 import FreeEntropy.Theorem2Canonical
 import FreeEntropy.Theorem2Choi
+import FreeEntropy.Theorem2Physical
 import FreeEntropy.Theorem2GT
 import FreeEntropy.Theorem2Petz
 import FreeEntropy.Theorem2RankOneGT

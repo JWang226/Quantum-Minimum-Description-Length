@@ -70,6 +70,17 @@ jobs:
         working-directory: ${{ runner.temp }}/free-entropy-source/lean
         run: lake build ComparatorChallenges
 
+      - name: Check physical specification boundary and rejection controls
+        working-directory: ${{ runner.temp }}/free-entropy-source/lean
+        shell: bash
+        run: |
+          set -euo pipefail
+          lake env lean --run ../scripts/check_physical_spec.lean verification/physical-spec.json \
+            2>&1 | tee verification/physical-spec.log
+          python3 ../scripts/test_physical_spec.py --lake-project . \
+            --report verification/physical-spec-controls.json \
+            2>&1 | tee verification/physical-spec-controls.log
+
       - name: Compare statements and replay in Lean (unsandboxed)
         working-directory: ${{ runner.temp }}/free-entropy-source/lean
         shell: bash

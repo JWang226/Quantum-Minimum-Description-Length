@@ -60,7 +60,7 @@ SCHEMAS = {
         "CITATION.cff",
     ),
 }
-CONFIG_NAMES = ("Theorem1Achievability", "Theorem1Converse", "Theorem2Choi")
+CONFIG_NAMES = ("Theorem1Achievability", "Theorem1Converse", "Theorem2Choi", "Theorem2Physical")
 CONFIG_KEYS = {"challenge_module", "solution_module", "theorem_names", "permitted_axioms", "enable_nanoda"}
 MODULE_RE = r"[A-Za-z_][A-Za-z_0-9]*(?:\.[A-Za-z_][A-Za-z_0-9]*)*"
 CONFIG_SCHEMA = {
@@ -308,6 +308,8 @@ class Validator:
                      "Root proof library does not import Theorem1Complete")
         self.require("FreeEntropy.Theorem2Choi" in self.import_closure("FreeEntropy"),
                      "Root proof library does not import Theorem2Choi")
+        self.require("FreeEntropy.Theorem2Physical" in self.import_closure("FreeEntropy"),
+                     "Root proof library does not import Theorem2Physical")
 
     def headers(self):
         paths = set(self.source)
@@ -447,7 +449,7 @@ class Validator:
         cases = report.get("cases")
         expected_cases = {f"ComparatorChallenges/{config}.json" for config in CONFIG_NAMES}
         self.require(isinstance(cases, dict) and set(cases) == expected_cases,
-                     "Nanoda evidence must cover all three configured solution cases")
+                     "Nanoda evidence must cover all four configured solution cases")
         for config_path, case in cases.items():
             config = self.configs["lean/" + config_path]
             self.require(case.get("status") == "passed" and case.get("theorem_names") == config["theorem_names"],

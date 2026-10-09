@@ -1,0 +1,233 @@
+{
+  "schema_version": 1,
+  "review_kind": "retrospective_agent_review",
+  "human_review": "not_established",
+  "source_revision": "490356f620c1ab963ff99585d6835c93e4324b37",
+  "method_revision": "601fe274276d93052ef645f0ff2c1a355e8e5b16",
+  "proof_sources_sha256": "e7068771d301aaac3156ecc7cd0a1a4b3868a894a1d0988ce897420786ba2c3f",
+  "endpoints": [
+    {
+      "name": "FreeEntropy.theorem1_achievability",
+      "file": "lean/FreeEntropy/Theorem1Complete.lean",
+      "line": 23,
+      "compiled_statement": "\u2200 {d r : \u2115} (s : FreeEntropy.FixedSpectrum d r),\n  \u2203 (memory : \u2115 \u2192 \u2115) (E : (n : \u2115) \u2192 FreeEntropy.Channels.MatrixChannel (Fin n \u2192 Fin d) (Fin (memory n))) (D :\n    (n : \u2115) \u2192 FreeEntropy.Channels.MatrixChannel (Fin (memory n)) (Fin n \u2192 Fin d)),\n    Filter.Tendsto (fun (n : \u2115) => Real.logb 2 \u2191(memory n) - FreeEntropy.Weyl.qmdl d r s.eigenvalue n) Filter.atTop\n        (nhds 0) \u2227\n      (fun (n : \u2115) => FreeEntropy.SchurWeyl.mixedWorstError s n (E n) (D n)) =O[Filter.atTop]\n          FreeEntropy.Weyl.errorScale \u2227\n        Filter.Tendsto (fun (n : \u2115) => FreeEntropy.SchurWeyl.mixedWorstError s n (E n) (D n)) Filter.atTop (nhds 0)",
+      "compiled_statement_sha256": "bc798eb5054b03f6c5230a66803c13ae7972bf04cbdd5285357c375e7bdb947c",
+      "top_level_binders": [
+        {
+          "name": "d",
+          "kind": "implicit"
+        },
+        {
+          "name": "r",
+          "kind": "implicit"
+        },
+        {
+          "name": "s",
+          "kind": "explicit"
+        }
+      ]
+    },
+    {
+      "name": "FreeEntropy.theorem1_converse",
+      "file": "lean/FreeEntropy/Theorem1Complete.lean",
+      "line": 43,
+      "compiled_statement": "\u2200 {d r : \u2115} (s : FreeEntropy.FixedSpectrum d r) (memory : \u2115 \u2192 \u2115)\n  (E : (n : \u2115) \u2192 FreeEntropy.Channels.MatrixChannel (Fin n \u2192 Fin d) (Fin (memory n)))\n  (D : (n : \u2115) \u2192 FreeEntropy.Channels.MatrixChannel (Fin (memory n)) (Fin n \u2192 Fin d)),\n  Filter.Tendsto (fun (n : \u2115) => FreeEntropy.SchurWeyl.mixedAverageError s n (E n) (D n)) Filter.atTop (nhds 0) \u2192\n    0 \u2264\n      Filter.liminf (fun (n : \u2115) => \u2191(Real.logb 2 \u2191(memory n) - FreeEntropy.Weyl.qmdl d r s.eigenvalue n)) Filter.atTop",
+      "compiled_statement_sha256": "29e0af015e6e2e4662354eb96f80fb5eed384bf0d2f2550421b408331ad086f4",
+      "top_level_binders": [
+        {
+          "name": "d",
+          "kind": "implicit"
+        },
+        {
+          "name": "r",
+          "kind": "implicit"
+        },
+        {
+          "name": "s",
+          "kind": "explicit"
+        },
+        {
+          "name": "memory",
+          "kind": "explicit"
+        },
+        {
+          "name": "E",
+          "kind": "explicit"
+        },
+        {
+          "name": "D",
+          "kind": "explicit"
+        },
+        {
+          "name": "herror",
+          "kind": "explicit"
+        }
+      ]
+    },
+    {
+      "name": "FreeEntropy.theorem1_converse_of_uniform",
+      "file": "lean/FreeEntropy/Theorem1Complete.lean",
+      "line": 60,
+      "compiled_statement": "\u2200 {d r : \u2115} (s : FreeEntropy.FixedSpectrum d r) (memory : \u2115 \u2192 \u2115)\n  (E : (n : \u2115) \u2192 FreeEntropy.Channels.MatrixChannel (Fin n \u2192 Fin d) (Fin (memory n)))\n  (D : (n : \u2115) \u2192 FreeEntropy.Channels.MatrixChannel (Fin (memory n)) (Fin n \u2192 Fin d)),\n  Filter.Tendsto (fun (n : \u2115) => FreeEntropy.SchurWeyl.mixedWorstError s n (E n) (D n)) Filter.atTop (nhds 0) \u2192\n    0 \u2264\n      Filter.liminf (fun (n : \u2115) => \u2191(Real.logb 2 \u2191(memory n) - FreeEntropy.Weyl.qmdl d r s.eigenvalue n)) Filter.atTop",
+      "compiled_statement_sha256": "638322dfbe72637518e73fc3031b429e11930c144e10dc8074729f5e63efdfe2",
+      "top_level_binders": [
+        {
+          "name": "d",
+          "kind": "implicit"
+        },
+        {
+          "name": "r",
+          "kind": "implicit"
+        },
+        {
+          "name": "s",
+          "kind": "explicit"
+        },
+        {
+          "name": "memory",
+          "kind": "explicit"
+        },
+        {
+          "name": "E",
+          "kind": "explicit"
+        },
+        {
+          "name": "D",
+          "kind": "explicit"
+        },
+        {
+          "name": "herror",
+          "kind": "explicit"
+        }
+      ]
+    },
+    {
+      "name": "FreeEntropy.ExteriorRepresentation.theorem2_cloning_accuracy_choi",
+      "file": "lean/FreeEntropy/Theorem2Choi.lean",
+      "line": 79,
+      "compiled_statement": "\u2200 {d r : \u2115} (s : FreeEntropy.FixedSpectrum d r) (hd : 2 \u2264 d) (mu nu : Fin d \u2192 \u2115) (hmu : Antitone mu)\n  (hnu : Antitone nu),\n  (\u2200 (i : Fin d), r \u2264 \u2191i \u2192 mu i = 0) \u2192\n    (\u2200 (i : Fin d), r \u2264 \u2191i \u2192 nu i = 0) \u2192\n      \u2200 (hinc : Antitone fun (i : Fin d) => \u2191(nu i) - \u2191(mu i)) (U : \u21a5(Matrix.unitaryGroup (Fin d) \u2102)),\n        FreeEntropy.TraceDistance.traceDistance\n              (FreeEntropy.ExteriorRepresentation.prvForward mu nu hmu hnu hinc\n                (FreeEntropy.ExteriorRepresentation.canonicalOrbitState s mu U))\n              (FreeEntropy.ExteriorRepresentation.canonicalOrbitState s nu U) \u2264\n            FreeEntropy.Theorem2.cloningConstant d r s.qx * \u2191(FreeEntropy.ExteriorRepresentation.differenceNorm mu nu) /\n              (\u2191(FreeEntropy.ExteriorRepresentation.minimumRowGap mu r hd \u22ef) + 1) \u2227\n          FreeEntropy.TraceDistance.traceDistance\n              (FreeEntropy.ExteriorRepresentation.prvReverse mu nu hmu hnu hinc\n                (FreeEntropy.ExteriorRepresentation.canonicalOrbitState s nu U))\n              (FreeEntropy.ExteriorRepresentation.canonicalOrbitState s mu U) \u2264\n            FreeEntropy.Theorem2.cloningConstant d r s.qx * \u2191(FreeEntropy.ExteriorRepresentation.differenceNorm mu nu) /\n              (\u2191(FreeEntropy.ExteriorRepresentation.minimumRowGap mu r hd \u22ef) + 1)",
+      "compiled_statement_sha256": "933ef0789f3ab7d358acfb28268ff9031bcd1d8895c877abc54a8529314adfad",
+      "top_level_binders": [
+        {
+          "name": "d",
+          "kind": "implicit"
+        },
+        {
+          "name": "r",
+          "kind": "implicit"
+        },
+        {
+          "name": "s",
+          "kind": "explicit"
+        },
+        {
+          "name": "hd",
+          "kind": "explicit"
+        },
+        {
+          "name": "mu",
+          "kind": "explicit"
+        },
+        {
+          "name": "nu",
+          "kind": "explicit"
+        },
+        {
+          "name": "hmu",
+          "kind": "explicit"
+        },
+        {
+          "name": "hnu",
+          "kind": "explicit"
+        },
+        {
+          "name": "hmu_support",
+          "kind": "explicit"
+        },
+        {
+          "name": "hnu_support",
+          "kind": "explicit"
+        },
+        {
+          "name": "hinc",
+          "kind": "explicit"
+        },
+        {
+          "name": "U",
+          "kind": "explicit"
+        }
+      ]
+    }
+  ],
+  "file_sha256": {
+    "article.tex": "09fc0a6bb205180cd820be94d843a1dc0d4342a543492e30dde54e367ae843a9",
+    "docs/assets/lean-catalog.json": "a4ca2b77eba4948192087e11fe0a36fdb9d6c0f20a89571c35705a232ddebfd7",
+    "docs/audit.md": "702185c89978fe9e1daefae44d8d35e3b65b49333974964594b2ea48c8451362",
+    "docs/audit/independent-review.md": "912e8d719e32124e1449c6ce4f8bba81f42322d90e0dce6d76ace35f696f382d",
+    "docs/audit/source-coverage.md": "fdde724b9d67da773e89d4b44815077e7dc7811aecc65058c3306ab90e90da6d",
+    "docs/audit/theorem1.md": "aa13768f73c712ad13c725cb97fd6829f56ba6cd647f7c68a0864eb3e9cbd070",
+    "docs/audit/theorem2.md": "d81b6c08ac835f19542769d7faebd38bb482e48178205cd84e1baf27cc6b4b96",
+    "free.bib": "c126c8db7dbb775c603d0bfbb9a17d231ca47cd6343afa9bf3e343123b56cab7",
+    "lean/ComparatorChallenges/ChannelInterface.lean": "98cae4065c68e28b5c8fe518783e49209d94cb7c40e367a603abc78405071017",
+    "lean/ComparatorChallenges/ErrorScale.lean": "70524794e3ddaaa41e5db855fc64ac7ad3052d9f438e0ffb6a7b7779b0b65d4e",
+    "lean/ComparatorChallenges/PhysicalInterface.lean": "493b25b4199cc9466c9d0a3cfa2477959170b73540d6e37ba7f7844fb6440a76",
+    "lean/ComparatorChallenges/Qmdl.lean": "201fbf33f3961cb677fe3786768ef70ebc8fd55ca1c37ef4ed83f17f68dd906a",
+    "lean/ComparatorChallenges/Theorem1Achievability.lean": "beb8fb6f1292edf1f89ef8131af90cc28eeba4bd243b39d4fe6a5648d6c25c64",
+    "lean/ComparatorChallenges/Theorem1Converse.lean": "209f79485a1ffedfa21affdd4b03534247ea6ce24b10b7368e7680c58e3cff18",
+    "lean/ComparatorChallenges/Theorem2Choi.lean": "a52bb8218ace6d41b63ac6a2842e95f6ba8ae1b26eaf77ee15fbeb82781ac73d",
+    "lean/FreeEntropy.lean": "0211bce20ad8f25b5bc244b606e86108a83c25369a20b88c3b929d2373b3f9ba",
+    "lean/lake-manifest.json": "4707e55825935027ab3c626f6042d11d9279aa19bc7e423a06113266025074eb",
+    "lean/lakefile.toml": "47a977e779ea66902563addddda68c232ed1cf38d9e08edf3fb5ea8c9731902e",
+    "lean/lean-toolchain": "dc6d65016fad3123d44bf17b5bf0598286284ab16ba75d5c17eb22ed11f47361",
+    "letter.tex": "0b6a2c45b1565c3e9aadcdaa1c6631a2d7e2e2ec259b7382d04bcbce83622260",
+    "metadata/letter-source-map.json": "a2e09ce75eb2df452fcb170a8fa5fb9ff6f10543919ca235f05c184916e13739",
+    "metadata/natural-language-map.json": "bbc430d1c5197f4d40db702471a1dec8e0a9456ea0ec55ae3ddd83392a85a37b",
+    "metadata/statement-audit/adversarial-review.json": "fd9aa6535c02c42256efc771161ef77fd40d671d8b81e8d68d4ce71d58f0bf8b",
+    "metadata/statement-audit/checks.json": "c46d1200d6cc3763ba1d4dba57bece37401f0641ee27c8650f3b12a2d7eb1e87",
+    "metadata/statement-audit/compiled-binders.json": "02d31b308cbd2a06983fd2db0e6c92b0a53c5d7fb2f8611baf821991a8fa0139",
+    "metadata/statement-audit/probes.json": "9a8d10e24ee04e8ca34a6ffe12f34918cf5dc790cc57f2b7a321a482a0ba1730",
+    "metadata/statement-audit/source-coverage.json": "017288cee637e6d3fc98dcb50200e8c6abd9f92ecc6ae92164ea860901eb786c",
+    "metadata/statement-audit/theorem1-output.txt": "7818b1c0d4fee5ae15ebac351ee8dfcb0142252832691976158f21e4e5fda250",
+    "metadata/statement-audit/theorem1.json": "ba9fe744a1a9c825c699c628b08dfb140d54140896a94822e6088d138549712b",
+    "metadata/statement-audit/theorem2-literal-comparison.json": "da10a7097090ed92348c009f25bd2bd0c22ce6ee636089c2ef586cc14ce7b07d",
+    "metadata/statement-audit/theorem2-output.txt": "7edc4d565ccc7ab98d962b184b88766d7986c4ac20d7a59760939d32e5790a74",
+    "metadata/statement-audit/theorem2.json": "60d5c30d19bd531fc18fa8cec5742f5f7113ee59ef70373a7fbeb2d7ba6af532",
+    "scripts/check_statement_audit.py": "cbff31873d9d7a5763a06ef81c758d832a74b70dd704a2e8a207cd6f8aa6c047",
+    "scripts/export_statement_audit.lean": "5916c46af85d9728543e8c01b98b8d2af0c9e354ec10e4d059e1575ff75d347e",
+    "scripts/test_statement_audit.py": "d63ef81d774c4fc938795fdf0ad0c24168490bb1ddd86f83e473527c3fb32482",
+    "metadata/elaboration/2026-10-06/cleanup-review-bridge.json": "f77c1f18d83682adc29f0dcfc55ec02c1330d417c63cfe04bb7c66dca5a21204",
+    "metadata/elaboration/2026-10-06/cleanup-delta-review.json": "62bf47ce8e7597c0d50daae083b42cf4d806d01c0244228857030592a7ff6859",
+    "metadata/elaboration/2026-10-06/cleanup-comparison.json": "4463feaaf517b55028d1d4c2949a8a9f21f7fd452e98351eb6c0fc4e9757e1d4",
+    "metadata/elaboration/2026-10-06/cleanup-reviewed-comparison.json": "89201736ea75cd748e30d923391af2859e4dd4a35ae0b55113ebc731a36923fc",
+    "metadata/elaboration/2026-10-06/instance-pairs.json": "d4d08c18e7c28855067d6b1a441382e26a100ea04616109718f0362841b9e34b",
+    "metadata/elaboration/2026-10-06/instance-witnesses.json": "6d538b5b233543ca33d37efff8cf05560e45b62570c3fdfa2689de5984a11a5d",
+    "metadata/elaboration/2026-10-06/historical/statement-manifest.json": "7de60a4373d1fd0a8bf87dfb02ea4f676c013d7546e57c35bf87bdd8d7f90912",
+    "scripts/check_cleanup_instance_pairs.lean": "f910509d40ad393f54f932f676e7df10cc2495c43ba46b881f52f4e71d7c03c8",
+    "scripts/compare_cleanup_fingerprints.py": "ca6cb4bd7d319293d10b2a0a4ea84c5fa6814f7f5a195d3cc0fda2e8140f2720"
+  },
+  "reviewers": [
+    {
+      "id": "/root/audit_theorem1",
+      "role": "Source-first Theorem 1 reconstruction and selected semantic review"
+    },
+    {
+      "id": "/root/audit_theorem2",
+      "role": "Source-first Theorem 2 reconstruction and selected semantic review"
+    },
+    {
+      "id": "/root/audit_source_coverage",
+      "role": "Manuscript-only inventory extraction"
+    },
+    {
+      "id": "/root/audit_adversarial_review",
+      "role": "Separate bounded adversarial review; not blind to reports"
+    },
+    {
+      "id": "/root",
+      "role": "Integration, fresh Lean checks and checker implementation"
+    }
+  ],
+  "policy": "Source/report identity and evidence snapshots, not a human-approved frozen-statement seal. Changes require review before rebinding. Structural validation does not decide mathematical meaning.",
+  "current_source_revision": "4c2054c47d6c81615f5687fe5ac3f1c4dd1ea1d9",
+  "cleanup_review_bridge": "metadata/elaboration/2026-10-06/cleanup-review-bridge.json"
+}
