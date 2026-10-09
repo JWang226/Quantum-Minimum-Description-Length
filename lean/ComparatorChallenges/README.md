@@ -21,6 +21,37 @@ Choi contractions; its constructed representation, state, and projector definiti
 are imported. This larger trust boundary is explicit in `trusted-boundary.json`.
 Neither challenge is an alias of a target proposition.
 
+### Shared definitions and specification independence
+
+An imported definition is still compared. If only the solution's
+`canonicalOrbitState` differs from the fixed expected export, the pinned
+Comparator rejects its differing body and dependencies. If a shared project
+definition is changed and both environments are rebuilt from that change,
+agreement between the new exports does not itself establish agreement with the
+paper. Other Lean proofs may fail, and the recorded source hashes become stale;
+a matching comparison alone is not a certificate of unchanged mathematical
+meaning. Theorem 1 has the same distinction for its shared Haar construction,
+with a narrower project interface.
+
+For Theorem 2, the separately proved identification
+`SchurWeyl.canonicalWeightTensorState_eq_orbit` identifies the supported physical
+tensor block with `canonicalOrbitState`. The third Theorem 2 application in
+[the statement probes](../../metadata/statement-audit/probes.json) rewrites both
+states using this bridge and then applies the endpoint. Its
+[recorded check](../../metadata/statement-audit/checks.json) passed, including the
+bridge's axiom audit. This is a checked composition of mathematical
+identifications, not an independently restated state/projector specification.
+
+A future independently specified expected-statement interface should use a
+linear isometric inclusion from the irrep into tensor space, with `Jᴴ * J = 1`
+and normalized compression `Jᴴ * ρ^⊗n * J`. It must characterize the representation
+and PRV projector and transport state and channel coordinates consistently. A
+function between index types, or a highest-vector condition alone, does not supply that
+specification. This strengthening is not claimed by the current challenge.
+
+See [the website explanation](https://jwang226.github.io/Quantum-Minimum-Description-Length/audit/comparator-scope/)
+for the source snapshot and recorded probe scope.
+
 ## Exact tooling and scope
 
 Lean is pinned to `v4.29.0-rc6`. The project pins

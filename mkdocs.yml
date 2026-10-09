@@ -116,6 +116,7 @@ nav:
     - Overview: audit.md
     - Theorem 1: audit/theorem1.md
     - Theorem 2: audit/theorem2.md
+    - Comparator scope: audit/comparator-scope.md
     - Manuscript inventory: audit/source-coverage.md
     - Independent review: audit/independent-review.md
   - Elaboration cleanup: elaboration.md

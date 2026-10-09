@@ -12,6 +12,10 @@ Its freshness check is `python3 scripts/check_statement_audit.py`; after Lean
 setup, add `--lean` to compile the recorded anonymous applications and check
 their axiom reports.
 
+[Comparator's specification boundary](audit/comparator-scope.md) explains which
+definitions are shared with the expected statements and how the existing
+physical-state identification is checked.
+
 ## Prerequisites
 
 Install [elan](https://github.com/leanprover/elan), Python 3.11 or newer, Git,

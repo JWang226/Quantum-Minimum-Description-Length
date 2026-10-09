@@ -300,3 +300,16 @@ Every definition page now has: concrete examples, expanded intuition, connection
 - Corrected stale license-pending and local-clean-build wording in the current
   human-readable scope document. The release tag and source archive are frozen;
   these documentation updates describe current status on main.
+
+## 2026-10-08 — Comparator specification clarification
+
+- Checked supplied statement-review comments against the current manuscript,
+  endpoints, physical-state bridge and pinned Comparator implementation.
+  Clarified that imported constants are compared, while agreement after a
+  shared specification change does not independently certify manuscript meaning.
+- Linked the existing compiled physical-state application and its recorded
+  incremental check. Described the correctly oriented linear isometry needed
+  for a stronger independent representation/projector interface.
+- Added a separate verification page and challenge documentation. Original
+  audit records, proof sources, manuscript bytes and the frozen release are
+  unchanged; this clarification is not a new human review or kernel run.
