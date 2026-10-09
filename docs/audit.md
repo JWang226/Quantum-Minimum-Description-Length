@@ -9,9 +9,16 @@ description: Retrospective checks of the Article's hypotheses, definitions and c
 # Statement audit
 
 This retrospective **agent review** compares four final Lean statements with the
-current Article: Theorem 1's achievability, Haar-average converse and worst-case
+reviewed Article snapshot: Theorem 1's achievability, Haar-average converse and worst-case
 converse, and Theorem 2's original Choi-projector bounds. It records what was
 reviewed, the interpretation choices, and the limits of the review.
+
+The complete source inventory and review records apply to
+[the archived revision](https://github.com/JWang226/Quantum-Minimum-Description-Length/tree/00ba2b4547cc76b3ac5153831d67de7c0c8e30ee).
+The current manuscript includes later prose, bibliography and submission edits.
+Website builds verify the archived audit, unchanged current theorem/proof blocks
+and displayed formulas, and unchanged Lean sources and endpoint statements.
+This comparison is not a new review of the revised prose or a new Lean execution.
 
 The source-first manuscript reviews retain their original dated snapshots.
 The October 6 cleanup is covered by a separate bounded source-delta review,
@@ -109,16 +116,18 @@ checker is an original implementation; no third-party helper code is vendored.
 From the repository root, with Python 3.11 or newer:
 
 ```sh
-python3 scripts/check_statement_audit.py
+python3 scripts/check_statement_audit.py --publication
 ```
 
 This verifies the recorded source and report hashes, endpoint snapshots,
-manuscript inventory and dependency structure. Success prints
-`STATEMENT AUDIT RECORDS CURRENT`. It checks freshness and consistency; it does
-not rerun a mathematical review.
+manuscript inventory and dependency structure in the archived revision. It also
+checks the current mathematical regions and Lean sources against that snapshot.
+Success prints `STATEMENT AUDIT SNAPSHOT VERIFIED`. A shallow checkout fetches
+the pinned archived commit from `origin` when necessary. This checks consistency
+and preserves the historical review; it does not rerun a mathematical review.
 
-After setting up the pinned Lean dependencies using [[verify|the verification
-guide]], run:
+In a separate checkout of the archived revision, after setting up the pinned
+Lean dependencies using [[verify|the verification guide]], run:
 
 ```sh
 python3 scripts/check_statement_audit.py --lean
@@ -137,7 +146,10 @@ python3 scripts/test_statement_audit.py
 ```
 
 The controls check omitted source tokens, missing dependency edges, stale
-source/closure data, incorrect locators, duplicate use sites and stale bindings.
+source/closure data, incorrect locators, duplicate use sites, stale bindings,
+and changes to published theorem formulas and proof text. The default strict
+mode without `--publication` still rejects revised sources whose full inventory
+has not received a new audit.
 
 The complete proof reproducer remains:
 

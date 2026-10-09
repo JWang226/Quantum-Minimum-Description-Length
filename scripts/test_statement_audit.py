@@ -10,7 +10,19 @@ import check_statement_audit as audit
 
 
 class AuditControls(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        cls.snapshot = audit.audited_snapshot(audit.ROOT)
+        cls.reviewed_root = cls.snapshot.__enter__()
+
+    @classmethod
+    def tearDownClass(cls):
+        cls.snapshot.__exit__(None, None, None)
+
     def setUp(self):
+        root_patch = patch.object(audit, "ROOT", self.reviewed_root)
+        root_patch.start()
+        self.addCleanup(root_patch.stop)
         self.coverage = audit.read_json(audit.ROOT / audit.AUDIT / "source-coverage.json")
 
     def test_current_records(self):
@@ -67,6 +79,25 @@ class AuditControls(unittest.TestCase):
         with patch.object(audit, "read_json", side_effect=lambda p: manifest if p.name == "manifest.json" else original(p)):
             with self.assertRaisesRegex(ValueError, "audit input/report changed"):
                 audit.check(audit.ROOT)
+
+
+class PublicationAuditControls(unittest.TestCase):
+    def test_current_sources_match_recorded_mathematical_regions(self):
+        audit.check_publication(audit.ROOT)
+
+    def test_rejects_changed_theorem_formula(self):
+        reviewed = audit.local(audit.ROOT, "article.tex").read_text()
+        changed = reviewed.replace("L_{d,r}(n,x)", "L_{d,r}(n,x)+1", 1)
+        self.assertNotEqual(changed, reviewed)
+        with self.assertRaisesRegex(ValueError, "Mathematical statement/proof regions changed"):
+            audit.check_mathematical_regions(changed, reviewed, "article.tex")
+
+    def test_rejects_changed_proof(self):
+        reviewed = audit.local(audit.ROOT, "article.tex").read_text()
+        changed = reviewed.replace("\\begin{proof}", "\\begin{proof}\nFalse inference.", 1)
+        self.assertNotEqual(changed, reviewed)
+        with self.assertRaisesRegex(ValueError, "Mathematical statement/proof regions changed"):
+            audit.check_mathematical_regions(changed, reviewed, "article.tex")
 
 
 if __name__ == "__main__":

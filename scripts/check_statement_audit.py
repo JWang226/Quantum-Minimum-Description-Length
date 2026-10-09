@@ -12,6 +12,7 @@ from __future__ import annotations
 
 import argparse
 from collections import Counter
+from contextlib import contextmanager
 from datetime import datetime, timezone
 import hashlib
 import json
@@ -20,10 +21,12 @@ import re
 import shutil
 import subprocess
 import sys
+import tarfile
 import tempfile
 
 ROOT = Path(__file__).resolve().parents[1]
 AUDIT = Path("metadata/statement-audit")
+PUBLICATION_AUDIT_REVISION = "00ba2b4547cc76b3ac5153831d67de7c0c8e30ee"
 ROOTS = {
     "FreeEntropy.theorem1_achievability",
     "FreeEntropy.theorem1_converse",
@@ -65,7 +68,9 @@ def proof_sha(root: Path) -> str:
 
 def local(root: Path, name: str) -> Path:
     # Earlier audit records retain their original logical source names.
-    relative = "manuscript/" + name if name in {"article.tex", "letter.tex", "free.bib"} else name
+    relative = ("manuscript/" + name
+                if name in {"article.tex", "letter.tex", "free.bib"} and not (root / name).is_file()
+                else name)
     path = (root / relative).resolve()
     require(path.is_relative_to(root.resolve()), f"path escapes repository: {name}")
     require(path.is_file(), f"missing file: {name}")
@@ -341,22 +346,114 @@ def run_lean(root: Path, project: Path, manifest, probes):
     print("STATEMENT AUDIT LEAN PROBES PASSED (incremental build; source interpretation remains agent-reviewed)")
 
 
+@contextmanager
+def audited_snapshot(root: Path):
+    """Recover the immutable revision to which the retrospective audit applies."""
+    with tempfile.TemporaryDirectory(prefix="qmdl-audited-snapshot-") as directory:
+        snapshot = Path(directory).resolve()
+        with tempfile.TemporaryFile() as archive:
+            result = subprocess.run(
+                ["git", "archive", "--format=tar", PUBLICATION_AUDIT_REVISION],
+                cwd=root, stdout=archive, stderr=subprocess.PIPE, check=False,
+            )
+            if result.returncode != 0:
+                # Actions checks out a shallow history by default. Fetch only
+                # the immutable audited commit; leave the working tree intact.
+                fetched = subprocess.run(
+                    ["git", "fetch", "--no-tags", "--depth=1", "origin", PUBLICATION_AUDIT_REVISION],
+                    cwd=root, stdout=subprocess.PIPE, stderr=subprocess.PIPE, check=False,
+                )
+                require(fetched.returncode == 0,
+                        "Audited revision is unavailable and could not be fetched")
+                archive.seek(0)
+                archive.truncate()
+                result = subprocess.run(
+                    ["git", "archive", "--format=tar", PUBLICATION_AUDIT_REVISION],
+                    cwd=root, stdout=archive, stderr=subprocess.PIPE, check=False,
+                )
+            require(result.returncode == 0,
+                    "Fetched audited revision could not be archived")
+            archive.seek(0)
+            with tarfile.open(fileobj=archive) as contents:
+                for member in contents:
+                    destination = snapshot / member.name
+                    require(destination.resolve().is_relative_to(snapshot),
+                            "Audited snapshot path escapes the archive")
+                    require(member.isdir() or member.isfile(),
+                            "Audited snapshot contains an unsupported file type")
+                    if member.isdir():
+                        destination.mkdir(parents=True, exist_ok=True)
+                    else:
+                        destination.parent.mkdir(parents=True, exist_ok=True)
+                        destination.write_bytes(contents.extractfile(member).read())
+        yield snapshot
+
+
+def check_mathematical_regions(current: str, reviewed: str, name: str):
+    """Reject changes to theorem/proof blocks or displayed mathematical formulas."""
+    environments = (
+        r"thm|lem|prop|defn|rem|cor|corollary|theorem|lemma|proposition|definition|remark|proof|"
+        r"equation\*?|align\*?|alignat\*?|gather\*?|multline\*?|eqnarray\*?"
+    )
+    pattern = re.compile(
+        r"\\begin\{(?P<environment>" + environments + r")\}.*?\\end\{(?P=environment)\}"
+        r"|\\\[.*?\\\]", re.S,
+    )
+    regions = lambda text: [match[0] for match in pattern.finditer(text)]
+    require(regions(current) == regions(reviewed),
+            f"Mathematical statement/proof regions changed: {name}; a new statement audit is required")
+
+
+def check_publication(root: Path):
+    """Validate the recorded audit and its limited connection to current sources.
+
+    The source inventory and review remain bound to their original revision.
+    Later prose, bibliography and path edits do not constitute a new review.
+    """
+    with audited_snapshot(root) as snapshot:
+        manifest, probes, coverage = check(snapshot)
+        require(proof_sha(root) == manifest["proof_sources_sha256"],
+                "Current Lean sources differ from the audited revision; a new audit is required")
+        require((root / AUDIT / "manifest.json").read_bytes() ==
+                (snapshot / AUDIT / "manifest.json").read_bytes(), "Published audit manifest changed")
+        for name, expected in manifest["file_sha256"].items():
+            if name.startswith("metadata/statement-audit/"):
+                require(sha(local(root, name).read_bytes()) == expected,
+                        f"Published audit report changed: {name}")
+        catalog = read_json(root / "docs/assets/lean-catalog.json")
+        declarations = {item["name"]: item for item in catalog["declarations"]}
+        for endpoint in manifest["endpoints"]:
+            require(declarations[endpoint["name"]]["statement"] == endpoint["compiled_statement"],
+                    f"Published endpoint statement changed: {endpoint['name']}")
+        for name in ("article.tex", "letter.tex"):
+            check_mathematical_regions(local(root, name).read_text(),
+                                       local(snapshot, name).read_text(), name)
+    return manifest, probes, coverage
+
+
 def on_pre_build(config, **kwargs):
-    check(ROOT)
+    check_publication(ROOT)
+    print("STATEMENT AUDIT SNAPSHOT VERIFIED: recorded review preserved; "
+          "current mathematical regions and Lean endpoints unchanged")
 
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--root", type=Path, default=ROOT)
     parser.add_argument("--lean", action="store_true", help="also build endpoint modules and compile transient probes")
+    parser.add_argument("--publication", action="store_true",
+                        help="validate the archived review and unchanged current mathematical regions")
     parser.add_argument("--lean-project", type=Path, help="matching existing Lean build directory (requires --lean)")
     args = parser.parse_args()
     if args.lean_project and not args.lean:
         parser.error("--lean-project requires --lean")
+    if args.publication and args.lean:
+        parser.error("--publication preserves recorded runs; use --lean for a fresh current-source audit")
     try:
         root = args.root.resolve()
-        manifest, probes, coverage = check(root)
-        print(f"STATEMENT AUDIT RECORDS CURRENT: {len(manifest['endpoints'])} endpoints; "
+        manifest, probes, coverage = check_publication(root) if args.publication else check(root)
+        status = "SNAPSHOT VERIFIED" if args.publication else "RECORDS CURRENT"
+        print(f"STATEMENT AUDIT {status}: {len(manifest['endpoints'])} endpoints; "
               f"{len(coverage['inventory'])} source inventory items")
         print("Structural freshness only; this does not certify mathematical correspondence.")
         if args.lean:
